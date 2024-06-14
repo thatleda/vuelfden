@@ -1,19 +1,17 @@
 <template>
   <div :class="$style.card">
-    <SanityImage
-      :asset-id="data[0].banner.asset._ref"
-      :class="$style.photo"
-      width="200"
-    ></SanityImage>
+    <sanity-image :asset-id="imageId" :class="$style.photo" width="200" />
     <div>
-      <SanityContent :blocks="data[0].content" />
+      <sanity-content :blocks="props.content" />
     </div>
   </div>
 </template>
 
 <script setup>
-const query = groq`*[_type == "page" && slug.current == $slug][0..10]`;
-const { data } = useSanityQuery(query, { slug: "who" });
+const props = defineProps({
+  content: { default: () => [], type: Array },
+  imageId: { default: "", type: String },
+});
 </script>
 
 <style module>
