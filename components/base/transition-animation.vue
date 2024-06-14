@@ -1,3 +1,11 @@
+<template>
+  <UseElementVisibility v-slot="{ isVisible }">
+    <div v-show="isVisible" :style="props">
+      <slot />
+    </div>
+  </UseElementVisibility>
+</template>
+
 <script setup lang="ts">
 import { UseElementVisibility } from "@vueuse/components";
 interface AnimationProps {
@@ -22,14 +30,6 @@ const props = withDefaults(defineProps<AnimationProps>(), {
   animationTiming: "ease-in",
 });
 </script>
-
-<template>
-  <UseElementVisibility v-slot="{ isVisible }">
-    <div v-show="isVisible" :style="props">
-      <slot />
-    </div>
-  </UseElementVisibility>
-</template>
 
 <style module>
 @keyframes fade-in {
