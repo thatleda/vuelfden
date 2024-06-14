@@ -1,5 +1,6 @@
 <template>
   <nav>
+    <NuxtLink to="/"><wolf mirror width="50px" height="50px"></wolf></NuxtLink>
     <NuxtLink to="/#who">Who?</NuxtLink>
     <NuxtLink to="/#previously">Previously</NuxtLink>
     <NuxtLink to="/ramblings">Blog</NuxtLink>
@@ -8,6 +9,9 @@
   </nav>
   <NuxtPage />
 </template>
+<script setup>
+import wolf from '~/components/svg/wolf.vue';
+</script>
 
 <style module>
 @import url("~/assets/css/main.css")

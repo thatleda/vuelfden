@@ -22,7 +22,7 @@ body {
   --scroll-bar-color: rgba(255, 255, 255, 0.5);
   --box-shadow-color: rgba(0, 0, 0, 0.16);
   --box-shadow-hover-color: rgba(0, 0, 0, 0.32);
-  --base-font: "Fira Sans", sans-serif;
+  --base-font: Fira Sans, sans-serif;
 
   height: 100%;
   background-color: var(--background-color);
