@@ -10,22 +10,5 @@
 </template>
 
 <style module>
-nav {
-  align-items: center;
-  display: flex;
-  height: 100%;
-  justify-content: space-between;
-  margin: 0 auto;
-  max-width: var(--page-width);
-  padding: var(--page-padding);
-  width: 100%;
-
-  @media (max-width: 1030px) {
-    padding-left: 0;
-  }
-
-  svg:hover {
-    fill: var(--primary-color);
-  }
-}
+@import url("~/assets/css/main.css")
 </style>
