@@ -8,9 +8,12 @@
 
 <script setup lang="ts">
 import { UseElementVisibility } from "@vueuse/components";
-interface AnimationProps {
-  animationDelay?: `${number}ms` | `${number}s`;
-  animationDuration: `${number}ms` | `${number}s`;
+
+type TimeUnit = "ms" | "s";
+
+export interface AnimationProps {
+  animationDelay?: `${number}${TimeUnit}`;
+  animationDuration: `${number}${TimeUnit}`;
   animationFillMode?: "backwards" | "both" | "forwards" | "none";
   animationName:
     | "fade-down"
