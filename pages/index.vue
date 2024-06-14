@@ -1,3 +1,3 @@
 <template>
-    <div><about></about></div>
+  <div><about-leda></about-leda></div>
 </template>

@@ -1,10 +1,10 @@
 <template>
   <svg
+    :class="{ mirror: props.mirror }"
     preserveAspectRatio="xMidYMid meet"
     version="1.0"
     viewBox="30 0 598.000000 583.000000"
     xmlns="http://www.w3.org/2000/svg"
-    :class="{ mirror: props.mirror }"
   >
     <title>Howling wolf icon</title>
     <g stroke="none" transform="translate(0,583) scale(0.1,-0.1)">
@@ -72,11 +72,11 @@
 <script setup>
 const props = defineProps({
   height: {
-    type: String,
     default: "50px",
+    type: String,
   },
-  width: { type: String, default: "50px" },
-  mirror: { type: Boolean, default: false },
+  mirror: { default: false, type: Boolean },
+  width: { default: "50px", type: String },
 });
 </script>
 

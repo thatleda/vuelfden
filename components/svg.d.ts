@@ -1,5 +1,5 @@
 interface SVGProps {
-    height?: string
-    width?: string
-    mirror?: boolean
+  height?: string;
+  mirror?: boolean;
+  width?: string;
 }

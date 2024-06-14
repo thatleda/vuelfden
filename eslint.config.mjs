@@ -1,9 +1,24 @@
-// @ts-check
-import withNuxt from './.nuxt/eslint.config.mjs'
+// @ts-ignore
+import perfectionist from "eslint-plugin-perfectionist";
+import perfectionistNatural from "eslint-plugin-perfectionist/configs/recommended-natural";
 import prettier from "eslint-plugin-prettier/recommended";
 
-export default withNuxt(
-  [
-    prettier,
-  ]
-)
+import withNuxt from "./.nuxt/eslint.config.mjs";
+
+export default withNuxt([
+  {
+    rules: {
+      "vue/no-multiple-template-root": "off",
+    },
+  },
+  prettier,
+  perfectionistNatural,
+  {
+    plugins: {
+      perfectionist,
+    },
+    rules: {
+      "perfectionist/sort-imports": ["warn"],
+    },
+  },
+]);
