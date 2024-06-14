@@ -19,6 +19,7 @@ export default withNuxt([
     },
     rules: {
       "perfectionist/sort-imports": ["warn"],
+      "perfectionist/sort-vue-attributes": ["off"],
     },
   },
 ]);
