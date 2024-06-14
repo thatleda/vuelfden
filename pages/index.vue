@@ -1,3 +1,3 @@
 <template>
-    <div>Itsa page!</div>
+    <div><about></about></div>
 </template>
