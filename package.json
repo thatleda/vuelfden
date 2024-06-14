@@ -18,6 +18,7 @@
     "vue-router": "^4.3.3"
   },
   "devDependencies": {
-    "@nuxt/eslint": "^0.3.13"
+    "@nuxt/eslint": "^0.3.13",
+    "eslint-plugin-prettier": "^5.1.3"
   }
 }
