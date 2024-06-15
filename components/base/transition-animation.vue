@@ -1,13 +1,15 @@
 <template>
-  <UseElementVisibility v-slot="{ isVisible }">
-    <div v-show="isVisible" :style="props" :class="props.class">
-      <slot />
-    </div>
-  </UseElementVisibility>
+  <div
+    ref="target"
+    :style="props"
+    :class="targetIsVisible ? props.class : $style.invisible"
+  >
+    <slot />
+  </div>
 </template>
 
 <script setup lang="ts">
-import { UseElementVisibility } from "@vueuse/components";
+import { useElementVisibility } from "@vueuse/core";
 
 type TimeUnit = "ms" | "s";
 
@@ -22,9 +24,12 @@ export interface AnimationProps {
     | "fade-up"
     | "scale-in"
     | "wiggle";
-  animationTiming: "ease-in" | "ease-in-out" | "ease-out" | "linear";
+  animationTiming?: "ease-in" | "ease-in-out" | "ease-out" | "linear";
   class?: string;
 }
+
+const target = ref(null);
+const targetIsVisible = useElementVisibility(target, { threshold: 0.05 });
 
 const props = withDefaults(defineProps<AnimationProps>(), {
   animationDelay: undefined,
@@ -35,3 +40,9 @@ const props = withDefaults(defineProps<AnimationProps>(), {
   class: "",
 });
 </script>
+
+<style module>
+.invisible {
+  opacity: 0;
+}
+</style>
