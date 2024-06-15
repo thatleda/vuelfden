@@ -5,7 +5,7 @@
       props.variant === 'secondary' && $style.secondary,
       $style.button,
     ]"
-    :to="props.href"
+    v-bind="props"
   >
     <slot />
     {{ props.text }}</NuxtLink
@@ -13,13 +13,15 @@
 </template>
 
 <script setup lang="ts">
-interface ButtonsProps {
-  href?: string;
+import type { NuxtLinkProps } from "#app";
+
+interface ButtonsProps extends NuxtLinkProps {
   text: string;
   variant?: "primary" | "secondary";
 }
 
 const props = withDefaults(defineProps<ButtonsProps>(), {
+  download: undefined,
   href: "/",
   icon: undefined,
   variant: undefined,
@@ -32,7 +34,6 @@ const props = withDefaults(defineProps<ButtonsProps>(), {
   padding: 0.5rem 1.5rem;
   width: auto;
   height: auto;
-  border-radius: var(--border-radius);
   transition: 0.25s ease-in-out;
   transition-property: background-color;
   display: flex;
@@ -40,6 +41,11 @@ const props = withDefaults(defineProps<ButtonsProps>(), {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+
+.primary,
+.secondary {
+  border-radius: var(--border-radius);
 }
 
 .primary {
