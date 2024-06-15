@@ -1,6 +1,6 @@
 <template>
   <UseElementVisibility v-slot="{ isVisible }">
-    <div v-show="isVisible" :style="props">
+    <div v-show="isVisible" :style="props" :class="props.class">
       <slot />
     </div>
   </UseElementVisibility>
@@ -23,6 +23,7 @@ export interface AnimationProps {
     | "scale-in"
     | "wiggle";
   animationTiming: "ease-in" | "ease-in-out" | "ease-out" | "linear";
+  class?: string;
 }
 
 const props = withDefaults(defineProps<AnimationProps>(), {
@@ -31,5 +32,6 @@ const props = withDefaults(defineProps<AnimationProps>(), {
   animationFillMode: "backwards",
   animationName: "fade-in",
   animationTiming: "ease-in",
+  class: "",
 });
 </script>

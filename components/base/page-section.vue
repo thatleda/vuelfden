@@ -22,7 +22,7 @@ import TransitionAnimation from "./transition-animation.vue";
 
 interface SectionProps {
   anchor?: string;
-  animationProps?: AnimationProps;
+  animationProps?: Partial<AnimationProps>;
   heading?: null | string;
 }
 

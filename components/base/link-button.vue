@@ -15,14 +15,15 @@
 <script setup lang="ts">
 import type { NuxtLinkProps } from "#app";
 
-interface ButtonsProps extends NuxtLinkProps {
-  text: string;
+interface ButtonProps extends NuxtLinkProps {
+  text?: string;
   variant?: "primary" | "secondary";
 }
 
-const props = withDefaults(defineProps<ButtonsProps>(), {
+const props = withDefaults(defineProps<ButtonProps>(), {
   download: undefined,
   icon: undefined,
+  text: undefined,
   to: "/",
   variant: undefined,
 });
