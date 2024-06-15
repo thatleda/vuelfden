@@ -1,8 +1,8 @@
 <template>
   <div
     ref="target"
-    :style="props"
-    :class="targetIsVisible ? props.class : $style.invisible"
+    :style="targetIsVisible ? props : { opacity: 0 }"
+    :class="props.class"
   >
     <slot />
   </div>
@@ -40,9 +40,3 @@ const props = withDefaults(defineProps<AnimationProps>(), {
   class: "",
 });
 </script>
-
-<style module>
-.invisible {
-  opacity: 0;
-}
-</style>
