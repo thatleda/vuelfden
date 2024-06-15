@@ -1,8 +1,8 @@
 <template>
   <transition-animation
-    :animation-duration="props.animationProps?.animationDuration ?? '600ms'"
+    :animation-duration="props.animationProps?.animationDuration ?? '1s'"
     :animation-name="props.animationProps?.animationName ?? 'fade-up'"
-    :animation-delay="props.animationProps?.animationDelay"
+    :animation-delay="props.animationProps?.animationDelay ?? '300ms'"
     :animation-fill-mode="props.animationProps?.animationFillMode"
     :animation-timing="props.animationProps?.animationTiming"
   >

@@ -22,8 +22,8 @@ interface ButtonsProps extends NuxtLinkProps {
 
 const props = withDefaults(defineProps<ButtonsProps>(), {
   download: undefined,
-  href: "/",
   icon: undefined,
+  to: "/",
   variant: undefined,
 });
 </script>
