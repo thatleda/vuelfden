@@ -69,14 +69,17 @@
   </svg>
 </template>
 
-<script setup>
-const props = defineProps({
-  height: {
-    default: "50px",
-    type: String,
-  },
-  mirror: { default: false, type: Boolean },
-  width: { default: "50px", type: String },
+<script lang="ts" setup>
+import type { SVGProps } from ".";
+
+interface WolfProps extends SVGProps {
+  mirror?: boolean;
+}
+
+const props = withDefaults(defineProps<WolfProps>(), {
+  height: "50px",
+  mirror: false,
+  width: "50px",
 });
 </script>
 
