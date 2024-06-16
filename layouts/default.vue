@@ -1,7 +1,9 @@
 <template>
   <nav>
     <link-button to="/">
-      <wolf mirror height="5rem" width="5rem" />
+      <template #icon>
+        <wolf mirror height="5rem" width="5rem" />
+      </template>
     </link-button>
     <link-button to="/#who" text="Who?" />
     <link-button to="/#previously" text="Previously" />

@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     "@nuxt/eslint",
     "@vueuse/nuxt",
     "@nuxt/image",
+    "@nuxt/test-utils/module",
   ],
   sanity: {
     dataset: process.env.NUXT_SANITY_DATASET,

@@ -7,7 +7,7 @@
     ]"
     v-bind="props"
   >
-    <slot />
+    <slot name="icon" />
     <span :class="$style.noBreakText">{{ props.text }}</span></NuxtLink
   >
 </template>
