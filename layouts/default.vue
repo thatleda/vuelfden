@@ -40,24 +40,25 @@ body {
   }
 }
 
-svg {
-  fill: var(--text-color);
-}
-
 a {
-  display: inline-block;
   text-decoration: none;
   text-decoration-skip-ink: auto;
   color: var(--subtext-color);
   cursor: pointer;
+
   &:hover {
     outline: 0;
   }
+
   &:focus {
     outline-color: var(--subtext-color);
     outline-style: dotted;
     outline-width: 2px;
   }
+}
+
+svg {
+  fill: var(--text-color);
 }
 
 h1 {

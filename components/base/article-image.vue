@@ -1,0 +1,29 @@
+<template>
+  <div :class="$style.frame">
+    <sanity-image
+      :asset-id="props.asset._ref"
+      :alt="props.alt"
+      :class="$style.photo"
+    />
+  </div>
+</template>
+
+<script lang="ts" setup>
+interface ImageProps {
+  alt: string;
+  asset: { _ref: string; _type: "reference" };
+}
+const props = defineProps<ImageProps>();
+</script>
+
+<style module>
+.frame {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.photo {
+  width: 80vw;
+}
+</style>

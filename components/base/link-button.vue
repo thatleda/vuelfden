@@ -8,7 +8,7 @@
     v-bind="props"
   >
     <slot />
-    {{ props.text }}</NuxtLink
+    <span :class="$style.noBreakText">{{ props.text }}</span></NuxtLink
   >
 </template>
 
@@ -72,5 +72,9 @@ const props = withDefaults(defineProps<ButtonProps>(), {
       fill: var(--primary-color);
     }
   }
+}
+
+.noBreakText {
+  display: inline-block;
 }
 </style>

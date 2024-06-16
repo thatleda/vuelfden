@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^0.3.13",
+    "@portabletext/types": "^2.0.13",
     "eslint": "^9.4.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-perfectionist": "^2.11.0",

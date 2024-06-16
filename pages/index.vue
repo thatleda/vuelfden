@@ -7,12 +7,13 @@
     />
   </page-section>
   <page-section :heading="previouslyPage.title" anchor="previously">
-    <div><sanity-content :blocks="previouslyPage.content" /></div>
+    <sanity-block :blocks="previouslyPage.content" />
   </page-section>
 </template>
 
 <script setup>
 import PageSection from "~/components/base/page-section.vue";
+import SanityBlock from "~/components/base/sanity-block.vue";
 import HeroBanner from "~/components/hero-banner.vue";
 
 const query = groq`*[_type == "page" && slug.current == $slug][0]`;
