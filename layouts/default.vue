@@ -8,7 +8,7 @@
     <link-button to="/#who" text="Who?" />
     <link-button to="/#previously" text="Previously" />
     <link-button to="/ramblings" text="Blog" />
-    <link-button to="/#testimonials" text="Working with Leda" />
+    <link-button to="/#reviews" text="Working with Leda" />
     <link-button to="/#contact" text="Contact" />
     <link-button
       text="CV"

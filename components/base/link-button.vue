@@ -4,11 +4,12 @@
       props.variant === 'primary' && $style.primary,
       props.variant === 'secondary' && $style.secondary,
       $style.button,
+      $style.noBreakText,
     ]"
     v-bind="props"
   >
     <slot name="icon" />
-    <span :class="$style.noBreakText">{{ props.text }}</span></NuxtLink
+    <span>{{ props.text }}</span></NuxtLink
   >
 </template>
 

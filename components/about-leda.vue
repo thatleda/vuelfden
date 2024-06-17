@@ -1,22 +1,27 @@
 <template>
   <div :class="$style.card">
-    <sanity-image
-      :asset-id="imageId"
-      :class="$style.photo"
-      auto="format"
-      crop="center"
-      fit="crop"
-    />
-    <sanity-block :blocks="props.content" />
+    <div :class="$style.frame">
+      <sanity-image
+        :asset-id="aboutPage.banner.asset._ref"
+        :alt="aboutPage.banner.alt"
+        w="300"
+        fit="crop"
+        :class="$style.photo"
+      />
+    </div>
+    <sanity-block :blocks="aboutPage.content" />
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
+import type { SanityPage } from "~/@types/sanity";
+
 import SanityBlock from "~/components/base/sanity-block.vue";
-const props = defineProps({
-  content: { default: () => [], type: Array },
-  imageId: { default: "", type: String },
-});
+
+interface AboutLedaProps {
+  aboutPage: SanityPage;
+}
+const { aboutPage } = defineProps<AboutLedaProps>();
 </script>
 
 <style module>
@@ -29,9 +34,18 @@ const props = defineProps({
   }
 }
 
+.frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .photo {
-  margin: 0 auto;
   border-radius: var(--border-radius);
-  max-width: 200px;
+  width: 200px;
+
+  @media (max-width: 749px) {
+    width: auto;
+  }
 }
 </style>

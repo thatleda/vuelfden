@@ -9,11 +9,9 @@
 </template>
 
 <script lang="ts" setup>
-interface ImageProps {
-  alt: string;
-  asset: { _ref: string; _type: "reference" };
-}
-const props = defineProps<ImageProps>();
+import type { SanityLinkedImage } from "~/@types/sanity";
+
+const props = defineProps<SanityLinkedImage>();
 </script>
 
 <style module>
