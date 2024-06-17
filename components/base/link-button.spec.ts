@@ -51,7 +51,7 @@ test("should add the right class to the primary button", async () => {
     },
   });
 
-  expect(screen.getByRole("link")).toHaveClass("button", "secondary");
+  expect(screen.getByRole("link")).toHaveClass("button", "primary");
 });
 
 test("should add the right class to the secondary button", async () => {
