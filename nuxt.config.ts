@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  css: ["~/assets/css/main.css", "~/assets/css/animation.css"],
+  css: ["~/assets/css/animation.css"],
   devtools: { enabled: true },
   image: {
     dir: "assets/images",
@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxt/fonts",
     "@nuxtjs/sanity",
+    "@nuxtjs/color-mode",
     "@nuxt/eslint",
     "@vueuse/nuxt",
     "@nuxt/image",

@@ -1,47 +1,69 @@
 <template>
-  <nav>
-    <link-button to="/" title="Home">
-      <template #icon>
-        <wolf mirror height="5rem" width="5rem" />
-      </template>
-    </link-button>
-    <link-button to="/#who" text="Who?" />
-    <link-button to="/#previously" text="Previously" />
-    <link-button to="/ramblings" text="Blog" />
-    <link-button to="/#reviews" text="Working with Leda" />
-    <link-button to="/#contact" text="Contact" />
-    <link-button
-      text="CV"
-      variant="primary"
-      to="resume.pdf"
-      target="_blank"
-      download="resume.pdf"
-    />
-  </nav>
+  <page-header />
   <NuxtPage />
-  <footer>
-    <div :class="$style.linkWrapper">
-      <NuxtLink aria-label="home" to="/#who">
-        <wolf v-if="smallScreen" height="5rem" width="5rem" />
-        <div v-else :class="$style.logo">Leda Wolf</div>
-      </NuxtLink>
-      <nav :class="$style.footerNav">
-        <link-button to="/privacy" text="Privacy" />
-        <link-button to="/imprint" text="Imprint" />
-      </nav>
-    </div>
-  </footer>
+  <page-footer />
 </template>
 
 <script lang="ts" setup>
-import LinkButton from "~/components/base/link-button.vue";
-import Wolf from "~/components/svg/wolf.vue";
-
-const smallScreen = useMediaQuery("(max-width: 1030px)");
+import PageFooter from "~/components/page-footer.vue";
+import PageHeader from "~/components/page-header.vue";
 </script>
 
-<style module>
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --border-radius: 1rem;
+  --page-width: 62rem;
+  --page-padding: 0 1rem;
+  --header-height: 6.25rem;
+  --footer-height: 7.5rem;
+  --base-font: Fira Sans, sans-serif;
+}
+
+.dark-mode {
+  --primary-color: #fafafa;
+  --secondary-color: #055b01;
+  --tertiary-color: #252525;
+  --text-color: rgba(255, 255, 255, 0.607);
+  --subtext-color: #aaaaaaa4;
+  --background-color: #121212;
+  --card-background-color: #202020;
+  --scroll-bar-color: rgba(255, 255, 255, 0.5);
+  --box-shadow-color: rgba(0, 0, 0, 0.16);
+  --box-shadow-hover-color: rgba(0, 0, 0, 0.32);
+}
+
+.light-mode {
+  --primary-color: #000000;
+  --secondary-color: #a7f8b1;
+  --tertiary-color: #f2f2f2;
+  --text-color: #000000;
+  --subtext-color: #555555;
+  --background-color: #d2d2d2;
+  --card-background-color: #dddddd;
+  --scroll-bar-color: rgba(0, 0, 0, 0.5);
+  --box-shadow-color: #dddddd;
+  --box-shadow-hover-color: rgba(0, 0, 0, 0.32);
+}
+
 body {
+  height: 100%;
+  background-color: var(--background-color);
+
+  /* Disable smooth scrolling when users have prefers-reduced-motion enabled */
+  @media screen and (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
   font-size: 18px;
   font-weight: 300;
   font-family: var(--base-font);
@@ -110,54 +132,5 @@ u {
   &:hover {
     box-shadow: inset 0 -1.5em 0 var(--secondary-color);
   }
-}
-
-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100%;
-  margin: 0 auto;
-  max-width: var(--page-width);
-  padding-bottom: 1rem;
-  width: 100%;
-
-  @media (max-width: 1030px) {
-    padding-left: 0;
-  }
-
-  svg:hover {
-    fill: var(--primary-color);
-  }
-}
-
-.footerNav {
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-}
-
-.logo {
-  font-family: "Homemade Apple", cursive;
-  min-width: 20rem;
-  font-size: 1.5rem;
-  color: var(--primary-color);
-}
-
-.linkWrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  max-width: var(--page-width);
-  padding: var(--page-padding);
-}
-
-footer {
-  background: var(--background-color);
-  border-top: 3px solid var(--box-shadow-color);
 }
 </style>

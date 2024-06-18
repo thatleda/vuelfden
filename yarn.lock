@@ -1220,6 +1220,16 @@
     vite-plugin-checker "^0.6.4"
     vue-bundle-renderer "^2.1.0"
 
+"@nuxtjs/color-mode@^3.4.1":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/color-mode/-/color-mode-3.4.1.tgz#d538d0239fac3fd050d757d37be3bf93b756d98f"
+  integrity sha512-vZgJqDstxInGw3RGSWbLoCLXtU1mvh1LLeuEA/X3a++DYA4ifwSbNoiSiOyb9qZHFEwz1Xr99H71sXV4IhOaEg==
+  dependencies:
+    "@nuxt/kit" "^3.11.2"
+    pathe "^1.1.2"
+    pkg-types "^1.1.0"
+    semver "^7.6.0"
+
 "@nuxtjs/sanity@^1.11.3":
   version "1.11.3"
   resolved "https://registry.yarnpkg.com/@nuxtjs/sanity/-/sanity-1.11.3.tgz#6fc2a2b399b22785f89d3211dac0775384f47261"
@@ -6460,7 +6470,7 @@ picomatch@^4.0.2:
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-4.0.2.tgz#77c742931e8f3b8820946c76cd0c1f13730d1dab"
   integrity sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==
 
-pkg-types@^1.0.3, pkg-types@^1.1.1:
+pkg-types@^1.0.3, pkg-types@^1.1.0, pkg-types@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/pkg-types/-/pkg-types-1.1.1.tgz#07b626880749beb607b0c817af63aac1845a73f2"
   integrity sha512-ko14TjmDuQJ14zsotODv7dBlwxKhUKQEhuhmbqo1uCi9BB0Z2alo/wAXg6q1dTR5TyuqYyWhjtfe/Tsh+X28jQ==
