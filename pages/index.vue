@@ -13,6 +13,9 @@
   <page-section v-if="reviews" anchor="reviews" heading="Reviews">
     <review v-for="review in reviews" :key="review._id" :review="review" />
   </page-section>
+  <page-section anchor="contact" heading="What is she up to?">
+    <contact-leda />
+  </page-section>
 </template>
 
 <script lang="ts" setup>
@@ -21,6 +24,7 @@ import type { SanityPage, SanityReview } from "~/@types/sanity";
 import PageSection from "~/components/base/page-section.vue";
 import Review from "~/components/base/review.vue";
 import SanityBlock from "~/components/base/sanity-block.vue";
+import contactLeda from "~/components/contact-leda.vue";
 import HeroBanner from "~/components/hero-banner.vue";
 
 const query = groq`*[_type == "page" && slug.current == $slug][0]`;
