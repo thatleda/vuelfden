@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <link-button to="/">
+    <link-button to="/" title="Home">
       <template #icon>
         <wolf mirror height="5rem" width="5rem" />
       </template>
@@ -105,7 +105,7 @@ nav {
   justify-content: space-between;
   margin: 0 auto;
   max-width: var(--page-width);
-  padding: var(--page-padding);
+  padding-bottom: 1rem;
   width: 100%;
 
   @media (max-width: 1030px) {

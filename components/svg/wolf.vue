@@ -3,7 +3,7 @@
     :class="{ mirror: props.mirror }"
     preserveAspectRatio="xMidYMid meet"
     version="1.0"
-    viewBox="30 0 598.000000 583.000000"
+    viewBox="100 0 583 583"
     xmlns="http://www.w3.org/2000/svg"
   >
     <title>Howling wolf icon</title>
