@@ -19,11 +19,25 @@
     />
   </nav>
   <NuxtPage />
+  <footer>
+    <div :class="$style.linkWrapper">
+      <NuxtLink aria-label="home" to="/#who">
+        <wolf v-if="smallScreen" height="5rem" width="5rem" />
+        <div v-else :class="$style.logo">Leda Wolf</div>
+      </NuxtLink>
+      <nav>
+        <link-button to="/privacy" text="Privacy" />
+        <link-button to="/imprint" text="Imprint" />
+      </nav>
+    </div>
+  </footer>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import LinkButton from "~/components/base/link-button.vue";
-import wolf from "~/components/svg/wolf.vue";
+import Wolf from "~/components/svg/wolf.vue";
+
+const smallScreen = useMediaQuery("(max-width: 1030px)");
 </script>
 
 <style module>
@@ -102,7 +116,7 @@ nav {
   align-items: center;
   display: flex;
   height: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 0 auto;
   max-width: var(--page-width);
   padding-bottom: 1rem;
@@ -115,5 +129,29 @@ nav {
   svg:hover {
     fill: var(--primary-color);
   }
+}
+
+.logo {
+  font-family: "Homemade Apple", cursive;
+  width: 10rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.linkWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  max-width: var(--page-width);
+  padding: var(--page-padding);
+}
+
+footer {
+  background: var(--background-color);
+  border-top: 3px solid var(--box-shadow-color);
 }
 </style>
