@@ -8,7 +8,7 @@
       <mail height="5rem" width="5rem" />
       <div :class="$style.contactData">
         <div :class="$style.name"><u>Leda Wolf</u></div>
-        <NuxtLink to="mailto:leda@hey.com" text="leda@hey.com" />
+        <NuxtLink to="mailto:leda@hey.com">leda@hey.com</NuxtLink>
       </div>
     </div>
     <transition-animation
