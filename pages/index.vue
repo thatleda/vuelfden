@@ -28,7 +28,7 @@ import contactLeda from "~/components/contact-leda.vue";
 import HeroBanner from "~/components/hero-banner.vue";
 
 const query = groq`*[_type == "page" && slug.current == $slug][0]`;
-const reviewsQuery = groq`*[_type == "review"][0..4]`;
+const reviewsQuery = groq`*[_type == "review"] | order(_createdAt desc)[0..4]`;
 const { data: previouslyPage } = useSanityQuery<SanityPage>(query, {
   slug: "previously",
 });
