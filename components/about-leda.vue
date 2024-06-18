@@ -42,10 +42,10 @@ const { aboutPage } = defineProps<AboutLedaProps>();
 
 .photo {
   border-radius: var(--border-radius);
-  width: 200px;
+  max-width: 200px;
 
   @media (max-width: 749px) {
-    width: auto;
+    max-width: auto;
   }
 }
 </style>

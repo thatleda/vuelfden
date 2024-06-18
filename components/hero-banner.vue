@@ -36,6 +36,16 @@
             text="LinkedIn"
             variant="secondary"
           />
+          <link-button
+            to="mailto:leda@hey.com"
+            text="Mail"
+            variant="secondary"
+          />
+          <link-button
+            to="https://calendly.com/ledawolf/meeting"
+            text="Calendly"
+            variant="primary"
+          />
         </transition-animation>
       </div>
     </div>
