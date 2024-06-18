@@ -25,7 +25,7 @@
         <wolf v-if="smallScreen" height="5rem" width="5rem" />
         <div v-else :class="$style.logo">Leda Wolf</div>
       </NuxtLink>
-      <nav>
+      <nav :class="$style.footerNav">
         <link-button to="/privacy" text="Privacy" />
         <link-button to="/imprint" text="Imprint" />
       </nav>
@@ -113,10 +113,10 @@ u {
 }
 
 nav {
-  align-items: center;
   display: flex;
-  height: 100%;
   justify-content: space-around;
+  align-items: center;
+  height: 100%;
   margin: 0 auto;
   max-width: var(--page-width);
   padding-bottom: 1rem;
@@ -131,10 +131,16 @@ nav {
   }
 }
 
+.footerNav {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
 .logo {
   font-family: "Homemade Apple", cursive;
-  width: 10rem;
-  text-align: center;
+  min-width: 20rem;
   font-size: 1.5rem;
   color: var(--primary-color);
 }
@@ -143,7 +149,7 @@ nav {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin: 0 auto;
   max-width: var(--page-width);
