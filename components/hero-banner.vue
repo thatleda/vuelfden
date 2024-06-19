@@ -2,7 +2,7 @@
   <page-section :animation-props="{ animationDuration: '0ms' }">
     <div :class="$style.card">
       <NuxtPicture
-        src="leda.jpeg"
+        src="/images/leda.jpeg"
         alt="Leda Wolf"
         :img-attrs="{ class: $style.photo }"
         fit="cover"
@@ -53,10 +53,9 @@
 </template>
 
 <script lang="ts" setup>
+import LinkButton from "~/components/base/link-button.vue";
 import PageSection from "~/components/base/page-section.vue";
-
-import LinkButton from "./base/link-button.vue";
-import TransitionAnimation from "./base/transition-animation.vue";
+import TransitionAnimation from "~/components/base/transition-animation.vue";
 </script>
 
 <style module>
