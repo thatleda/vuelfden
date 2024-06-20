@@ -34,6 +34,8 @@ useSeoMeta({
   ogTitle:
     article.value?.title ??
     "Vuelfden - the Nuxt Edition of Leda Wolf's website",
+  robots:
+    "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
   title: article.value?.title ?? "Vuelfden",
 });
 </script>
