@@ -4,8 +4,8 @@
       <sanity-image
         :asset-id="page.banner.asset._ref"
         alt="Leda Wolf"
-        w="200"
-        h="200"
+        w="400"
+        h="400"
         fit="crop"
         crop="center"
         :class="$style.photo"
@@ -88,6 +88,7 @@ const { page } = defineProps<HeroProps>();
 
 .photo {
   border-radius: 100%;
+  max-width: 200px;
 }
 
 .callToAction {
