@@ -3,6 +3,9 @@
   <page-section anchor="who" heading="Who?">
     <about-leda v-if="aboutPage" :about-page="aboutPage" />
   </page-section>
+  <page-section>
+    <lazy-work-playlist />
+  </page-section>
   <page-section
     v-if="previouslyPage"
     :heading="previouslyPage.title"
@@ -27,6 +30,7 @@ import Review from "~/components/base/review.vue";
 import SanityBlock from "~/components/base/sanity-block.vue";
 import contactLeda from "~/components/contact-leda.vue";
 import HeroBanner from "~/components/hero-banner.vue";
+import LazyWorkPlaylist from "~/components/work-playlist.vue";
 
 const query = groq`*[_type == "page" && slug.current == $slug][0]`;
 const reviewsQuery = groq`*[_type == "review"] | order(_createdAt desc)[0..4]`;
