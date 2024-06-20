@@ -40,6 +40,12 @@ const { data: aboutPage } = useSanityQuery<SanityPage>(query, { slug: "who" });
 const { data: reviews } = useSanityQuery<SanityReview[]>(reviewsQuery);
 const { data: book } = useSanityQuery<SanityBook>(bookQuery);
 
+useHead({
+  htmlAttrs: {
+    lang: "en",
+  },
+});
+
 useSeoMeta({
   description:
     "Leda is a passionate software engineer, whose empathetic and playful approach to problems is sure to find a solution for you.",
