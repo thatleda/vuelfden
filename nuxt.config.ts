@@ -37,5 +37,6 @@ export default defineNuxtConfig({
   },
   site: {
     name: "Vuelfden",
+    url: process.env.URL,
   },
 });
