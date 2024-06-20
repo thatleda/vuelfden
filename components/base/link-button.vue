@@ -6,6 +6,7 @@
       $style.button,
     ]"
     v-bind="props"
+    :external="isExternalLink"
   >
     <slot name="icon" />
     <div :class="$style.noBreakText">{{ props.text }}</div></NuxtLink
@@ -27,6 +28,8 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   to: "/",
   variant: undefined,
 });
+
+const isExternalLink = props.to.startsWith("/") ?? false;
 </script>
 
 <style module>
