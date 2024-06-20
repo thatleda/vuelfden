@@ -1,23 +1,18 @@
-# Nuxt 3 Minimal Starter
-
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+<p align="center">
+  <a href="https://leda.fyi">
+    <img alt="Howling wolf logo" src="https://leda.fyi/images/wolf.jpeg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Leda's Vuelfden
+</h1>
 
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+yarn install --frozen-lockfile
 ```
 
 ## Development Server
@@ -25,51 +20,18 @@ bun install
 Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
 yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
-
+Tests can be run with:
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+yarn test
 ```
 
-Locally preview production build:
+Apart from that and the .env file I will not provide, thank you very much, check out the real thing at:
 
-```bash
-# npm
-npm run preview
+<a href="https://leda.fyi" target="_blank">https://leda.fyi</a>
 
-# pnpm
-pnpm run preview
+or 
 
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+<a href="https://ledawolf.info" target="_blank">https://ledawolf.info</a>
