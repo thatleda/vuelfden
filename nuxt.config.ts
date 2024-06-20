@@ -25,6 +25,7 @@ export default defineNuxtConfig({
         },
       },
     ],
+    "nuxt-security"
   ],
   routeRules: {
     "/": { prerender: true },

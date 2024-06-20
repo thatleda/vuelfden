@@ -21,6 +21,7 @@
     "@vueuse/nuxt": "^10.11.0",
     "date-fns": "^3.6.0",
     "nuxt": "^3.12.1",
+    "nuxt-security": "^2.0.0-rc.6",
     "vue": "^3.4.27",
     "vue-router": "^4.3.3"
   },
