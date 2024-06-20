@@ -104,6 +104,13 @@ const closeMenu = () => {
 };
 
 onClickOutside(outsideRef, closeMenu);
+useHead({
+  bodyAttrs: {
+    class: computed(() => {
+      return isMenuOpen.value ? "static" : "";
+    }),
+  },
+});
 </script>
 
 <style module>
@@ -174,7 +181,6 @@ onClickOutside(outsideRef, closeMenu);
   transition: all 0.3s ease-in-out;
   visibility: hidden;
   width: 100%;
-  z-index: 10;
 }
 
 .open {
@@ -196,6 +202,7 @@ onClickOutside(outsideRef, closeMenu);
   right: 0;
   text-align: left;
   width: 55%;
+  z-index: 10;
 }
 
 .backdrop {
@@ -205,7 +212,9 @@ onClickOutside(outsideRef, closeMenu);
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--card-background-color);
+  opacity: 90%;
+  backdrop-filter: blur(10px);
   transition: all 0.3s ease-in-out;
   display: none;
   filter: blur(5px);

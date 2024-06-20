@@ -53,6 +53,13 @@ html {
   --box-shadow-hover-color: rgba(0, 0, 0, 0.32);
 }
 
+.static * {
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+  animation: none !important;
+}
+
 body {
   height: 100%;
   background-color: var(--background-color);
