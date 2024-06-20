@@ -14,6 +14,17 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/test-utils/module",
     "@nuxtjs/sitemap",
+    [
+      "@nuxtjs/robots",
+      {
+        rules: {
+          BlankLine: true,
+          Comment: "Come hither, little bots.",
+          Disallow: "",
+          UserAgent: "*",
+        },
+      },
+    ],
   ],
   routeRules: {
     "/": { prerender: true },
