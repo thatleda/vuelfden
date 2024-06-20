@@ -34,4 +34,11 @@ const { data: previouslyPage } = useSanityQuery<SanityPage>(query, {
 });
 const { data: aboutPage } = useSanityQuery<SanityPage>(query, { slug: "who" });
 const { data: reviews } = useSanityQuery<SanityReview[]>(reviewsQuery);
+useSeoMeta({
+  description:
+    "Leda is a passionate software engineer, whose empathetic and playful approach to problems is sure to find a solution for you.",
+  ogImage: "/images/wolf.jpeg",
+  ogTitle: "Vuelfden - the Nuxt Edition of Leda Wolf's website",
+  title: "Vuelfden",
+});
 </script>
