@@ -45,6 +45,6 @@ useSeoMeta({
 .banner {
   margin: 0 auto;
   display: flex;
-  max-height: 50vh;
+  max-width: 80vw;
 }
 </style>
