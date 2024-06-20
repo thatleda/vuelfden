@@ -48,6 +48,30 @@ useHead({
   htmlAttrs: {
     lang: "en",
   },
+  link: [
+    {
+      href: "/apple-touch-icon.png",
+      rel: "apple-touch-icon",
+      sizes: "180x180",
+    },
+    {
+      href: "/favicon-32x32.png",
+      rel: "icon",
+      sizes: "32x32",
+      type: "image/png",
+    },
+    {
+      href: "/favicon-16x16.png",
+      rel: "icon",
+      sizes: "16x16",
+      type: "image/png",
+    },
+    {
+      color: "#a7f8b1",
+      href: "/safari-pinned-tab.svg",
+      rel: "mask-icon",
+    },
+  ],
 });
 
 useSeoMeta({
