@@ -91,6 +91,7 @@ import Burger from "~/components/svg/burger.vue";
 import Wolf from "~/components/svg/wolf.vue";
 
 const smallScreen = useMediaQuery("(max-width: 1030px)");
+const prefersReducedMotion = useMediaQuery("prefers-reduced-motion");
 
 const isMenuOpen = ref(false);
 const outsideRef = ref(null);
@@ -107,7 +108,7 @@ onClickOutside(outsideRef, closeMenu);
 useHead({
   bodyAttrs: {
     class: computed(() => {
-      return isMenuOpen.value ? "static" : "";
+      return isMenuOpen.value || prefersReducedMotion ? "static" : "";
     }),
   },
 });
