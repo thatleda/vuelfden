@@ -25,7 +25,7 @@ export default defineNuxtConfig({
         },
       },
     ],
-    "nuxt-security"
+    "nuxt-security",
   ],
   routeRules: {
     "/": { prerender: true },
@@ -39,6 +39,13 @@ export default defineNuxtConfig({
   sanity: {
     dataset: process.env.NUXT_SANITY_DATASET,
     projectId: process.env.NUXT_SANITY_PROJECT_ID,
+  },
+  security: {
+    headers: {
+      contentSecurityPolicy: {
+        "img-src": ["https://cdn.sanity.io"],
+      },
+    },
   },
   site: {
     name: "Vuelfden",

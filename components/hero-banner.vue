@@ -9,6 +9,7 @@
         fit="crop"
         crop="center"
         :class="$style.photo"
+        crossorigin
       />
       <div :class="$style.callToAction">
         <h1 :class="$style.greeting">{{ page.title }}</h1>

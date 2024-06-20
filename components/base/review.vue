@@ -10,6 +10,7 @@
         fit="crop"
         w="300"
         h="300"
+        crossorigin
       />
     </div>
 

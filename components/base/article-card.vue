@@ -7,6 +7,7 @@
         w="100"
         h="100"
         fit="crop"
+        crossorigin
       />
       <div :class="$style.description">
         <h3 :class="$style.title">{{ article.title }}</h3>

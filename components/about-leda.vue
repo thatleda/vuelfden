@@ -7,6 +7,7 @@
         w="300"
         fit="crop"
         :class="$style.photo"
+        crossorigin
       />
     </div>
     <sanity-block :blocks="aboutPage.content" />

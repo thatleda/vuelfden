@@ -10,6 +10,7 @@
       fit="crop"
       crop="center"
       :class="$style.banner"
+      crossorigin
     />
     <sanity-block :blocks="article.content"></sanity-block>
   </page-section>
