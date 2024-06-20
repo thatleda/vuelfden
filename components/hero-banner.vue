@@ -2,20 +2,21 @@
   <page-section :animation-props="{ animationDuration: '0ms' }">
     <div :class="$style.card">
       <sanity-image
-        asset-id="22a0c5650448c7acfdfda5a07a576fae7f3775d8"
+        :asset-id="page.banner.asset._ref"
         alt="Leda Wolf"
-        :img-attrs="{ class: $style.photo }"
-        fit="cover"
-        width="200"
-        height="200"
+        w="200"
+        h="200"
+        fit="crop"
+        crop="center"
+        :class="$style.photo"
       />
       <div :class="$style.callToAction">
-        <h1 :class="$style.greeting">Hello,</h1>
+        <h1 :class="$style.greeting">{{ page.title }}</h1>
         <h1 :class="$style.introduction">I'm a software engineer</h1>
         <h2 :class="$style.purpose">
           Let's see if I'm a <u>good fit</u> for your company.
         </h2>
-        <p>Look around and let me know what you think.</p>
+        <sanity-block :blocks="page.content" />
         <transition-animation
           animation-duration="2s"
           animation-name="fade-left"
@@ -53,9 +54,18 @@
 </template>
 
 <script lang="ts" setup>
+import type { SanityPage } from "~/@types";
+
 import LinkButton from "~/components/base/link-button.vue";
 import PageSection from "~/components/base/page-section.vue";
+import SanityBlock from "~/components/base/sanity-block.vue";
 import TransitionAnimation from "~/components/base/transition-animation.vue";
+
+interface HeroProps {
+  page: SanityPage;
+}
+
+const { page } = defineProps<HeroProps>();
 </script>
 
 <style module>

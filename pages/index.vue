@@ -1,5 +1,5 @@
 <template>
-  <hero-banner />
+  <hero-banner :page="hero" />
   <page-section anchor="who" heading="Who?">
     <about-leda v-if="aboutPage" :about-page="aboutPage" />
   </page-section>
@@ -29,6 +29,7 @@ import HeroBanner from "~/components/hero-banner.vue";
 
 const query = groq`*[_type == "page" && slug.current == $slug][0]`;
 const reviewsQuery = groq`*[_type == "review"] | order(_createdAt desc)[0..4]`;
+const { data: hero } = useSanityQuery<SanityPage>(query, { slug: "hero" });
 const { data: previouslyPage } = useSanityQuery<SanityPage>(query, {
   slug: "previously",
 });
