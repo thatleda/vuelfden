@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxt/image",
     "@nuxt/test-utils/module",
+    "@nuxtjs/sitemap",
   ],
   routeRules: {
     "/": { prerender: true },
@@ -26,5 +27,8 @@ export default defineNuxtConfig({
   sanity: {
     dataset: process.env.NUXT_SANITY_DATASET,
     projectId: process.env.NUXT_SANITY_PROJECT_ID,
+  },
+  site: {
+    name: "Vuelfden",
   },
 });

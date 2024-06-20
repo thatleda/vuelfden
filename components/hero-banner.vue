@@ -1,8 +1,8 @@
 <template>
   <page-section :animation-props="{ animationDuration: '0ms' }">
     <div :class="$style.card">
-      <NuxtPicture
-        src="/images/leda.jpeg"
+      <sanity-image
+        asset-id="22a0c5650448c7acfdfda5a07a576fae7f3775d8"
         alt="Leda Wolf"
         :img-attrs="{ class: $style.photo }"
         fit="cover"

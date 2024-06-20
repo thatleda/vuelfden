@@ -16,6 +16,7 @@
     "@nuxt/fonts": "^0.7.0",
     "@nuxt/image": "^1.7.0",
     "@nuxtjs/sanity": "^1.11.3",
+    "@nuxtjs/sitemap": "^5.2.0",
     "@vueuse/core": "^10.11.0",
     "@vueuse/nuxt": "^10.11.0",
     "date-fns": "^3.6.0",

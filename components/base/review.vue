@@ -3,7 +3,7 @@
     <div :class="$style.frame">
       <sanity-image
         :asset-id="review.picture.asset._ref"
-        :alt="review.picture.alt"
+        :alt="review.reviewer"
         :class="$style.picture"
         auto="format"
         crop="center"
