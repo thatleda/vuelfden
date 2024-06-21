@@ -108,7 +108,7 @@ onClickOutside(outsideRef, closeMenu);
 useHead({
   bodyAttrs: {
     class: computed(() => {
-      return isMenuOpen.value || prefersReducedMotion ? "static" : "";
+      return isMenuOpen.value || prefersReducedMotion.value ? "static" : "";
     }),
   },
 });
