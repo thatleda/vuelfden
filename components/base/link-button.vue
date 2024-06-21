@@ -29,7 +29,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   variant: undefined,
 });
 
-const isExternalLink = props.to.startsWith("/") ?? false;
+const isExternalLink = props.to.toString().startsWith("/") ?? false;
 </script>
 
 <style module>
