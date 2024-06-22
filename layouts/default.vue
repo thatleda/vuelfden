@@ -1,5 +1,5 @@
 <template>
-  <page-header />
+  <page-header ref="header" />
   <NuxtPage />
   <page-footer />
 </template>
@@ -7,6 +7,18 @@
 <script lang="ts" setup>
 import PageFooter from '~/components/page-footer.vue'
 import PageHeader from '~/components/page-header.vue'
+
+const header = ref<{ isMenuOpen: boolean }>({ isMenuOpen: false })
+
+const prefersReducedMotion = useMediaQuery('prefers-reduced-motion')
+
+useHead({
+  bodyAttrs: {
+    class: computed(() => {
+      return header.value.isMenuOpen || prefersReducedMotion.value ? 'static' : ''
+    }),
+  },
+})
 </script>
 
 <style>

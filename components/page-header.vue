@@ -91,7 +91,6 @@ import Burger from '~/components/svg/burger.vue'
 import Wolf from '~/components/svg/wolf.vue'
 
 const smallScreen = useMediaQuery('(max-width: 1030px)')
-const prefersReducedMotion = useMediaQuery('prefers-reduced-motion')
 
 const isMenuOpen = ref(false)
 const outsideRef = ref(null)
@@ -105,12 +104,8 @@ function closeMenu() {
 }
 
 onClickOutside(outsideRef, closeMenu)
-useHead({
-  bodyAttrs: {
-    class: computed(() => {
-      return isMenuOpen.value || prefersReducedMotion.value ? 'static' : ''
-    }),
-  },
+defineExpose({
+  isMenuOpen,
 })
 </script>
 
@@ -213,12 +208,9 @@ useHead({
   height: 100%;
   top: 0;
   left: 0;
-  background: var(--card-background-color);
   opacity: 90%;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease-in-out;
+  backdrop-filter: brightness(10%) blur(4px);
   display: none;
-  filter: blur(5px);
   overflow: hidden;
   pointer-events: none;
   user-select: none;

@@ -27,7 +27,7 @@
       </div>
     </div>
     <sanity-image
-      :alt="book.cover.asset.altText ?? book.title"
+      :alt="book.cover.alt ?? book.title"
       :asset-id="book.cover.asset._ref"
       :class="$style.cover"
       w="300"
@@ -37,6 +37,7 @@
 </template>
 
 <script lang="ts" setup>
+import type { SanityBook } from '~/@types/sanity'
 import LinkButton from '~/components/base/link-button.vue'
 import SanityBlock from '~/components/base/sanity-block.vue'
 import Amazon from '~/components/svg/amazon.vue'
