@@ -209,7 +209,8 @@ defineExpose({
   top: 0;
   left: 0;
   opacity: 90%;
-  backdrop-filter: brightness(10%) blur(4px);
+  backdrop-filter: brightness(10%) blur(10px);
+  -webkit-backdrop-filter: brightness(10%) blur(10px);
   display: none;
   overflow: hidden;
   pointer-events: none;
