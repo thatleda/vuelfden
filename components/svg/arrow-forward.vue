@@ -10,10 +10,10 @@
 </template>
 
 <script lang="ts" setup>
-import type { SVGProps } from ".";
+import type { SVGProps } from '.'
 
 const props = withDefaults(defineProps<SVGProps>(), {
-  height: "1rem",
-  width: "1rem",
-});
+  height: '1rem',
+  width: '1rem',
+})
 </script>

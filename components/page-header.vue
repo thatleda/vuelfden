@@ -76,42 +76,42 @@
           download="resume.pdf"
         />
       </nav>
-      <div :class="[$style.backdrop, isMenuOpen && $style.backdropBlock]"></div>
+      <div :class="[$style.backdrop, isMenuOpen && $style.backdropBlock]" />
     </div>
   </nav>
 </template>
 
 <script lang="ts" setup>
-import { onClickOutside } from "@vueuse/core";
-import { ref } from "vue";
+import { onClickOutside } from '@vueuse/core'
+import { ref } from 'vue'
 
-import LinkButton from "~/components/base/link-button.vue";
-import TransitionAnimation from "~/components/base/transition-animation.vue";
-import Burger from "~/components/svg/burger.vue";
-import Wolf from "~/components/svg/wolf.vue";
+import LinkButton from '~/components/base/link-button.vue'
+import TransitionAnimation from '~/components/base/transition-animation.vue'
+import Burger from '~/components/svg/burger.vue'
+import Wolf from '~/components/svg/wolf.vue'
 
-const smallScreen = useMediaQuery("(max-width: 1030px)");
-const prefersReducedMotion = useMediaQuery("prefers-reduced-motion");
+const smallScreen = useMediaQuery('(max-width: 1030px)')
+const prefersReducedMotion = useMediaQuery('prefers-reduced-motion')
 
-const isMenuOpen = ref(false);
-const outsideRef = ref(null);
+const isMenuOpen = ref(false)
+const outsideRef = ref(null)
 
-const openMenu = () => {
-  isMenuOpen.value = true;
-};
+function openMenu() {
+  isMenuOpen.value = true
+}
 
-const closeMenu = () => {
-  isMenuOpen.value = false;
-};
+function closeMenu() {
+  isMenuOpen.value = false
+}
 
-onClickOutside(outsideRef, closeMenu);
+onClickOutside(outsideRef, closeMenu)
 useHead({
   bodyAttrs: {
     class: computed(() => {
-      return isMenuOpen.value || prefersReducedMotion.value ? "static" : "";
+      return isMenuOpen.value || prefersReducedMotion.value ? 'static' : ''
     }),
   },
-});
+})
 </script>
 
 <style module>

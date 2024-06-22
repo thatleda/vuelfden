@@ -9,34 +9,33 @@
 </template>
 
 <script setup lang="ts">
-import { useElementVisibility } from "@vueuse/core";
+import { useElementVisibility } from '@vueuse/core'
 
-type TimeUnit = "ms" | "s";
+type TimeUnit = 'ms' | 's'
 
 export interface AnimationProps {
-  animationDelay?: `${number}${TimeUnit}`;
-  animationDuration: `${number}${TimeUnit}`;
-  animationFillMode?: "backwards" | "both" | "forwards" | "none";
+  animationDelay?: `${number}${TimeUnit}`
+  animationDuration: `${number}${TimeUnit}`
+  animationFillMode?: 'backwards' | 'both' | 'forwards' | 'none'
   animationName:
-    | "fade-down"
-    | "fade-in"
-    | "fade-left"
-    | "fade-up"
-    | "scale-in"
-    | "wiggle";
-  animationTiming?: "ease-in" | "ease-in-out" | "ease-out" | "linear";
-  class?: string;
+    | 'fade-down'
+    | 'fade-in'
+    | 'fade-left'
+    | 'fade-up'
+    | 'scale-in'
+    | 'wiggle'
+  animationTiming?: 'ease-in' | 'ease-in-out' | 'ease-out' | 'linear'
+  class?: string
 }
-
-const target = ref(null);
-const targetIsVisible = useElementVisibility(target, { threshold: 0.05 });
 
 const props = withDefaults(defineProps<AnimationProps>(), {
   animationDelay: undefined,
-  animationDuration: "1s",
-  animationFillMode: "backwards",
-  animationName: "fade-in",
-  animationTiming: "ease-in",
-  class: "",
-});
+  animationDuration: '1s',
+  animationFillMode: 'backwards',
+  animationName: 'fade-in',
+  animationTiming: 'ease-in',
+  class: '',
+})
+const target = ref(null)
+const targetIsVisible = useElementVisibility(target, { threshold: 0.05 })
 </script>

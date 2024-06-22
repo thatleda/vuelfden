@@ -20,7 +20,9 @@
           variant="secondary"
           target="_blank"
         >
-          <template #icon><amazon width="1rem" height="1rem" /></template>
+          <template #icon>
+            <amazon width="1rem" height="1rem" />
+          </template>
         </link-button>
       </div>
     </div>
@@ -35,15 +37,15 @@
 </template>
 
 <script lang="ts" setup>
-import LinkButton from "~/components/base/link-button.vue";
-import SanityBlock from "~/components/base/sanity-block.vue";
-import Amazon from "~/components/svg/amazon.vue";
+import LinkButton from '~/components/base/link-button.vue'
+import SanityBlock from '~/components/base/sanity-block.vue'
+import Amazon from '~/components/svg/amazon.vue'
 
 interface ReadingNowProps {
-  book: SanityBook;
+  book: SanityBook
 }
 
-const { book } = defineProps<ReadingNowProps>();
+const { book } = defineProps<ReadingNowProps>()
 </script>
 
 <style module>

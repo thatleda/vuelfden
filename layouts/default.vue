@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts" setup>
-import PageFooter from "~/components/page-footer.vue";
-import PageHeader from "~/components/page-header.vue";
+import PageFooter from '~/components/page-footer.vue'
+import PageHeader from '~/components/page-header.vue'
 </script>
 
 <style>

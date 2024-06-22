@@ -10,9 +10,9 @@
 </template>
 
 <script lang="ts" setup>
-import type { SanityLinkedImage } from "~/@types/sanity";
+import type { SanityLinkedImage } from '~/@types/sanity'
 
-const props = defineProps<SanityLinkedImage>();
+const props = defineProps<SanityLinkedImage>()
 </script>
 
 <style module>

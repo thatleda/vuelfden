@@ -22,13 +22,13 @@
 </template>
 
 <script lang="ts" setup>
-import type { SanityReview } from "~/@types/sanity";
+import type { SanityReview } from '~/@types/sanity'
 
 interface ReviewProps {
-  review: SanityReview;
+  review: SanityReview
 }
 
-const { review } = defineProps<ReviewProps>();
+const { review } = defineProps<ReviewProps>()
 </script>
 
 <style module>

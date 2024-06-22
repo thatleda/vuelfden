@@ -7,8 +7,12 @@
     <div :class="$style.profile">
       <mail height="5rem" width="5rem" />
       <div :class="$style.contactData">
-        <div :class="$style.name"><u>Leda Wolf</u></div>
-        <NuxtLink to="mailto:leda@hey.com">leda@hey.com</NuxtLink>
+        <div :class="$style.name">
+          <u>Leda Wolf</u>
+        </div>
+        <NuxtLink to="mailto:leda@hey.com">
+          leda@hey.com
+        </NuxtLink>
       </div>
     </div>
     <transition-animation
@@ -48,13 +52,12 @@
 </template>
 
 <script lang="ts" setup>
-import LinkButton from "~/components/base/link-button.vue";
-import TransitionAnimation from "~/components/base/transition-animation.vue";
-import Discord from "~/components/svg/discord.vue";
-import Github from "~/components/svg/github.vue";
-import Linkedin from "~/components/svg/linkedin.vue";
-
-import Mail from "./svg/mail.vue";
+import Mail from '~/components/svg/mail.vue'
+import LinkButton from '~/components/base/link-button.vue'
+import TransitionAnimation from '~/components/base/transition-animation.vue'
+import Discord from '~/components/svg/discord.vue'
+import Github from '~/components/svg/github.vue'
+import Linkedin from '~/components/svg/linkedin.vue'
 </script>
 
 <style module>

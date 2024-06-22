@@ -12,8 +12,12 @@
         crossorigin
       />
       <div :class="$style.callToAction">
-        <h1 :class="$style.greeting">{{ page.title }}</h1>
-        <h1 :class="$style.introduction">I'm a software engineer</h1>
+        <h1 :class="$style.greeting">
+          {{ page.title }}
+        </h1>
+        <h1 :class="$style.introduction">
+          I'm a software engineer
+        </h1>
         <h2 :class="$style.purpose">
           Let's see if I'm a <u>good fit</u> for your company.
         </h2>
@@ -55,18 +59,18 @@
 </template>
 
 <script lang="ts" setup>
-import type { SanityPage } from "~/@types";
+import type { SanityPage } from '~/@types'
 
-import LinkButton from "~/components/base/link-button.vue";
-import PageSection from "~/components/base/page-section.vue";
-import SanityBlock from "~/components/base/sanity-block.vue";
-import TransitionAnimation from "~/components/base/transition-animation.vue";
+import LinkButton from '~/components/base/link-button.vue'
+import PageSection from '~/components/base/page-section.vue'
+import SanityBlock from '~/components/base/sanity-block.vue'
+import TransitionAnimation from '~/components/base/transition-animation.vue'
 
 interface HeroProps {
-  page: SanityPage;
+  page: SanityPage
 }
 
-const { page } = defineProps<HeroProps>();
+const { page } = defineProps<HeroProps>()
 </script>
 
 <style module>

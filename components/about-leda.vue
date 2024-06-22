@@ -15,14 +15,14 @@
 </template>
 
 <script lang="ts" setup>
-import type { SanityPage } from "~/@types/sanity";
+import type { SanityPage } from '~/@types/sanity'
 
-import SanityBlock from "~/components/base/sanity-block.vue";
+import SanityBlock from '~/components/base/sanity-block.vue'
 
 interface AboutLedaProps {
-  aboutPage: SanityPage;
+  aboutPage: SanityPage
 }
-const { aboutPage } = defineProps<AboutLedaProps>();
+const { aboutPage } = defineProps<AboutLedaProps>()
 </script>
 
 <style module>

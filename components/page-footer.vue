@@ -3,7 +3,9 @@
     <div :class="$style.linkWrapper">
       <NuxtLink aria-label="home" to="/#who">
         <wolf v-if="smallScreen" mirror height="5rem" width="5rem" />
-        <div v-else :class="$style.logo">Leda Wolf</div>
+        <div v-else :class="$style.logo">
+          Leda Wolf
+        </div>
       </NuxtLink>
       <nav :class="$style.footerNav">
         <link-button to="/privacy" text="Privacy" />
@@ -14,10 +16,10 @@
 </template>
 
 <script lang="ts" setup>
-import LinkButton from "~/components/base/link-button.vue";
-import Wolf from "~/components/svg/wolf.vue";
+import LinkButton from '~/components/base/link-button.vue'
+import Wolf from '~/components/svg/wolf.vue'
 
-const smallScreen = useMediaQuery("(max-width: 1030px)");
+const smallScreen = useMediaQuery('(max-width: 1030px)')
 </script>
 
 <style module>

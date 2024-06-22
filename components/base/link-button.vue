@@ -9,27 +9,29 @@
     :external="isExternalLink"
   >
     <slot name="icon" />
-    <div :class="$style.noBreakText">{{ props.text }}</div></NuxtLink
-  >
+    <div :class="$style.noBreakText">
+      {{ props.text }}
+    </div>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">
-import type { NuxtLinkProps } from "#app";
+import type { NuxtLinkProps } from '#app'
 
 interface ButtonProps extends NuxtLinkProps {
-  text?: string;
-  variant?: "primary" | "secondary";
+  text?: string
+  variant?: 'primary' | 'secondary'
 }
 
 const props = withDefaults(defineProps<ButtonProps>(), {
   download: undefined,
   icon: undefined,
   text: undefined,
-  to: "/",
+  to: '/',
   variant: undefined,
-});
+})
 
-const isExternalLink = props.to.toString().startsWith("/") ?? false;
+const isExternalLink = props.to.toString().startsWith('/') ?? false
 </script>
 
 <style module>

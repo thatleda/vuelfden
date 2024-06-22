@@ -8,25 +8,29 @@
   >
     <section :id="props.anchor" :class="$style.section">
       <div :class="$style.wrapper">
-        <h2 v-if="props.heading">{{ props.heading }}</h2>
-        <div :class="$style.cards"><slot /></div>
+        <h2 v-if="props.heading">
+          {{ props.heading }}
+        </h2>
+        <div :class="$style.cards">
+          <slot />
+        </div>
       </div>
     </section>
   </transition-animation>
 </template>
 
 <script setup lang="ts">
-import type { AnimationProps } from "./transition-animation.vue";
+import type { AnimationProps } from '~/components/base/transition-animation.vue'
 
-import TransitionAnimation from "./transition-animation.vue";
+import TransitionAnimation from '~/components/base/transition-animation.vue'
 
 interface SectionProps {
-  anchor?: string;
-  animationProps?: Partial<AnimationProps>;
-  heading?: null | string;
+  anchor?: string
+  animationProps?: Partial<AnimationProps>
+  heading?: null | string
 }
 
-const props = defineProps<SectionProps>();
+const props = defineProps<SectionProps>()
 </script>
 
 <style module>

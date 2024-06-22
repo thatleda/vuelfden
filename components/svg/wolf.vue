@@ -70,17 +70,17 @@
 </template>
 
 <script lang="ts" setup>
-import type { SVGProps } from ".";
+import type { SVGProps } from '.'
 
 interface WolfProps extends SVGProps {
-  mirror?: boolean;
+  mirror?: boolean
 }
 
 const props = withDefaults(defineProps<WolfProps>(), {
-  height: "50px",
+  height: '50px',
   mirror: false,
-  width: "50px",
-});
+  width: '50px',
+})
 </script>
 
 <style scoped>

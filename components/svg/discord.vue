@@ -7,12 +7,12 @@
     xmlns="http://www.w3.org/2000/svg"
   >
     <title>Discord icon</title>
-    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+    <g id="SVGRepo_bgCarrier" strokeWidth="0" />
     <g
       id="SVGRepo_tracerCarrier"
       strokeLinecap="round"
       strokeLinejoin="round"
-    ></g>
+    />
     <g id="SVGRepo_iconCarrier">
       <g>
         <path
@@ -25,10 +25,10 @@
 </template>
 
 <script lang="ts" setup>
-import type { SVGProps } from ".";
+import type { SVGProps } from '.'
 
 const props = withDefaults(defineProps<SVGProps>(), {
-  height: "1rem",
-  width: "1rem",
-});
+  height: '1rem',
+  width: '1rem',
+})
 </script>
