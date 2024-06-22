@@ -6,7 +6,6 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxtjs/sanity',
     '@nuxtjs/color-mode',
-    '@nuxt/eslint',
     '@vueuse/nuxt',
     '@nuxt/test-utils/module',
     '@nuxtjs/sitemap',
