@@ -1,10 +1,6 @@
 <template>
   <nav :class="$style.navigation">
-    <transition-animation
-      :class="$style.animatedLinks"
-      animation-name="fade-down"
-      animation-duration="200ms"
-    >
+    <div :class="$style.links">
       <link-button to="/" title="Home">
         <template #icon>
           <wolf mirror height="5rem" width="5rem" />
@@ -34,10 +30,9 @@
           download="resume.pdf"
         />
       </template>
-    </transition-animation>
-
+    </div>
     <div
-      v-if="smallScreen && isMenuOpen"
+      v-if="isMenuOpen"
       :class="[$style.sidebar, isMenuOpen && $style.open]"
       :aria-hidden="!isMenuOpen"
       :tabindex="isMenuOpen ? 1 : -1"
@@ -86,7 +81,6 @@ import { onClickOutside } from '@vueuse/core'
 import { ref } from 'vue'
 
 import LinkButton from '~/components/base/link-button.vue'
-import TransitionAnimation from '~/components/base/transition-animation.vue'
 import Burger from '~/components/svg/burger.vue'
 import Wolf from '~/components/svg/wolf.vue'
 
@@ -129,7 +123,7 @@ defineExpose({
   }
 }
 
-.animatedLinks {
+.links {
   align-items: center;
   display: flex;
   height: 100%;
@@ -173,8 +167,6 @@ defineExpose({
   position: fixed;
   right: 0;
   top: 0;
-  transform: translateX(100%);
-  transition: all 0.3s ease-in-out;
   visibility: hidden;
   width: 100%;
 }
@@ -197,7 +189,7 @@ defineExpose({
   position: relative;
   right: 0;
   text-align: left;
-  width: 55%;
+  width: 50vw;
   z-index: 10;
 }
 
@@ -208,8 +200,7 @@ defineExpose({
   height: 100%;
   top: 0;
   left: 0;
-  opacity: 90%;
-  backdrop-filter: brightness(10%) blur(10px);
+  backdrop-filter: brightness(10%) blur(4px);
   -webkit-backdrop-filter: brightness(10%) blur(10px);
   display: none;
   overflow: hidden;
