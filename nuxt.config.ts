@@ -26,8 +26,6 @@ export default defineNuxtConfig({
     '/imprint': { prerender: true },
     '/privacy': { prerender: true },
     // cache for a week
-    '/ramblings': { cache: { maxAge: 60 * 60 * 24 * 7 } },
-    // cache articles for a month
     '/ramblings/*': { cache: { maxAge: 60 * 60 * 24 * 30 } },
   },
   sanity: {
