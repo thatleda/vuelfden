@@ -5,15 +5,18 @@
         aria-label="Nuxt"
         to="https://nuxt.com/"
         target="_blank"
-        text="-powered vanity"
       >
-        <template #icon>
-          <svg-nuxt-logo fill="var(--text-color)" />
-        </template>
+        <span :class="$style.powered">
+          <svg-nuxt-logo fill="var(--text-color)" />-powered vanity
+        </span>
       </base-link-button>
       <nav :class="$style.footerNav">
-        <base-link-button to="/privacy" text="Privacy" />
-        <base-link-button to="/imprint" text="Imprint" />
+        <base-link-button to="/privacy">
+          Privacy
+        </base-link-button>
+        <base-link-button to="/imprint">
+          Imprint
+        </base-link-button>
       </nav>
     </div>
   </footer>

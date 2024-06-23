@@ -22,30 +22,21 @@
     >
       <base-link-button
         to="https://discord.com/users/732667625255075951"
-        text="Discord"
         variant="secondary"
       >
-        <template #icon>
-          <svg-discord />
-        </template>
+        <svg-discord />Discord
       </base-link-button>
       <base-link-button
         to="https://github.com/thatleda"
-        text="GitHub"
         variant="secondary"
       >
-        <template #icon>
-          <svg-github />
-        </template>
+        <svg-github />GitHub
       </base-link-button>
       <base-link-button
         to="https://www.linkedin.com/in/thatleda/"
-        text="LinkedIn"
         variant="secondary"
       >
-        <template #icon>
-          <svg-linkedin />
-        </template>
+        <svg-linkedin />LinkedIn
       </base-link-button>
     </base-transition-animation>
   </div>

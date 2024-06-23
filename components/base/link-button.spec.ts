@@ -4,14 +4,16 @@ import { renderSuspended } from '@nuxt/test-utils/runtime'
 import { screen } from '@testing-library/vue'
 import { expect, it } from 'vitest'
 
+import GitHub from '~/components/svg/github.vue'
 import LinkButton from '~/components/base/link-button.vue'
 
 it('should render external link as a button', async () => {
   await renderSuspended(LinkButton, {
     props: {
-      target: '_blank',
-      text: 'Google it!',
       to: 'https://google.com',
+    },
+    slots: {
+      default: () => 'Google it!',
     },
   })
 
@@ -24,17 +26,13 @@ it('should render external link as a button', async () => {
   expect(screen.getByRole('link')).toHaveClass('button')
 })
 
-// TODO: NuxtLink swallows slots for some odd reason
-it.skip('should pass an svg', async () => {
+it('should pass an svg', async () => {
   await renderSuspended(LinkButton, {
     props: {
-      target: '_blank',
-      text: 'GitHub',
       to: 'https://github.com',
     },
     slots: {
-      icon: () =>
-        `<svg width="10" height="10" viewBox="0 -960 960 960"><title>GitHub icon</title><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" /></svg>`,
+      default: GitHub,
     },
   })
 
@@ -45,9 +43,11 @@ it('should add the right class to the primary button', async () => {
   await renderSuspended(LinkButton, {
     props: {
       target: '_blank',
-      text: 'Google it!',
       to: 'https://google.com',
       variant: 'primary',
+    },
+    slots: {
+      default: () => 'Google it!',
     },
   })
 
@@ -57,10 +57,11 @@ it('should add the right class to the primary button', async () => {
 it('should add the right class to the secondary button', async () => {
   await renderSuspended(LinkButton, {
     props: {
-      target: '_blank',
-      text: 'Google it!',
       to: 'https://google.com',
       variant: 'secondary',
+    },
+    slots: {
+      default: () => 'Google it!',
     },
   })
 
@@ -71,10 +72,11 @@ it('should add the custom class', async () => {
   await renderSuspended(LinkButton, {
     props: {
       class: 'customClass',
-      target: '_blank',
-      text: 'Google it!',
       to: 'https://google.com',
       variant: 'secondary',
+    },
+    slots: {
+      default: () => 'Google it!',
     },
   })
 

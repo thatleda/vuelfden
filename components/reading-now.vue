@@ -16,13 +16,10 @@
         Find it on
         <base-link-button
           :to="book.url"
-          text="Amazon"
           variant="secondary"
           target="_blank"
         >
-          <template #icon>
-            <svg-amazon width="1rem" height="1rem" />
-          </template>
+          <svg-amazon width="1rem" height="1rem" />Amazon
         </base-link-button>
       </div>
     </div>

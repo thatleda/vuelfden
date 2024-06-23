@@ -29,29 +29,36 @@
         >
           <base-link-button
             to="https://discord.com/users/732667625255075951"
-            text="Discord"
             variant="secondary"
-          />
+          >
+            Discord
+          </base-link-button>
           <base-link-button
             to="https://github.com/thatleda"
-            text="GitHub"
             variant="secondary"
-          />
+          >
+            GitHub
+          </base-link-button>
           <base-link-button
             to="https://www.linkedin.com/in/thatleda/"
-            text="LinkedIn"
             variant="secondary"
-          />
+          >
+            LinkedIn
+          </base-link-button>
           <base-link-button
             to="mailto:leda@hey.com"
-            text="Mail"
+
             variant="secondary"
-          />
+          >
+            Mail
+          </base-link-button>
           <base-link-button
             to="https://calendly.com/ledawolf/meeting"
-            text="Calendly"
+
             variant="primary"
-          />
+          >
+            Calendly
+          </base-link-button>
         </base-transition-animation>
       </div>
     </div>

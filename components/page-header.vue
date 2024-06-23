@@ -2,9 +2,7 @@
   <nav :class="$style.navigation">
     <div :class="$style.links">
       <base-link-button to="/" title="Home">
-        <template #icon>
-          <svg-wolf mirror height="5rem" width="5rem" />
-        </template>
+        <svg-wolf mirror height="5rem" width="5rem" />
       </base-link-button>
       <button
         v-if="smallScreen"
@@ -17,18 +15,29 @@
         <svg-burger height="3rem" width="3rem" />
       </button>
       <template v-else>
-        <base-link-button to="/#who" text="Who?" />
-        <base-link-button to="/#previously" text="Previously" />
-        <base-link-button to="/ramblings" text="Blog" />
-        <base-link-button to="/#reviews" text="Working with Leda" />
-        <base-link-button to="/#contact" text="Contact" />
+        <base-link-button to="/#who">
+          Who?
+        </base-link-button>
+        <base-link-button to="/#previously">
+          Previously
+        </base-link-button>
+        <base-link-button to="/ramblings">
+          Blog
+        </base-link-button>
+        <base-link-button to="/#reviews">
+          Working with Leda
+        </base-link-button>
+        <base-link-button to="/#contact">
+          Contact
+        </base-link-button>
         <base-link-button
-          text="CV"
           variant="primary"
           to="resume.pdf"
           target="_blank"
           download="resume.pdf"
-        />
+        >
+          CV
+        </base-link-button>
       </template>
     </div>
     <div
@@ -41,35 +50,42 @@
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/#who"
-          text="Who?"
-        />
+        >
+          Who?
+        </base-link-button>
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/#previously"
-          text="Previously"
-        />
+        >
+          Previously
+        </base-link-button>
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/ramblings"
-          text="Blog"
-        />
+        >
+          Blog
+        </base-link-button>
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/#reviews"
-          text="Working with Leda"
-        />
+        >
+          Working with Leda
+        </base-link-button>
+
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/#contact"
-          text="Contact"
-        />
+        >
+          Contact
+        </base-link-button>
         <base-link-button
           :class="$style.sideNavigationLink"
-          text="CV"
           to="resume.pdf"
           target="_blank"
           download="resume.pdf"
-        />
+        >
+          CV
+        </base-link-button>
       </nav>
       <div :class="[$style.backdrop, isMenuOpen && $style.backdropBlock]" />
     </div>
