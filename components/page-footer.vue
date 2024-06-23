@@ -1,7 +1,12 @@
 <template>
   <footer :class="$style.footer">
     <div :class="$style.linkWrapper">
-      <link-button aria-label="Nuxt" to="https://nuxt.com/" text="-powered vanity">
+      <link-button
+        aria-label="Nuxt"
+        to="https://nuxt.com/"
+        target="_blank"
+        text="-powered vanity"
+      >
         <template #icon>
           <nuxt-logo />
         </template>
