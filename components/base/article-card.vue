@@ -10,7 +10,9 @@
         crossorigin
       />
       <div :class="$style.description">
-        <h3 :class="$style.title">{{ article.title }}</h3>
+        <h3 :class="$style.title">
+          {{ article.title }}
+        </h3>
         <p>{{ article.excerpt }}</p>
         <sub :class="$style.published">published {{ whatTimeAgo }}</sub>
       </div>
@@ -19,20 +21,20 @@
 </template>
 
 <script lang="ts" setup>
-import { formatDistance } from "date-fns";
+import { formatDistance } from 'date-fns'
 
-import type { SanityArticle } from "~/@types/sanity";
+import type { SanityArticle } from '~/@types/sanity'
 
 interface ArticleProps {
-  article: SanityArticle;
+  article: SanityArticle
 }
 
-const { article } = defineProps<ArticleProps>();
-const articleReleaseDate =
-  article._createdAt === null ? new Date() : new Date(article._createdAt);
+const { article } = defineProps<ArticleProps>()
+const articleReleaseDate
+  = article._createdAt === null ? new Date() : new Date(article._createdAt)
 const whatTimeAgo = formatDistance(articleReleaseDate, new Date(), {
   addSuffix: true,
-});
+})
 </script>
 
 <style module>

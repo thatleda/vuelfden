@@ -5,57 +5,42 @@
       please don't hesitate and write to:
     </p>
     <div :class="$style.profile">
-      <mail height="5rem" width="5rem" />
+      <svg-mail height="5rem" width="5rem" />
       <div :class="$style.contactData">
-        <div :class="$style.name"><u>Leda Wolf</u></div>
-        <NuxtLink to="mailto:leda@hey.com">leda@hey.com</NuxtLink>
+        <div :class="$style.name">
+          <u>Leda Wolf</u>
+        </div>
+        <NuxtLink to="mailto:leda@hey.com">
+          leda@hey.com
+        </NuxtLink>
       </div>
     </div>
-    <transition-animation
+    <base-transition-animation
       :class="$style.actionButtons"
       animation-name="fade-left"
       animation-duration="600ms"
     >
-      <link-button
+      <base-link-button
         to="https://discord.com/users/732667625255075951"
-        text="Discord"
         variant="secondary"
       >
-        <template #icon>
-          <discord />
-        </template>
-      </link-button>
-      <link-button
+        <svg-discord />Discord
+      </base-link-button>
+      <base-link-button
         to="https://github.com/thatleda"
-        text="GitHub"
         variant="secondary"
       >
-        <template #icon>
-          <github />
-        </template>
-      </link-button>
-      <link-button
+        <svg-github />GitHub
+      </base-link-button>
+      <base-link-button
         to="https://www.linkedin.com/in/thatleda/"
-        text="LinkedIn"
         variant="secondary"
       >
-        <template #icon>
-          <linkedin />
-        </template>
-      </link-button>
-    </transition-animation>
+        <svg-linkedin />LinkedIn
+      </base-link-button>
+    </base-transition-animation>
   </div>
 </template>
-
-<script lang="ts" setup>
-import LinkButton from "~/components/base/link-button.vue";
-import TransitionAnimation from "~/components/base/transition-animation.vue";
-import Discord from "~/components/svg/discord.vue";
-import Github from "~/components/svg/github.vue";
-import Linkedin from "~/components/svg/linkedin.vue";
-
-import Mail from "./svg/mail.vue";
-</script>
 
 <style module>
 .card {

@@ -1,5 +1,5 @@
 <template>
-  <page-section :animation-props="{ animationDuration: '0ms' }">
+  <base-page-section :animation-props="{ animationDuration: '0ms' }">
     <div :class="$style.card">
       <sanity-image
         :asset-id="page.banner.asset._ref"
@@ -12,61 +12,67 @@
         crossorigin
       />
       <div :class="$style.callToAction">
-        <h1 :class="$style.greeting">{{ page.title }}</h1>
-        <h1 :class="$style.introduction">I'm a software engineer</h1>
+        <h1 :class="$style.greeting">
+          {{ page.title }}
+        </h1>
+        <h1 :class="$style.introduction">
+          I'm a software engineer
+        </h1>
         <h2 :class="$style.purpose">
           Let's see if I'm a <u>good fit</u> for your company.
         </h2>
-        <sanity-block :blocks="page.content" />
-        <transition-animation
+        <base-sanity-block :blocks="page.content" />
+        <base-transition-animation
           animation-duration="2s"
           animation-name="fade-left"
           :class="$style.actionButtons"
         >
-          <link-button
+          <base-link-button
             to="https://discord.com/users/732667625255075951"
-            text="Discord"
             variant="secondary"
-          />
-          <link-button
+          >
+            Discord
+          </base-link-button>
+          <base-link-button
             to="https://github.com/thatleda"
-            text="GitHub"
             variant="secondary"
-          />
-          <link-button
+          >
+            GitHub
+          </base-link-button>
+          <base-link-button
             to="https://www.linkedin.com/in/thatleda/"
-            text="LinkedIn"
             variant="secondary"
-          />
-          <link-button
+          >
+            LinkedIn
+          </base-link-button>
+          <base-link-button
             to="mailto:leda@hey.com"
-            text="Mail"
+
             variant="secondary"
-          />
-          <link-button
+          >
+            Mail
+          </base-link-button>
+          <base-link-button
             to="https://calendly.com/ledawolf/meeting"
-            text="Calendly"
+
             variant="primary"
-          />
-        </transition-animation>
+          >
+            Calendly
+          </base-link-button>
+        </base-transition-animation>
       </div>
     </div>
-  </page-section>
+  </base-page-section>
 </template>
 
 <script lang="ts" setup>
-import type { SanityPage } from "~/@types";
-
-import LinkButton from "~/components/base/link-button.vue";
-import PageSection from "~/components/base/page-section.vue";
-import SanityBlock from "~/components/base/sanity-block.vue";
-import TransitionAnimation from "~/components/base/transition-animation.vue";
+import type { SanityPage } from '~/@types/sanity'
 
 interface HeroProps {
-  page: SanityPage;
+  page: SanityPage
 }
 
-const { page } = defineProps<HeroProps>();
+const { page } = defineProps<HeroProps>()
 </script>
 
 <style module>

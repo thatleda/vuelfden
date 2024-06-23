@@ -1,15 +1,9 @@
 <template>
   <nav :class="$style.navigation">
-    <transition-animation
-      :class="$style.animatedLinks"
-      animation-name="fade-down"
-      animation-duration="200ms"
-    >
-      <link-button to="/" title="Home">
-        <template #icon>
-          <wolf mirror height="5rem" width="5rem" />
-        </template>
-      </link-button>
+    <div :class="$style.links">
+      <base-link-button to="/" title="Home">
+        <svg-wolf mirror height="5rem" width="5rem" />
+      </base-link-button>
       <button
         v-if="smallScreen"
         id="openMenu"
@@ -18,100 +12,112 @@
         :class="isMenuOpen ? $style.noDisplay : $style.burgerMenu"
         @click="openMenu"
       >
-        <burger height="3rem" width="3rem" />
+        <svg-burger height="3rem" width="3rem" />
       </button>
       <template v-else>
-        <link-button to="/#who" text="Who?" />
-        <link-button to="/#previously" text="Previously" />
-        <link-button to="/ramblings" text="Blog" />
-        <link-button to="/#reviews" text="Working with Leda" />
-        <link-button to="/#contact" text="Contact" />
-        <link-button
-          text="CV"
+        <base-link-button to="/#who">
+          Who?
+        </base-link-button>
+        <base-link-button to="/#previously">
+          Previously
+        </base-link-button>
+        <base-link-button to="/ramblings">
+          Blog
+        </base-link-button>
+        <base-link-button to="/#reviews">
+          Working with Leda
+        </base-link-button>
+        <base-link-button to="/#contact">
+          Contact
+        </base-link-button>
+        <base-link-button
           variant="primary"
           to="resume.pdf"
           target="_blank"
           download="resume.pdf"
-        />
+        >
+          CV
+        </base-link-button>
       </template>
-    </transition-animation>
-
+    </div>
     <div
-      v-if="smallScreen && isMenuOpen"
+      v-if="isMenuOpen"
       :class="[$style.sidebar, isMenuOpen && $style.open]"
       :aria-hidden="!isMenuOpen"
       :tabindex="isMenuOpen ? 1 : -1"
     >
       <nav ref="outsideRef" :class="$style.sideNavigation">
-        <link-button
+        <base-link-button
           :class="$style.sideNavigationLink"
           to="/#who"
-          text="Who?"
-        />
-        <link-button
+          :onclick="closeMenu"
+        >
+          Who?
+        </base-link-button>
+        <base-link-button
           :class="$style.sideNavigationLink"
           to="/#previously"
-          text="Previously"
-        />
-        <link-button
+          :onclick="closeMenu"
+        >
+          Previously
+        </base-link-button>
+        <base-link-button
           :class="$style.sideNavigationLink"
           to="/ramblings"
-          text="Blog"
-        />
-        <link-button
+          :onclick="closeMenu"
+        >
+          Blog
+        </base-link-button>
+        <base-link-button
           :class="$style.sideNavigationLink"
           to="/#reviews"
-          text="Working with Leda"
-        />
-        <link-button
+          :onclick="closeMenu"
+        >
+          Working with Leda
+        </base-link-button>
+
+        <base-link-button
           :class="$style.sideNavigationLink"
           to="/#contact"
-          text="Contact"
-        />
-        <link-button
+          :onclick="closeMenu"
+        >
+          Contact
+        </base-link-button>
+        <base-link-button
           :class="$style.sideNavigationLink"
-          text="CV"
           to="resume.pdf"
           target="_blank"
           download="resume.pdf"
-        />
+        >
+          CV
+        </base-link-button>
       </nav>
-      <div :class="[$style.backdrop, isMenuOpen && $style.backdropBlock]"></div>
+      <div :class="[$style.backdrop, isMenuOpen && $style.backdropBlock]" />
     </div>
   </nav>
 </template>
 
 <script lang="ts" setup>
-import { onClickOutside } from "@vueuse/core";
-import { ref } from "vue";
+import { onClickOutside } from '@vueuse/core'
+import { ref } from 'vue'
 
-import LinkButton from "~/components/base/link-button.vue";
-import TransitionAnimation from "~/components/base/transition-animation.vue";
-import Burger from "~/components/svg/burger.vue";
-import Wolf from "~/components/svg/wolf.vue";
+const smallScreen = useMediaQuery('(max-width: 1030px)')
 
-const smallScreen = useMediaQuery("(max-width: 1030px)");
-const prefersReducedMotion = useMediaQuery("prefers-reduced-motion");
+const isMenuOpen = ref(false)
+const outsideRef = ref(null)
 
-const isMenuOpen = ref(false);
-const outsideRef = ref(null);
+function openMenu() {
+  isMenuOpen.value = true
+}
 
-const openMenu = () => {
-  isMenuOpen.value = true;
-};
+function closeMenu() {
+  isMenuOpen.value = false
+}
 
-const closeMenu = () => {
-  isMenuOpen.value = false;
-};
-
-onClickOutside(outsideRef, closeMenu);
-useHead({
-  bodyAttrs: {
-    class: computed(() => {
-      return isMenuOpen.value || prefersReducedMotion.value ? "static" : "";
-    }),
-  },
-});
+onClickOutside(outsideRef, closeMenu)
+defineExpose({
+  isMenuOpen,
+})
 </script>
 
 <style module>
@@ -134,7 +140,7 @@ useHead({
   }
 }
 
-.animatedLinks {
+.links {
   align-items: center;
   display: flex;
   height: 100%;
@@ -178,8 +184,6 @@ useHead({
   position: fixed;
   right: 0;
   top: 0;
-  transform: translateX(100%);
-  transition: all 0.3s ease-in-out;
   visibility: hidden;
   width: 100%;
 }
@@ -202,7 +206,7 @@ useHead({
   position: relative;
   right: 0;
   text-align: left;
-  width: 55%;
+  width: 65vw;
   z-index: 10;
 }
 
@@ -213,12 +217,9 @@ useHead({
   height: 100%;
   top: 0;
   left: 0;
-  background: var(--card-background-color);
-  opacity: 90%;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease-in-out;
+  backdrop-filter: brightness(10%) blur(4px);
+  -webkit-backdrop-filter: brightness(10%) blur(4px);
   display: none;
-  filter: blur(5px);
   overflow: hidden;
   pointer-events: none;
   user-select: none;

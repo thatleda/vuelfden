@@ -10,19 +10,17 @@
         crossorigin
       />
     </div>
-    <sanity-block :blocks="aboutPage.content" />
+    <base-sanity-block :blocks="aboutPage.content" />
   </div>
 </template>
 
 <script lang="ts" setup>
-import type { SanityPage } from "~/@types/sanity";
-
-import SanityBlock from "~/components/base/sanity-block.vue";
+import type { SanityPage } from '~/@types/sanity'
 
 interface AboutLedaProps {
-  aboutPage: SanityPage;
+  aboutPage: SanityPage
 }
-const { aboutPage } = defineProps<AboutLedaProps>();
+const { aboutPage } = defineProps<AboutLedaProps>()
 </script>
 
 <style module>

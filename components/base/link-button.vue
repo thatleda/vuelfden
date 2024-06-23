@@ -5,31 +5,33 @@
       props.variant === 'secondary' && $style.secondary,
       $style.button,
     ]"
-    v-bind="props"
-    :external="isExternalLink"
+    v-bind="nuxtLinkProps"
   >
-    <slot name="icon" />
-    <div :class="$style.noBreakText">{{ props.text }}</div></NuxtLink
-  >
+    <slot />
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">
-import type { NuxtLinkProps } from "#app";
+import type { NuxtLinkProps } from '#app'
 
 interface ButtonProps extends NuxtLinkProps {
-  text?: string;
-  variant?: "primary" | "secondary";
+  variant?: 'primary' | 'secondary'
 }
 
 const props = withDefaults(defineProps<ButtonProps>(), {
   download: undefined,
-  icon: undefined,
-  text: undefined,
-  to: "/",
+  to: '/',
   variant: undefined,
-});
+  prefetch: true,
+})
 
-const isExternalLink = props.to.startsWith("/") ?? false;
+const nuxtLinkProps = props.to.toString().startsWith('/')
+  ? props
+  : {
+      ...props,
+      external: true,
+      target: '_blank',
+    }
 </script>
 
 <style module>
@@ -75,9 +77,5 @@ const isExternalLink = props.to.startsWith("/") ?? false;
       fill: var(--primary-color);
     }
   }
-}
-
-.noBreakText {
-  display: inline-block;
 }
 </style>

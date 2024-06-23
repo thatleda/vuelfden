@@ -1,9 +1,11 @@
 <template>
   <svg
-    :class="{ mirror: props.mirror }"
+    :class="mirror && $style.mirror"
+    :style="{ height, width }"
+    v-bind="svgAttributes"
     preserveAspectRatio="xMidYMid meet"
     version="1.0"
-    viewBox="100 0 583 583"
+    viewBox="50 0 583 583"
     xmlns="http://www.w3.org/2000/svg"
   >
     <title>Howling wolf icon</title>
@@ -70,25 +72,20 @@
 </template>
 
 <script lang="ts" setup>
-import type { SVGProps } from ".";
+import type { SVGProps } from '~/@types/svg'
 
 interface WolfProps extends SVGProps {
-  mirror?: boolean;
+  mirror?: boolean
 }
 
-const props = withDefaults(defineProps<WolfProps>(), {
-  height: "50px",
+const { mirror, width, height, ...svgAttributes } = withDefaults(defineProps<WolfProps>(), {
+  height: '50px',
   mirror: false,
-  width: "50px",
-});
+  width: '50px',
+})
 </script>
 
-<style scoped>
-svg {
-  height: v-bind(height);
-  width: v-bind(width);
-}
-
+<style module>
 .mirror {
   transform: scale(-1, 1);
 }

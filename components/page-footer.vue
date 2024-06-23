@@ -1,24 +1,26 @@
 <template>
   <footer :class="$style.footer">
     <div :class="$style.linkWrapper">
-      <NuxtLink aria-label="home" to="/#who">
-        <wolf v-if="smallScreen" mirror height="5rem" width="5rem" />
-        <div v-else :class="$style.logo">Leda Wolf</div>
-      </NuxtLink>
+      <base-link-button
+        aria-label="Nuxt"
+        to="https://nuxt.com/"
+        target="_blank"
+      >
+        <span :class="$style.powered">
+          <svg-nuxt-logo fill="var(--text-color)" />-powered vanity
+        </span>
+      </base-link-button>
       <nav :class="$style.footerNav">
-        <link-button to="/privacy" text="Privacy" />
-        <link-button to="/imprint" text="Imprint" />
+        <base-link-button to="/privacy">
+          Privacy
+        </base-link-button>
+        <base-link-button to="/imprint">
+          Imprint
+        </base-link-button>
       </nav>
     </div>
   </footer>
 </template>
-
-<script lang="ts" setup>
-import LinkButton from "~/components/base/link-button.vue";
-import Wolf from "~/components/svg/wolf.vue";
-
-const smallScreen = useMediaQuery("(max-width: 1030px)");
-</script>
 
 <style module>
 .footer {
@@ -34,17 +36,9 @@ const smallScreen = useMediaQuery("(max-width: 1030px)");
   padding-bottom: 0;
 }
 
-.logo {
-  font-family: "Homemade Apple", cursive;
-  min-width: 10rem;
-  font-size: 1.5rem;
-  color: var(--primary-color);
-}
-
 .linkWrapper {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;

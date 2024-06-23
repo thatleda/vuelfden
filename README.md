@@ -32,6 +32,6 @@ Apart from that and the .env file I will not provide, thank you very much, check
 
 <a href="https://leda.fyi" target="_blank">https://leda.fyi</a>
 
-or 
+or
 
 <a href="https://ledawolf.info" target="_blank">https://ledawolf.info</a>

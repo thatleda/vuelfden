@@ -1,86 +1,88 @@
 // @vitest-environment nuxt
 
-import { renderSuspended } from "@nuxt/test-utils/runtime";
-import { screen } from "@testing-library/vue";
-import { expect, test } from "vitest";
+import { renderSuspended } from '@nuxt/test-utils/runtime'
+import { screen } from '@testing-library/vue'
+import { expect, it } from 'vitest'
 
-import LinkButton from "./link-button.vue";
+import GitHub from '~/components/svg/github.vue'
+import LinkButton from '~/components/base/link-button.vue'
 
-test("should render external link as a button", async () => {
+it('should render external link as a button', async () => {
   await renderSuspended(LinkButton, {
     props: {
-      target: "_blank",
-      text: "Google it!",
-      to: "https://google.com",
-    },
-  });
-
-  expect(screen.getByRole("link")).toHaveAccessibleName("Google it!");
-  expect(screen.getByRole("link")).toHaveAttribute(
-    "rel",
-    "noopener noreferrer",
-  );
-  expect(screen.getByRole("link")).toHaveAttribute("target", "_blank");
-  expect(screen.getByRole("link")).toHaveClass("button");
-});
-
-// TODO: NuxtLink swallows slots for some odd reason
-test.skip("should pass an svg", async () => {
-  await renderSuspended(LinkButton, {
-    props: {
-      target: "_blank",
-      text: "GitHub",
-      to: "https://github.com",
+      to: 'https://google.com',
     },
     slots: {
-      icon: () =>
-        `<svg width="10" height="10" viewBox="0 -960 960 960"><title>GitHub icon</title><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" /></svg>`,
+      default: () => 'Google it!',
     },
-  });
+  })
 
-  expect(screen.getByTitle("GitHub icon")).toBeInTheDocument();
-});
+  expect(screen.getByRole('link')).toHaveAccessibleName('Google it!')
+  expect(screen.getByRole('link')).toHaveAttribute(
+    'rel',
+    'noopener noreferrer',
+  )
+  expect(screen.getByRole('link')).toHaveAttribute('target', '_blank')
+  expect(screen.getByRole('link')).toHaveClass('button')
+})
 
-test("should add the right class to the primary button", async () => {
+it('should pass an svg', async () => {
   await renderSuspended(LinkButton, {
     props: {
-      target: "_blank",
-      text: "Google it!",
-      to: "https://google.com",
-      variant: "primary",
+      to: 'https://github.com',
     },
-  });
+    slots: {
+      default: GitHub,
+    },
+  })
 
-  expect(screen.getByRole("link")).toHaveClass("button", "primary");
-});
+  expect(screen.getByTitle('GitHub icon')).toBeInTheDocument()
+})
 
-test("should add the right class to the secondary button", async () => {
+it('should add the right class to the primary button', async () => {
   await renderSuspended(LinkButton, {
     props: {
-      target: "_blank",
-      text: "Google it!",
-      to: "https://google.com",
-      variant: "secondary",
+      target: '_blank',
+      to: 'https://google.com',
+      variant: 'primary',
     },
-  });
+    slots: {
+      default: () => 'Google it!',
+    },
+  })
 
-  expect(screen.getByRole("link")).toHaveClass("button", "secondary");
-});
+  expect(screen.getByRole('link')).toHaveClass('button', 'primary')
+})
 
-test("should add the custom class", async () => {
+it('should add the right class to the secondary button', async () => {
   await renderSuspended(LinkButton, {
     props: {
-      class: "customClass",
-      target: "_blank",
-      text: "Google it!",
-      to: "https://google.com",
-      variant: "secondary",
+      to: 'https://google.com',
+      variant: 'secondary',
     },
-  });
+    slots: {
+      default: () => 'Google it!',
+    },
+  })
 
-  expect(screen.getByRole("link")).toHaveClass(
-    "button",
-    "secondary",
-    "customClass",
-  );
-});
+  expect(screen.getByRole('link')).toHaveClass('button', 'secondary')
+})
+
+it('should add the custom class', async () => {
+  await renderSuspended(LinkButton, {
+    props: {
+      class: 'customClass',
+      to: 'https://google.com',
+      variant: 'secondary',
+    },
+    slots: {
+      default: () => 'Google it!',
+    },
+  })
+
+  expect(screen.getByRole('link')).toHaveClass(
+    'button',
+    'secondary',
+    'customClass',
+  )
+})
