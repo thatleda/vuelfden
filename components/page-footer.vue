@@ -1,12 +1,11 @@
 <template>
   <footer :class="$style.footer">
     <div :class="$style.linkWrapper">
-      <NuxtLink aria-label="home" to="/#who">
-        <wolf v-if="smallScreen" mirror height="5rem" width="5rem" />
-        <div v-else :class="$style.logo">
-          Leda Wolf
-        </div>
-      </NuxtLink>
+      <link-button aria-label="Nuxt" to="https://nuxt.com/" text="-powered vanity">
+        <template #icon>
+          <nuxt-logo />
+        </template>
+      </link-button>
       <nav :class="$style.footerNav">
         <link-button to="/privacy" text="Privacy" />
         <link-button to="/imprint" text="Imprint" />
@@ -17,9 +16,7 @@
 
 <script lang="ts" setup>
 import LinkButton from '~/components/base/link-button.vue'
-import Wolf from '~/components/svg/wolf.vue'
-
-const smallScreen = useMediaQuery('(max-width: 1030px)')
+import NuxtLogo from '~/components/svg/nuxt-logo.vue'
 </script>
 
 <style module>
@@ -34,13 +31,6 @@ const smallScreen = useMediaQuery('(max-width: 1030px)')
   justify-content: flex-end;
   align-items: flex-start;
   padding-bottom: 0;
-}
-
-.logo {
-  font-family: "Homemade Apple", cursive;
-  min-width: 10rem;
-  font-size: 1.5rem;
-  color: var(--primary-color);
 }
 
 .linkWrapper {
