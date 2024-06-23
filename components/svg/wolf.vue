@@ -5,7 +5,7 @@
     v-bind="svgAttributes"
     preserveAspectRatio="xMidYMid meet"
     version="1.0"
-    viewBox="100 0 583 583"
+    viewBox="50 0 583 583"
     xmlns="http://www.w3.org/2000/svg"
   >
     <title>Howling wolf icon</title>
