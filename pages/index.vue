@@ -1,36 +1,29 @@
 <template>
-  <hero-banner :page="hero" />
-  <page-section anchor="who" heading="Who?">
+  <hero-banner v-if="hero" :page="hero" />
+  <base-page-section anchor="who" heading="Who?">
     <about-leda v-if="aboutPage" :about-page="aboutPage" />
-  </page-section>
-  <page-section>
+  </base-page-section>
+  <base-page-section>
     <lazy-work-playlist />
-  </page-section>
-  <page-section
+  </base-page-section>
+  <base-page-section
     v-if="previouslyPage"
     :heading="previouslyPage.title"
     anchor="previously"
   >
-    <sanity-block :blocks="previouslyPage.content" />
-  </page-section>
-  <page-section v-if="reviews" anchor="reviews" heading="Reviews">
-    <review v-for="review in reviews" :key="review._id" :review="review" />
-  </page-section>
-  <page-section anchor="contact" heading="What is she up to?">
-    <reading-now :book="book" />
+    <base-sanity-block :blocks="previouslyPage.content" />
+  </base-page-section>
+  <base-page-section v-if="reviews" anchor="reviews" heading="Reviews">
+    <base-review v-for="review in reviews" :key="review._id" :review="review" />
+  </base-page-section>
+  <base-page-section anchor="contact" heading="What is she up to?">
+    <reading-now v-if="book" :book="book" />
     <contact-leda />
-  </page-section>
+  </base-page-section>
 </template>
 
 <script lang="ts" setup>
 import type { SanityBook, SanityPage, SanityReview } from '~/@types/sanity'
-
-import PageSection from '~/components/base/page-section.vue'
-import Review from '~/components/base/review.vue'
-import SanityBlock from '~/components/base/sanity-block.vue'
-import contactLeda from '~/components/contact-leda.vue'
-import HeroBanner from '~/components/hero-banner.vue'
-import LazyWorkPlaylist from '~/components/work-playlist.vue'
 
 const query = groq`*[_type == "page" && slug.current == $slug][0]`
 const reviewsQuery = groq`*[_type == "review"] | order(_createdAt desc)[0..4]`

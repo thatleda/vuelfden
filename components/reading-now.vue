@@ -14,16 +14,16 @@
       </div>
       <div v-if="book.url" :class="$style.links">
         Find it on
-        <link-button
+        <base-link-button
           :to="book.url"
           text="Amazon"
           variant="secondary"
           target="_blank"
         >
           <template #icon>
-            <amazon width="1rem" height="1rem" />
+            <svg-amazon width="1rem" height="1rem" />
           </template>
-        </link-button>
+        </base-link-button>
       </div>
     </div>
     <sanity-image
@@ -33,14 +33,11 @@
       w="300"
     />
   </div>
-  <sanity-block :blocks="book.notes" />
+  <base-sanity-block :blocks="book.notes" />
 </template>
 
 <script lang="ts" setup>
 import type { SanityBook } from '~/@types/sanity'
-import LinkButton from '~/components/base/link-button.vue'
-import SanityBlock from '~/components/base/sanity-block.vue'
-import Amazon from '~/components/svg/amazon.vue'
 
 interface ReadingNowProps {
   book: SanityBook

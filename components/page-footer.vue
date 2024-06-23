@@ -1,28 +1,23 @@
 <template>
   <footer :class="$style.footer">
     <div :class="$style.linkWrapper">
-      <link-button
+      <base-link-button
         aria-label="Nuxt"
         to="https://nuxt.com/"
         target="_blank"
         text="-powered vanity"
       >
         <template #icon>
-          <nuxt-logo />
+          <svg-nuxt-logo width="1rem" height="1rem" fill="var(--text-color)" />
         </template>
-      </link-button>
+      </base-link-button>
       <nav :class="$style.footerNav">
-        <link-button to="/privacy" text="Privacy" />
-        <link-button to="/imprint" text="Imprint" />
+        <base-link-button to="/privacy" text="Privacy" />
+        <base-link-button to="/imprint" text="Imprint" />
       </nav>
     </div>
   </footer>
 </template>
-
-<script lang="ts" setup>
-import LinkButton from '~/components/base/link-button.vue'
-import NuxtLogo from '~/components/svg/nuxt-logo.vue'
-</script>
 
 <style module>
 .footer {
@@ -45,6 +40,7 @@ import NuxtLogo from '~/components/svg/nuxt-logo.vue'
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
+  font-size: 0.85rem;
   max-width: var(--page-width);
   padding: var(--page-padding);
 }

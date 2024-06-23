@@ -1,5 +1,5 @@
 <template>
-  <page-section v-if="article">
+  <base-page-section v-if="article">
     <h1>{{ article.title }}</h1>
     <sanity-image
       v-if="article.banner"
@@ -12,15 +12,12 @@
       :class="$style.banner"
       crossorigin
     />
-    <sanity-block :blocks="article.content" />
-  </page-section>
+    <base-sanity-block :blocks="article.content" />
+  </base-page-section>
 </template>
 
 <script lang="ts" setup>
 import type { SanityArticle } from '~/@types/sanity'
-
-import PageSection from '~/components/base/page-section.vue'
-import SanityBlock from '~/components/base/sanity-block.vue'
 
 const route = useRoute()
 const { slug } = route.params

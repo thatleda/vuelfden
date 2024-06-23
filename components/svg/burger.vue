@@ -1,6 +1,7 @@
 <template>
   <svg
-    :style="{ ...props }"
+    :style="{ height, width }"
+    v-bind="svgAttributes"
     viewBox="0 -960 960 960"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -12,9 +13,9 @@
 </template>
 
 <script lang="ts" setup>
-import type { SVGProps } from '.'
+import type { SVGAttributes } from 'vue'
 
-const props = withDefaults(defineProps<SVGProps>(), {
+const { height, width, ...svgAttributes } = withDefaults(defineProps</* @vue-ignore */SVGAttributes>(), {
   height: '1rem',
   width: '1rem',
 })

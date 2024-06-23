@@ -1,11 +1,11 @@
 <template>
   <nav :class="$style.navigation">
     <div :class="$style.links">
-      <link-button to="/" title="Home">
+      <base-link-button to="/" title="Home">
         <template #icon>
-          <wolf mirror height="5rem" width="5rem" />
+          <svg-wolf mirror height="5rem" width="5rem" />
         </template>
-      </link-button>
+      </base-link-button>
       <button
         v-if="smallScreen"
         id="openMenu"
@@ -14,15 +14,15 @@
         :class="isMenuOpen ? $style.noDisplay : $style.burgerMenu"
         @click="openMenu"
       >
-        <burger height="3rem" width="3rem" />
+        <svg-burger height="3rem" width="3rem" />
       </button>
       <template v-else>
-        <link-button to="/#who" text="Who?" />
-        <link-button to="/#previously" text="Previously" />
-        <link-button to="/ramblings" text="Blog" />
-        <link-button to="/#reviews" text="Working with Leda" />
-        <link-button to="/#contact" text="Contact" />
-        <link-button
+        <base-link-button to="/#who" text="Who?" />
+        <base-link-button to="/#previously" text="Previously" />
+        <base-link-button to="/ramblings" text="Blog" />
+        <base-link-button to="/#reviews" text="Working with Leda" />
+        <base-link-button to="/#contact" text="Contact" />
+        <base-link-button
           text="CV"
           variant="primary"
           to="resume.pdf"
@@ -38,32 +38,32 @@
       :tabindex="isMenuOpen ? 1 : -1"
     >
       <nav ref="outsideRef" :class="$style.sideNavigation">
-        <link-button
+        <base-link-button
           :class="$style.sideNavigationLink"
           to="/#who"
           text="Who?"
         />
-        <link-button
+        <base-link-button
           :class="$style.sideNavigationLink"
           to="/#previously"
           text="Previously"
         />
-        <link-button
+        <base-link-button
           :class="$style.sideNavigationLink"
           to="/ramblings"
           text="Blog"
         />
-        <link-button
+        <base-link-button
           :class="$style.sideNavigationLink"
           to="/#reviews"
           text="Working with Leda"
         />
-        <link-button
+        <base-link-button
           :class="$style.sideNavigationLink"
           to="/#contact"
           text="Contact"
         />
-        <link-button
+        <base-link-button
           :class="$style.sideNavigationLink"
           text="CV"
           to="resume.pdf"
@@ -79,10 +79,6 @@
 <script lang="ts" setup>
 import { onClickOutside } from '@vueuse/core'
 import { ref } from 'vue'
-
-import LinkButton from '~/components/base/link-button.vue'
-import Burger from '~/components/svg/burger.vue'
-import Wolf from '~/components/svg/wolf.vue'
 
 const smallScreen = useMediaQuery('(max-width: 1030px)')
 

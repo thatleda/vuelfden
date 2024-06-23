@@ -1,15 +1,12 @@
 <template>
-  <page-section v-if="page">
+  <base-page-section v-if="page">
     <h1>{{ page.title }}</h1>
-    <sanity-block :blocks="page.content" />
-  </page-section>
+    <base-sanity-block :blocks="page.content" />
+  </base-page-section>
 </template>
 
 <script lang="ts" setup>
 import type { SanityPage } from '~/@types/sanity'
-
-import PageSection from '~/components/base/page-section.vue'
-import SanityBlock from '~/components/base/sanity-block.vue'
 
 const route = useRoute()
 const { slug } = route.params

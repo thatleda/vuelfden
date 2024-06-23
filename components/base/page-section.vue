@@ -1,5 +1,5 @@
 <template>
-  <transition-animation
+  <base-transition-animation
     :animation-duration="props.animationProps?.animationDuration ?? '1s'"
     :animation-name="props.animationProps?.animationName ?? 'fade-up'"
     :animation-delay="props.animationProps?.animationDelay ?? '300ms'"
@@ -16,13 +16,11 @@
         </div>
       </div>
     </section>
-  </transition-animation>
+  </base-transition-animation>
 </template>
 
 <script setup lang="ts">
 import type { AnimationProps } from '~/components/base/transition-animation.vue'
-
-import TransitionAnimation from '~/components/base/transition-animation.vue'
 
 interface SectionProps {
   anchor?: string

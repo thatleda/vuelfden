@@ -5,7 +5,7 @@
       please don't hesitate and write to:
     </p>
     <div :class="$style.profile">
-      <mail height="5rem" width="5rem" />
+      <svg-mail height="5rem" width="5rem" />
       <div :class="$style.contactData">
         <div :class="$style.name">
           <u>Leda Wolf</u>
@@ -15,50 +15,41 @@
         </NuxtLink>
       </div>
     </div>
-    <transition-animation
+    <base-transition-animation
       :class="$style.actionButtons"
       animation-name="fade-left"
       animation-duration="600ms"
     >
-      <link-button
+      <base-link-button
         to="https://discord.com/users/732667625255075951"
         text="Discord"
         variant="secondary"
       >
         <template #icon>
-          <discord />
+          <svg-discord />
         </template>
-      </link-button>
-      <link-button
+      </base-link-button>
+      <base-link-button
         to="https://github.com/thatleda"
         text="GitHub"
         variant="secondary"
       >
         <template #icon>
-          <github />
+          <svg-github />
         </template>
-      </link-button>
-      <link-button
+      </base-link-button>
+      <base-link-button
         to="https://www.linkedin.com/in/thatleda/"
         text="LinkedIn"
         variant="secondary"
       >
         <template #icon>
-          <linkedin />
+          <svg-linkedin />
         </template>
-      </link-button>
-    </transition-animation>
+      </base-link-button>
+    </base-transition-animation>
   </div>
 </template>
-
-<script lang="ts" setup>
-import Mail from '~/components/svg/mail.vue'
-import LinkButton from '~/components/base/link-button.vue'
-import TransitionAnimation from '~/components/base/transition-animation.vue'
-import Discord from '~/components/svg/discord.vue'
-import Github from '~/components/svg/github.vue'
-import Linkedin from '~/components/svg/linkedin.vue'
-</script>
 
 <style module>
 .card {

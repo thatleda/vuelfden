@@ -1,6 +1,8 @@
 <template>
   <svg
-    :class="{ mirror: props.mirror }"
+    :class="mirror && $style.mirror"
+    :style="{ height, width }"
+    v-bind="svgAttributes"
     preserveAspectRatio="xMidYMid meet"
     version="1.0"
     viewBox="100 0 583 583"
@@ -70,25 +72,20 @@
 </template>
 
 <script lang="ts" setup>
-import type { SVGProps } from '.'
+import type { SVGAttributes } from 'vue'
 
-interface WolfProps extends SVGProps {
+interface WolfProps extends /* @vue-ignore */ SVGAttributes {
   mirror?: boolean
 }
 
-const props = withDefaults(defineProps<WolfProps>(), {
+const { mirror, width, height, ...svgAttributes } = withDefaults(defineProps<WolfProps>(), {
   height: '50px',
   mirror: false,
   width: '50px',
 })
 </script>
 
-<style scoped>
-svg {
-  height: v-bind(height);
-  width: v-bind(width);
-}
-
+<style module>
 .mirror {
   transform: scale(-1, 1);
 }
