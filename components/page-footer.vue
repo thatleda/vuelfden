@@ -8,7 +8,7 @@
         text="-powered vanity"
       >
         <template #icon>
-          <svg-nuxt-logo width="1rem" height="1rem" fill="var(--text-color)" />
+          <svg-nuxt-logo fill="var(--text-color)" />
         </template>
       </base-link-button>
       <nav :class="$style.footerNav">
@@ -36,11 +36,9 @@
 .linkWrapper {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  font-size: 0.85rem;
   max-width: var(--page-width);
   padding: var(--page-padding);
 }

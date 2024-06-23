@@ -46,7 +46,7 @@ const isExternalLink = props.to.toString().startsWith('/') ?? false
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .primary,
