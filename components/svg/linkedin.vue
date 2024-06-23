@@ -13,9 +13,9 @@
 </template>
 
 <script lang="ts" setup>
-import type { SVGAttributes } from 'vue'
+import type { SVGProps } from '~/@types/svg'
 
-const { height, width, ...svgAttributes } = withDefaults(defineProps</* @vue-ignore */SVGAttributes>(), {
+const { height, width, ...svgAttributes } = withDefaults(defineProps<SVGProps>(), {
   height: '1rem',
   width: '1rem',
 })

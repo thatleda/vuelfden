@@ -72,9 +72,9 @@
 </template>
 
 <script lang="ts" setup>
-import type { SVGAttributes } from 'vue'
+import type { SVGProps } from '~/@types/svg'
 
-interface WolfProps extends /* @vue-ignore */ SVGAttributes {
+interface WolfProps extends SVGProps {
   mirror?: boolean
 }
 
