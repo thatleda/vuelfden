@@ -201,7 +201,7 @@ defineExpose({
   position: relative;
   right: 0;
   text-align: left;
-  width: 50vw;
+  width: 65vw;
   z-index: 10;
 }
 
@@ -213,7 +213,7 @@ defineExpose({
   top: 0;
   left: 0;
   backdrop-filter: brightness(10%) blur(4px);
-  -webkit-backdrop-filter: brightness(10%) blur(10px);
+  -webkit-backdrop-filter: brightness(10%) blur(4px);
   display: none;
   overflow: hidden;
   pointer-events: none;
