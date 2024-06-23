@@ -1,11 +1,18 @@
 <template>
-  <div
-    ref="target"
-    :style="targetIsVisible ? props : { opacity: 0 }"
-    :class="props.class"
-  >
-    <slot />
-  </div>
+  <ClientOnly>
+    <div
+      ref="target"
+      :style="targetIsVisible ? props : { opacity: 0 }"
+      :class="props.class"
+    >
+      <slot />
+    </div>
+    <template #placeholder>
+      <div ref="target" :class="props.class" :style="props">
+        <slot />
+      </div>
+    </template>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">
