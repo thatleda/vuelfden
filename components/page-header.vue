@@ -50,31 +50,36 @@
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/#who"
+          :onclick="closeMenu"
         >
           Who?
         </base-link-button>
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/#previously"
+          :onclick="closeMenu"
         >
           Previously
         </base-link-button>
         <base-link-button
           :class="$style.sideNavigationLink"
-          to="/ramblings"
+          to="/ramblings" 
+          :onclick="closeMenu"
         >
           Blog
         </base-link-button>
         <base-link-button
           :class="$style.sideNavigationLink"
-          to="/#reviews"
+          to="/#reviews" 
+          :onclick="closeMenu"
         >
           Working with Leda
         </base-link-button>
 
         <base-link-button
           :class="$style.sideNavigationLink"
-          to="/#contact"
+          to="/#contact" 
+          :onclick="closeMenu"
         >
           Contact
         </base-link-button>
