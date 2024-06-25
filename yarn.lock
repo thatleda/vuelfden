@@ -1075,7 +1075,7 @@
   resolved "https://registry.yarnpkg.com/@nuxt/devalue/-/devalue-2.0.2.tgz#5749f04df13bda4c863338d8dabaf370f45ef7c7"
   integrity sha512-GBzP8zOc7CGWyFQS6dv1lQz8VVpz5C2yRszbXufwG/9zhStTIH50EtD87NmWbTMwXDvZLNg8GIpb1UFdH93JCA==
 
-"@nuxt/devtools-kit@1.3.6", "@nuxt/devtools-kit@^1.0.8", "@nuxt/devtools-kit@^1.2.0", "@nuxt/devtools-kit@^1.3.6":
+"@nuxt/devtools-kit@1.3.6", "@nuxt/devtools-kit@^1.0.8", "@nuxt/devtools-kit@^1.3.2", "@nuxt/devtools-kit@^1.3.6":
   version "1.3.6"
   resolved "https://registry.yarnpkg.com/@nuxt/devtools-kit/-/devtools-kit-1.3.6.tgz#27e3e19a5c0738fe88849a7fbf108db99f3ff5ad"
   integrity sha512-FM0s9CrTxwvaMcakWZc7oGqzSj4GPalcY3PmyZhollMyR2dqBB1n0ZfnTdLm8KUSgc7jdFR6DuG7PfQwAm06tQ==
@@ -1170,16 +1170,16 @@
     ws "^8.17.1"
 
 "@nuxt/fonts@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@nuxt/fonts/-/fonts-0.7.0.tgz#9ec64c3f7c3b0f606d5b1c3076e305c323587770"
-  integrity sha512-nng9m7IbdjPkKbNY26xygsuIeld3WjejGBmB4xN3lZDo8kKtThqzLn+M0enYQZBNGQShLaIAoFa+ccFF50qZRg==
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@nuxt/fonts/-/fonts-0.7.1.tgz#26f68a79857e20be840f5ed2f1aab27b2d4edd27"
+  integrity sha512-uB1vHiWhm96VI0+6QsmWzEDbZlhWGkaUqydZph5huRTW3Y7I9+VIPvsLa9PS0bgbK2hmADrvrMEK9b2zUUIGvQ==
   dependencies:
-    "@nuxt/devtools-kit" "^1.2.0"
-    "@nuxt/kit" "^3.11.2"
+    "@nuxt/devtools-kit" "^1.3.2"
+    "@nuxt/kit" "^3.12.2"
     chalk "^5.3.0"
     css-tree "^2.3.1"
     defu "^6.1.4"
-    esbuild "^0.20.2"
+    esbuild "^0.21.4"
     fontaine "^0.5.0"
     globby "^14.0.1"
     h3 "^1.11.1"
@@ -4089,9 +4089,9 @@ ee-first@1.1.1:
   integrity sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==
 
 electron-to-chromium@^1.4.796:
-  version "1.4.810"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.810.tgz#7dee01b090b9e048e6db752f7b30921790230654"
-  integrity sha512-Kaxhu4T7SJGpRQx99tq216gCq2nMxJo+uuT6uzz9l8TVN2stL7M06MIIXAtr9jsrLs2Glflgf2vMQRepxawOdQ==
+  version "1.4.811"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.811.tgz#031c8b101e7d0a7cde1dfdb0623dbdb5e19655cd"
+  integrity sha512-CDyzcJ5XW78SHzsIOdn27z8J4ist8eaFLhdto2hSMSJQgsiwvbv2fbizcKUICryw1Wii1TI/FEkvzvJsR3awrA==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -4211,7 +4211,7 @@ esbuild@^0.20.2:
     "@esbuild/win32-ia32" "0.20.2"
     "@esbuild/win32-x64" "0.20.2"
 
-esbuild@^0.21.3, esbuild@^0.21.5:
+esbuild@^0.21.3, esbuild@^0.21.4, esbuild@^0.21.5:
   version "0.21.5"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.21.5.tgz#9ca301b120922959b766360d8ac830da0d02997d"
   integrity sha512-mg3OPMV4hXywwpoDxu3Qda5xCKQi+vCTZq8S9J/EpkhB2HzKXq4SNFZE3+NK93JYxc8VMSep+lOUSC/RVKaBqw==
