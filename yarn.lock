@@ -1349,9 +1349,9 @@
     h3 "^1.0.1"
 
 "@nuxtjs/sanity@^1.11.3":
-  version "1.11.3"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/sanity/-/sanity-1.11.3.tgz#6fc2a2b399b22785f89d3211dac0775384f47261"
-  integrity sha512-ZNPRKBFaI7teh5x9SeK14ayLlxJ2e5UTcY+NAsVgSLR94DVRZ/oB3jHCTADK1n8T1TK6PHMNFjrxptJ9lhCL/w==
+  version "1.11.4"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/sanity/-/sanity-1.11.4.tgz#5fb13d8378be51f05aced0b4cc58c8f064fa7f9a"
+  integrity sha512-WFWxpO1U/OlqUCNmkkdrmMMjaJ+Y8OpPtCIKV0iFw5fLLVE+WnHTE3eC2JPF5gDlevICALo9fKfOfQquavw01A==
   dependencies:
     "@nuxt/kit" "^3.11.1"
     "@portabletext/types" "^2.0.11"
@@ -4969,9 +4969,9 @@ get-intrinsic@^1.1.3, get-intrinsic@^1.2.1, get-intrinsic@^1.2.2, get-intrinsic@
     hasown "^2.0.0"
 
 get-it@^8.6.1:
-  version "8.6.1"
-  resolved "https://registry.yarnpkg.com/get-it/-/get-it-8.6.1.tgz#b424f136e91f7898551323378af4ad38f92c15a9"
-  integrity sha512-fCK6M+WkN1TuXzYac0RYk9OK4VdJKV1xG3fe9D3TU2is/G8ofz6/+hRBCiddO/eNPhnhMBpYIk2kNx1S4NRdsg==
+  version "8.6.2"
+  resolved "https://registry.yarnpkg.com/get-it/-/get-it-8.6.2.tgz#39c9754f7598d918908bc468b8b917352575e29f"
+  integrity sha512-yZNwjgWGc1bmu+NGlb834A5SpfJAlVubOmyMjnwMnGdO4dpCshAFahFTC9Ct123FSf9cY1aSVPLJS2/BKaQ+GA==
   dependencies:
     decompress-response "^7.0.0"
     follow-redirects "^1.15.6"
