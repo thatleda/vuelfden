@@ -1,22 +1,20 @@
 <template>
-  <main>
-    <base-page-section v-if="article">
-      <h1>{{ article.title }}</h1>
-      <sanity-image
-        v-if="article.banner"
-        :alt="article.banner.alt"
-        :asset-id="article.banner.asset._ref"
-        w="750"
-        h="300"
-        fit="crop"
-        crop="center"
-        :class="$style.banner"
-        loading="lazy"
-        auto="format"
-      />
-      <base-sanity-block :blocks="article.content" />
-    </base-page-section>
-  </main>
+  <base-page-section v-if="article">
+    <h1>{{ article.title }}</h1>
+    <sanity-image
+      v-if="article.banner"
+      :alt="article.banner.alt"
+      :asset-id="article.banner.asset._ref"
+      w="750"
+      h="300"
+      fit="crop"
+      crop="center"
+      :class="$style.banner"
+      loading="lazy"
+      auto="format"
+    />
+    <base-sanity-block :blocks="article.content" />
+  </base-page-section>
 </template>
 
 <script lang="ts" setup>

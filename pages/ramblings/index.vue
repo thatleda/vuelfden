@@ -1,15 +1,13 @@
 <template>
-  <main>
-    <base-page-section heading="Unhinged ramblings">
-      <div :class="$style.articles">
-        <base-article-card
-          v-for="article in articles"
-          :key="article._id"
-          :article="article"
-        />
-      </div>
-    </base-page-section>
-  </main>
+  <base-page-section heading="Unhinged ramblings">
+    <div :class="$style.articles">
+      <base-article-card
+        v-for="article in articles"
+        :key="article._id"
+        :article="article"
+      />
+    </div>
+  </base-page-section>
 </template>
 
 <script lang="ts" setup>

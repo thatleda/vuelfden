@@ -1,10 +1,8 @@
 <template>
-  <main>
-    <base-page-section v-if="page">
-      <h1>{{ page.title }}</h1>
-      <base-sanity-block :blocks="page.content" />
-    </base-page-section>
-  </main>
+  <base-page-section v-if="page">
+    <h1>{{ page.title }}</h1>
+    <base-sanity-block :blocks="page.content" />
+  </base-page-section>
 </template>
 
 <script lang="ts" setup>
