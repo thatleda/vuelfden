@@ -22,11 +22,11 @@ export default defineNuxtConfig({
     ],
   ],
   routeRules: {
-    '/': { prerender: true },
+    '/': { swr: true },
     '/imprint': { prerender: true },
     '/privacy': { prerender: true },
-    // cache for a week
-    '/ramblings/*': { cache: { maxAge: 60 * 60 * 24 * 30 } },
+    '/ramblings': { swr: true },
+    '/ramblings/*': { prerender: true },
   },
   sanity: {
     dataset: process.env.NUXT_SANITY_DATASET,
