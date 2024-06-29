@@ -38,6 +38,8 @@ useSeoMeta({
   robots:
     'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   title: article.value?.title ?? 'Vuelfden',
+  articleModifiedTime: article.value?._updatedAt,
+  articlePublishedTime: article.value?._createdAt,
 })
 </script>
 
