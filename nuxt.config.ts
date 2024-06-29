@@ -26,7 +26,7 @@ export default defineNuxtConfig({
     '/imprint': { prerender: true },
     '/privacy': { prerender: true },
     '/ramblings': { swr: true },
-    '/ramblings/*': { prerender: true },
+    '/ramblings/**': { prerender: true },
   },
   sanity: {
     dataset: process.env.NUXT_SANITY_DATASET,
