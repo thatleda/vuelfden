@@ -4,7 +4,9 @@
       <sanity-image
         :asset-id="aboutPage.banner.asset._ref"
         :alt="aboutPage.banner.alt"
-        w="300"
+        w="200"
+        width="200"
+        height="269"
         fit="crop"
         :class="$style.photo"
         loading="lazy"
@@ -42,10 +44,5 @@ const { aboutPage } = defineProps<AboutLedaProps>()
 
 .photo {
   border-radius: var(--border-radius);
-  max-width: 200px;
-
-  @media (max-width: 749px) {
-    max-width: auto;
-  }
 }
 </style>

@@ -21,12 +21,18 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+    },
+  },
   routeRules: {
     '/': { swr: true },
     '/imprint': { prerender: true },
     '/privacy': { prerender: true },
     '/ramblings': { swr: true },
     '/ramblings/**': { prerender: true },
+    '/sitemap.xml': { prerender: true },
   },
   sanity: {
     dataset: process.env.NUXT_SANITY_DATASET,
@@ -34,6 +40,6 @@ export default defineNuxtConfig({
   },
   site: {
     name: 'Vuelfden',
-    url: process.env.URL,
+    url: process.env.NETLIFY_URL,
   },
 })

@@ -8,6 +8,8 @@
         h="400"
         fit="crop"
         crop="center"
+        width="200"
+        height="200"
         :class="$style.photo"
         loading="lazy"
         auto="format"
