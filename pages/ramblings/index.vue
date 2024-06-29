@@ -1,5 +1,6 @@
 <template>
   <base-page-section heading="Unhinged ramblings">
+    <work-playlist />
     <div :class="$style.articles">
       <base-article-card
         v-for="article in articles"

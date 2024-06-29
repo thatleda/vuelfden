@@ -3,9 +3,6 @@
   <base-page-section anchor="who" heading="Who?">
     <about-leda v-if="aboutPage" :about-page="aboutPage" />
   </base-page-section>
-  <base-page-section>
-    <lazy-work-playlist />
-  </base-page-section>
   <base-page-section
     v-if="previouslyPage"
     :heading="previouslyPage.title"
@@ -42,7 +39,6 @@ useHead({
     lang: 'en',
   },
   link: [
-    { href: 'https://js-cdn.music.apple.com', rel: 'preconnect', crossorigin: 'anonymous' },
     {
       href: '/apple-touch-icon.png',
       rel: 'apple-touch-icon',
