@@ -34,6 +34,6 @@ export default defineNuxtConfig({
   },
   site: {
     name: 'Vuelfden',
-    url: process.env.URL,
+    url: process.env.NETLIFY_URL,
   },
 })
