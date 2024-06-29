@@ -1,25 +1,27 @@
 <template>
-  <hero-banner v-if="hero" :page="hero" />
-  <base-page-section anchor="who" heading="Who?">
-    <about-leda v-if="aboutPage" :about-page="aboutPage" />
-  </base-page-section>
-  <base-page-section>
-    <lazy-work-playlist />
-  </base-page-section>
-  <base-page-section
-    v-if="previouslyPage"
-    :heading="previouslyPage.title"
-    anchor="previously"
-  >
-    <base-sanity-block :blocks="previouslyPage.content" />
-  </base-page-section>
-  <base-page-section v-if="reviews" anchor="reviews" heading="Reviews">
-    <base-review v-for="review in reviews" :key="review._id" :review="review" />
-  </base-page-section>
-  <base-page-section anchor="contact" heading="What is she up to?">
-    <reading-now v-if="book" :book="book" />
-    <contact-leda />
-  </base-page-section>
+  <main>
+    <hero-banner v-if="hero" :page="hero" />
+    <base-page-section anchor="who" heading="Who?">
+      <about-leda v-if="aboutPage" :about-page="aboutPage" />
+    </base-page-section>
+    <base-page-section>
+      <lazy-work-playlist />
+    </base-page-section>
+    <base-page-section
+      v-if="previouslyPage"
+      :heading="previouslyPage.title"
+      anchor="previously"
+    >
+      <base-sanity-block :blocks="previouslyPage.content" />
+    </base-page-section>
+    <base-page-section v-if="reviews" anchor="reviews" heading="Reviews">
+      <base-review v-for="review in reviews" :key="review._id" :review="review" />
+    </base-page-section>
+    <base-page-section anchor="contact" heading="What is she up to?">
+      <reading-now v-if="book" :book="book" />
+      <contact-leda />
+    </base-page-section>
+  </main>
 </template>
 
 <script lang="ts" setup>

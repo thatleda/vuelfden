@@ -1,8 +1,6 @@
 <template>
   <page-header ref="header" />
-  <main>
-    <NuxtPage />
-  </main>
+  <NuxtPage />
   <page-footer />
 </template>
 
