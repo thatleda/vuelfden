@@ -30,6 +30,7 @@
       loading="lazy"
       auto="format"
       w="300"
+      width="300"
     />
   </div>
   <base-sanity-block :blocks="book.notes" />
@@ -53,14 +54,14 @@ const { book } = defineProps<ReadingNowProps>()
   gap: 1rem;
   max-width: 1000px;
 
-  @media (max-width: 465px) {
+  @media (max-width: 600px) {
     flex-direction: column;
   }
 }
 
 .cover {
   min-width: 180px;
-  @media (max-width: 465px) {
+  @media (max-width: 600px) {
     margin: 0 auto;
   }
 }
@@ -72,7 +73,7 @@ const { book } = defineProps<ReadingNowProps>()
   width: 100%;
   gap: 1rem;
   padding-left: 1rem;
-  @media (max-width: 465px) {
+  @media (max-width: 600px) {
     padding: 0;
   }
 }
@@ -84,7 +85,7 @@ const { book } = defineProps<ReadingNowProps>()
 
 .progressBar {
   width: 80%;
-  @media (max-width: 465px) {
+  @media (max-width: 600px) {
     width: 100%;
   }
 }

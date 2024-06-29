@@ -42,7 +42,7 @@ useHead({
     lang: 'en',
   },
   link: [
-    { href: 'https://js-cdn.music.apple.com', rel: 'preconnect', crossorigin: 'anonymous' },
+    // { href: 'https://js-cdn.music.apple.com', rel: 'preconnect', crossorigin: 'anonymous' }, doesn't help
     {
       href: '/apple-touch-icon.png',
       rel: 'apple-touch-icon',
