@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     '/': { swr: true },
     '/imprint': { prerender: true },
     '/privacy': { prerender: true },
-    '/ramblings': { swr: true },
+    '/ramblings': { prerender: true },
     '/ramblings/**': { prerender: true },
   },
   sanity: {
