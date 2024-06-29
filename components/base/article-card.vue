@@ -7,7 +7,8 @@
         w="100"
         h="100"
         fit="crop"
-        crossorigin
+        loading="lazy"
+        auto="format"
       />
       <div :class="$style.description">
         <h3 :class="$style.title">

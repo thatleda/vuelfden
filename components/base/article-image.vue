@@ -4,7 +4,8 @@
       :asset-id="props.asset._ref"
       :alt="props.alt"
       :class="$style.photo"
-      crossorigin
+      loading="lazy"
+      auto="format"
     />
   </div>
 </template>

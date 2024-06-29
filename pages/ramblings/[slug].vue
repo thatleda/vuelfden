@@ -10,7 +10,8 @@
       fit="crop"
       crop="center"
       :class="$style.banner"
-      crossorigin
+      loading="lazy"
+      auto="format"
     />
     <base-sanity-block :blocks="article.content" />
   </base-page-section>
