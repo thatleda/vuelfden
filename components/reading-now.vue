@@ -27,6 +27,8 @@
       :alt="book.cover.alt ?? book.title"
       :asset-id="book.cover.asset._ref"
       :class="$style.cover"
+      loading="lazy"
+      auto="format"
       w="300"
     />
   </div>

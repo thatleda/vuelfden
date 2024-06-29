@@ -9,7 +9,8 @@
         fit="crop"
         crop="center"
         :class="$style.photo"
-        crossorigin
+        loading="lazy"
+        auto="format"
       />
       <div :class="$style.callToAction">
         <h1 :class="$style.greeting">
