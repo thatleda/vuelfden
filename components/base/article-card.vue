@@ -2,8 +2,8 @@
   <NuxtLink :to="`/ramblings/${article.slug.current}`">
     <div :class="$style.card">
       <sanity-image
-        :asset-id="article.banner.asset._ref"
-        :alt="article.banner.alt"
+        :asset-id="article.banner._id"
+        :alt="article.banner.altText"
         w="100"
         h="100"
         fit="crop"
@@ -24,10 +24,10 @@
 <script lang="ts" setup>
 import { formatDistance } from 'date-fns'
 
-import type { SanityArticle } from '~/@types/sanity'
+import type { SanityPage } from '~/@types/sanity'
 
 interface ArticleProps {
-  article: SanityArticle
+  article: SanityPage
 }
 
 const { article } = defineProps<ArticleProps>()

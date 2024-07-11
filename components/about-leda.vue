@@ -2,8 +2,8 @@
   <div :class="$style.card">
     <div :class="$style.frame">
       <sanity-image
-        :asset-id="aboutPage.banner.asset._ref"
-        :alt="aboutPage.banner.alt"
+        :asset-id="aboutPage.banner._id"
+        :alt="aboutPage.banner.altText"
         w="200"
         width="200"
         height="269"

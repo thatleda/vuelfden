@@ -2,8 +2,8 @@
   <base-page-section :animation-props="{ animationDuration: '0ms' }">
     <div :class="$style.card">
       <sanity-image
-        :asset-id="page.banner.asset._ref"
-        alt="Leda Wolf"
+        :asset-id="page.banner._id"
+        :alt="page.banner.altText"
         w="400"
         h="400"
         fit="crop"

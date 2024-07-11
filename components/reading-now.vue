@@ -24,8 +24,8 @@
       </div>
     </div>
     <sanity-image
-      :alt="book.cover.alt ?? book.title"
-      :asset-id="book.cover.asset._ref"
+      :alt="book.cover.altText ?? book.title"
+      :asset-id="book.cover._id"
       :class="$style.cover"
       loading="lazy"
       auto="format"

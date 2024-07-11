@@ -3,8 +3,8 @@
     <h1>{{ article.title }}</h1>
     <sanity-image
       v-if="article.banner"
-      :alt="article.banner.alt"
-      :asset-id="article.banner.asset._ref"
+      :alt="article.banner.altText"
+      :asset-id="article.banner._id"
       w="750"
       h="300"
       fit="crop"
@@ -18,13 +18,13 @@
 </template>
 
 <script lang="ts" setup>
-import type { SanityArticle } from '~/@types/sanity'
+import type { SanityPage } from '~/@types/sanity'
 
 const route = useRoute()
 const { slug } = route.params
 
-const query = groq`*[slug.current == $slug][0]`
-const { data: article } = useSanityQuery<SanityArticle>(query, { slug })
+const query = groq`*[slug.current == $slug][0]{_createdAt, _updatedAt, _id, content, excerpt, slug, title, "banner": banner.asset->{_id, _type, altText}}`
+const { data: article } = useSanityQuery<SanityPage>(query, { slug })
 useSeoMeta({
   description:
     article.value?.excerpt

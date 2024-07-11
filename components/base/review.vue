@@ -2,8 +2,8 @@
   <div :class="$style.card">
     <div :class="$style.frame">
       <sanity-image
-        :asset-id="review.picture.asset._ref"
-        :alt="review.reviewer"
+        :asset-id="review.picture._id"
+        :alt="review.picture.altText"
         :class="$style.picture"
         auto="format"
         crop="center"
