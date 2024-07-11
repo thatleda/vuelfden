@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   css: ['~/assets/css/animation.css'],
   devtools: { enabled: true },
+
   modules: [
     '@nuxt/fonts',
     '@nuxtjs/sanity',
@@ -21,11 +22,13 @@ export default defineNuxtConfig({
       },
     ],
   ],
+
   nitro: {
     prerender: {
       crawlLinks: true,
     },
   },
+
   routeRules: {
     '/': { swr: true },
     '/imprint': { prerender: true },
@@ -34,12 +37,16 @@ export default defineNuxtConfig({
     '/ramblings/**': { prerender: true },
     '/sitemap.xml': { prerender: true },
   },
+
   sanity: {
     dataset: process.env.NUXT_SANITY_DATASET,
     projectId: process.env.NUXT_SANITY_PROJECT_ID,
   },
+
   site: {
     name: 'Vuelfden',
     url: process.env.NETLIFY_URL,
   },
+
+  compatibilityDate: '2024-07-11',
 })
