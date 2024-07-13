@@ -116,12 +116,15 @@ svg {
 }
 
 h1 {
-  font-family: "Silkscreen", sans-serif;
+  font-family: Silkscreen, sans-serif;
   font-size: 2.5rem;
 }
 
 h2 {
-  font-family: "Homemade Apple", cursive;
+  font-family: Satisfy, cursive;
+  font-size: 3rem;
+  margin: 0;
+  color: var(--primary-color);
 }
 
 h3 {
@@ -129,15 +132,11 @@ h3 {
 }
 
 em {
-  font-family: "Homemade Apple", cursive;
+  font-family: Satisfy, cursive;
   font-style: normal;
-  margin: 0 0.25rem;
+  margin: 0 0rem;
   line-height: 0.8rem;
-  font-size: 1.1rem;
-}
-
-q {
-  font-style: italic;
+  font-size: 1.5rem;
   color: var(--primary-color);
 }
 
