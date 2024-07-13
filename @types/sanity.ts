@@ -1,26 +1,8 @@
 import type { PortableTextBlock } from '@portabletext/types'
 
-export interface SanityArticle {
-  _createdAt: string
-  _id: string
-  _rev: string
-  _type: 'article'
-  _updatedAt: string
-  banner: SanityLinkedImage
-  content: PortableTextBlock[]
-  excerpt: string
-  slug: {
-    _type: 'slug'
-    current: string
-  }
-  title: string
-}
-
 export interface SanityPage {
-  _createdAt: string
   _id: string
-  _rev: string
-  _type: 'page'
+  _createdAt: string
   _updatedAt: string
   banner: SanityLinkedImage
   content: PortableTextBlock[]
@@ -33,19 +15,14 @@ export interface SanityPage {
 }
 
 export interface SanityLinkedImage {
-  _type: 'image'
-  alt: string
-  asset: {
-    _ref: string
-    _type: 'reference'
-  }
+  _id: string
+  _type: 'sanity.imageAsset'
+  altText: string
 }
 
 export interface SanityReview {
   _createdAt: string
   _id: string
-  _rev: string
-  _type: 'review'
   _updatedAt: string
   comment: string
   picture: SanityLinkedImage
@@ -55,8 +32,6 @@ export interface SanityReview {
 export interface SanityBook {
   _createdAt: string
   _id: string
-  _rev: string
-  _type: 'book'
   _updatedAt: string
   author: string
   cover: SanityLinkedImage

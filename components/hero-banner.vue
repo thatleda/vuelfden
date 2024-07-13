@@ -1,18 +1,14 @@
 <template>
   <base-page-section :animation-props="{ animationDuration: '0ms' }">
     <div :class="$style.card">
-      <sanity-image
-        :asset-id="page.banner.asset._ref"
-        alt="Leda Wolf"
-        w="400"
-        h="400"
-        fit="crop"
-        crop="center"
+      <NuxtImg
+        :src="page.banner._id"
+        :alt="page.banner.altText"
         width="200"
         height="200"
         :class="$style.photo"
         loading="lazy"
-        auto="format"
+        placeholder
       />
       <div :class="$style.callToAction">
         <h1 :class="$style.greeting">
@@ -98,7 +94,6 @@ const { page } = defineProps<HeroProps>()
 
 .photo {
   border-radius: 100%;
-  max-width: 200px;
 }
 
 .callToAction {

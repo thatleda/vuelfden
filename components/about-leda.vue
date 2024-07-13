@@ -1,16 +1,13 @@
 <template>
   <div :class="$style.card">
     <div :class="$style.frame">
-      <sanity-image
-        :asset-id="aboutPage.banner.asset._ref"
-        :alt="aboutPage.banner.alt"
-        w="200"
+      <NuxtImg
+        :src="aboutPage.banner._id"
+        :alt="aboutPage.banner.altText"
         width="200"
         height="269"
-        fit="crop"
         :class="$style.photo"
         loading="lazy"
-        auto="format"
       />
     </div>
     <base-sanity-block :blocks="aboutPage.content" />

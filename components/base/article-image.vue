@@ -1,11 +1,10 @@
 <template>
   <div :class="$style.frame">
-    <sanity-image
-      :asset-id="props.asset._ref"
-      :alt="props.alt"
+    <NuxtImg
+      :src="props._id"
+      :alt="props.altText"
       :class="$style.photo"
       loading="lazy"
-      auto="format"
     />
   </div>
 </template>

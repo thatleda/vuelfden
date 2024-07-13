@@ -1,30 +1,26 @@
 <template>
   <base-page-section v-if="article">
     <h1>{{ article.title }}</h1>
-    <sanity-image
+    <NuxtImg
       v-if="article.banner"
-      :alt="article.banner.alt"
-      :asset-id="article.banner.asset._ref"
-      w="750"
-      h="300"
-      fit="crop"
-      crop="center"
+      :alt="article.banner.altText"
+      :src="article.banner._id"
+      width="750"
       :class="$style.banner"
       loading="lazy"
-      auto="format"
     />
     <base-sanity-block :blocks="article.content" />
   </base-page-section>
 </template>
 
 <script lang="ts" setup>
-import type { SanityArticle } from '~/@types/sanity'
+import type { SanityPage } from '~/@types/sanity'
 
 const route = useRoute()
 const { slug } = route.params
 
-const query = groq`*[slug.current == $slug][0]`
-const { data: article } = useSanityQuery<SanityArticle>(query, { slug })
+const query = groq`*[slug.current == $slug][0]{_createdAt, _updatedAt, _id, content, excerpt, slug, title, "banner": banner.asset->{_id, _type, altText}}`
+const { data: article } = useSanityQuery<SanityPage>(query, { slug })
 useSeoMeta({
   description:
     article.value?.excerpt

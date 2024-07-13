@@ -1,14 +1,13 @@
 <template>
   <NuxtLink :to="`/ramblings/${article.slug.current}`">
     <div :class="$style.card">
-      <sanity-image
-        :asset-id="article.banner.asset._ref"
-        :alt="article.banner.alt"
-        w="100"
-        h="100"
-        fit="crop"
+      <NuxtImg
+        :src="article.banner._id"
+        :alt="article.banner.altText"
+        width="100"
+        height="100"
+
         loading="lazy"
-        auto="format"
       />
       <div :class="$style.description">
         <h3 :class="$style.title">
@@ -24,10 +23,10 @@
 <script lang="ts" setup>
 import { formatDistance } from 'date-fns'
 
-import type { SanityArticle } from '~/@types/sanity'
+import type { SanityPage } from '~/@types/sanity'
 
 interface ArticleProps {
-  article: SanityArticle
+  article: SanityPage
 }
 
 const { article } = defineProps<ArticleProps>()

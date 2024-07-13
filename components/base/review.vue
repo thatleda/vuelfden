@@ -1,15 +1,12 @@
 <template>
   <div :class="$style.card">
     <div :class="$style.frame">
-      <sanity-image
-        :asset-id="review.picture.asset._ref"
-        :alt="review.reviewer"
+      <NuxtImg
+        :src="review.picture._id"
+        :alt="review.picture.altText"
         :class="$style.picture"
-        auto="format"
-        crop="center"
-        fit="crop"
-        w="300"
-        h="300"
+        height="200"
+        sizes="100vw md:200px"
         loading="lazy"
       />
     </div>
@@ -40,18 +37,13 @@ const { review } = defineProps<ReviewProps>()
   white-space: normal;
   padding: 2rem 0;
 
-  @media (max-width: 700px) {
+  @media (max-width: 765px) {
     flex-direction: column;
   }
 }
 
 .picture {
   border-radius: var(--border-radius);
-  width: 200px;
-
-  @media (max-width: 700px) {
-    width: auto;
-  }
 }
 
 .frame {
@@ -59,6 +51,10 @@ const { review } = defineProps<ReviewProps>()
   justify-content: center;
   align-items: center;
   width: 200px;
+  height: 200px;
+  @media (max-width: 765px) {
+    width: 100vw;
+  }
 }
 
 .text {
@@ -66,7 +62,7 @@ const { review } = defineProps<ReviewProps>()
   width: 100%;
   padding-left: 2rem;
 
-  @media (max-width: 700px) {
+  @media (max-width: 765px) {
     display: grid;
     padding: 2rem 0;
   }
