@@ -1,14 +1,13 @@
 <template>
   <NuxtLink :to="`/ramblings/${article.slug.current}`">
     <div :class="$style.card">
-      <sanity-image
-        :asset-id="article.banner._id"
+      <NuxtImg
+        :src="article.banner._id"
         :alt="article.banner.altText"
-        w="100"
-        h="100"
-        fit="crop"
+        width="100"
+        height="100"
+
         loading="lazy"
-        auto="format"
       />
       <div :class="$style.description">
         <h3 :class="$style.title">

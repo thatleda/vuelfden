@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxtjs/sanity',
     '@nuxtjs/color-mode',
+    '@nuxt/image',
     '@vueuse/nuxt',
     '@nuxt/test-utils/module',
     '@nuxtjs/sitemap',
@@ -41,6 +42,21 @@ export default defineNuxtConfig({
   sanity: {
     dataset: process.env.NUXT_SANITY_DATASET,
     projectId: process.env.NUXT_SANITY_PROJECT_ID,
+  },
+
+  image: {
+    provider: 'sanity',
+    sanity: {
+      baseURL: 'https://cdn.sanity.io/',
+      projectId: process.env.NUXT_SANITY_PROJECT_ID,
+      modifiers: {
+        fit: 'cover',
+        crop: 'center',
+      },
+    },
+    alias: {
+      domain: 'https://cdn.sanity.io',
+    },
   },
 
   site: {

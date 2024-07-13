@@ -23,13 +23,12 @@
         </base-link-button>
       </div>
     </div>
-    <sanity-image
+    <NuxtImg
       :alt="book.cover.altText ?? book.title"
-      :asset-id="book.cover._id"
+      :src="book.cover._id"
       :class="$style.cover"
       loading="lazy"
-      auto="format"
-      w="300"
+
       width="300"
     />
   </div>

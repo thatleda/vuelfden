@@ -1,17 +1,13 @@
 <template>
   <base-page-section v-if="article">
     <h1>{{ article.title }}</h1>
-    <sanity-image
+    <NuxtImg
       v-if="article.banner"
       :alt="article.banner.altText"
-      :asset-id="article.banner._id"
-      w="750"
-      h="300"
-      fit="crop"
-      crop="center"
+      :src="article.banner._id"
+      width="750"
       :class="$style.banner"
       loading="lazy"
-      auto="format"
     />
     <base-sanity-block :blocks="article.content" />
   </base-page-section>
