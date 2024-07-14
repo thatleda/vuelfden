@@ -118,7 +118,7 @@ const { page } = defineProps<HeroProps>()
 }
 
 .introduction {
-  font-size: 2.625rem;
+  font-size: 2.5rem;
   line-height: 3rem;
   margin-bottom: 0;
   line-break: unset;
@@ -126,7 +126,7 @@ const { page } = defineProps<HeroProps>()
 }
 
 .purpose {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   line-height: 1rem;
   margin: 0;
   text-align: end;
