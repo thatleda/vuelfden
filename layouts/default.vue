@@ -122,7 +122,7 @@ h1 {
 
 h2 {
   font-family: Satisfy, cursive;
-  font-size: 3rem;
+  font-size: 2rem;
   margin: 0;
   color: var(--primary-color);
 }
