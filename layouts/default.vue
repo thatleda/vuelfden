@@ -40,8 +40,8 @@ html {
   --primary-color: #fafafa;
   --secondary-color: #055b01;
   --tertiary-color: #252525;
-  --text-color: rgba(255, 255, 255, 0.607);
-  --subtext-color: #aaaaaaa4;
+  --text-color: #aaaaaa;
+  --subtext-color: #6f6f6f;
   --background-color: #121212;
   --card-background-color: #202020;
   --scroll-bar-color: rgba(255, 255, 255, 0.5);
@@ -125,7 +125,7 @@ h2 {
   font-size: 2rem;
   font-weight: 200;
   margin: 0;
-  color: var(--primary-color);
+  text-shadow: black 5px 5px;
 }
 
 h3 {
