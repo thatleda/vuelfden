@@ -125,7 +125,7 @@ h2 {
   font-size: 2rem;
   font-weight: 200;
   margin: 0;
-  text-shadow: black 5px 5px;
+  text-shadow: var(--card-background-color) 5px 3px 5px;
 }
 
 h3 {
