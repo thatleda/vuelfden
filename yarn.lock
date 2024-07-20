@@ -16,9 +16,9 @@
     "@jridgewell/trace-mapping" "^0.3.24"
 
 "@antfu/eslint-config@^2.21.1":
-  version "2.23.0"
-  resolved "https://registry.yarnpkg.com/@antfu/eslint-config/-/eslint-config-2.23.0.tgz#a5d00e604398006eaf8076218d7aacfdf3ab2c26"
-  integrity sha512-+ibN5QHV78JFWRa+Y9ttHj75d8zOb0NQjWXWeRlVwr1+WSns8UnEPd40dqzzUXq0D76FJ9gkMAlzKeEyfubkTQ==
+  version "2.23.1"
+  resolved "https://registry.yarnpkg.com/@antfu/eslint-config/-/eslint-config-2.23.1.tgz#95a0d2721ac141d9b36924a1187566283ce7780d"
+  integrity sha512-ncp0CVLTvwKItpEPyI5WlUrN4B8J8ksXyi/L684KPCAlzk5CYugno01ApcqnHKlc951vz2NbXU7XdEpZfBl6HA==
   dependencies:
     "@antfu/eslint-plugin-unused-imports" "^4.0.0"
     "@antfu/install-pkg" "^0.3.3"
@@ -33,7 +33,7 @@
     eslint-plugin-command "^0.2.3"
     eslint-plugin-eslint-comments "^3.2.0"
     eslint-plugin-import-x "^3.0.1"
-    eslint-plugin-jsdoc "^48.7.0"
+    eslint-plugin-jsdoc "^48.8.3"
     eslint-plugin-jsonc "^2.16.0"
     eslint-plugin-markdown "^5.1.0"
     eslint-plugin-n "^17.9.0"
@@ -1921,13 +1921,13 @@
     "@typescript-eslint/types" "8.0.0-alpha.40"
     "@typescript-eslint/visitor-keys" "8.0.0-alpha.40"
 
-"@typescript-eslint/scope-manager@8.0.0-alpha.44":
-  version "8.0.0-alpha.44"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/scope-manager/-/scope-manager-8.0.0-alpha.44.tgz#952a9c4fa6af101bae278648c65cfbec1bbeb303"
-  integrity sha512-0w0pDILwfwRXSz9lQBXnJmeGaIbSBgl4vAw/lB2kCnOKYl2SXCVbdNOHPwxWigvQ08QVpuaKy+wEjbFKr9Xwfg==
+"@typescript-eslint/scope-manager@8.0.0-alpha.47":
+  version "8.0.0-alpha.47"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/scope-manager/-/scope-manager-8.0.0-alpha.47.tgz#f9288e82a760f3ea64112f1dbdba2acd6a8ab4b0"
+  integrity sha512-w2ihTDFyukIxOfyG3fgkU9exRQNFAcc5EPGKcqKZ3POK9b0XgsTIHduD9awSE/5rNW6soSJJYj19cA7JW5CH/Q==
   dependencies:
-    "@typescript-eslint/types" "8.0.0-alpha.44"
-    "@typescript-eslint/visitor-keys" "8.0.0-alpha.44"
+    "@typescript-eslint/types" "8.0.0-alpha.47"
+    "@typescript-eslint/visitor-keys" "8.0.0-alpha.47"
 
 "@typescript-eslint/type-utils@8.0.0-alpha.40":
   version "8.0.0-alpha.40"
@@ -1949,10 +1949,10 @@
   resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-8.0.0-alpha.40.tgz#5de45adba9672de10329b2fe044172b53149ce1c"
   integrity sha512-44mUq4VZVydxNlOM8Xtp/BXDkyfuvvjgPIBf7vRQDutrLDeNS0pJ9pcSloSbop5MwKLfJjBU+PbwnJPQM+DWNg==
 
-"@typescript-eslint/types@8.0.0-alpha.44":
-  version "8.0.0-alpha.44"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-8.0.0-alpha.44.tgz#1f8a6cfa6d36855511504a7a5caf30a572dd5657"
-  integrity sha512-FNBBUTJBNbIaTJhhBbSNxKv+qS8lrwwnpBg36APp5fhDRu8K/YFQZP/VEa19nKBz+8+QUK7R6wV9DHYjj56S7w==
+"@typescript-eslint/types@8.0.0-alpha.47":
+  version "8.0.0-alpha.47"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-8.0.0-alpha.47.tgz#9fab18253639be9506c1e977dd3bc3fef44e668b"
+  integrity sha512-Jb2toEU34iYev82/EQtJTcI3V4Whi6LMSm6Y/fNQPqRI8oYCzVuoEx95OZLLpiZOAK/F1CWXNZObvBg6/lM59g==
 
 "@typescript-eslint/typescript-estree@7.16.1":
   version "7.16.1"
@@ -1982,13 +1982,13 @@
     semver "^7.6.0"
     ts-api-utils "^1.3.0"
 
-"@typescript-eslint/typescript-estree@8.0.0-alpha.44":
-  version "8.0.0-alpha.44"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-8.0.0-alpha.44.tgz#e92204c87c8d4fc649952db94620d5dd0e0bf442"
-  integrity sha512-IyLELYPMFaleWpEVrcYhSfgFXFx4/505P4/vi9Dfp6s6T2xapyAdti6WL9iZbnXk72SL5M0wMp3V73nHn8ce1A==
+"@typescript-eslint/typescript-estree@8.0.0-alpha.47":
+  version "8.0.0-alpha.47"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-8.0.0-alpha.47.tgz#aeae9715ef8d5550d6a8d62ac0f6f1192109ed20"
+  integrity sha512-8RQlspUvCrHIs1DhxR0hCh9ZJrD63Hnpj4zGYQEhHvxWXcWD2uYFeP8n2Ulib1HumIZlLwJsXU+MV9uj44iXcQ==
   dependencies:
-    "@typescript-eslint/types" "8.0.0-alpha.44"
-    "@typescript-eslint/visitor-keys" "8.0.0-alpha.44"
+    "@typescript-eslint/types" "8.0.0-alpha.47"
+    "@typescript-eslint/visitor-keys" "8.0.0-alpha.47"
     debug "^4.3.4"
     globby "^11.1.0"
     is-glob "^4.0.3"
@@ -2017,14 +2017,14 @@
     "@typescript-eslint/typescript-estree" "7.16.1"
 
 "@typescript-eslint/utils@^8.0.0-alpha.34":
-  version "8.0.0-alpha.44"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/utils/-/utils-8.0.0-alpha.44.tgz#dff548f129800c6f89ec55f43042fa1e6f4ae850"
-  integrity sha512-gOSA4Yo1jufcOuV68yX3hzpwzufd/Ru6KYL04od1T1c5tt6cvN3i5D5Tc3BBJ3xYFE7ge821mJbUJMTc+BMaWg==
+  version "8.0.0-alpha.47"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/utils/-/utils-8.0.0-alpha.47.tgz#7857ffd862b0e374247b190f061bf55aef3434ca"
+  integrity sha512-RLvHFJstxMGMKzSKrdq7u1t6i2ZYQLR8E5BSwb2nIekLtMWHMxHbVef2dH4w3AoAEzUH3W0S/9jc3N0FLfOOYA==
   dependencies:
     "@eslint-community/eslint-utils" "^4.4.0"
-    "@typescript-eslint/scope-manager" "8.0.0-alpha.44"
-    "@typescript-eslint/types" "8.0.0-alpha.44"
-    "@typescript-eslint/typescript-estree" "8.0.0-alpha.44"
+    "@typescript-eslint/scope-manager" "8.0.0-alpha.47"
+    "@typescript-eslint/types" "8.0.0-alpha.47"
+    "@typescript-eslint/typescript-estree" "8.0.0-alpha.47"
 
 "@typescript-eslint/visitor-keys@7.16.1":
   version "7.16.1"
@@ -2042,12 +2042,12 @@
     "@typescript-eslint/types" "8.0.0-alpha.40"
     eslint-visitor-keys "^3.4.3"
 
-"@typescript-eslint/visitor-keys@8.0.0-alpha.44":
-  version "8.0.0-alpha.44"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/visitor-keys/-/visitor-keys-8.0.0-alpha.44.tgz#dbce20d4bee9431308c3c5c8f98799cfe9ca4d55"
-  integrity sha512-geWzLM8S6vYGdhA01mWJyGh2V/7VRzAmsD6ZKuc/rLkeJhYjvkMY0g0uMDw/7wmNLeRrpjHnL8HJklrpAlrb9g==
+"@typescript-eslint/visitor-keys@8.0.0-alpha.47":
+  version "8.0.0-alpha.47"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/visitor-keys/-/visitor-keys-8.0.0-alpha.47.tgz#1c71cb9ab9f3ad9e64b44a18a15c92a6442d7898"
+  integrity sha512-k2CQOfSBZXmAmM/WUoykxMZxEoA1+JHwbVkl2Tf2RimH11XrnFMyyx81XE/DCjbfLsHexNhHBhBj74Ga9kGlgg==
   dependencies:
-    "@typescript-eslint/types" "8.0.0-alpha.44"
+    "@typescript-eslint/types" "8.0.0-alpha.47"
     eslint-visitor-keys "^3.4.3"
 
 "@unhead/dom@1.9.16", "@unhead/dom@^1.9.16":
@@ -3922,10 +3922,10 @@ eslint-plugin-import-x@^3.0.1:
     stable-hash "^0.0.4"
     tslib "^2.6.2"
 
-eslint-plugin-jsdoc@^48.7.0:
-  version "48.7.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-48.7.0.tgz#1450e5bccc320dee01a8d24ac71651a539857692"
-  integrity sha512-5oiVf7Y+ZxGYQTlLq81X72n+S+hjvS/u0upAdbpPEeaIZILK3MKN8lm/6QqKioBjm/qZ0B5XpMQUtc2fUkqXAg==
+eslint-plugin-jsdoc@^48.8.3:
+  version "48.8.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-48.8.3.tgz#0a651bc0ab5b0732c39e12b26771fca78c830c1c"
+  integrity sha512-AtIvwwW9D17MRkM0Z0y3/xZYaa9mdAvJrkY6fU/HNUwGbmMtHVvK4qRM9CDixGVtfNrQitb8c6zQtdh6cTOvLg==
   dependencies:
     "@es-joy/jsdoccomment" "~0.46.0"
     are-docs-informative "^0.0.2"
@@ -3934,9 +3934,9 @@ eslint-plugin-jsdoc@^48.7.0:
     escape-string-regexp "^4.0.0"
     esquery "^1.6.0"
     parse-imports "^2.1.1"
-    semver "^7.6.2"
+    semver "^7.6.3"
     spdx-expression-parse "^4.0.0"
-    synckit "^0.9.0"
+    synckit "^0.9.1"
 
 eslint-plugin-jsonc@^2.16.0:
   version "2.16.0"
@@ -4531,9 +4531,9 @@ get-stream@^8.0.1:
   integrity sha512-VaUJspBffn/LMCJVoMvSAdmscJyS1auj5Zulnn5UoYcY531UWmdwhRWkcGKnGU93m5HSXP9LP2usOryrBtQowA==
 
 get-tsconfig@^4.7.0, get-tsconfig@^4.7.3:
-  version "4.7.5"
-  resolved "https://registry.yarnpkg.com/get-tsconfig/-/get-tsconfig-4.7.5.tgz#5e012498579e9a6947511ed0cd403272c7acbbaf"
-  integrity sha512-ZCuZCnlqNzjb4QprAzXKdpp/gh6KTxSJuw3IBsPnV/7fV4NxC9ckB+vPTt8w7fJA0TaSD7c55BR47JD6MEDyDw==
+  version "4.7.6"
+  resolved "https://registry.yarnpkg.com/get-tsconfig/-/get-tsconfig-4.7.6.tgz#118fd5b7b9bae234cc7705a00cd771d7eb65d62a"
+  integrity sha512-ZAqrLlu18NbDdRaHq+AKXzAmqIUPswPWKUchfytdAjiRFnCe5ojG2bstg6mRiZabkKfCoL/e98pbBELIV/YCeA==
   dependencies:
     resolve-pkg-maps "^1.0.0"
 
@@ -7503,7 +7503,7 @@ synckit@^0.6.0:
   dependencies:
     tslib "^2.3.1"
 
-synckit@^0.9.0:
+synckit@^0.9.1:
   version "0.9.1"
   resolved "https://registry.yarnpkg.com/synckit/-/synckit-0.9.1.tgz#febbfbb6649979450131f64735aa3f6c14575c88"
   integrity sha512-7gr8p9TQP6RAHusBOSLs46F4564ZrjV8xFmw5zCmgmhGUcw2hxsShhJ6CEiHQMgPDwAQ1fWHPM0ypc4RMAig4A==
