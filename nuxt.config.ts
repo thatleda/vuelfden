@@ -11,17 +11,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/test-utils/module',
     '@nuxtjs/sitemap',
-    [
-      '@nuxtjs/robots',
-      {
-        rules: {
-          BlankLine: true,
-          Comment: 'Come hither, little bots.',
-          Disallow: '',
-          UserAgent: '*',
-        },
-      },
-    ],
+    '@nuxtjs/robots',
   ],
 
   nitro: {
