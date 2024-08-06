@@ -23,7 +23,7 @@
     "date-fns": "3.6.0",
     "nuxt": "3.12.4",
     "vue": "3.4.36",
-    "vue-router": "4.4.2"
+    "vue-router": "4.4.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "2.24.1",
