@@ -6,7 +6,6 @@
         :alt="article.banner.altText"
         width="100"
         height="100"
-
         loading="lazy"
       />
       <div :class="$style.description">
