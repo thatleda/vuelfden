@@ -17,7 +17,7 @@
     "@nuxt/image": "1.7.0",
     "@nuxtjs/sanity": "1.12.1",
     "@nuxtjs/sitemap": "6.0.0-beta.4",
-    "@vueuse/core": "11.0.1",
+    "@vueuse/core": "11.0.3",
     "@vueuse/nuxt": "11.0.3",
     "date-fns": "3.6.0",
     "nuxt": "3.12.4",
