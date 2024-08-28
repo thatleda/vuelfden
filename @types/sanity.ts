@@ -20,6 +20,13 @@ export interface SanityLinkedImage {
   altText: string
 }
 
+export interface SanityBlockImage {
+  alt: string
+  asset: {
+    _ref: string
+  }
+}
+
 export interface SanityReview {
   _createdAt: string
   _id: string

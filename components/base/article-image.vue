@@ -1,8 +1,8 @@
 <template>
   <div :class="$style.frame">
     <NuxtImg
-      :src="props._id"
-      :alt="props.altText"
+      :src="props.asset._ref"
+      :alt="props.alt"
       :class="$style.photo"
       loading="lazy"
     />
@@ -10,9 +10,9 @@
 </template>
 
 <script lang="ts" setup>
-import type { SanityLinkedImage } from '~/@types/sanity'
+import type { SanityBlockImage } from '~/@types/sanity'
 
-const props = defineProps<SanityLinkedImage>()
+const props = defineProps<SanityBlockImage>()
 </script>
 
 <style module>
