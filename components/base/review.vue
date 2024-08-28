@@ -5,8 +5,8 @@
         :src="review.picture._id"
         :alt="review.picture.altText"
         :class="$style.picture"
+        width="200"
         height="200"
-        sizes="100vw md:200px"
         loading="lazy"
       />
     </div>
@@ -50,11 +50,6 @@ const { review } = defineProps<ReviewProps>()
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 200px;
-  @media (max-width: 765px) {
-    width: 100vw;
-  }
 }
 
 .text {
