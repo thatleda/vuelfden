@@ -18,8 +18,8 @@ importers:
         specifier: 1.12.1
         version: 1.12.1(magicast@0.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.21.2)
       '@nuxtjs/sitemap':
-        specifier: 6.0.0
-        version: 6.0.0(h3@1.12.0)(magicast@0.3.5)(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.2)(terser@5.31.6))(vue@3.5.0(typescript@5.5.4))
+        specifier: 6.0.1
+        version: 6.0.1(h3@1.12.0)(magicast@0.3.5)(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.2)(terser@5.31.6))(vue@3.5.0(typescript@5.5.4))
       '@vueuse/core':
         specifier: 11.0.3
         version: 11.0.3(vue@3.5.0(typescript@5.5.4))
@@ -954,8 +954,8 @@ packages:
   '@nuxtjs/sanity@1.12.1':
     resolution: {integrity: sha512-X9RAwOQN4AVAYSZGnZ/VyTK6pIfXidMYvEWhs3EuDhiPvODex+5kl/vdyGzV8IEW1P1TrIktuCi04kb/EDLuvg==}
 
-  '@nuxtjs/sitemap@6.0.0':
-    resolution: {integrity: sha512-onn/rkhizs/7zHi8C0r1w6L0B4HYxoL3zqcICadx7b4HdUT5m3w7/MGfBFZkGDspKJ6B4ywhpCODWvLiF2V+rw==}
+  '@nuxtjs/sitemap@6.0.1':
+    resolution: {integrity: sha512-cl+3wrEm14iNAn+Bx9pJAOfbn1GVtQOu2ZMQanr0KKRZtrxI479oVjuRgP31VjiiCDyayBc76OnCDd6KpnqHkw==}
     engines: {node: '>=18.0.0'}
 
   '@one-ini/wasm@0.1.1':
@@ -6037,10 +6037,10 @@ snapshots:
       - supports-color
       - svelte
 
-  '@nuxtjs/sitemap@6.0.0(h3@1.12.0)(magicast@0.3.5)(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.2)(terser@5.31.6))(vue@3.5.0(typescript@5.5.4))':
+  '@nuxtjs/sitemap@6.0.1(h3@1.12.0)(magicast@0.3.5)(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.2)(terser@5.31.6))(vue@3.5.0(typescript@5.5.4))':
     dependencies:
       '@nuxt/devtools-kit': 1.4.1(magicast@0.3.5)(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.2)(terser@5.31.6))
-      '@nuxt/kit': 3.13.0(magicast@0.3.5)(rollup@4.21.2)
+      '@nuxt/kit': 3.13.1(magicast@0.3.5)(rollup@4.21.2)
       chalk: 5.3.0
       defu: 6.1.4
       h3-compression: 0.3.2(h3@1.12.0)
