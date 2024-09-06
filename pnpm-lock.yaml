@@ -40,8 +40,8 @@ importers:
         version: 4.4.3(vue@3.5.3(typescript@5.5.4))
     devDependencies:
       '@antfu/eslint-config':
-        specifier: 3.2.2
-        version: 3.2.2(@typescript-eslint/utils@8.4.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(@vue/compiler-sfc@3.5.3)(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)(vitest@2.0.5(@types/node@22.5.2)(happy-dom@15.7.3)(terser@5.31.6))
+        specifier: 3.3.2
+        version: 3.3.2(@typescript-eslint/utils@8.4.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(@vue/compiler-sfc@3.5.3)(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)(vitest@2.0.5(@types/node@22.5.2)(happy-dom@15.7.3)(terser@5.31.6))
       '@nuxt/test-utils':
         specifier: 3.13.1
         version: 3.13.1(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.3)(vue@3.5.3(typescript@5.5.4)))(@vue/test-utils@2.4.6)(h3@1.12.0)(happy-dom@15.7.3)(magicast@0.3.5)(nitropack@2.9.7(magicast@0.3.5))(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.2)(terser@5.31.6))(vitest@2.0.5(@types/node@22.5.2)(happy-dom@15.7.3)(terser@5.31.6))(vue-router@4.4.3(vue@3.5.3(typescript@5.5.4)))(vue@3.5.3(typescript@5.5.4))
@@ -85,8 +85,8 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
-  '@antfu/eslint-config@3.2.2':
-    resolution: {integrity: sha512-GqRcfpBmuE2ATHEDwFJ36/H1IK4Zauwgdg4FjCakzdFV9AEAEBp+nVSDeJzeofIp9Zc/LI+fg+IGAITEXE0zpA==}
+  '@antfu/eslint-config@3.3.2':
+    resolution: {integrity: sha512-cHWbGP7CccmuUz/Aj6KORuLitkxuj2sONX+4PN+fvfJKTkVc2WXs9xlhO4AxhF1CU4Pn05M07OjDBXErqEmHzw==}
     hasBin: true
     peerDependencies:
       '@eslint-react/eslint-plugin': ^1.5.8
@@ -4989,7 +4989,7 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@antfu/eslint-config@3.2.2(@typescript-eslint/utils@8.4.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(@vue/compiler-sfc@3.5.3)(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)(vitest@2.0.5(@types/node@22.5.2)(happy-dom@15.7.3)(terser@5.31.6))':
+  '@antfu/eslint-config@3.3.2(@typescript-eslint/utils@8.4.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(@vue/compiler-sfc@3.5.3)(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)(vitest@2.0.5(@types/node@22.5.2)(happy-dom@15.7.3)(terser@5.31.6))':
     dependencies:
       '@antfu/install-pkg': 0.4.1
       '@clack/prompts': 0.7.0
