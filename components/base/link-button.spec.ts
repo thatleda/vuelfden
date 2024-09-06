@@ -4,8 +4,8 @@ import { renderSuspended } from '@nuxt/test-utils/runtime'
 import { screen } from '@testing-library/vue'
 import { expect, it } from 'vitest'
 
-import GitHub from '~/components/svg/github.vue'
 import LinkButton from '~/components/base/link-button.vue'
+import GitHub from '~/components/svg/github.vue'
 
 it('should render external link as a button', async () => {
   await renderSuspended(LinkButton, {
