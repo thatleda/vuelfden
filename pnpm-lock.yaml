@@ -49,8 +49,8 @@ importers:
         specifier: 3.4.4
         version: 3.4.4(magicast@0.3.5)(rollup@4.21.2)
       '@nuxtjs/robots':
-        specifier: 4.1.6
-        version: 4.1.6(magicast@0.3.5)(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.4)(terser@5.31.6))(vue@3.5.4(typescript@5.6.2))
+        specifier: 4.1.7
+        version: 4.1.7(magicast@0.3.5)(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.4)(terser@5.31.6))(vue@3.5.4(typescript@5.6.2))
       '@portabletext/types':
         specifier: 2.0.13
         version: 2.0.13
@@ -942,8 +942,8 @@ packages:
   '@nuxtjs/color-mode@3.4.4':
     resolution: {integrity: sha512-VSNJVGnRIjiGmfbMa0cN+rwNRowDRTL/wku/z5MpKSanVo3khIRitBNqNviso1l3T+LW0pLHeXBNp6L8g/l1EA==}
 
-  '@nuxtjs/robots@4.1.6':
-    resolution: {integrity: sha512-0U5+aEyVoW0j8JcbVaRj0upSi9qZm772epZWKw9sFH7Y8OGAHCM+4EfRXT5GhHSYjTpFc6zFKob+paVGyn3MHA==}
+  '@nuxtjs/robots@4.1.7':
+    resolution: {integrity: sha512-1rz2oyBNmpfIzqNG9LfGft+H8Wpp1BMmPyNhkm7BuG/jUXTBFaCh6HDeK6Otx2y53Z9JtCDhiIs/JHj/L4WLPw==}
 
   '@nuxtjs/sanity@1.12.1':
     resolution: {integrity: sha512-X9RAwOQN4AVAYSZGnZ/VyTK6pIfXidMYvEWhs3EuDhiPvODex+5kl/vdyGzV8IEW1P1TrIktuCi04kb/EDLuvg==}
@@ -6010,7 +6010,7 @@ snapshots:
       - supports-color
       - webpack-sources
 
-  '@nuxtjs/robots@4.1.6(magicast@0.3.5)(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.4)(terser@5.31.6))(vue@3.5.4(typescript@5.6.2))':
+  '@nuxtjs/robots@4.1.7(magicast@0.3.5)(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.4)(terser@5.31.6))(vue@3.5.4(typescript@5.6.2))':
     dependencies:
       '@nuxt/devtools-kit': 1.4.1(magicast@0.3.5)(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.4)(terser@5.31.6))
       '@nuxt/kit': 3.13.1(magicast@0.3.5)(rollup@4.21.2)
