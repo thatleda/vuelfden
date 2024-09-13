@@ -46,8 +46,8 @@ importers:
         specifier: 3.13.1
         version: 3.13.1(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.4)(vue@3.5.4(typescript@5.6.2)))(@vue/test-utils@2.4.6)(h3@1.12.0)(happy-dom@15.7.4)(magicast@0.3.5)(nitropack@2.9.7(magicast@0.3.5))(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.4)(terser@5.31.6))(vitest@2.1.0(@types/node@22.5.4)(happy-dom@15.7.4)(terser@5.31.6))(vue-router@4.4.3(vue@3.5.4(typescript@5.6.2)))(vue@3.5.4(typescript@5.6.2))
       '@nuxtjs/color-mode':
-        specifier: 3.4.4
-        version: 3.4.4(magicast@0.3.5)(rollup@4.21.2)
+        specifier: 3.5.0
+        version: 3.5.0(magicast@0.3.5)(rollup@4.21.2)
       '@nuxtjs/robots':
         specifier: 4.1.7
         version: 4.1.7(magicast@0.3.5)(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.4)(terser@5.31.6))(vue@3.5.4(typescript@5.6.2))
@@ -939,8 +939,8 @@ packages:
     peerDependencies:
       vue: ^3.3.4
 
-  '@nuxtjs/color-mode@3.4.4':
-    resolution: {integrity: sha512-VSNJVGnRIjiGmfbMa0cN+rwNRowDRTL/wku/z5MpKSanVo3khIRitBNqNviso1l3T+LW0pLHeXBNp6L8g/l1EA==}
+  '@nuxtjs/color-mode@3.5.0':
+    resolution: {integrity: sha512-vM14Gx05X+nqRXN0h48WqcxQ6YQVCKyobU04KIzqlRrzlpRA5bbuHpHEg+X0vGJCq2JX0skK1rBqvrQv3DVDPw==}
 
   '@nuxtjs/robots@4.1.7':
     resolution: {integrity: sha512-1rz2oyBNmpfIzqNG9LfGft+H8Wpp1BMmPyNhkm7BuG/jUXTBFaCh6HDeK6Otx2y53Z9JtCDhiIs/JHj/L4WLPw==}
@@ -6015,7 +6015,7 @@ snapshots:
       - vue-tsc
       - webpack-sources
 
-  '@nuxtjs/color-mode@3.4.4(magicast@0.3.5)(rollup@4.21.2)':
+  '@nuxtjs/color-mode@3.5.0(magicast@0.3.5)(rollup@4.21.2)':
     dependencies:
       '@nuxt/kit': 3.13.1(magicast@0.3.5)(rollup@4.21.2)
       pathe: 1.1.2
