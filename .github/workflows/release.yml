@@ -1,8 +1,8 @@
-name: Pull Request CI
+name: Release CI
 
 on:
   push:
-    branches-ignore:
+    branches:
       - main
 
 jobs:
@@ -24,9 +24,5 @@ jobs:
         run: pnpm install
       - name: Build production bundle
         run: pnpm build
-      - name: Lint files
-        run: pnpm lint:ci
-      - name: Run tests
-        run: pnpm test
-      - name: Deploy preview
-        run: pnpm run deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}} --context deploy-preview --json
+      - name: Deploy to production
+        run: pnpm run deploy --prod --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}}

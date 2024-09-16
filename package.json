@@ -1,7 +1,8 @@
 {
-  "name": "nuxt-app",
+  "name": "vuelfden",
   "type": "module",
   "private": true,
+  "packageManager": "pnpm@9.10.0",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -10,7 +11,8 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint . --fix",
     "lint:ci": "eslint .",
-    "test": "vitest run"
+    "test": "vitest run",
+    "deploy": "netlify deploy"
   },
   "dependencies": {
     "@nuxt/fonts": "0.8.0",
