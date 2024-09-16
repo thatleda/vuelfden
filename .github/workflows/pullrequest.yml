@@ -30,11 +30,13 @@ jobs:
         run: pnpm test
       - name: Deploy preview
         id: netlify
-        run: echo $(pnpm run deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}} --json) >> $GITHUB_OUTPUT
+        run: |
+          echo "OUTPUT=$(pnpm run deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}} --json)" 
+          $OUTPUT >> "$GITHUB_OUTPUT"
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v12
         with:
           urls: |
-            ${{ fromJson(steps.netlify.outputs).deploy_url }}
+            ${{ fromJson(steps.netlify.outputs.output).deploy_url }}
           budgetPath: ./budget.json
           uploadArtifacts: true
