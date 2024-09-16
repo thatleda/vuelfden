@@ -27,8 +27,8 @@ importers:
         specifier: 11.0.3
         version: 11.0.3(magicast@0.3.5)(nuxt@3.13.1(@netlify/blobs@7.4.0)(@parcel/watcher@2.4.1)(@types/node@22.5.5)(eslint@9.10.0(jiti@1.21.6))(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.21.3)(terser@5.32.0)(typescript@5.6.2)(vite@5.4.5(@types/node@22.5.5)(terser@5.32.0)))(rollup@4.21.3)(vue@3.5.4(typescript@5.6.2))
       date-fns:
-        specifier: 3.6.0
-        version: 3.6.0
+        specifier: 4.0.0
+        version: 4.0.0
       netlify-cli:
         specifier: 17.36.0
         version: 17.36.0(@types/node@22.5.5)(ioredis@5.4.1)(picomatch@4.0.2)
@@ -3096,8 +3096,8 @@ packages:
     resolution: {integrity: sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==}
     engines: {node: '>= 12'}
 
-  date-fns@3.6.0:
-    resolution: {integrity: sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==}
+  date-fns@4.0.0:
+    resolution: {integrity: sha512-6K33+I8fQ5otvHgLIvKK1xmMbLAh0pduyrx7dwMXKiGYeoWhmk6M3Zoak9n7bXHMJQlHq1yqmdGy1QxKddJjUA==}
 
   date-time@3.1.0:
     resolution: {integrity: sha512-uqCUKXE5q1PNBXjPqvwhwJf9SwMoAHBgWJ6DcrnS5o+W2JOiIILl0JEdVD8SGujrNS02GGxgwAg2PN2zONgtjg==}
@@ -11149,7 +11149,7 @@ snapshots:
 
   data-uri-to-buffer@4.0.1: {}
 
-  date-fns@3.6.0: {}
+  date-fns@4.0.0: {}
 
   date-time@3.1.0:
     dependencies:
