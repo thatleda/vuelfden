@@ -1,9 +1,12 @@
-name: Vulfden CI
+name: Pull Request CI
 
-on: [push]
+on:
+  push:
+    branches-ignore:
+      - main
 
 jobs:
-  test:
+  preview:
     runs-on: ubuntu-latest
     env:
       NUXT_SANITY_PROJECT_ID: brvct6ie
@@ -17,7 +20,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version-file: .nvmrc
+          node-version: 20.17.0
           cache: pnpm
       - name: Run install
         run: pnpm install
@@ -27,3 +30,7 @@ jobs:
         run: pnpm lint:ci
       - name: Run tests
         run: pnpm test
+      - name: Deploy preview
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}}
