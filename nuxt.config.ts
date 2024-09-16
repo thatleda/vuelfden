@@ -15,16 +15,17 @@ export default defineNuxtConfig({
   ],
 
   nitro: {
+    preset: 'netlify',
     prerender: {
       crawlLinks: true,
     },
   },
 
   routeRules: {
-    '/': { swr: true },
+    '/': { isr: true },
     '/imprint': { prerender: true },
     '/privacy': { prerender: true },
-    '/ramblings': { swr: true },
+    '/ramblings': { isr: true },
     '/ramblings/**': { prerender: true },
     '/sitemap.xml': { prerender: true },
   },
