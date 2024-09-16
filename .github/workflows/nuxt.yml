@@ -1,9 +1,12 @@
-name: Vulfden CI
+name: Pull Request CI
 
-on: [push]
+on: 
+  pull_request:
+    types:
+      - opened
 
 jobs:
-  test:
+  test-and-preview:
     runs-on: ubuntu-latest
     env:
       NUXT_SANITY_PROJECT_ID: brvct6ie
@@ -27,3 +30,18 @@ jobs:
         run: pnpm lint:ci
       - name: Run tests
         run: pnpm test
+      - uses: nelonoel/branch-name@v1.0.1
+      - name: Deploy to Netlify
+        uses: jsmrcaga/action-netlify-deploy@v2.2.0
+        with: 
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          deploy_alias: ${{ env.BRANCH_NAME }}
+          build_directory: '.output'
+      - name: Status check
+        uses: Sibz/github-status-action@v1.1.1
+        with:
+          authToken: ${{ secrets.GITHUB_TOKEN }}
+          context: Netlify preview
+          state: success
+          target_url: ${{ env.NETLIFY_PREVIEW_URL }}
