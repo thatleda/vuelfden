@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@nuxt/fonts':
-        specifier: 0.7.2
-        version: 0.7.2(@netlify/blobs@7.4.0)(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(terser@5.32.0))
+        specifier: 0.8.0
+        version: 0.8.0(@netlify/blobs@7.4.0)(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(terser@5.32.0))
       '@nuxt/image':
         specifier: 1.8.0
         version: 1.8.0(@netlify/blobs@7.4.0)(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.21.3)
@@ -1390,8 +1390,8 @@ packages:
     peerDependencies:
       vite: '*'
 
-  '@nuxt/fonts@0.7.2':
-    resolution: {integrity: sha512-Tu3Wn1agG96khZaRwFdpYAhr+HltUKWxXXAnK6qvhLWbFbVigEPyQOY352KZ4UjFlTlNxUz9hphwvDNioP3vUQ==}
+  '@nuxt/fonts@0.8.0':
+    resolution: {integrity: sha512-FpgbgIPO+q0oquFXZIpQoxFH7dNxBUvYJGOeeKLJuXgF1JARCaDDZ+wLQT5i70P2O42Ll+sliZTTG1INW7ozAg==}
 
   '@nuxt/image@1.8.0':
     resolution: {integrity: sha512-GBbORch+ZfWJ0KB8PaXABsPjaiEXB4B4plcpAUVNCdzKZi2qQ4beRnEXfAbtAWPUPefj3rgCG7b9AqAe51Qlzw==}
@@ -8953,7 +8953,7 @@ snapshots:
       - vue
       - webpack-sources
 
-  '@nuxt/fonts@0.7.2(@netlify/blobs@7.4.0)(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(terser@5.32.0))':
+  '@nuxt/fonts@0.8.0(@netlify/blobs@7.4.0)(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(terser@5.32.0))':
     dependencies:
       '@nuxt/devtools-kit': 1.4.2(magicast@0.3.5)(rollup@4.21.3)(vite@5.4.5(@types/node@22.5.5)(terser@5.32.0))
       '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.21.3)

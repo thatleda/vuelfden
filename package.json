@@ -13,7 +13,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@nuxt/fonts": "0.7.2",
+    "@nuxt/fonts": "0.8.0",
     "@nuxt/image": "1.8.0",
     "@nuxtjs/sanity": "1.12.1",
     "@nuxtjs/sitemap": "6.0.1",
