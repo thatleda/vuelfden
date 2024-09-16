@@ -25,8 +25,5 @@
 <script lang="ts" setup>
 import type { SVGProps } from '~/@types/svg'
 
-const { height, width, fill, ...svgAttributes } = withDefaults(defineProps<SVGProps>(), {
-  height: '1rem',
-  width: '1rem',
-})
+const { height = '1rem', width = '1rem', fill, ...svgAttributes } = defineProps<SVGProps>()
 </script>

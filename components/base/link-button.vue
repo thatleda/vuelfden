@@ -1,8 +1,8 @@
 <template>
   <NuxtLink
     :class="[
-      props.variant === 'primary' && $style.primary,
-      props.variant === 'secondary' && $style.secondary,
+      variant === 'primary' && $style.primary,
+      variant === 'secondary' && $style.secondary,
       $style.button,
     ]"
     v-bind="nuxtLinkProps"
@@ -16,19 +16,18 @@ import type { NuxtLinkProps } from '#app'
 
 interface ButtonProps extends NuxtLinkProps {
   variant?: 'primary' | 'secondary'
+  download?: boolean
 }
 
-const props = withDefaults(defineProps<ButtonProps>(), {
-  download: undefined,
-  to: '/',
-  variant: undefined,
-  prefetch: true,
-})
+const { download, to = '/', variant, prefetch = true } = defineProps<ButtonProps>()
 
-const nuxtLinkProps = props.to.toString().startsWith('/')
-  ? props
+const nuxtLinkProps = to.toString().startsWith('/')
+  ? { download, to, variant, prefetch }
   : {
-      ...props,
+      download,
+      to,
+      variant,
+      prefetch,
       external: true,
       target: '_blank',
     }
