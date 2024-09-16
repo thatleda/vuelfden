@@ -1,0 +1,47 @@
+name: Pull Request CI
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  test-and-preview:
+    runs-on: ubuntu-latest
+    env:
+      NUXT_SANITY_PROJECT_ID: brvct6ie
+      NUXT_SANITY_DATASET: production
+      URL: https://leda.fyi
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 9.7.0
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - name: Run install
+        run: pnpm install
+      - name: Build production bundle
+        run: pnpm build
+      - name: Lint files
+        run: pnpm lint:ci
+      - name: Run tests
+        run: pnpm test
+      - uses: nelonoel/branch-name@v1.0.1
+      - name: Deploy to Netlify
+        uses: jsmrcaga/action-netlify-deploy@v2.2.0
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          deploy_alias: ${{ env.BRANCH_NAME }}
+          build_directory: .output
+      - name: Status check
+        uses: Sibz/github-status-action@v1.1.1
+        with:
+          authToken: ${{ secrets.GITHUB_TOKEN }}
+          context: Netlify preview
+          state: success
+          target_url: ${{ env.NETLIFY_PREVIEW_URL }}
