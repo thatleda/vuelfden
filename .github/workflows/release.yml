@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  preview:
+  deploy:
     runs-on: ubuntu-latest
     env:
       NUXT_SANITY_PROJECT_ID: brvct6ie
