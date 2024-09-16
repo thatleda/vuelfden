@@ -29,12 +29,13 @@ jobs:
       - name: Run tests
         run: pnpm test
       - name: Deploy preview
+        id: netlify
         run: pnpm run deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}} --json
-      # - name: Audit URLs using Lighthouse
-      #   uses: treosh/lighthouse-ci-action@v12
-      #   with:
-      #     urls: |
-      #       ${{ steps.netlify.outputs.url }}
-      #       ${{ steps.netlify.outputs.url }}/products/
-      #     budgetPath: ./budget.json
-      #     uploadArtifacts: true
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            ${{ steps.netlify.outputs.url }}
+            ${{ steps.netlify.outputs.url }}/products/
+          budgetPath: ./budget.json
+          uploadArtifacts: true
