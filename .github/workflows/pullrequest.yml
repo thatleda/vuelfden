@@ -35,7 +35,6 @@ jobs:
         uses: treosh/lighthouse-ci-action@v12
         with:
           urls: |
-            ${{ steps.netlify.outputs.url }}
-            ${{ steps.netlify.outputs.url }}/products/
+            ${{ steps.netlify.outputs.deploy_url }}
           budgetPath: ./budget.json
           uploadArtifacts: true
