@@ -30,9 +30,7 @@ jobs:
         run: pnpm lint:ci
       - name: Run tests
         run: pnpm test
-      - name: print branch name
-        run: echo ${{github.ref_name}}
-      # - name: Deploy preview
-      #   uses: netlify/actions/cli@master
-      #   with:
-      #     args: deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}}
+      - name: Deploy preview
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}}
