@@ -31,13 +31,11 @@ jobs:
       - name: Deploy preview
         id: netlify
         run: |
-          echo "deploy=$(pnpm run deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}} --json)" >> $GITHUB_OUTPUT
-      - name: Debug
-        run: echo "${{steps.netlify.outputs.deploy}}"
-      # - name: Audit URLs using Lighthouse
-      #   uses: treosh/lighthouse-ci-action@v12
-      #   with:
-      #     urls: |
-      #       ${{ fromJson(steps.netlify.outputs.deploy).deploy_url }}
-      #     budgetPath: ./budget.json
-      #     uploadArtifacts: true
+          echo "deploy=$(pnpm run deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}} --json | grep 'deploy_url')" >> $GITHUB_OUTPUT
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            ${{ steps.netlify.outputs.deploy.deploy_url }}
+          budgetPath: ./budget.json
+          uploadArtifacts: true
