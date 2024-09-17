@@ -31,9 +31,9 @@ jobs:
       - name: Deploy preview
         id: netlify
         run: |
-          echo "deployment=$(pnpm run deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}} --json | grep -zPo '(?s){.*?}')" >> $GITHUB_OUTPUT
+          $(pnpm run deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}} --json | grep -zPo '(?s){.*?}') >> $GITHUB_ENV
       - name: Debug
-        run: echo "${{toJson(steps.netlify.outputs.deployment).deploy_url}}"
+        run: echo "$deploy_url"
       # - name: Audit URLs using Lighthouse
       #   uses: treosh/lighthouse-ci-action@v12
       #   with:
