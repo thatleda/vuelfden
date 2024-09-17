@@ -29,13 +29,20 @@ jobs:
       - name: Run tests
         run: pnpm test
       - name: Deploy preview
-        id: netlify
+        id: deploy
         run: |
-          echo "$(pnpm run deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}} --json | grep 'deploy_url')" >> $GITHUB_STEP_SUMMARY
-      # - name: Audit URLs using Lighthouse
-      #   uses: treosh/lighthouse-ci-action@v12
-      #   with:
-      #     urls: |
-      #       ${{ steps.netlify.outputs.deploy.deploy_url }}
-      #     budgetPath: ./budget.json
-      #     uploadArtifacts: true
+          echo "$(pnpm run deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}} --json | grep -zPo '(?s){.*?}')" >> $GITHUB_OUTPUT
+      - name: waiting for Netlify Preview
+        uses: probablyup/wait-for-netlify-action@3.2.0
+        id: netlify
+        with:
+          site_id: ${{ secrets.NETLIFY_SITE_ID }} # See Settings > Site Details > General in the Netlify UI
+        env:
+          NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            ${{ steps.netlify.outputs.url }}
+          budgetPath: ./budget.json
+          uploadArtifacts: true
