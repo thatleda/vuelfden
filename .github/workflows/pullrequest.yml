@@ -29,4 +29,4 @@ jobs:
       - name: Run tests
         run: pnpm test
       - name: Deploy preview
-        run: pnpm run deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}} --context deploy-preview --json
+        run: pnpm run deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}}
