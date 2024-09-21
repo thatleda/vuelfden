@@ -32,13 +32,6 @@ jobs:
         id: deploy
         run: |
           echo "$(pnpm run deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}} --message "Deploying branch preview for '${{github.ref_name}}'" --json | grep -zPo '(?s){.*?}')" >> $GITHUB_STEP_SUMMARY
-      - name: waiting for Netlify Preview
-        uses: probablyup/wait-for-netlify-action@3.2.0
-        id: netlify
-        with:
-          site_id: ${{ secrets.NETLIFY_SITE_ID }} # See Settings > Site Details > General in the Netlify UI
-        env:
-          NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
       - name: Audit the preview URL using Lighthouse
         uses: treosh/lighthouse-ci-action@v12
         with:
