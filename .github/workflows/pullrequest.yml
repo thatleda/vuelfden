@@ -31,7 +31,7 @@ jobs:
       - name: Deploy preview
         id: deploy
         run: |
-          echo "$(pnpm run deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}} --json | grep -zPo '(?s){.*?}')" >> $GITHUB_STEP_SUMMARY
+          echo "$(pnpm run deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}} --message "Deploying branch preview for '${{github.ref_name}}'" --json | grep -zPo '(?s){.*?}')" >> $GITHUB_STEP_SUMMARY
       - name: waiting for Netlify Preview
         uses: probablyup/wait-for-netlify-action@3.2.0
         id: netlify
