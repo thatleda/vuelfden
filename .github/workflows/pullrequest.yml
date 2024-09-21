@@ -36,11 +36,10 @@ jobs:
           --site ${{ secrets.NETLIFY_SITE_ID }}
           --auth ${{ secrets.NETLIFY_TOKEN }}
           --message "Deploying branch preview for '${{ github.ref_name }}'"
-          --json
-          | awk '/deploy_url/ {print $2}' # cut the line with deploy_url on it
-          | sed 's/\"//g' # remove all ", replace them with an empty string
-          | sed 's/\,//') # replace the comma with an empty string
-          >> $GITHUB_OUTPUT # save to outputs
+          --json | 
+          awk '/deploy_url/ {print $2}' | # cut the line with deploy_url on it
+          sed 's/\"//g' | # remove all ", replace them with an empty string
+          sed 's/\,//') >> $GITHUB_OUTPUT # replace the comma with an empty string
       - run: echo ${{ steps.deploy.outputs.deploy_url }}
       - name: Audit the preview URL using Lighthouse
         uses: treosh/lighthouse-ci-action@v12
