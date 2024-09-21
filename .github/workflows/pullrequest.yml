@@ -43,7 +43,7 @@ jobs:
       - name: Job successful feedback
         run: |
           echo '### Lighthouse check :white_check_mark:' >> $GITHUB_STEP_SUMMARY
-          echo "Triggered by **${{ github.actor	}}** ∙ deployed from **${{ github.ref_name }}**" >> $GITHUB_STEP_SUMMARY
+          echo "Triggered by **${{ github.actor }}** ∙ deployed from **${{ github.ref_name }}**" >> $GITHUB_STEP_SUMMARY
           echo ' ' >> $GITHUB_STEP_SUMMARY
           echo "**Results:**" >> $GITHUB_STEP_SUMMARY
           echo "Performance: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.performance }}" >> $GITHUB_STEP_SUMMARY
