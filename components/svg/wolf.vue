@@ -78,11 +78,7 @@ interface WolfProps extends SVGProps {
   mirror?: boolean
 }
 
-const { mirror, width, height, ...svgAttributes } = withDefaults(defineProps<WolfProps>(), {
-  height: '50px',
-  mirror: false,
-  width: '50px',
-})
+const { mirror = false, width = '50px', height = '50px', ...svgAttributes } = defineProps<WolfProps>()
 </script>
 
 <style module>
