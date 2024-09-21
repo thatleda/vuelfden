@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://leda.fyi">
-    <img alt="Howling wolf logo" src="https://leda.fyi/images/wolf.jpeg" width="60" />
+    <img alt="Howling wolf logo" src="https://leda.fyi/images/wolf.jpeg" width="100" />
   </a>
 </p>
 <h1 align="center">
@@ -12,7 +12,7 @@
 Make sure to install the dependencies:
 
 ```bash
-yarn install --frozen-lockfile
+pnpm install --frozen-lockfile
 ```
 
 ## Development Server
@@ -20,12 +20,12 @@ yarn install --frozen-lockfile
 Start the development server on `http://localhost:3000`:
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 Tests can be run with:
 ```bash
-yarn test
+pnpm test
 ```
 
 Apart from that and the .env file I will not provide, thank you very much, check out the real thing at:
