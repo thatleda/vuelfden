@@ -32,10 +32,22 @@ jobs:
         id: deploy
         run: |
           echo "URL=$(pnpm run deploy --alias ${{ github.ref_name }} --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_TOKEN }} --message "Deploying branch preview for '${{ github.ref_name }}'" --json | awk '/deploy_url/ {print $2}' | sed 's/\"//g' | sed 's/\,//')" >> $GITHUB_OUTPUT
-      - run: echo ${{ steps.deploy.outputs.url }}
+      - run: echo "Published preview at ${{ steps.deploy.outputs.url }}" >> $GITHUB_STEP_SUMMARY
       - name: Audit the preview URL using Lighthouse
+        id: lighthouse
         uses: treosh/lighthouse-ci-action@v12
         with:
           urls: ${{ steps.deploy.outputs.url }}
-          budgetPath: ./budget.json
           uploadArtifacts: true
+          temporaryPublicStorage: true
+      - name: Job successful feedback
+        run: |
+          echo '### Lighthouse check :white_check_mark:' >> $GITHUB_STEP_SUMMARY
+          echo "Triggered by **${{ github.actor	}}** ∙ deployed from **${{ github.ref_name }}**" >> $GITHUB_STEP_SUMMARY
+          echo ' ' >> $GITHUB_STEP_SUMMARY
+          echo "**Results:**" >> $GITHUB_STEP_SUMMARY
+          echo "Performance: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.performance }}" >> $GITHUB_STEP_SUMMARY
+          echo "Accessibility: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.accessibility }}" >> $GITHUB_STEP_SUMMARY
+          echo "Best Practices: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.best-practices }}" >> $GITHUB_STEP_SUMMARY
+          echo "SEO: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.seo }}" >> $GITHUB_STEP_SUMMARY
+          echo "PWA: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.pwa }}" >> $GITHUB_STEP_SUMMARY
