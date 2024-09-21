@@ -31,11 +31,11 @@ jobs:
       - name: Deploy preview
         id: deploy
         run: |
-          summary=$(pnpm run deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}} --message "Deploying branch preview for '${{github.ref_name}}'" --json | grep -zPo '.netlify\.app') >> $GITHUB_OUTPUT
+          deploy_url=$(pnpm run deploy --alias ${{github.ref_name}} --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_TOKEN}} --message "Deploying branch preview for '${{github.ref_name}}'" --json | grep -zPo '.netlify\.app') >> $GITHUB_OUTPUT
       - name: Audit the preview URL using Lighthouse
         uses: treosh/lighthouse-ci-action@v12
         with:
           urls: |
-            ${{ fromJson(steps.deploy.outputs.summary).deploy_url }}
+            ${{ steps.deploy.outputs.deploy_url }}
           budgetPath: ./budget.json
           uploadArtifacts: true
