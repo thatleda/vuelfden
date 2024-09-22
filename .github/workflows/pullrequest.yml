@@ -1,9 +1,7 @@
 name: Pull Request CI
 
 on:
-  push:
-    branches-ignore:
-      - main
+  pull_request_target
 
 jobs:
   preview:
