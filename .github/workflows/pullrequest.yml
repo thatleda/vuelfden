@@ -1,8 +1,7 @@
 name: Pull Request CI
 
 on:
-  pull_request_target:
-    types: [opened, reopened, synchronize, edited, ready_for_review]
+  pull_request:
 
 jobs:
   preview:
