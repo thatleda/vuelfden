@@ -39,14 +39,14 @@ jobs:
         with:
           urls: ${{ steps.deploy.outputs.url }}
           temporaryPublicStorage: true
-      - name: Job successful feedback
-        run: |
-          echo '### Lighthouse check :white_check_mark:' >> $GITHUB_STEP_SUMMARY
-          echo "Triggered by **${{ github.actor }}** ∙ deployed from **${{ github.ref_name }}**" >> $GITHUB_STEP_SUMMARY
-          echo ' ' >> $GITHUB_STEP_SUMMARY
-          echo "**Results:**" >> $GITHUB_STEP_SUMMARY
-          echo "Performance: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.performance }}" >> $GITHUB_STEP_SUMMARY
-          echo "Accessibility: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.accessibility }}" >> $GITHUB_STEP_SUMMARY
-          echo "Best Practices: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.best-practices }}" >> $GITHUB_STEP_SUMMARY
-          echo "SEO: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.seo }}" >> $GITHUB_STEP_SUMMARY
-          echo "PWA: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.pwa }}" >> $GITHUB_STEP_SUMMARY
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            ### Lighthouse check :white_check_mark:
+            Triggered by **${{ github.actor }}** ∙ deployed from **${{ github.ref_name }}** to ${{ steps.deploy.outputs.url }}
+            **Results:**
+            Performance: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.performance }}
+            Accessibility: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.accessibility }}
+            Best Practices: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.best-practices }}
+            SEO: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.seo }}
