@@ -4,8 +4,8 @@ on: pull_request
 
 jobs:
   preview:
-    permissions: 
-      pull-requests: write 
+    permissions:
+      pull-requests: write
     runs-on: ubuntu-latest
     env:
       NUXT_SANITY_PROJECT_ID: brvct6ie
