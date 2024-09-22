@@ -100,7 +100,6 @@ const { page } = defineProps<HeroProps>()
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 30vh;
   box-sizing: border-box;
   margin: 0 auto;
 
@@ -126,7 +125,7 @@ const { page } = defineProps<HeroProps>()
 }
 
 .purpose {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   line-height: 1rem;
   margin: 0;
   text-align: end;

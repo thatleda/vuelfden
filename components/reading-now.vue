@@ -28,7 +28,6 @@
       :src="book.cover._id"
       :class="$style.cover"
       loading="lazy"
-
       width="300"
     />
   </div>

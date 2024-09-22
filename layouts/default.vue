@@ -121,11 +121,10 @@ h1 {
 }
 
 h2 {
-  font-family: Satisfy, cursive;
-  font-size: 2rem;
-  font-weight: 200;
+  font-family: "Oooh Baby", cursive;
+  font-size: 3rem;
   margin: 0;
-  text-shadow: var(--card-background-color) 5px 3px 5px;
+  color: var(--text-color);
 }
 
 h3 {
@@ -133,11 +132,10 @@ h3 {
 }
 
 em {
-  font-family: Satisfy, cursive;
+  font-family: "Oooh Baby", cursive;
   font-style: normal;
-  margin: 0 0rem;
-  line-height: 0.8rem;
-  font-size: 1.5rem;
+  line-height: 1rem;
+  font-size: 1.75rem;
   color: var(--primary-color);
 }
 
