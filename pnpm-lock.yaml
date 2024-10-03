@@ -12,8 +12,8 @@ importers:
         specifier: 0.9.2
         version: 0.9.2(@netlify/blobs@7.4.0)(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.22.5)(vite@5.4.8(@types/node@22.7.4)(terser@5.34.1))
       '@nuxt/image':
-        specifier: 1.8.0
-        version: 1.8.0(@netlify/blobs@7.4.0)(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.22.5)
+        specifier: 1.8.1
+        version: 1.8.1(@netlify/blobs@7.4.0)(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.22.5)
       '@nuxtjs/sanity':
         specifier: 1.12.1
         version: 1.12.1(magicast@0.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.22.5)
@@ -1530,8 +1530,8 @@ packages:
   '@nuxt/fonts@0.9.2':
     resolution: {integrity: sha512-RMekoJh5AIaKG3tu0YaCdru3eTqNdXn6v7ggh5cdG4rWugr59HzihZ6n4C2Pkkv6nxOP4DOhxxdOwcZwXZM5vQ==}
 
-  '@nuxt/image@1.8.0':
-    resolution: {integrity: sha512-GBbORch+ZfWJ0KB8PaXABsPjaiEXB4B4plcpAUVNCdzKZi2qQ4beRnEXfAbtAWPUPefj3rgCG7b9AqAe51Qlzw==}
+  '@nuxt/image@1.8.1':
+    resolution: {integrity: sha512-qNj7OCNsoGcutGOo1R2PYp4tQ/6uD77aSakyDoVAmLSRJBmhFTnT2+gIqVD95JMmkSHgYhmSX4gGxnaQK/t1cw==}
     engines: {node: ^14.16.0 || >=16.11.0}
 
   '@nuxt/kit@3.13.2':
@@ -9098,7 +9098,7 @@ snapshots:
       - vite
       - webpack-sources
 
-  '@nuxt/image@1.8.0(@netlify/blobs@7.4.0)(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.22.5)':
+  '@nuxt/image@1.8.1(@netlify/blobs@7.4.0)(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.22.5)':
     dependencies:
       '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.22.5)
       consola: 3.2.3
