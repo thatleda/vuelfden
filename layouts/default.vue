@@ -38,10 +38,10 @@ html {
 
 .dark-mode {
   --primary-color: #fafafa;
-  --secondary-color: #055b01;
-  --tertiary-color: #252525;
-  --text-color: #aaaaaa;
-  --subtext-color: #6f6f6f;
+  --secondary-color: #0c4e28;
+  --tertiary-color: #527766;
+  --text-color: #b1b1b1;
+  --subtext-color: #e6e6e6;
   --background-color: #121212;
   --card-background-color: #202020;
   --scroll-bar-color: rgba(255, 255, 255, 0.5);
@@ -51,8 +51,8 @@ html {
 
 .light-mode {
   --primary-color: #000000;
-  --secondary-color: #a7f8b1;
-  --tertiary-color: #f2f2f2;
+  --secondary-color: #94e4af;
+  --tertiary-color: #328d58;
   --text-color: #000000;
   --subtext-color: #555555;
   --background-color: #d2d2d2;
@@ -121,8 +121,8 @@ h1 {
 }
 
 h2 {
-  font-family: "Oooh Baby", cursive;
-  font-size: 3rem;
+  font-family: Satisfy, cursive;
+  font-size: 2.5rem;
   margin: 0;
   color: var(--text-color);
 }
@@ -132,10 +132,10 @@ h3 {
 }
 
 em {
-  font-family: "Oooh Baby", cursive;
+  font-family: Satisfy, cursive;
   font-style: normal;
   line-height: 1rem;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: var(--primary-color);
 }
 
