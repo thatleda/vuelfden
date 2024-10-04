@@ -125,8 +125,8 @@ const { page } = defineProps<HeroProps>()
 }
 
 .purpose {
-  font-size: 2.4rem;
-  line-height: 1rem;
+  font-size: 2.25rem;
+  line-height: 0.5rem;
   margin: 0;
   text-align: end;
   text-shadow: var(--background-color) 0 0 20px;

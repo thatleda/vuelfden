@@ -46,10 +46,11 @@ const whatTimeAgo = formatDistance(articleReleaseDate, new Date(), {
   border-radius: var(--border-radius);
   transition: 0.5s ease-in-out;
   transition-property: background-color;
+  color: var(--text-color);
 
   &:hover {
     background-color: var(--tertiary-color);
-    color: var(--primary-color);
+    color: var(--background-color);
   }
 }
 
@@ -63,10 +64,10 @@ const whatTimeAgo = formatDistance(articleReleaseDate, new Date(), {
 }
 
 .description {
+
   width: 100%;
   display: flex;
   flex-direction: column;
-  font-size: medium;
   justify-content: center;
 }
 </style>

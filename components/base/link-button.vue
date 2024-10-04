@@ -59,9 +59,9 @@ const nuxtLinkProps = to.toString().startsWith('/')
   border-color: var(--box-shadow-color);
   font-weight: 600;
 
-  &.hover {
+  &:hover {
     border-color: var(--box-shadow-hover-color);
-    background-color: var(--background-color);
+    background-color: var(--tertiary-color);
   }
 }
 

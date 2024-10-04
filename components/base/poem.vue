@@ -5,7 +5,8 @@
 <style module>
 .centered {
   font-family: var(--base-font);
-  text-align: center;
   font-style: italic;
+  text-align: center;
+  color: var(--primary-color);
 }
 </style>
