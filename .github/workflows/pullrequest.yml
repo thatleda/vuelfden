@@ -39,7 +39,7 @@ jobs:
           urls: ${{ steps.deploy.outputs.url }}
           temporaryPublicStorage: true
       - name: Comment PR
-        uses: thollander/actions-comment-pull-request@v2
+        uses: thollander/actions-comment-pull-request@v3
         with:
           comment_tag: execution
           message: |
