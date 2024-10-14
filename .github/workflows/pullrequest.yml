@@ -17,7 +17,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20.17.0
+          node-version: 20.18.0
           cache: pnpm
       - name: Run install
         run: pnpm install
@@ -39,9 +39,9 @@ jobs:
           urls: ${{ steps.deploy.outputs.url }}
           temporaryPublicStorage: true
       - name: Comment PR
-        uses: thollander/actions-comment-pull-request@v2
+        uses: thollander/actions-comment-pull-request@v3
         with:
-          comment_tag: execution
+          comment-tag: execution
           message: |
             ### Lighthouse check :white_check_mark:
             Triggered by **${{ github.actor }}** ∙ deployed from **${{ github.ref_name }}** to ${{ steps.deploy.outputs.url }}
