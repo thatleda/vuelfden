@@ -33,7 +33,7 @@
     "@nuxtjs/color-mode": "3.5.1",
     "@nuxtjs/robots": "4.1.9",
     "@portabletext/types": "2.0.13",
-    "@testing-library/jest-dom": "6.6.1",
+    "@testing-library/jest-dom": "6.6.2",
     "@testing-library/vue": "8.1.0",
     "@vue/test-utils": "2.4.6",
     "eslint": "9.12.0",
