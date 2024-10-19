@@ -22,7 +22,7 @@
     "@vueuse/core": "11.1.0",
     "@vueuse/nuxt": "11.1.0",
     "date-fns": "4.1.0",
-    "netlify-cli": "17.37.0",
+    "netlify-cli": "17.37.1",
     "nuxt": "3.13.2",
     "vue": "3.5.12",
     "vue-router": "4.4.5"
