@@ -15,7 +15,7 @@
     "deploy": "netlify deploy"
   },
   "dependencies": {
-    "@nuxt/fonts": "0.10.1",
+    "@nuxt/fonts": "0.10.2",
     "@nuxt/image": "1.8.1",
     "@nuxtjs/sanity": "1.12.2",
     "@nuxtjs/sitemap": "6.1.2",
