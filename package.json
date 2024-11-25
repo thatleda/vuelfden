@@ -25,7 +25,7 @@
     "netlify-cli": "17.37.2",
     "nuxt": "3.14.1592",
     "vue": "3.5.13",
-    "vue-router": "4.4.5"
+    "vue-router": "4.5.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "3.9.2",
