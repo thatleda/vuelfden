@@ -20,9 +20,9 @@
 </template>
 
 <script lang="ts" setup>
-import { formatDistance } from 'date-fns'
-
 import type { SanityPage } from '~/@types/sanity'
+
+import { formatDistance } from 'date-fns'
 
 interface ArticleProps {
   article: SanityPage
