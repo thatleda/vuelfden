@@ -39,6 +39,6 @@
     "eslint": "9.16.0",
     "happy-dom": "15.11.7",
     "typescript": "5.7.2",
-    "vitest": "2.1.7"
+    "vitest": "2.1.8"
   }
 }
