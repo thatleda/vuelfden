@@ -13,7 +13,7 @@
 <script lang="ts" setup>
 import type { SanityPage } from '~/@types/sanity'
 
-const query = groq`*[_type == "article"] | order(_createdAt desc)[0..20]{_createdAt, _updatedAt, _id, content, excerpt, slug, title, "banner": banner.asset->{_id, _type, altText}}`
+const query = groq`*[_type == "article"] | order(_createdAt desc)[0..12]{_createdAt, _updatedAt, _id, content, excerpt, slug, title, "banner": banner.asset->{_id, _type, altText}}`
 const { data: articles } = useSanityQuery<SanityPage[]>(query)
 
 useSeoMeta({
