@@ -34,6 +34,7 @@
           variant="primary"
           to="resume.pdf"
           target="_blank"
+          download="Leda Wolf CV.pdf"
         >
           CV
         </base-link-button>
@@ -86,6 +87,7 @@
           :class="$style.sideNavigationLink"
           to="resume.pdf"
           target="_blank"
+          download="Leda Wolf CV.pdf"
         >
           CV
         </base-link-button>
