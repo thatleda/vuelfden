@@ -15,8 +15,8 @@ importers:
         specifier: 1.8.1
         version: 1.8.1(@netlify/blobs@8.1.0)(db0@0.2.1)(ioredis@5.4.2)(magicast@0.3.5)(rollup@4.29.1)
       '@nuxtjs/sanity':
-        specifier: 1.13.2
-        version: 1.13.2(magicast@0.3.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(rollup@4.29.1)
+        specifier: 1.13.3
+        version: 1.13.3(magicast@0.3.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(rollup@4.29.1)
       '@nuxtjs/sitemap':
         specifier: 7.0.0
         version: 7.0.0(h3@1.13.0)(magicast@0.3.5)(rollup@4.29.1)(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))(vue@3.5.13(typescript@5.7.2))
@@ -1339,8 +1339,8 @@ packages:
   '@nuxtjs/robots@5.0.1':
     resolution: {integrity: sha512-kao3acYi51WGcI/Pn7UVC2SJJ+QZONmrw91QFmkH8xsAcgNO5/pChtDY0xBfdRp6Mxp7ME+ppKFLctzVQJdasw==}
 
-  '@nuxtjs/sanity@1.13.2':
-    resolution: {integrity: sha512-RR8GfWO6LPyYYds121SHRq99SFUepQqeR07kB0vGTe/Wfxo8FEE0hlEYVdfdVdcq7hJvPQiI8ofXcFJj1d05Lw==}
+  '@nuxtjs/sanity@1.13.3':
+    resolution: {integrity: sha512-qZNPqlsaUWABhezryUbls/H40tXDrayNVAj8f4QPCEJqKyvQGZ8kG7nagjrwOkModl+cn56fVP/q47AYfkFbZA==}
     engines: {node: ^18.20.4 || ^20.9.0 || ^22.0.0 || >=23.0.0}
 
   '@nuxtjs/sitemap@7.0.0':
@@ -9111,7 +9111,7 @@ snapshots:
       - vite
       - vue
 
-  '@nuxtjs/sanity@1.13.2(magicast@0.3.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(rollup@4.29.1)':
+  '@nuxtjs/sanity@1.13.3(magicast@0.3.5)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(rollup@4.29.1)':
     dependencies:
       '@nuxt/kit': 3.14.1592(magicast@0.3.5)(rollup@4.29.1)
       '@portabletext/types': 2.0.13
