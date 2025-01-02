@@ -8,9 +8,9 @@
       </sub>
       <div v-if="book.number" :class="$style.progress">
         <p>
-          Reading challenge progress: {{ book.number }} of 100 books completed
+          This year's challenge: {{ book.number }} of 120 books completed
         </p>
-        <progress :class="$style.progressBar" max="100" :value="book.number" />
+        <progress :class="$style.progressBar" max="120" :value="book.number" />
       </div>
       <div v-if="book.url" :class="$style.links">
         Find it on
