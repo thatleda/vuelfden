@@ -1,6 +1,6 @@
 // @vitest-environment nuxt
 
-import { mockNuxtImport, renderSuspended } from '@nuxt/test-utils/runtime'
+import { renderSuspended } from '@nuxt/test-utils/runtime'
 import { screen } from '@testing-library/vue'
 import { beforeEach, expect, it, vi } from 'vitest'
 
@@ -14,8 +14,8 @@ const { useElementVisibility } = vi.hoisted(() => {
   }
 })
 
-mockNuxtImport('useElementVisibility', () => {
-  return useElementVisibility
+vi.mock('@vueuse/core', () => {
+  return { useElementVisibility }
 })
 
 beforeEach(() => {
