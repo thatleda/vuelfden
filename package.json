@@ -37,7 +37,7 @@
     "@testing-library/vue": "8.1.0",
     "@vue/test-utils": "2.4.6",
     "eslint": "9.19.0",
-    "happy-dom": "16.7.3",
+    "happy-dom": "16.8.1",
     "typescript": "5.7.3",
     "vitest": "3.0.4"
   }
