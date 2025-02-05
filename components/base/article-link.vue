@@ -5,7 +5,11 @@
 </template>
 
 <script lang="ts" setup>
-const { href } = defineProps<{ href: string }>()
+export interface ArticleLinkProps {
+  href: string
+}
+
+const { href } = defineProps<ArticleLinkProps>()
 </script>
 
 <style module>
