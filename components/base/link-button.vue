@@ -14,7 +14,7 @@
 <script setup lang="ts">
 import type { NuxtLinkProps } from '#app'
 
-interface ButtonProps extends NuxtLinkProps {
+export interface ButtonProps extends NuxtLinkProps {
   variant?: 'primary' | 'secondary'
   download?: boolean
 }
