@@ -18,8 +18,8 @@ importers:
         specifier: 1.13.3
         version: 1.13.3(@emotion/is-prop-valid@1.2.2)(@sanity/types@3.75.1(@types/react@19.0.9))(magicast@0.3.5)(react-dom@19.0.0(react@19.0.0))(react-is@17.0.2)(react@19.0.0)
       '@nuxtjs/sitemap':
-        specifier: 7.2.4
-        version: 7.2.4(h3@1.15.0)(magicast@0.3.5)(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.7.3))
+        specifier: 7.2.5
+        version: 7.2.5(h3@1.15.0)(magicast@0.3.5)(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.7.3))
       '@vueuse/core':
         specifier: 12.5.0
         version: 12.5.0(typescript@5.7.3)
@@ -1266,8 +1266,8 @@ packages:
     resolution: {integrity: sha512-qZNPqlsaUWABhezryUbls/H40tXDrayNVAj8f4QPCEJqKyvQGZ8kG7nagjrwOkModl+cn56fVP/q47AYfkFbZA==}
     engines: {node: ^18.20.4 || ^20.9.0 || ^22.0.0 || >=23.0.0}
 
-  '@nuxtjs/sitemap@7.2.4':
-    resolution: {integrity: sha512-u4BLPuKHsy6jSj2D27W3QHih4PwaWY2LrGi+6PTUu/b0/itS+U2aovxHfWLUWHKNZG3LazJNziLG/RBBwdqLxg==}
+  '@nuxtjs/sitemap@7.2.5':
+    resolution: {integrity: sha512-WTLgNmZS39sQ9lV5iyyKI6Z7hw0Z0CAWpbT7c+xS1qzVWoI6WxuiprvXcaoThCLGF0I3KRugjdYnLjzvtBzJQw==}
     engines: {node: '>=18.0.0'}
 
   '@octokit/auth-token@5.1.2':
@@ -9256,7 +9256,7 @@ snapshots:
       - supports-color
       - svelte
 
-  '@nuxtjs/sitemap@7.2.4(h3@1.15.0)(magicast@0.3.5)(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.7.3))':
+  '@nuxtjs/sitemap@7.2.5(h3@1.15.0)(magicast@0.3.5)(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.7.3))':
     dependencies:
       '@nuxt/devtools-kit': 2.1.0(magicast@0.3.5)(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.0))
       '@nuxt/kit': 3.15.4(magicast@0.3.5)
