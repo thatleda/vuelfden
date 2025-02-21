@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "4.3.0",
-    "@nuxt/test-utils": "3.16.0",
+    "@nuxt/test-utils": "3.17.0",
     "@nuxtjs/color-mode": "3.5.2",
     "@nuxtjs/robots": "5.2.4",
     "@portabletext/types": "2.0.13",
