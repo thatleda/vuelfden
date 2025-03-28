@@ -30,8 +30,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       netlify-cli:
-        specifier: 19.1.3
-        version: 19.1.3(@types/node@22.13.11)(db0@0.3.1)(ioredis@5.6.0)(picomatch@4.0.2)(rollup@4.37.0)
+        specifier: 19.1.4
+        version: 19.1.4(@types/node@22.13.11)(db0@0.3.1)(ioredis@5.6.0)(picomatch@4.0.2)(rollup@4.37.0)
       nuxt:
         specifier: 3.16.1
         version: 3.16.1(@netlify/blobs@8.1.2)(@parcel/watcher@2.5.1)(@types/node@22.13.11)(db0@0.3.1)(eslint@9.23.0(jiti@2.4.2))(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.37.0)(terser@5.39.0)(typescript@5.8.2)(vite@6.2.2(@types/node@22.13.11)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.0))(yaml@2.7.0)
@@ -4062,13 +4062,13 @@ packages:
   get-port-please@3.1.2:
     resolution: {integrity: sha512-Gxc29eLs1fbn6LQ4jSU4vXjlwyZhF5HsGuMAa7gqBP4Rw4yxxltyDUuF5MBclFzDTXO+ACchGQoeela4DSfzdQ==}
 
+  get-port@5.1.1:
+    resolution: {integrity: sha512-g/Q1aTSDOxFpchXC4i8ZWvxA1lnPqx/JHqcpIw0/LX9T8x/GBbi6YnlN5nhaKIFkT8oFsscUKgDJYxfwfS6QsQ==}
+    engines: {node: '>=8'}
+
   get-port@6.1.2:
     resolution: {integrity: sha512-BrGGraKm2uPqurfGVj/z97/zv8dPleC6x9JBNRTrDNtCkkRF4rPwrQXFgL7+I+q8QSdU4ntLQX2D7KIxSy8nGw==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-
-  get-port@7.1.0:
-    resolution: {integrity: sha512-QB9NKEeDg3xxVwCCwJQ9+xycaz6pBB6iQ76wiWMl1927n0Kir6alPiP+yuiICLLU4jpMe08dXfpebuQppFA2zw==}
-    engines: {node: '>=16'}
 
   get-proto@1.0.1:
     resolution: {integrity: sha512-sTSfBjoXBp89JvIKIefqw7U2CCebsc74kiY6awiGogKtoSGbgjYE/G/+l9sF3MWFPNc9IcoOC4ODfKHfxFmp0g==}
@@ -5331,8 +5331,8 @@ packages:
   nested-error-stacks@2.1.1:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
 
-  netlify-cli@19.1.3:
-    resolution: {integrity: sha512-zAIypaX5AqLslIIkAYFlJAc1CqrUwhL6Vh/d0M+CagezIlhLvru6MTEfyxCaDIH1BBmOfH0cWViLa+M+LsyETg==}
+  netlify-cli@19.1.4:
+    resolution: {integrity: sha512-/X5gn8jO/GY4cZnEFajaUnO/4LiCLgnbumoSNvbNnY8EADqdfPiOnjz1u6gAiMlSt2DKASy7Bs6HbNM1XcXGsA==}
     engines: {node: '>=18.14.0'}
     hasBin: true
 
@@ -12306,9 +12306,9 @@ snapshots:
 
   get-port-please@3.1.2: {}
 
-  get-port@6.1.2: {}
+  get-port@5.1.1: {}
 
-  get-port@7.1.0: {}
+  get-port@6.1.2: {}
 
   get-proto@1.0.1:
     dependencies:
@@ -13739,7 +13739,7 @@ snapshots:
 
   nested-error-stacks@2.1.1: {}
 
-  netlify-cli@19.1.3(@types/node@22.13.11)(db0@0.3.1)(ioredis@5.6.0)(picomatch@4.0.2)(rollup@4.37.0):
+  netlify-cli@19.1.4(@types/node@22.13.11)(db0@0.3.1)(ioredis@5.6.0)(picomatch@4.0.2)(rollup@4.37.0):
     dependencies:
       '@fastify/static': 7.0.4
       '@netlify/blobs': 8.1.2
@@ -13788,7 +13788,7 @@ snapshots:
       folder-walker: 3.2.0
       from2-array: 0.0.4
       fuzzy: 0.1.3
-      get-port: 7.1.0
+      get-port: 5.1.1
       gh-release-fetch: 4.0.3
       git-repo-info: 2.1.1
       gitconfiglocal: 2.1.0
