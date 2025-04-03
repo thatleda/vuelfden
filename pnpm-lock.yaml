@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@nuxt/fonts':
-        specifier: 0.11.0
-        version: 0.11.0(@netlify/blobs@8.1.2)(db0@0.3.1)(ioredis@5.6.0)(magicast@0.3.5)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.1))
+        specifier: 0.11.1
+        version: 0.11.1(@netlify/blobs@8.1.2)(db0@0.3.1)(ioredis@5.6.0)(magicast@0.3.5)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.1))
       '@nuxt/image':
         specifier: 1.10.0
         version: 1.10.0(@netlify/blobs@8.1.2)(db0@0.3.1)(ioredis@5.6.0)(magicast@0.3.5)
@@ -1154,8 +1154,8 @@ packages:
     peerDependencies:
       vite: '>=6.0'
 
-  '@nuxt/fonts@0.11.0':
-    resolution: {integrity: sha512-YdQqJDm+B9A6hyhralFcUXMCLdQZTKuqHPpAeD6Gb3uYLxfVYVyKKxc5Ch0n656u1mp9CaPaeK4CkDAQDgxAbQ==}
+  '@nuxt/fonts@0.11.1':
+    resolution: {integrity: sha512-WRrJp0n+Hk9wF2W7aPGfYLxvQYn4Yxnf1+LtG0lORMrwM7smo9OSdc1+2WyDGZzP3ySnqjvN98OBZrGAQrmnIg==}
 
   '@nuxt/image@1.10.0':
     resolution: {integrity: sha512-/B58GeEmme7bkmQUrXzEw8P9sJb9BkMaYZqLDtq8ZdDLEddE3P4nVya8RQPB+p4b7EdqWajpPqdy1A2ZPLev/A==}
@@ -8847,8 +8847,8 @@ snapshots:
 
   '@nuxt/devtools-kit@2.3.2(magicast@0.3.5)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.1))':
     dependencies:
-      '@nuxt/kit': 3.16.1(magicast@0.3.5)
-      '@nuxt/schema': 3.16.1
+      '@nuxt/kit': 3.16.2(magicast@0.3.5)
+      '@nuxt/schema': 3.16.2
       execa: 8.0.1
       vite: 6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.1)
     transitivePeerDependencies:
@@ -8906,10 +8906,10 @@ snapshots:
       - utf-8-validate
       - vue
 
-  '@nuxt/fonts@0.11.0(@netlify/blobs@8.1.2)(db0@0.3.1)(ioredis@5.6.0)(magicast@0.3.5)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.1))':
+  '@nuxt/fonts@0.11.1(@netlify/blobs@8.1.2)(db0@0.3.1)(ioredis@5.6.0)(magicast@0.3.5)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.1))':
     dependencies:
       '@nuxt/devtools-kit': 2.3.2(magicast@0.3.5)(vite@6.2.4(@types/node@22.13.14)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.1))
-      '@nuxt/kit': 3.16.1(magicast@0.3.5)
+      '@nuxt/kit': 3.16.2(magicast@0.3.5)
       consola: 3.4.2
       css-tree: 3.1.0
       defu: 6.1.4
@@ -14156,7 +14156,7 @@ snapshots:
 
   nuxt-site-config-kit@3.1.7(magicast@0.3.5)(vue@3.5.13(typescript@5.8.2)):
     dependencies:
-      '@nuxt/kit': 3.16.1(magicast@0.3.5)
+      '@nuxt/kit': 3.16.2(magicast@0.3.5)
       pkg-types: 2.1.0
       site-config-stack: 3.1.7(vue@3.5.13(typescript@5.8.2))
       std-env: 3.8.1
