@@ -30,8 +30,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       netlify-cli:
-        specifier: 19.1.6
-        version: 19.1.6(@types/node@22.14.0)(db0@0.3.1)(ioredis@5.6.0)(picomatch@4.0.2)(rollup@4.39.0)
+        specifier: 19.1.7
+        version: 19.1.7(@types/node@22.14.0)(db0@0.3.1)(ioredis@5.6.0)(picomatch@4.0.2)(rollup@4.39.0)
       nuxt:
         specifier: 3.16.2
         version: 3.16.2(@netlify/blobs@8.1.2)(@parcel/watcher@2.5.1)(@types/node@22.14.0)(db0@0.3.1)(eslint@9.24.0(jiti@2.4.2))(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.39.0)(terser@5.39.0)(typescript@5.8.3)(vite@6.2.5(@types/node@22.14.0)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.1))(yaml@2.7.1)
@@ -5349,8 +5349,8 @@ packages:
   nested-error-stacks@2.1.1:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
 
-  netlify-cli@19.1.6:
-    resolution: {integrity: sha512-Z3FUnz1mGHV6rrxBS2fEeNl2uvs3qnXOa4292jMNGqDewLTiu++TWZuLq7x5mMZj/zTqu95W44GxaSpmQDiGYg==}
+  netlify-cli@19.1.7:
+    resolution: {integrity: sha512-1L5DVUDnJgCz445p4C+syYEZ15RrsJ9QAEoonZaPWk5ZVuG/ueDn6C8rYXCjogJL2W6vtrZy2CnKijI8Z6e0kg==}
     engines: {node: '>=18.14.0'}
     hasBin: true
 
@@ -13737,7 +13737,7 @@ snapshots:
 
   nested-error-stacks@2.1.1: {}
 
-  netlify-cli@19.1.6(@types/node@22.14.0)(db0@0.3.1)(ioredis@5.6.0)(picomatch@4.0.2)(rollup@4.39.0):
+  netlify-cli@19.1.7(@types/node@22.14.0)(db0@0.3.1)(ioredis@5.6.0)(picomatch@4.0.2)(rollup@4.39.0):
     dependencies:
       '@fastify/static': 7.0.4
       '@netlify/blobs': 8.1.2
