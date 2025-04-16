@@ -30,8 +30,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       netlify-cli:
-        specifier: 20.0.1
-        version: 20.0.1(@types/node@22.14.1)(db0@0.3.1)(ioredis@5.6.1)(picomatch@4.0.2)(rollup@4.40.0)
+        specifier: 20.0.2
+        version: 20.0.2(@types/node@22.14.1)(db0@0.3.1)(ioredis@5.6.1)(picomatch@4.0.2)(rollup@4.40.0)
       nuxt:
         specifier: 3.16.2
         version: 3.16.2(@netlify/blobs@8.1.2)(@parcel/watcher@2.5.1)(@types/node@22.14.1)(db0@0.3.1)(eslint@9.24.0(jiti@2.4.2))(ioredis@5.6.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.40.0)(terser@5.39.0)(typescript@5.8.3)(vite@6.2.6(@types/node@22.14.1)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.1))(yaml@2.7.1)
@@ -3837,9 +3837,6 @@ packages:
   flatted@3.3.3:
     resolution: {integrity: sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==}
 
-  flush-write-stream@2.0.0:
-    resolution: {integrity: sha512-uXClqPxT4xW0lcdSBheb2ObVU+kuqUk3Jk64EwieirEXZx9XUrVwp/JuBfKAWaM4T5Td/VL7QLDWPXp/MvGm/g==}
-
   fn.name@1.1.0:
     resolution: {integrity: sha512-GRnmB5gPyJpAhTQdSZTSp9uaPSvl09KoYcMQtsB9rQoOmzs9dH6ffeccH+Z+cv6P68Hu5bC6JjRh4Ah/mHSNRw==}
 
@@ -3905,9 +3902,6 @@ packages:
   fresh@2.0.0:
     resolution: {integrity: sha512-Rx/WycZ60HOaqLKAi6cHRKKI7zxWbJ31MhntmtwMoaTeF7XFH9hhBp8vITaMidfljRQ6eYWCKkaTK+ykVJHP2A==}
     engines: {node: '>= 0.8'}
-
-  from2-array@0.0.4:
-    resolution: {integrity: sha512-0G0cAp7sYLobH7ALsr835x98PU/YeVF7wlwxdWbCUaea7wsa7lJfKZUAo6p2YZGZ8F94luCuqHZS3JtFER6uPg==}
 
   from2@2.3.0:
     resolution: {integrity: sha512-OMcX/4IC/uqEPVgGeyfN22LJk6AZrMkRZHxcHBMBvHScDGgwTm2GT2Wkgtocyd3JfZffjj2kYUDXXII0Fk9W0g==}
@@ -5255,8 +5249,8 @@ packages:
   nested-error-stacks@2.1.1:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
 
-  netlify-cli@20.0.1:
-    resolution: {integrity: sha512-MEGq/86msjpdUKW5LtvUAXyNk5jMOjLjP0PonbPa3vkGvR7CY0RaZCusypyjQTZCKtbPqcG2/dinP9QQrmcCbA==}
+  netlify-cli@20.0.2:
+    resolution: {integrity: sha512-f3skyVgoOp1JOzA/UKS7PNzq57UWkS2gS2xqBgetmyq7+z3pf2mzVE5jFW5juAqiymeb7bARtmuS1XLOMajHjw==}
     engines: {node: '>=18.14.0'}
     hasBin: true
 
@@ -5475,10 +5469,6 @@ packages:
 
   onetime@7.0.0:
     resolution: {integrity: sha512-VXJjc87FScF88uafS3JllDgvAm+c/Slfz06lorj2uAY34rlUu0Nt+v8wreiImcrgAjjIHp1rXpTDlLOGw29WwQ==}
-    engines: {node: '>=18'}
-
-  open@10.1.0:
-    resolution: {integrity: sha512-mnkeQ1qP5Ue2wd+aivTD3NHd/lZ96Lu0jgf0pwktLPtx6cTZiH7tyeGRRHs0zX0rbrahXPnXlUnbeXyaBBuIaw==}
     engines: {node: '>=18'}
 
   open@10.1.1:
@@ -6611,9 +6601,6 @@ packages:
   string_decoder@1.3.0:
     resolution: {integrity: sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==}
 
-  strip-ansi-control-characters@2.0.0:
-    resolution: {integrity: sha512-Q0/k5orrVGeaOlIOUn1gybGU0IcAbgHQT1faLo5hik4DqClKVSaka5xOhNNoRgtfztHVxCYxi7j71mrWom0bIw==}
-
   strip-ansi@6.0.1:
     resolution: {integrity: sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==}
     engines: {node: '>=8'}
@@ -6782,19 +6769,8 @@ packages:
   thread-stream@3.1.0:
     resolution: {integrity: sha512-OqyPZ9u96VohAyMfJykzmivOrY2wfMSf3C5TtFJVgN+Hm6aj+voFhlK+kZEIv2FBh1X6Xp3DlnCOfEQ3B2J86A==}
 
-  through2-filter@4.0.0:
-    resolution: {integrity: sha512-P8IpQL19bSdXqGLvLdbidYRxERXgHEXGcQofPxbLpPkqS1ieOrUrocdYRTNv8YwSukaDJWr71s6F2kZ3bvgEhA==}
-    engines: {node: '>= 6'}
-
-  through2-map@4.0.0:
-    resolution: {integrity: sha512-+rpmDB5yckiBGEuqJSsWYWMs9e1zdksypDKvByysEyN+knhsPXV9Z6O2mA9meczIa6AON7bi2G3xWk5T8UG4zQ==}
-    engines: {node: '>= 6'}
-
   through2@2.0.5:
     resolution: {integrity: sha512-/mrRod8xqpA+IHSLyGCQ2s8SPHiCDEeQJSep1jqLYeEUClOFG2Qsh+4FU6G9VeqpZnGW/Su8LQGc4YKni5rYSQ==}
-
-  through2@4.0.2:
-    resolution: {integrity: sha512-iOqSav00cVxEEICeD7TjLB1sueEL+81Wpzp2bY17uZjZN0pWZPuo4suZ/61VujxmqSGFfgOcNuTZ85QJwNZQpw==}
 
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
@@ -12060,11 +12036,6 @@ snapshots:
 
   flatted@3.3.3: {}
 
-  flush-write-stream@2.0.0:
-    dependencies:
-      inherits: 2.0.4
-      readable-stream: 3.6.2
-
   fn.name@1.1.0: {}
 
   folder-walker@3.2.0:
@@ -12131,10 +12102,6 @@ snapshots:
   fresh@0.5.2: {}
 
   fresh@2.0.0: {}
-
-  from2-array@0.0.4:
-    dependencies:
-      from2: 2.3.0
 
   from2@2.3.0:
     dependencies:
@@ -13652,7 +13619,7 @@ snapshots:
 
   nested-error-stacks@2.1.1: {}
 
-  netlify-cli@20.0.1(@types/node@22.14.1)(db0@0.3.1)(ioredis@5.6.1)(picomatch@4.0.2)(rollup@4.40.0):
+  netlify-cli@20.0.2(@types/node@22.14.1)(db0@0.3.1)(ioredis@5.6.1)(picomatch@4.0.2)(rollup@4.40.0):
     dependencies:
       '@fastify/static': 7.0.4
       '@netlify/blobs': 8.1.2
@@ -13696,9 +13663,7 @@ snapshots:
       fastest-levenshtein: 1.0.16
       fastify: 4.29.0
       find-up: 7.0.0
-      flush-write-stream: 2.0.0
       folder-walker: 3.2.0
-      from2-array: 0.0.4
       fuzzy: 0.1.3
       get-port: 5.1.1
       gh-release-fetch: 4.0.3
@@ -13741,11 +13706,8 @@ snapshots:
       readdirp: 4.1.2
       semver: 7.7.1
       source-map-support: 0.5.21
-      strip-ansi-control-characters: 2.0.0
       tempy: 3.1.0
       terminal-link: 4.0.0
-      through2-filter: 4.0.0
-      through2-map: 4.0.0
       toml: 3.0.0
       tomlify-j0.4: 3.0.0
       ulid: 2.3.0
@@ -14205,13 +14167,6 @@ snapshots:
   onetime@7.0.0:
     dependencies:
       mimic-function: 5.0.1
-
-  open@10.1.0:
-    dependencies:
-      default-browser: 5.2.1
-      define-lazy-prop: 3.0.0
-      is-inside-container: 1.0.0
-      is-wsl: 3.1.0
 
   open@10.1.1:
     dependencies:
@@ -15428,8 +15383,6 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
-  strip-ansi-control-characters@2.0.0: {}
-
   strip-ansi@6.0.1:
     dependencies:
       ansi-regex: 5.0.1
@@ -15629,22 +15582,10 @@ snapshots:
     dependencies:
       real-require: 0.2.0
 
-  through2-filter@4.0.0:
-    dependencies:
-      through2: 4.0.2
-
-  through2-map@4.0.0:
-    dependencies:
-      through2: 4.0.2
-
   through2@2.0.5:
     dependencies:
       readable-stream: 2.3.8
       xtend: 4.0.2
-
-  through2@4.0.2:
-    dependencies:
-      readable-stream: 3.6.2
 
   through@2.3.8: {}
 
@@ -16120,7 +16061,7 @@ snapshots:
       debug: 4.4.0(supports-color@9.4.0)
       error-stack-parser-es: 1.0.5
       ohash: 2.0.11
-      open: 10.1.0
+      open: 10.1.1
       perfect-debounce: 1.0.0
       sirv: 3.0.1
       unplugin-utils: 0.2.4
