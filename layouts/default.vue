@@ -52,7 +52,7 @@ html {
 .light-mode {
   --primary-color: #000000;
   --secondary-color: #94e4af;
-  --tertiary-color: #328d58;
+  --tertiary-color:rgb(23, 67, 41);
   --text-color: #000000;
   --subtext-color: #555555;
   --background-color: #d2d2d2;
@@ -137,6 +137,12 @@ em {
   line-height: 1rem;
   font-size: 1.5rem;
   color: var(--primary-color);
+}
+
+strong {
+  color: var(--tertiary-color);
+  font-weight: 800;
+  line-height: 1rem;
 }
 
 u {
