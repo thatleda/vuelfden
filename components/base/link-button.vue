@@ -16,15 +16,13 @@ import type { NuxtLinkProps } from '#app'
 
 export interface ButtonProps extends NuxtLinkProps {
   variant?: 'primary' | 'secondary'
-  download?: boolean
 }
 
-const { download, to = '/', variant, prefetch = true } = defineProps<ButtonProps>()
+const { to = '/', variant, prefetch = true } = defineProps<ButtonProps>()
 
 const nuxtLinkProps = to.toString().startsWith('/')
-  ? { download, to, variant, prefetch }
+  ? { to, variant, prefetch }
   : {
-      download,
       to,
       variant,
       prefetch,

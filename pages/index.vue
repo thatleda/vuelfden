@@ -26,7 +26,7 @@
 import type { SanityBook, SanityPage, SanityReview } from '~/@types/sanity'
 
 const query = groq`*[_type == "page" && slug.current == $slug][0]{_createdAt, _updatedAt, _id, content, excerpt, slug, title, "banner": banner.asset->{_id, _type, altText}}`
-const reviewsQuery = groq`*[_type == "review"] | order(_createdAt desc)[0..4]{_createdAt, _updatedAt, _id, comment, excerpt, reviewer, "picture": picture.asset->{_id, _type, altText}}`
+const reviewsQuery = groq`*[_type == "review"] | order(_createdAt desc){_createdAt, _updatedAt, _id, comment, excerpt, reviewer, "picture": picture.asset->{_id, _type, altText}}`
 const bookQuery = groq`*[_type == "book"] | order(_createdAt desc)[0]{_createdAt, _updatedAt, _id, author, notes, number, title, url, "cover": cover.asset->{_id, _type, altText}}`
 
 const { data: hero } = useSanityQuery<SanityPage>(query, { slug: 'hero' })

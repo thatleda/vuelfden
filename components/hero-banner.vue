@@ -82,7 +82,7 @@ const { page } = defineProps<HeroProps>()
   align-items: center;
   background-color: var(--card-background-color);
   border-radius: var(--border-radius);
-  padding: 1rem;
+  padding: 2rem;
 
   @media (max-width: 1015px) {
     display: flex;
@@ -126,7 +126,7 @@ const { page } = defineProps<HeroProps>()
 
 .purpose {
   font-size: 2.25rem;
-  line-height: 0.5rem;
+  line-height: 1rem;
   margin: 0;
   text-align: end;
   text-shadow: var(--background-color) 0 0 20px;
