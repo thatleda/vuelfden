@@ -45,6 +45,9 @@ importers:
       '@antfu/eslint-config':
         specifier: 4.12.0
         version: 4.12.0(@typescript-eslint/utils@8.30.1(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3))(@vue/compiler-sfc@3.5.13)(eslint@9.25.1(jiti@2.4.2))(typescript@5.8.3)(vitest@3.1.2(@types/debug@4.1.12)(@types/node@22.14.1)(happy-dom@17.4.4)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.1))
+      '@asbjorn/eslint-plugin-groq':
+        specifier: 2.0.0
+        version: 2.0.0
       '@nuxt/test-utils':
         specifier: 3.17.2
         version: 3.17.2(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.13)(vue@3.5.13(typescript@5.8.3)))(@types/node@22.14.1)(@vue/test-utils@2.4.6)(happy-dom@17.4.4)(jiti@2.4.2)(magicast@0.3.5)(terser@5.39.0)(typescript@5.8.3)(vitest@3.1.2(@types/debug@4.1.12)(@types/node@22.14.1)(happy-dom@17.4.4)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.1))(yaml@2.7.1)
@@ -69,6 +72,9 @@ importers:
       eslint:
         specifier: 9.25.1
         version: 9.25.1(jiti@2.4.2)
+      groq:
+        specifier: 3.86.1
+        version: 3.86.1
       happy-dom:
         specifier: 17.4.4
         version: 17.4.4
@@ -139,6 +145,10 @@ packages:
 
   '@antfu/install-pkg@1.0.0':
     resolution: {integrity: sha512-xvX6P/lo1B3ej0OsaErAjqgFYzYVcJpamjLAFLYh9vRJngBrMoUG7aVnrGTeqM7yxbyTD5p3F2+0/QUEh8Vzhw==}
+
+  '@asbjorn/eslint-plugin-groq@2.0.0':
+    resolution: {integrity: sha512-dIR4FB4yBoA/WZEsgagmcnwllRH+qkDS8/YxVgLlsoL+IZb6RXtBDThoGKZye/OryAlEGLQP6aaWHtlxAflgyA==}
+    engines: {node: '>=10.0.0'}
 
   '@babel/code-frame@7.26.2':
     resolution: {integrity: sha512-RJlIHRueQgwWitWgF8OdFYGZX328Ax5BCemNGlqHfplnRT9ESi8JkFlvaVYbS+UubVY6dpv87Fs2u5M29iNFVQ==}
@@ -3593,6 +3603,10 @@ packages:
     engines: {node: '>=6.0'}
     hasBin: true
 
+  eslint-ast-utils@1.1.0:
+    resolution: {integrity: sha512-otzzTim2/1+lVrlH19EfQQJEhVJSu0zOb9ygb3iapN6UlyaDtyRq4b5U1FuW0v1lRa9Fp/GJyHkSwm6NqABgCA==}
+    engines: {node: '>=4'}
+
   eslint-compat-utils@0.5.1:
     resolution: {integrity: sha512-3z3vFexKIEnjHE3zCMRo6fn/e44U7T1khUjg+Hp0ZQMCigh28rALD0nPFBcGZuiLC5rLZa2ubQHDRln09JfU2Q==}
     engines: {node: '>=12'}
@@ -4303,6 +4317,13 @@ packages:
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
 
+  groq-js@0.2.0:
+    resolution: {integrity: sha512-qJeuEgziddryH1ClsJvMoZM9aXNQbBViNZZrJwhHKr2wU8HGGM7uNWNVFglWXMX60MMaa2SClX3UohP76Ut68g==}
+
+  groq@3.86.1:
+    resolution: {integrity: sha512-87KF+20HZuoQD/E8GQk/DMM+edobO++/KHz7/5U4CK4lQ7x6BVgyBWcpLZwPNcHSn8ZBHVO3mZu7+zNV1iX0VA==}
+    engines: {node: '>=18'}
+
   gzip-size@7.0.0:
     resolution: {integrity: sha512-O1Ld7Dr+nqPnmGpdhzLmMTQ4vAsD+rHwMm1NLUmoUFFymBOMKxCCrtDxqdBRYXdeEPEi3SyoR4TizJLQrnKBNA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
@@ -4966,6 +4987,10 @@ packages:
   lodash.flatten@4.4.0:
     resolution: {integrity: sha512-C5N2Z3DgnnKr0LOpv/hKCgKdb7ZZwafIrsesve6lmzvZIRZRGaZ/l6Q8+2W7NaT+ZwO3fFlSCzCzrDCFdJfZ4g==}
 
+  lodash.get@4.4.2:
+    resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
+    deprecated: This package is deprecated. Use the optional chaining (?.) operator instead.
+
   lodash.includes@4.3.0:
     resolution: {integrity: sha512-W3Bx6mdkRTGtlJISOvVD/lbqjTlPPUDTMnlXZFnVwi9NKJ6tiAk6LVdlhZMm17VZisqhKcgzpO5Wz91PCt5b0w==}
 
@@ -5007,6 +5032,9 @@ packages:
 
   lodash.uniq@4.5.0:
     resolution: {integrity: sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==}
+
+  lodash.zip@4.2.0:
+    resolution: {integrity: sha512-C7IOaBBK/0gMORRBd8OETNx3kmOkgIWIPvyDpZSCTwUrpYmgZwJkjZeOD8ww4xbOUOs4/attY+pciKvadNfFbg==}
 
   lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
@@ -7937,6 +7965,11 @@ snapshots:
     dependencies:
       package-manager-detector: 0.2.11
       tinyexec: 0.3.2
+
+  '@asbjorn/eslint-plugin-groq@2.0.0':
+    dependencies:
+      eslint-ast-utils: 1.1.0
+      groq-js: 0.2.0
 
   '@babel/code-frame@7.26.2':
     dependencies:
@@ -11996,6 +12029,11 @@ snapshots:
     optionalDependencies:
       source-map: 0.6.1
 
+  eslint-ast-utils@1.1.0:
+    dependencies:
+      lodash.get: 4.4.2
+      lodash.zip: 4.2.0
+
   eslint-compat-utils@0.5.1(eslint@9.25.1(jiti@2.4.2)):
     dependencies:
       eslint: 9.25.1(jiti@2.4.2)
@@ -12921,6 +12959,10 @@ snapshots:
 
   graphemer@1.4.0: {}
 
+  groq-js@0.2.0: {}
+
+  groq@3.86.1: {}
+
   gzip-size@7.0.0:
     dependencies:
       duplexer: 0.1.2
@@ -13617,6 +13659,8 @@ snapshots:
 
   lodash.flatten@4.4.0: {}
 
+  lodash.get@4.4.2: {}
+
   lodash.includes@4.3.0: {}
 
   lodash.isarguments@3.1.0: {}
@@ -13644,6 +13688,8 @@ snapshots:
   lodash.union@4.6.0: {}
 
   lodash.uniq@4.5.0: {}
+
+  lodash.zip@4.2.0: {}
 
   lodash@4.17.21: {}
 

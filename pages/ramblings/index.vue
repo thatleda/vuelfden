@@ -12,6 +12,7 @@
 
 <script lang="ts" setup>
 import type { SanityPage } from '~/@types/sanity'
+import groq from 'groq'
 
 const query = groq`*[_type == "article"] | order(_createdAt desc){_createdAt, _updatedAt, _id, content, excerpt, slug, title, "banner": banner.asset->{_id, _type, altText}}`
 const { data: articles } = useSanityQuery<SanityPage[]>(query)

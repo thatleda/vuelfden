@@ -7,6 +7,7 @@
 
 <script lang="ts" setup>
 import type { SanityPage } from '~/@types/sanity'
+import groq from 'groq'
 
 const route = useRoute()
 const { slug } = route.params
