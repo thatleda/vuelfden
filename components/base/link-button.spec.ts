@@ -33,7 +33,6 @@ it('should pass an svg', async () => {
       to: 'https://github.com',
     } as ButtonProps,
     slots: {
-      // @ts-expect-error there's something wrong with the Component types
       default: GitHub,
     },
   })

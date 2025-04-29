@@ -15,9 +15,9 @@ type TimeUnit = 'ms' | 's'
 
 export interface AnimationProps {
   animationDelay?: `${number}${TimeUnit}`
-  animationDuration: `${number}${TimeUnit}`
+  animationDuration?: `${number}${TimeUnit}`
   animationFillMode?: 'backwards' | 'both' | 'forwards' | 'none'
-  animationName:
+  animationName?:
     | 'fade-down'
     | 'fade-in'
     | 'fade-left'
