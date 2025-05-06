@@ -30,8 +30,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       netlify-cli:
-        specifier: 20.1.1
-        version: 20.1.1(@types/node@22.15.3)(db0@0.3.2)(ioredis@5.6.1)(picomatch@4.0.2)(rollup@4.40.1)
+        specifier: 21.0.0
+        version: 21.0.0(@types/node@22.15.3)(db0@0.3.2)(ioredis@5.6.1)(picomatch@4.0.2)(rollup@4.40.1)
       nuxt:
         specifier: 3.17.2
         version: 3.17.2(@netlify/blobs@8.2.0)(@parcel/watcher@2.5.1)(@types/node@22.15.3)(db0@0.3.2)(eslint@9.26.0(jiti@2.4.2))(ioredis@5.6.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.40.1)(terser@5.39.0)(typescript@5.8.3)(vite@6.3.4(@types/node@22.15.3)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.1))(yaml@2.7.1)
@@ -1027,8 +1027,8 @@ packages:
     resolution: {integrity: sha512-q95EzA9lRCL7tsLVhgvFEfuYvL+gJFC8T//Q7O1MFKAUGJVGa00UBD9QDQAFEjTg2e9+yYBFXmjsUqCUPM2GUA==}
     engines: {node: ^14.16.0 || >=16.0.0}
 
-  '@netlify/edge-functions@2.11.1':
-    resolution: {integrity: sha512-pyQOTZ8a+ge5lZlE+H/UAHyuqQqtL5gE0pXrHT9mOykr3YQqnkB2hZMtx12odatZ87gHg4EA+UPyMZUbLfnXvw==}
+  '@netlify/edge-functions@2.12.0':
+    resolution: {integrity: sha512-6EWKqCQvOWyM6CHOofvDglX8qkBL2xcMF2T0h7kzZRrdBvHMRgxTk6BmPlBGt8z4LubSQo6vDAb46MYNJ7ZyaA==}
 
   '@netlify/framework-info@9.9.3':
     resolution: {integrity: sha512-kPTF5yemdmadP/+qMDcc3p10NkZKXHXGm2BCFvB192paCNxQrSJz+qb56SO+kvSn9exg+HvhGJ0gfIcVwPjzWw==}
@@ -5536,8 +5536,8 @@ packages:
   nested-error-stacks@2.1.1:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
 
-  netlify-cli@20.1.1:
-    resolution: {integrity: sha512-TyOaHXN8CwesnTiavZQtXquzarJ8Bxu1ufa9SdEcJ/g7usy4/OIBrOVQiAk2RdOHn2gGV07ttJ1KxHt+RP9xew==}
+  netlify-cli@21.0.0:
+    resolution: {integrity: sha512-XDYvnipzE3eJDGgoeWo5FpWge7aU9VgRgSlQFXB+KrrNu+BffJqChaWW1UYtuBjOjpRuEYGGsyF1XLtSmx+cUA==}
     engines: {node: '>=18.14.0'}
     hasBin: true
 
@@ -8870,7 +8870,7 @@ snapshots:
       urlpattern-polyfill: 8.0.2
       uuid: 9.0.1
 
-  '@netlify/edge-functions@2.11.1': {}
+  '@netlify/edge-functions@2.12.0': {}
 
   '@netlify/framework-info@9.9.3':
     dependencies:
@@ -14306,7 +14306,7 @@ snapshots:
 
   nested-error-stacks@2.1.1: {}
 
-  netlify-cli@20.1.1(@types/node@22.15.3)(db0@0.3.2)(ioredis@5.6.1)(picomatch@4.0.2)(rollup@4.40.1):
+  netlify-cli@21.0.0(@types/node@22.15.3)(db0@0.3.2)(ioredis@5.6.1)(picomatch@4.0.2)(rollup@4.40.1):
     dependencies:
       '@fastify/static': 7.0.4
       '@netlify/blobs': 8.2.0
@@ -14314,7 +14314,7 @@ snapshots:
       '@netlify/build-info': 9.0.4
       '@netlify/config': 22.0.1
       '@netlify/edge-bundler': 13.0.2
-      '@netlify/edge-functions': 2.11.1
+      '@netlify/edge-functions': 2.12.0
       '@netlify/headers-parser': 8.0.0
       '@netlify/local-functions-proxy': 2.0.3
       '@netlify/redirect-parser': 14.5.1
