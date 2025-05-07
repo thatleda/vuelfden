@@ -30,8 +30,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       netlify-cli:
-        specifier: 21.0.1
-        version: 21.0.1(@types/node@22.15.3)(db0@0.3.2)(ioredis@5.6.1)(picomatch@4.0.2)(rollup@4.40.1)
+        specifier: 21.1.0
+        version: 21.1.0(@types/node@22.15.3)(db0@0.3.2)(ioredis@5.6.1)(picomatch@4.0.2)(rollup@4.40.1)
       nuxt:
         specifier: 3.17.2
         version: 3.17.2(@netlify/blobs@8.2.0)(@parcel/watcher@2.5.1)(@types/node@22.15.3)(db0@0.3.2)(eslint@9.26.0(jiti@2.4.2))(ioredis@5.6.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.40.1)(terser@5.39.0)(typescript@5.8.3)(vite@6.3.4(@types/node@22.15.3)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.1))(yaml@2.7.1)
@@ -3969,8 +3969,8 @@ packages:
   fastify-plugin@4.5.1:
     resolution: {integrity: sha512-stRHYGeuqpEZTL1Ef0Ovr2ltazUT9g844X5z/zEBFLG8RYlpDiOCIG+ATvYEp+/zmc7sN29mcIMp8gvYplYPIQ==}
 
-  fastify@4.29.0:
-    resolution: {integrity: sha512-MaaUHUGcCgC8fXQDsDtioaCcag1fmPJ9j64vAKunqZF4aSub040ZGi/ag8NGE2714yREPOKZuHCfpPzuUD3UQQ==}
+  fastify@4.29.1:
+    resolution: {integrity: sha512-m2kMNHIG92tSNWv+Z3UeTR9AWLLuo7KctC7mlFPtMEVrfjIhmQhkQnT9v15qA/BfVq3vvj134Y0jl9SBje3jXQ==}
 
   fastq@1.19.1:
     resolution: {integrity: sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ==}
@@ -5536,8 +5536,8 @@ packages:
   nested-error-stacks@2.1.1:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
 
-  netlify-cli@21.0.1:
-    resolution: {integrity: sha512-qgdbrOPzgu2qt7fyM6pGMvbbLyFEaKjdTcyGfNV15ElyQEQ5aRIXr1ggK6Yg0Mr4VQplW0caipz+XlKmBPo1dA==}
+  netlify-cli@21.1.0:
+    resolution: {integrity: sha512-+yracuJld2PS0MwTlYscfQpn+z/hy9cE+eGZw62Vbw/DXm9NsS69bW7+KCPbvksSm+t53TKZyuq3OxHFvIHxPg==}
     engines: {node: '>=18.14.0'}
     hasBin: true
 
@@ -5757,10 +5757,6 @@ packages:
 
   onetime@7.0.0:
     resolution: {integrity: sha512-VXJjc87FScF88uafS3JllDgvAm+c/Slfz06lorj2uAY34rlUu0Nt+v8wreiImcrgAjjIHp1rXpTDlLOGw29WwQ==}
-    engines: {node: '>=18'}
-
-  open@10.1.1:
-    resolution: {integrity: sha512-zy1wx4+P3PfhXSEPJNtZmJXfhkkIaxU1VauWIrDZw1O7uJRDRJtKr9n3Ic4NgbA16KyOxOXO2ng9gYwCdXuSXA==}
     engines: {node: '>=18'}
 
   open@10.1.2:
@@ -7236,8 +7232,8 @@ packages:
     resolution: {integrity: sha512-KPHm4VL5dDXKz01UuEd88Df+KzynaohSL9fBh096KWAxSKZQDI2uBrVqtvRM4rwrIrRRKsdLNML/lnaaVSRioA==}
     engines: {node: '>= 0.8'}
 
-  ulid@2.3.0:
-    resolution: {integrity: sha512-keqHubrlpvT6G2wH0OEfSW4mquYRcbe/J8NMmveoQOjUqmo+hXtO+ORCpWhdbZ7k72UtY61BL7haGxW6enBnjw==}
+  ulid@3.0.0:
+    resolution: {integrity: sha512-yvZYdXInnJve6LdlPIuYmURdS2NP41ZoF4QW7SXwbUKYt53+0eDAySO+rGSvM2O/ciuB/G+8N7GQrZ1mCJpuqw==}
     hasBin: true
 
   ultrahtml@1.6.0:
@@ -7763,18 +7759,6 @@ packages:
   write-file-atomic@6.0.0:
     resolution: {integrity: sha512-GmqrO8WJ1NuzJ2DrziEI2o57jKAVIQNf8a18W3nCYU3H7PNWqCCVTeH6/NQE93CIllIgQS98rrmVkYgTX9fFJQ==}
     engines: {node: ^18.17.0 || >=20.5.0}
-
-  ws@8.18.1:
-    resolution: {integrity: sha512-RKW2aJZMXeMxVpnZ6bck+RswznaxmzdULiBr6KY7XkTnW8uvt0iT9H5DkHUChXrc+uurzwa0rVI16n/Xzjdz1w==}
-    engines: {node: '>=10.0.0'}
-    peerDependencies:
-      bufferutil: ^4.0.1
-      utf-8-validate: '>=5.0.2'
-    peerDependenciesMeta:
-      bufferutil:
-        optional: true
-      utf-8-validate:
-        optional: true
 
   ws@8.18.2:
     resolution: {integrity: sha512-DMricUmwGZUVr++AEAe2uiVM7UoO9MAVZMDu05UQOaUII0lp+zOzLLU4Xqh/JvTqklB1T4uELaaPBKyjE1r4fQ==}
@@ -12536,7 +12520,7 @@ snapshots:
 
   fastify-plugin@4.5.1: {}
 
-  fastify@4.29.0:
+  fastify@4.29.1:
     dependencies:
       '@fastify/ajv-compiler': 3.6.0
       '@fastify/error': 3.4.1
@@ -14306,7 +14290,7 @@ snapshots:
 
   nested-error-stacks@2.1.1: {}
 
-  netlify-cli@21.0.1(@types/node@22.15.3)(db0@0.3.2)(ioredis@5.6.1)(picomatch@4.0.2)(rollup@4.40.1):
+  netlify-cli@21.1.0(@types/node@22.15.3)(db0@0.3.2)(ioredis@5.6.1)(picomatch@4.0.2)(rollup@4.40.1):
     dependencies:
       '@fastify/static': 7.0.4
       '@netlify/blobs': 8.2.0
@@ -14348,7 +14332,7 @@ snapshots:
       express-logging: 1.1.1
       extract-zip: 2.0.1
       fastest-levenshtein: 1.0.16
-      fastify: 4.29.0
+      fastify: 4.29.1
       find-up: 7.0.0
       folder-walker: 3.2.0
       fuzzy: 0.1.3
@@ -14380,7 +14364,7 @@ snapshots:
       netlify-redirector: 0.5.0
       node-fetch: 3.3.2
       normalize-package-data: 6.0.2
-      open: 10.1.1
+      open: 10.1.2
       p-filter: 4.1.0
       p-map: 7.0.3
       p-wait-for: 5.0.2
@@ -14396,12 +14380,12 @@ snapshots:
       terminal-link: 4.0.0
       toml: 3.0.0
       tomlify-j0.4: 3.0.0
-      ulid: 2.3.0
+      ulid: 3.0.0
       update-notifier: 7.3.1
       uuid: 11.1.0
       wait-port: 1.1.0
       write-file-atomic: 5.0.1
-      ws: 8.18.1
+      ws: 8.18.2
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -14852,13 +14836,6 @@ snapshots:
   onetime@7.0.0:
     dependencies:
       mimic-function: 5.0.1
-
-  open@10.1.1:
-    dependencies:
-      default-browser: 5.2.1
-      define-lazy-prop: 3.0.0
-      is-inside-container: 1.0.0
-      is-wsl: 3.1.0
 
   open@10.1.2:
     dependencies:
@@ -16417,7 +16394,7 @@ snapshots:
     dependencies:
       random-bytes: 1.0.0
 
-  ulid@2.3.0: {}
+  ulid@3.0.0: {}
 
   ultrahtml@1.6.0: {}
 
@@ -17043,8 +17020,6 @@ snapshots:
     dependencies:
       imurmurhash: 0.1.4
       signal-exit: 4.1.0
-
-  ws@8.18.1: {}
 
   ws@8.18.2: {}
 
