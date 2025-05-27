@@ -38,7 +38,7 @@
     "@testing-library/vue": "8.1.0",
     "@vue/test-utils": "2.4.6",
     "eslint": "9.27.0",
-    "groq": "3.89.0",
+    "groq": "3.90.0",
     "happy-dom": "17.4.7",
     "typescript": "5.8.3",
     "vitest": "3.1.4"
