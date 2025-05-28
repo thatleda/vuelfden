@@ -22,10 +22,10 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { isr: 60 },
+    '/': { swr: true },
     '/imprint': { prerender: true },
     '/privacy': { prerender: true },
-    '/ramblings': { isr: true },
+    '/ramblings': { swr: true },
     '/ramblings/**': { prerender: true },
     '/sitemap.xml': { prerender: true },
   },
@@ -55,5 +55,5 @@ export default defineNuxtConfig({
     url: process.env.NETLIFY_URL,
   },
 
-  compatibilityDate: '2024-07-11',
+  compatibilityDate: '2025-05-28',
 })
