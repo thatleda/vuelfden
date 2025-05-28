@@ -22,10 +22,10 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { swr: 60 },
+    '/': { isr: 360 },
     '/imprint': { prerender: true },
     '/privacy': { prerender: true },
-    '/ramblings': { swr: 60 },
+    '/ramblings': { isr: true },
     '/ramblings/**': { prerender: true },
     '/sitemap.xml': { prerender: true },
   },
