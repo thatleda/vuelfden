@@ -1,10 +1,6 @@
 [Settings]
 ID = "a7667055-8ef3-4833-bbdf-0d1468164dc0"
 
-[functions]
-
-[functions."*"]
-
 [build]
 publish = "dist"
 publishOrigin = "default"
