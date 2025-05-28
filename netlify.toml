@@ -1,0 +1,12 @@
+[Settings]
+ID = "a7667055-8ef3-4833-bbdf-0d1468164dc0"
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "/home/runner/work/vuelfden/vuelfden/dist"
+publishOrigin = "default"
+commandOrigin = "ui"
+command = "pnpm run build"
