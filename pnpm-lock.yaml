@@ -18,8 +18,8 @@ importers:
         specifier: 1.13.3
         version: 1.13.3(@emotion/is-prop-valid@1.2.2)(@sanity/types@3.90.0(@types/react@19.1.6))(magicast@0.3.5)(react-dom@19.1.0(react@19.1.0))(react-is@17.0.2)(react@19.1.0)(styled-components@6.1.18(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.8.3)
       '@nuxtjs/sitemap':
-        specifier: 7.3.0
-        version: 7.3.0(h3@1.15.3)(magicast@0.3.5)(vite@6.3.5(@types/node@22.15.29)(jiti@2.4.2)(terser@5.40.0)(yaml@2.8.0))(vue@3.5.16(typescript@5.8.3))
+        specifier: 7.3.1
+        version: 7.3.1(h3@1.15.3)(magicast@0.3.5)(vite@6.3.5(@types/node@22.15.29)(jiti@2.4.2)(terser@5.40.0)(yaml@2.8.0))(vue@3.5.16(typescript@5.8.3))
       '@vueuse/core':
         specifier: 13.3.0
         version: 13.3.0(vue@3.5.16(typescript@5.8.3))
@@ -1143,8 +1143,8 @@ packages:
     resolution: {integrity: sha512-qZNPqlsaUWABhezryUbls/H40tXDrayNVAj8f4QPCEJqKyvQGZ8kG7nagjrwOkModl+cn56fVP/q47AYfkFbZA==}
     engines: {node: ^18.20.4 || ^20.9.0 || ^22.0.0 || >=23.0.0}
 
-  '@nuxtjs/sitemap@7.3.0':
-    resolution: {integrity: sha512-R3X5hqhWoMXIB4XWQmUuVSGmPFrKTFYFho7pk990si8iayKjSMbBCtTPtHdEscglZukKy4cL7V0WYdDFrUvV5w==}
+  '@nuxtjs/sitemap@7.3.1':
+    resolution: {integrity: sha512-HvVMg0MGdyOQi6gx2Gz9gWxxHywZqXH8FygWoMIaTsnw9yRRbQT52V47KAWoi5mJaL7y59dBKIy1gMY3WL9law==}
     engines: {node: '>=18.0.0'}
 
   '@octokit/auth-token@5.1.2':
@@ -9326,7 +9326,7 @@ snapshots:
       - svelte
       - typescript
 
-  '@nuxtjs/sitemap@7.3.0(h3@1.15.3)(magicast@0.3.5)(vite@6.3.5(@types/node@22.15.29)(jiti@2.4.2)(terser@5.40.0)(yaml@2.8.0))(vue@3.5.16(typescript@5.8.3))':
+  '@nuxtjs/sitemap@7.3.1(h3@1.15.3)(magicast@0.3.5)(vite@6.3.5(@types/node@22.15.29)(jiti@2.4.2)(terser@5.40.0)(yaml@2.8.0))(vue@3.5.16(typescript@5.8.3))':
     dependencies:
       '@nuxt/devtools-kit': 2.4.1(magicast@0.3.5)(vite@6.3.5(@types/node@22.15.29)(jiti@2.4.2)(terser@5.40.0)(yaml@2.8.0))
       '@nuxt/kit': 3.17.4(magicast@0.3.5)
