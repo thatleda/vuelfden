@@ -12,7 +12,20 @@ import groq from 'groq'
 const route = useRoute()
 const { slug } = route.params
 
-const query = groq`*[slug.current == $slug][0]{_createdAt, _updatedAt, _id, content, excerpt, slug, title, "banner": banner.asset->{_id, _type, altText}}`
+const query = groq`*[slug.current == $slug][0]{
+  _createdAt, 
+  _updatedAt, 
+  _id, 
+  content, 
+  excerpt, 
+  slug, 
+  title, 
+  "banner": banner.asset->{
+    _id, 
+    _type, 
+    altText
+  }
+}`
 const { data: page } = useSanityQuery<SanityPage>(query, { slug })
 useSeoMeta({
   description:

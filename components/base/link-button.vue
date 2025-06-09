@@ -44,6 +44,7 @@ const nuxtLinkProps = to.toString().startsWith('/')
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  user-select: none;
 }
 
 .primary,
@@ -59,7 +60,8 @@ const nuxtLinkProps = to.toString().startsWith('/')
 
   &:hover {
     border-color: var(--box-shadow-hover-color);
-    background-color: var(--tertiary-color);
+    background-color: var(--primary-color);
+    color: var(--background-color);
   }
 }
 
@@ -68,10 +70,10 @@ const nuxtLinkProps = to.toString().startsWith('/')
   background-color: var(--box-shadow-color);
 
   &:hover {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--background-color);
     svg {
-      fill: var(--primary-color);
+      fill: var(--background-color);
     }
   }
 }
