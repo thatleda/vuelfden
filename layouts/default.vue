@@ -12,7 +12,7 @@ const prefersReducedMotion = useMediaQuery('prefers-reduced-motion')
 useHead({
   bodyAttrs: {
     class: computed(() => {
-      return header.value.isMenuOpen || prefersReducedMotion.value ? 'static' : ''
+      return header.value.isMenuOpen || prefersReducedMotion ? 'static' : ''
     }),
   },
 })
