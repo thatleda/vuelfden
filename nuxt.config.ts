@@ -22,11 +22,12 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { isr: 360 },
+    '/': { prerender: true },
     '/imprint': { prerender: true },
     '/privacy': { prerender: true },
-    '/ramblings': { isr: true },
+    '/ramblings': { prerender: true },
     '/ramblings/**': { prerender: true },
+    '/ramblings/page/**': { prerender: true },
     '/sitemap.xml': { prerender: true },
   },
 

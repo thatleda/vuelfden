@@ -71,9 +71,15 @@ import groq from 'groq'
 import LinkButton from '~/components/base/link-button.vue'
 import TransitionAnimation from '~/components/base/transition-animation.vue'
 
-const currentPage = 1 // Always page 1 for index
+const route = useRoute()
 const pageSize = 10
 const mainContent = ref<HTMLElement>()
+
+// Get page number from route params
+const currentPage = computed(() => {
+  const pageNumber = Number.parseInt(route.params.number as string, 10)
+  return Number.isNaN(pageNumber) || pageNumber < 1 ? 1 : pageNumber
+})
 
 const articlesQuery = groq`*[_type == "article"] | order(_createdAt desc){
   _createdAt, 
@@ -93,17 +99,22 @@ const { data: allArticles, pending: isLoading } = await useSanityQuery<SanityPag
 
 const articles = computed(() => getCurrentPageArticles())
 const totalPages = computed(() => calculateTotalPages())
-const hasNextPage = computed(() => currentPage < totalPages.value)
-const hasPreviousPage = computed(() => currentPage > 1) // Always false for index
+const hasNextPage = computed(() => currentPage.value < totalPages.value)
+const hasPreviousPage = computed(() => currentPage.value > 1)
 
-const nextPageUrl = computed(() => `/ramblings/page/2`)
-const previousPageUrl = computed(() => '/ramblings') // Not used on index
+const nextPageUrl = computed(() => `/ramblings/page/${currentPage.value + 1}`)
+const previousPageUrl = computed(() => {
+  if (currentPage.value === 2) {
+    return '/ramblings'
+  }
+  return `/ramblings/page/${currentPage.value - 1}`
+})
 
 function getCurrentPageArticles() {
   if (!allArticles.value) {
     return []
   }
-  const startIndex = (currentPage - 1) * pageSize
+  const startIndex = (currentPage.value - 1) * pageSize
   const endIndex = startIndex + pageSize
   return allArticles.value.slice(startIndex, endIndex)
 }
@@ -115,19 +126,31 @@ function calculateTotalPages() {
   return Math.ceil(allArticles.value.length / pageSize)
 }
 
+// 404 if page number is invalid
+if (process.client && currentPage.value > totalPages.value && totalPages.value > 0) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Page not found',
+  })
+}
+
 useSeoMeta({
-  description:
-    'You have reached the coveted index of Leda Wolf\'s select wisdom nuggets. Good for you!',
+  description: `Page ${currentPage.value} of Leda Wolf's unhinged ramblings and wisdom nuggets.`,
   ogImage: '/images/wolf.jpeg',
-  ogTitle: 'Ramblings',
-  robots:
-    'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
-  title: 'Ramblings',
+  ogTitle: `Ramblings - Page ${currentPage.value}`,
+  robots: 'noindex, follow', // Don't index paginated pages
+  title: `Ramblings - Page ${currentPage.value}`,
 })
 
 // Add pagination SEO links
 useHead({
   link: [
+    hasPreviousPage.value
+      ? {
+          rel: 'prev',
+          href: previousPageUrl.value,
+        }
+      : null,
     hasNextPage.value
       ? {
           rel: 'next',
