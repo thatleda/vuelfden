@@ -55,8 +55,8 @@ importers:
         specifier: 3.5.2
         version: 3.5.2(magicast@0.3.5)
       '@nuxtjs/robots':
-        specifier: 5.2.11
-        version: 5.2.11(magicast@0.3.5)(vue@3.5.17(typescript@5.8.3))
+        specifier: 5.3.0
+        version: 5.3.0(magicast@0.3.5)(vue@3.5.17(typescript@5.8.3))
       '@portabletext/types':
         specifier: 2.0.13
         version: 2.0.13
@@ -594,6 +594,9 @@ packages:
   '@fastify/static@7.0.4':
     resolution: {integrity: sha512-p2uKtaf8BMOZWLs6wu+Ihg7bWNBdjNgCwDza4MJtTqg+5ovKmcbgbR9Xs5/smZ1YISfzKOCNYmZV8LaCj+eJ1Q==}
 
+  '@fingerprintjs/botd@1.9.1':
+    resolution: {integrity: sha512-7kv3Yolsx9E56i+L1hCEcupH5yqcI5cmVktxy6B0K7rimaH5qDXwsiA5FL+fkxeUny7XQKn7p13HvK7ofDZB3g==}
+
   '@floating-ui/core@1.7.2':
     resolution: {integrity: sha512-wNB5ooIKHQc+Kui96jE/n69rHFWAVoxn5CAzL1Xdd8FG03cgY3MLO+GF9U3W737fYDSgPWA6MReKhBQBop6Pcw==}
 
@@ -992,8 +995,8 @@ packages:
   '@nuxtjs/color-mode@3.5.2':
     resolution: {integrity: sha512-cC6RfgZh3guHBMLLjrBB2Uti5eUoGM9KyauOaYS9ETmxNWBMTvpgjvSiSJp1OFljIXPIqVTJ3xtJpSNZiO3ZaA==}
 
-  '@nuxtjs/robots@5.2.11':
-    resolution: {integrity: sha512-FEjr3i4SKr5Qj4ahgbTIVQfdIiENhXvSnkDuHlXaiX0Y/mEa3lG0+DARCTakmCb4++DjwW1E1iOUWfYIukWviA==}
+  '@nuxtjs/robots@5.3.0':
+    resolution: {integrity: sha512-kArYlCknv/7v40xNnuRkmUVsNIw/c5MW/fGWZNcs5upk0RV/lND34Mcpuq79kIcbSvJaHUzlsButdO2X2lE69g==}
 
   '@nuxtjs/sanity@1.13.3':
     resolution: {integrity: sha512-qZNPqlsaUWABhezryUbls/H40tXDrayNVAj8f4QPCEJqKyvQGZ8kG7nagjrwOkModl+cn56fVP/q47AYfkFbZA==}
@@ -7729,6 +7732,10 @@ snapshots:
       fastq: 1.19.1
       glob: 10.4.5
 
+  '@fingerprintjs/botd@1.9.1':
+    dependencies:
+      tslib: 2.8.1
+
   '@floating-ui/core@1.7.2':
     dependencies:
       '@floating-ui/utils': 0.2.10
@@ -8578,8 +8585,9 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@nuxtjs/robots@5.2.11(magicast@0.3.5)(vue@3.5.17(typescript@5.8.3))':
+  '@nuxtjs/robots@5.3.0(magicast@0.3.5)(vue@3.5.17(typescript@5.8.3))':
     dependencies:
+      '@fingerprintjs/botd': 1.9.1
       '@nuxt/kit': 3.17.5(magicast@0.3.5)
       consola: 3.4.2
       defu: 6.1.4
