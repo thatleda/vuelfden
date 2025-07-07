@@ -30,8 +30,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       netlify-cli:
-        specifier: 22.2.1
-        version: 22.2.1(@types/node@24.0.7)(db0@0.3.2)(ioredis@5.6.1)(picomatch@4.0.2)(rollup@4.44.1)
+        specifier: 22.2.2
+        version: 22.2.2(@types/node@24.0.7)(db0@0.3.2)(ioredis@5.6.1)(picomatch@4.0.2)(rollup@4.44.1)
       nuxt:
         specifier: 3.17.5
         version: 3.17.5(@parcel/watcher@2.5.1)(@types/node@24.0.7)(db0@0.3.2)(eslint@9.30.1(jiti@2.4.2))(ioredis@5.6.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.44.1)(terser@5.43.1)(typescript@5.8.3)(vite@6.3.5(@types/node@24.0.7)(jiti@2.4.2)(terser@5.43.1)(yaml@2.8.0))(yaml@2.8.0)
@@ -749,6 +749,10 @@ packages:
     resolution: {integrity: sha512-a96wZheD3duD20aEJXBIui73GewRIcKwsXyzyFyerrsDffQjaWFuWxU9fnVSiunl6UVrvpBjWMJRGkCv4zf2KQ==}
     engines: {node: ^18.14.0 || >=20}
 
+  '@netlify/dev-utils@3.2.2':
+    resolution: {integrity: sha512-ECz/xEaqhAPUoFkeC2Ofpky1HBEKwPCsAL66iK/dLFHUFs39SC3y6Bn5QY76DzONmt+RjWmoYkSIEhJ1xAWHfA==}
+    engines: {node: ^18.14.0 || >=20}
+
   '@netlify/edge-bundler@14.0.6':
     resolution: {integrity: sha512-wfIS26778TG34C3Ma4vhYVTviUuZMD1cWVW/G3m9qZ4MPqC3xII66mmJOdHSfBhwXNeu8tt/b3YoFO0b/nJO0Q==}
     engines: {node: '>=18.14.0'}
@@ -756,8 +760,8 @@ packages:
   '@netlify/edge-functions-bootstrap@2.14.0':
     resolution: {integrity: sha512-Fs1cQ+XKfKr2OxrAvmX+S46CJmrysxBdCUCTk/wwcCZikrDvsYUFG7FTquUl4JfAf9taYYyW/tPv35gKOKS8BQ==}
 
-  '@netlify/edge-functions@2.15.4':
-    resolution: {integrity: sha512-R84omAVAdm5NU1P8LaRXUU65NUPUzpOE5zdWmVzA6vwoSHweq0nVFfuXnQcVCHHgjizRhuKHi5mCxgwg0438ug==}
+  '@netlify/edge-functions@2.15.5':
+    resolution: {integrity: sha512-hm4NnhmDxwICuuaO2mw9HS1T3Pd2TEFU+xIItG09534vYddvCQ/6fAjT3LQQoyCWreEBUYvYn7Ml7kV4mMFb0w==}
     engines: {node: '>=18.0.0'}
 
   '@netlify/functions-utils@6.0.12':
@@ -4977,8 +4981,8 @@ packages:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
     engines: {node: '>= 0.6'}
 
-  netlify-cli@22.2.1:
-    resolution: {integrity: sha512-1blzNQqUops2Vfc0xLVsJXlifteQxbXvpuIWwS/Gur/OALs0M+sD0wAY79K5eLc9+UOxpABBtMncMXXdZQpFqQ==}
+  netlify-cli@22.2.2:
+    resolution: {integrity: sha512-g2NepIGfGzpSGTQr0W3LvdahytllYqkZVZiUbNKBkBwM1ZxlCc5hFCgZdYUGg0iuItvvPPd9dY8NpGL6ifhGpQ==}
     engines: {node: '>=20.12.2'}
     hasBin: true
 
@@ -8075,6 +8079,24 @@ snapshots:
       uuid: 11.1.0
       write-file-atomic: 5.0.1
 
+  '@netlify/dev-utils@3.2.2':
+    dependencies:
+      '@whatwg-node/server': 0.10.10
+      ansis: 4.1.0
+      chokidar: 4.0.3
+      decache: 4.6.2
+      dot-prop: 9.0.0
+      env-paths: 3.0.0
+      find-up: 7.0.0
+      image-size: 2.0.2
+      js-image-generator: 1.0.4
+      lodash.debounce: 4.0.8
+      parse-gitignore: 2.0.0
+      semver: 7.7.2
+      tmp-promise: 3.0.3
+      uuid: 11.1.0
+      write-file-atomic: 5.0.1
+
   '@netlify/edge-bundler@14.0.6':
     dependencies:
       '@import-maps/resolve': 2.0.0
@@ -8101,9 +8123,9 @@ snapshots:
 
   '@netlify/edge-functions-bootstrap@2.14.0': {}
 
-  '@netlify/edge-functions@2.15.4':
+  '@netlify/edge-functions@2.15.5':
     dependencies:
-      '@netlify/dev-utils': 3.2.1
+      '@netlify/dev-utils': 3.2.2
       '@netlify/edge-bundler': 14.0.6
       '@netlify/edge-functions-bootstrap': 2.14.0
       '@netlify/runtime-utils': 2.1.0
@@ -9439,7 +9461,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/scope-manager': 8.35.1
       '@typescript-eslint/types': 8.35.1
-      '@typescript-eslint/typescript-estree': 8.35.1(typescript@5.8.3)
+      '@typescript-eslint/typescript-estree': 8.35.1(supports-color@10.0.0)(typescript@5.8.3)
       '@typescript-eslint/visitor-keys': 8.35.1
       debug: 4.4.1(supports-color@10.0.0)
       eslint: 9.30.1(jiti@2.4.2)
@@ -9447,7 +9469,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/project-service@8.35.0(supports-color@10.0.0)(typescript@5.8.3)':
+  '@typescript-eslint/project-service@8.35.0(typescript@5.8.3)':
     dependencies:
       '@typescript-eslint/tsconfig-utils': 8.35.0(typescript@5.8.3)
       '@typescript-eslint/types': 8.35.0
@@ -9456,7 +9478,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/project-service@8.35.1(typescript@5.8.3)':
+  '@typescript-eslint/project-service@8.35.1(supports-color@10.0.0)(typescript@5.8.3)':
     dependencies:
       '@typescript-eslint/tsconfig-utils': 8.35.1(typescript@5.8.3)
       '@typescript-eslint/types': 8.35.1
@@ -9485,7 +9507,7 @@ snapshots:
 
   '@typescript-eslint/type-utils@8.35.1(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3)':
     dependencies:
-      '@typescript-eslint/typescript-estree': 8.35.1(typescript@5.8.3)
+      '@typescript-eslint/typescript-estree': 8.35.1(supports-color@10.0.0)(typescript@5.8.3)
       '@typescript-eslint/utils': 8.35.1(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3)
       debug: 4.4.1(supports-color@10.0.0)
       eslint: 9.30.1(jiti@2.4.2)
@@ -9498,9 +9520,9 @@ snapshots:
 
   '@typescript-eslint/types@8.35.1': {}
 
-  '@typescript-eslint/typescript-estree@8.35.0(supports-color@10.0.0)(typescript@5.8.3)':
+  '@typescript-eslint/typescript-estree@8.35.0(typescript@5.8.3)':
     dependencies:
-      '@typescript-eslint/project-service': 8.35.0(supports-color@10.0.0)(typescript@5.8.3)
+      '@typescript-eslint/project-service': 8.35.0(typescript@5.8.3)
       '@typescript-eslint/tsconfig-utils': 8.35.0(typescript@5.8.3)
       '@typescript-eslint/types': 8.35.0
       '@typescript-eslint/visitor-keys': 8.35.0
@@ -9514,9 +9536,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/typescript-estree@8.35.1(typescript@5.8.3)':
+  '@typescript-eslint/typescript-estree@8.35.1(supports-color@10.0.0)(typescript@5.8.3)':
     dependencies:
-      '@typescript-eslint/project-service': 8.35.1(typescript@5.8.3)
+      '@typescript-eslint/project-service': 8.35.1(supports-color@10.0.0)(typescript@5.8.3)
       '@typescript-eslint/tsconfig-utils': 8.35.1(typescript@5.8.3)
       '@typescript-eslint/types': 8.35.1
       '@typescript-eslint/visitor-keys': 8.35.1
@@ -9535,7 +9557,7 @@ snapshots:
       '@eslint-community/eslint-utils': 4.7.0(eslint@9.30.1(jiti@2.4.2))
       '@typescript-eslint/scope-manager': 8.35.0
       '@typescript-eslint/types': 8.35.0
-      '@typescript-eslint/typescript-estree': 8.35.0(supports-color@10.0.0)(typescript@5.8.3)
+      '@typescript-eslint/typescript-estree': 8.35.0(typescript@5.8.3)
       eslint: 9.30.1(jiti@2.4.2)
       typescript: 5.8.3
     transitivePeerDependencies:
@@ -9546,7 +9568,7 @@ snapshots:
       '@eslint-community/eslint-utils': 4.7.0(eslint@9.30.1(jiti@2.4.2))
       '@typescript-eslint/scope-manager': 8.35.1
       '@typescript-eslint/types': 8.35.1
-      '@typescript-eslint/typescript-estree': 8.35.1(typescript@5.8.3)
+      '@typescript-eslint/typescript-estree': 8.35.1(supports-color@10.0.0)(typescript@5.8.3)
       eslint: 9.30.1(jiti@2.4.2)
       typescript: 5.8.3
     transitivePeerDependencies:
@@ -10807,7 +10829,7 @@ snapshots:
 
   detective-typescript@14.0.0(supports-color@10.0.0)(typescript@5.8.3):
     dependencies:
-      '@typescript-eslint/typescript-estree': 8.35.0(supports-color@10.0.0)(typescript@5.8.3)
+      '@typescript-eslint/typescript-estree': 8.35.1(supports-color@10.0.0)(typescript@5.8.3)
       ast-module-types: 6.0.1
       node-source-walk: 7.0.1
       typescript: 5.8.3
@@ -13091,7 +13113,7 @@ snapshots:
 
   negotiator@0.6.3: {}
 
-  netlify-cli@22.2.1(@types/node@24.0.7)(db0@0.3.2)(ioredis@5.6.1)(picomatch@4.0.2)(rollup@4.44.1):
+  netlify-cli@22.2.2(@types/node@24.0.7)(db0@0.3.2)(ioredis@5.6.1)(picomatch@4.0.2)(rollup@4.44.1):
     dependencies:
       '@fastify/static': 7.0.4
       '@netlify/api': 14.0.3
@@ -13100,7 +13122,7 @@ snapshots:
       '@netlify/build-info': 10.0.7
       '@netlify/config': 23.0.11
       '@netlify/edge-bundler': 14.0.6
-      '@netlify/edge-functions': 2.15.4
+      '@netlify/edge-functions': 2.15.5
       '@netlify/headers-parser': 9.0.1
       '@netlify/local-functions-proxy': 2.0.3
       '@netlify/redirect-parser': 15.0.2
