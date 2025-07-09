@@ -73,8 +73,8 @@ importers:
         specifier: 9.30.1
         version: 9.30.1(jiti@2.4.2)
       groq:
-        specifier: 3.97.1
-        version: 3.97.1
+        specifier: 3.98.0
+        version: 3.98.0
       happy-dom:
         specifier: 18.0.1
         version: 18.0.1
@@ -3878,8 +3878,8 @@ packages:
   groq-js@0.2.0:
     resolution: {integrity: sha512-qJeuEgziddryH1ClsJvMoZM9aXNQbBViNZZrJwhHKr2wU8HGGM7uNWNVFglWXMX60MMaa2SClX3UohP76Ut68g==}
 
-  groq@3.97.1:
-    resolution: {integrity: sha512-FpeRtJIPa/FMbX/Vb00/QeKvT8AMGMyTJ3jkg1yTwZ9g5uGmvQKJtBHO8+yPoZyj71YrPud7LCdMBy5ihdczqg==}
+  groq@3.98.0:
+    resolution: {integrity: sha512-n9Xqi6hxHP01VHY0JgXY5s4kQh/09tJQyct08lmD8jXSPV56WPjR4gfV1o2xIa1U2gWSqMy4F5yDcuxHkX2Jcg==}
     engines: {node: '>=18'}
 
   gzip-size@7.0.0:
@@ -11865,7 +11865,7 @@ snapshots:
 
   groq-js@0.2.0: {}
 
-  groq@3.97.1: {}
+  groq@3.98.0: {}
 
   gzip-size@7.0.0:
     dependencies:
