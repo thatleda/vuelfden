@@ -50,7 +50,6 @@ const { book } = defineProps<ReadingNowProps>()
   flex-direction: row;
   margin: 0 auto;
   gap: 1rem;
-  max-width: 1000px;
 
   @media (max-width: 600px) {
     flex-direction: column;

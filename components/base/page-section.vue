@@ -8,7 +8,7 @@
   >
     <section :id="props.anchor" :class="$style.section">
       <div :class="$style.wrapper">
-        <h2 v-if="props.heading">
+        <h2 v-if="props.heading" :class="$style.heading">
           {{ props.heading }}
         </h2>
         <div :class="$style.cards">
@@ -32,12 +32,21 @@ const props = defineProps<SectionProps>()
 </script>
 
 <style module>
+h2.heading {
+  margin: auto;
+  padding-top: 2rem;
+}
+
 .section {
+  width: 64rem;
   height: auto;
   background: var(--background-color);
+  border-radius: var(--border-radius);
   scroll-margin-top: 60px;
   padding: var(--page-padding);
   margin: 0 auto 4rem auto;
+  position: relative;
+  z-index: 1;
 
   @media (max-width: 749px) {
     margin: 0 auto 2rem auto;
@@ -50,6 +59,8 @@ const props = defineProps<SectionProps>()
   max-width: var(--page-width);
   margin: 0 auto 0 auto;
   padding: var(--page-padding);
+  position: relative;
+  z-index: 2;
 
   @media (max-width: 749px) {
     padding: 0;
@@ -60,5 +71,9 @@ const props = defineProps<SectionProps>()
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 2rem 0;
+  border-radius: var(--border-radius);
+  position: relative;
+  z-index: 3;
 }
 </style>

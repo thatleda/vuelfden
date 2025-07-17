@@ -80,7 +80,7 @@ const { page } = defineProps<HeroProps>()
   flex-direction: row;
   gap: 5rem;
   align-items: center;
-  background-color: var(--card-background-color);
+  background: var(--surface-primary);
   border-radius: var(--border-radius);
   padding: 2rem;
 

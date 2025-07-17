@@ -42,8 +42,14 @@ html {
   --tertiary-color: #527766;
   --text-color: #b1b1b1;
   --subtext-color: #e6e6e6;
-  --background-color: #121212;
-  --card-background-color: #202020;
+  --background-color: #1a1a1a;
+  --card-background-color: #2a2a2a;
+  --background-gradient:
+    radial-gradient(ellipse at 20% 50%, rgba(120, 200, 80, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(100, 150, 255, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 40% 80%, rgba(200, 100, 255, 0.2) 0%, transparent 50%),
+    linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 25%, #0f1f15 50%, #1a1a2e 75%, #0a0a1a 100%);
+  --card-background-gradient: #2a2a2a;
   --scroll-bar-color: rgba(255, 255, 255, 0.5);
   --box-shadow-color: rgba(0, 0, 0, 0.16);
   --box-shadow-hover-color: rgba(0, 0, 0, 0.32);
@@ -57,6 +63,8 @@ html {
   --subtext-color: #555555;
   --background-color: #d2d2d2;
   --card-background-color: #dddddd;
+  --background-gradient: linear-gradient(135deg, #d2d2d2 0%, #e0e0e0 25%, #c8e6d0 50%, #e0e0e0 75%, #d2d2d2 100%);
+  --card-background-gradient: linear-gradient(135deg, #dddddd 0%, #f0f0f0 25%, #e8f5ea 50%, #f0f0f0 75%, #dddddd 100%);
   --scroll-bar-color: rgba(0, 0, 0, 0.5);
   --box-shadow-color: #dddddd;
   --box-shadow-hover-color: rgba(0, 0, 0, 0.32);
@@ -71,7 +79,9 @@ html {
 
 body {
   height: 100%;
-  background-color: var(--background-color);
+  background: var(--background-gradient);
+  position: relative;
+  overflow-x: hidden;
 
   /* Disable smooth scrolling when users have prefers-reduced-motion enabled */
   @media screen and (prefers-reduced-motion: reduce) {
@@ -91,6 +101,118 @@ body {
 
   @media (max-width: 1030px) {
     font-size: 16px;
+  }
+}
+
+/* Northern Lights Animation */
+@keyframes aurora {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-10px);
+  }
+}
+
+/* Star twinkling animations */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+@keyframes twinkle-slow {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.9; }
+}
+
+@keyframes twinkle-fast {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.8; }
+}
+
+/* Stars layer 1 - Small clustered stars */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    /* Dense cluster 1 */
+    radial-gradient(1px 1px at 50px 40px, #fff, transparent),
+    radial-gradient(1px 1px at 55px 45px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 48px 38px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 52px 42px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 57px 39px, #fff, transparent),
+
+    /* Dense cluster 2 */
+    radial-gradient(1px 1px at 180px 80px, #fff, transparent),
+    radial-gradient(2px 2px at 185px 85px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 175px 82px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 188px 78px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 182px 88px, #fff, transparent),
+
+    /* Dense cluster 3 */
+    radial-gradient(1px 1px at 320px 50px, #fff, transparent),
+    radial-gradient(1px 1px at 325px 55px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 318px 48px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 322px 52px, rgba(255,255,255,0.7), transparent),
+
+    /* Scattered individual stars */
+    radial-gradient(1px 1px at 100px 20px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 150px 150px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 250px 30px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 380px 120px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 420px 90px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 80px 140px, rgba(255,255,255,0.6), transparent);
+  background-repeat: repeat;
+  background-size: 500px 200px;
+  animation: twinkle 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Stars layer 2 - Larger accent stars */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    /* Bright accent stars */
+    radial-gradient(3px 3px at 120px 60px, rgba(200,200,255,0.9), transparent),
+    radial-gradient(2px 2px at 280px 40px, rgba(255,200,200,0.8), transparent),
+    radial-gradient(3px 3px at 400px 110px, rgba(200,255,200,0.9), transparent),
+    radial-gradient(2px 2px at 200px 120px, rgba(255,255,200,0.8), transparent),
+    radial-gradient(3px 3px at 350px 180px, rgba(200,200,255,0.7), transparent),
+    radial-gradient(2px 2px at 80px 90px, rgba(255,200,255,0.8), transparent),
+    radial-gradient(3px 3px at 450px 70px, rgba(200,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 30px 160px, rgba(255,255,200,0.7), transparent);
+  background-repeat: repeat;
+  background-size: 600px 250px;
+  animation: twinkle-slow 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Aurora animation container */
+.dark-mode body {
+  background: var(--background-gradient);
+}
+
+/* Hide stars and aurora effects for users with reduced motion preference */
+@media screen and (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none !important;
+  }
+  .dark-mode body {
+    animation: none !important;
   }
 }
 

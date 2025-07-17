@@ -18,6 +18,8 @@
   </base-page-section>
   <base-page-section anchor="contact" heading="What is she up to?">
     <reading-now v-if="book" :book="book" />
+  </base-page-section>
+  <base-page-section>
     <contact-leda />
   </base-page-section>
 </template>

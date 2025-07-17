@@ -24,7 +24,6 @@
 
 <style module>
 .footer {
-  background: var(--background-color);
   border-top: 3px solid var(--box-shadow-color);
 }
 

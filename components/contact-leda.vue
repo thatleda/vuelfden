@@ -46,7 +46,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  background-color: var(--card-background-color);
+  background: var(--surface-primary);
   border-radius: var(--border-radius);
   padding: 1rem;
 }
