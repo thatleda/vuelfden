@@ -24,7 +24,6 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxt/image',
     '@vueuse/nuxt',
-    '@nuxtjs/robots',
   ],
 
   // CSS and asset optimization
