@@ -1,4 +1,5 @@
 onlyBuiltDependencies:
   - esbuild
   - netlify-cli
+  - sharp
   - unrs-resolver

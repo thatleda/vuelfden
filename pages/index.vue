@@ -25,6 +25,7 @@
 <script lang="ts" setup>
 import type { SanityBook, SanityPage, SanityReview } from '~/@types/sanity'
 import groq from 'groq'
+import { useSanityQuery } from '~/composables/useSanity'
 
 const homePageQuery = groq`{
   "hero": *[_type == "page" && slug.current == "hero"][0]{

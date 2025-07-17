@@ -24,7 +24,6 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxt/image',
     '@vueuse/nuxt',
-    '@nuxtjs/sitemap',
     '@nuxtjs/robots',
   ],
 
@@ -56,7 +55,7 @@ export default defineNuxtConfig({
     '/ramblings': { prerender: true },
     '/ramblings/**': { prerender: true },
     '/ramblings/page/**': { prerender: true },
-    '/sitemap.xml': { prerender: true },
+    '/sitemap.xml': { headers: { 'Content-Type': 'application/xml' } },
   },
 
   image: {
