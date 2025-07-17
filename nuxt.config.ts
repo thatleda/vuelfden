@@ -5,7 +5,6 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/fonts',
-    '@nuxtjs/sanity',
     '@nuxtjs/color-mode',
     '@nuxt/image',
     '@vueuse/nuxt',
@@ -31,11 +30,6 @@ export default defineNuxtConfig({
     '/sitemap.xml': { prerender: true },
   },
 
-  sanity: {
-    dataset: process.env.NUXT_SANITY_DATASET,
-    projectId: process.env.NUXT_SANITY_PROJECT_ID,
-  },
-
   image: {
     provider: 'sanity',
     sanity: {
@@ -54,6 +48,13 @@ export default defineNuxtConfig({
   site: {
     name: 'Vuelfden',
     url: process.env.NETLIFY_URL,
+  },
+
+  runtimeConfig: {
+    public: {
+      sanityProjectId: process.env.NUXT_SANITY_PROJECT_ID || '',
+      sanityDataset: process.env.NUXT_SANITY_DATASET || 'production',
+    },
   },
 
   compatibilityDate: '2025-05-28',
