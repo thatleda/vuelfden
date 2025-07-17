@@ -154,17 +154,17 @@ body::before {
     radial-gradient(1px 1px at 320px 50px, #fff, transparent),
     radial-gradient(1px 1px at 325px 55px, rgba(255,255,255,0.8), transparent),
     radial-gradient(2px 2px at 318px 48px, rgba(255,255,255,0.9), transparent),
-    radial-gradient(1px 1px at 322px 52px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 322px 51px, rgba(255,255,255,0.7), transparent),
 
     /* Scattered individual stars */
-    radial-gradient(1px 1px at 100px 20px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 100px 30px, rgba(255,255,255,0.8), transparent),
     radial-gradient(1px 1px at 150px 150px, rgba(255,255,255,0.6), transparent),
-    radial-gradient(1px 1px at 250px 30px, rgba(255,255,255,0.9), transparent),
-    radial-gradient(1px 1px at 380px 120px, rgba(255,255,255,0.7), transparent),
-    radial-gradient(1px 1px at 420px 90px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 250px 32px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 390px 120px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 420px 92px, rgba(255,255,255,0.8), transparent),
     radial-gradient(1px 1px at 80px 140px, rgba(255,255,255,0.6), transparent);
   background-repeat: repeat;
-  background-size: 1000px 200px;
+  background-size: 400px 200px;
   animation: twinkle 4s ease-in-out infinite;
   pointer-events: none;
   z-index: -2;
@@ -182,13 +182,13 @@ body::after {
     radial-gradient(3px 3px at 120px 60px, rgba(200,200,255,0.9), transparent),
     radial-gradient(2px 2px at 280px 40px, rgba(255,200,200,0.8), transparent),
     radial-gradient(3px 3px at 400px 110px, rgba(200,255,200,0.9), transparent),
-    radial-gradient(2px 2px at 200px 120px, rgba(255,255,200,0.8), transparent),
-    radial-gradient(3px 3px at 350px 180px, rgba(200,200,255,0.7), transparent),
-    radial-gradient(2px 2px at 80px 90px, rgba(255,200,255,0.8), transparent),
-    radial-gradient(3px 3px at 450px 70px, rgba(200,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 201px 123px, rgba(255,255,200,0.8), transparent),
+    radial-gradient(3px 3px at 354px 184px, rgba(200,200,255,0.7), transparent),
+    radial-gradient(2px 2px at 84px 90px, rgba(255,200,255,0.8), transparent),
+    radial-gradient(3px 3px at 459px 70px, rgba(200,255,255,0.9), transparent),
     radial-gradient(2px 2px at 30px 160px, rgba(255,255,200,0.7), transparent);
   background-repeat: repeat;
-  background-size: 600px 250px;
+  background-size: 800px 250px;
   animation: twinkle-slow 6s ease-in-out infinite;
   pointer-events: none;
   z-index: -1;
