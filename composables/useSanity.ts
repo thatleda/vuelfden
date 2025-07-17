@@ -1,15 +1,15 @@
 import type { SanityClient } from '@sanity/client'
+import type { MaybeRef } from '@vueuse/core'
 import { createClient } from '@sanity/client'
-import { computed, ref } from 'vue'
+import { computed, ref, unref, watch } from 'vue'
 
 let client: SanityClient | null = null
 
 function getSanityClient(): SanityClient {
   if (!client) {
-    const config = useRuntimeConfig()
     client = createClient({
-      projectId: config.public.sanityProjectId || '',
-      dataset: config.public.sanityDataset || '',
+      projectId: process.env.NUXT_SANITY_PROJECT_ID || '',
+      dataset: process.env.NUXT_SANITY_DATASET || 'production',
       useCdn: true,
       apiVersion: '2023-01-01',
     })
@@ -17,7 +17,10 @@ function getSanityClient(): SanityClient {
   return client
 }
 
-export function useSanityQuery<T = any>(query: string, params?: any) {
+export function useSanityQuery<T = any>(
+  query: MaybeRef<string>,
+  params?: MaybeRef<any>,
+) {
   const data = ref<T | null>(null)
   const pending = ref(true)
   const error = ref<Error | null>(null)
@@ -27,18 +30,22 @@ export function useSanityQuery<T = any>(query: string, params?: any) {
       pending.value = true
       error.value = null
       const sanityClient = getSanityClient()
-      const result = await sanityClient.fetch<T>(query, params)
+      const queryValue = unref(query)
+      const paramsValue = unref(params) || {}
+
+      const result = await sanityClient.fetch<T>(queryValue, paramsValue)
       data.value = result
     }
     catch (err) {
       error.value = err instanceof Error ? err : new Error(String(err))
+      console.error('Sanity query error:', err)
     }
     finally {
       pending.value = false
     }
   }
 
-  execute()
+  watch([() => unref(query), () => unref(params)], execute, { immediate: true })
 
   return {
     data: computed(() => data.value),
