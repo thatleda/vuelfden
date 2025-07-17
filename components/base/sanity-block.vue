@@ -31,20 +31,20 @@ const components = computed(() => ({
         console.warn('Link mark missing href:', props.value)
         return h('span', {}, () => props.children)
       }
-      return h(ArticleLink, { href: props.value.href }, () => props.children)
+      return h(ArticleLink, { href: props.value.href }, () => props.text)
     },
   },
   block: {
     blockquote: (props: any) => {
-      const text = props.node.children?.[0]?.text || ''
+      const text = props.node.children?.[0]?.text ?? ''
       return h(Blockquote, {}, { default: () => text })
     },
     pre: (props: any) => {
-      const text = props.node.children?.[0]?.text || ''
+      const text = props.node.children?.[0]?.text ?? ''
       return h(Poem, {}, { default: () => text })
     },
     sub: (props: any) => {
-      const text = props.node.children?.[0]?.text || ''
+      const text = props.node.children?.[0]?.text ?? ''
       return h(QuoteAuthor, {}, { default: () => text })
     },
   },
