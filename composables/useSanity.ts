@@ -6,10 +6,11 @@ import { computed, ref, unref, watch } from 'vue'
 let client: SanityClient | null = null
 
 function getSanityClient(): SanityClient {
+  const config = useRuntimeConfig()
   if (!client) {
     client = createClient({
-      projectId: process.env.NUXT_SANITY_PROJECT_ID || '',
-      dataset: process.env.NUXT_SANITY_DATASET || 'production',
+      projectId: config.public.sanityProjectId || '',
+      dataset: config.public.sanityDataset || '',
       useCdn: true,
       apiVersion: '2023-01-01',
     })

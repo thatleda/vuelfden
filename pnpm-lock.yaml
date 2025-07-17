@@ -17,6 +17,9 @@ importers:
       '@nuxtjs/sitemap':
         specifier: 7.3.1
         version: 7.3.1(h3@1.15.3)(magicast@0.3.5)(vite@7.0.4(@types/node@24.0.7)(jiti@2.4.2)(terser@5.43.1)(yaml@2.8.0))(vue@3.5.17(typescript@5.8.3))
+      '@portabletext/vue':
+        specifier: 1.0.12
+        version: 1.0.12(vue@3.5.17(typescript@5.8.3))
       '@sanity/client':
         specifier: 7.8.0
         version: 7.8.0
@@ -1621,9 +1624,18 @@ packages:
   '@poppinss/exception@1.2.2':
     resolution: {integrity: sha512-m7bpKCD4QMlFCjA/nKTs23fuvoVFoA83brRKmObCUNmi/9tVu8Ve3w4YQAnJu4q3Tjf5fr685HYIC/IA2zHRSg==}
 
+  '@portabletext/toolkit@2.0.17':
+    resolution: {integrity: sha512-5wj+oUaCmHm9Ay1cytPmT1Yc0SrR1twwUIc0qNQ3MtaXaNMPw99Gjt1NcA34yfyKmEf/TAB2NiiT72jFxdddIQ==}
+    engines: {node: ^14.13.1 || >=16.0.0}
+
   '@portabletext/types@2.0.13':
     resolution: {integrity: sha512-5xk5MSyQU9CrDho3Rsguj38jhijhD36Mk8S6mZo3huv6PM+t4M/5kJN2KFIxgvt4ONpvOEs1pVIZAV0cL0Vi+Q==}
     engines: {node: ^14.13.1 || >=16.0.0 || >=18.0.0}
+
+  '@portabletext/vue@1.0.12':
+    resolution: {integrity: sha512-RUmdORBquYHpf5rkPgppZEqFYA/SOjR2udUIUcg+HfStc+r48CyaQGUy9Iq4cfFPu7VlVwH9F5Dfr2BT0T3Ayw==}
+    peerDependencies:
+      vue: ^3.3.4
 
   '@rolldown/pluginutils@1.0.0-beta.19':
     resolution: {integrity: sha512-3FL3mnMbPu0muGOCaKAhhFEYmqv9eTfPSJRJmANrCwtgK8VuxpsZDGK+m0LYAGoyO8+0j5uRe4PeyPDK1yA/hA==}
@@ -9215,7 +9227,17 @@ snapshots:
 
   '@poppinss/exception@1.2.2': {}
 
+  '@portabletext/toolkit@2.0.17':
+    dependencies:
+      '@portabletext/types': 2.0.13
+
   '@portabletext/types@2.0.13': {}
+
+  '@portabletext/vue@1.0.12(vue@3.5.17(typescript@5.8.3))':
+    dependencies:
+      '@portabletext/toolkit': 2.0.17
+      '@portabletext/types': 2.0.13
+      vue: 3.5.17(typescript@5.8.3)
 
   '@rolldown/pluginutils@1.0.0-beta.19': {}
 
