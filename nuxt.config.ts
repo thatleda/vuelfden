@@ -72,11 +72,6 @@ export default defineNuxtConfig({
     },
   },
 
-  site: {
-    name: 'Vuelfden',
-    url: process.env.NETLIFY_URL,
-  },
-
   runtimeConfig: {
     public: {
       sanityProjectId: process.env.NUXT_SANITY_PROJECT_ID || '',

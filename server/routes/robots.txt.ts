@@ -1,5 +1,5 @@
 export default defineEventHandler(async (event) => {
-  const baseUrl = process.env.URL || 'https://leda.fyi'
+  const baseUrl = process.env.NETLIFY_URL || 'https://leda.fyi'
 
   const robots = `User-agent: *
 Allow: /
