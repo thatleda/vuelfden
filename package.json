@@ -17,7 +17,7 @@
   "dependencies": {
     "@nuxt/fonts": "0.11.4",
     "@nuxt/image": "1.10.0",
-    "@nuxtjs/sitemap": "7.3.1",
+    "@nuxtjs/sitemap": "7.4.3",
     "@portabletext/vue": "1.0.12",
     "@sanity/client": "7.8.0",
     "@vueuse/core": "13.5.0",
