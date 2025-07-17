@@ -3,6 +3,22 @@ export default defineNuxtConfig({
   css: ['~/assets/css/animation.css'],
   devtools: { enabled: true },
 
+  // Performance optimizations for Nuxt 4
+  experimental: {
+    payloadExtraction: false,
+    viewTransition: true,
+  },
+
+  // Optimization settings
+  optimization: {
+    keyedComposables: [
+      {
+        name: 'useElementVisibility',
+        argumentLength: 2,
+      },
+    ],
+  },
+
   modules: [
     '@nuxt/fonts',
     '@nuxtjs/color-mode',
@@ -11,6 +27,20 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
   ],
+
+  // CSS and asset optimization
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@import "~/assets/css/animation.css";`,
+        },
+      },
+    },
+    build: {
+      cssCodeSplit: false,
+    },
+  },
 
   nitro: {
     preset: 'netlify',

@@ -26,58 +26,92 @@
 import type { SanityBook, SanityPage, SanityReview } from '~/@types/sanity'
 import groq from 'groq'
 
-const query = groq`*[_type == "page" && slug.current == $slug][0]{
-  _createdAt, 
-  _updatedAt, 
-  _id, 
-  content, 
-  excerpt, 
-  slug, 
-  title, 
-  "banner": banner.asset->{
-    _id, 
-    _type, 
-    altText
+const homePageQuery = groq`{
+  "hero": *[_type == "page" && slug.current == "hero"][0]{
+    _createdAt,
+    _updatedAt,
+    _id,
+    content,
+    excerpt,
+    slug,
+    title,
+    "banner": banner.asset->{
+      _id,
+      _type,
+      altText
+    }
+  },
+  "previously": *[_type == "page" && slug.current == "previously"][0]{
+    _createdAt,
+    _updatedAt,
+    _id,
+    content,
+    excerpt,
+    slug,
+    title,
+    "banner": banner.asset->{
+      _id,
+      _type,
+      altText
+    }
+  },
+  "about": *[_type == "page" && slug.current == "who"][0]{
+    _createdAt,
+    _updatedAt,
+    _id,
+    content,
+    excerpt,
+    slug,
+    title,
+    "banner": banner.asset->{
+      _id,
+      _type,
+      altText
+    }
+  },
+  "reviews": *[_type == "review"] | order(_createdAt desc){
+    _createdAt,
+    _updatedAt,
+    _id,
+    comment,
+    excerpt,
+    reviewer,
+    "picture": picture.asset->{
+      _id,
+      _type,
+      altText
+    }
+  },
+  "book": *[_type == "book"] | order(_createdAt desc)[0]{
+    _createdAt,
+    _updatedAt,
+    _id,
+    author,
+    notes,
+    number,
+    title,
+    url,
+    "cover": cover.asset->{
+      _id,
+      _type,
+      altText
+    }
   }
 }`
 
-const reviewsQuery = groq`*[_type == "review"] | order(_createdAt desc){
-  _createdAt, 
-  _updatedAt, 
-  _id, 
-  comment, 
-  excerpt, 
-  reviewer, 
-  "picture": picture.asset->{
-    _id, 
-    _type, 
-    altText
-  }
-}`
+const { data: homeData } = useSanityQuery<{
+  hero: SanityPage
+  previously: SanityPage
+  about: SanityPage
+  reviews: SanityReview[]
+  book: SanityBook
+}>(homePageQuery)
 
-const bookQuery = groq`*[_type == "book"] | order(_createdAt desc)[0]{
-  _createdAt, 
-  _updatedAt, 
-  _id, 
-  author, 
-  notes, 
-  number, 
-  title, 
-  url, 
-  "cover": cover.asset->{
-    _id, 
-    _type, 
-    altText
-  }
-}`
-
-const { data: hero } = useSanityQuery<SanityPage>(query, { slug: 'hero' })
-const { data: previouslyPage } = useSanityQuery<SanityPage>(query, {
-  slug: 'previously',
-})
-const { data: aboutPage } = useSanityQuery<SanityPage>(query, { slug: 'who' })
-const { data: reviews } = useSanityQuery<SanityReview[]>(reviewsQuery)
-const { data: book } = useSanityQuery<SanityBook>(bookQuery)
+const hero = computed(() => homeData.value?.hero)
+const previouslyPage = computed(() => homeData.value?.previously)
+const aboutPage = computed(() => homeData.value?.about)
+const reviews = computed(() => homeData.value?.reviews)
+const book = computed(() => homeData.value?.book)
 
 useHead({
   htmlAttrs: {
