@@ -8,7 +8,6 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxt/image',
     '@vueuse/nuxt',
-    '@nuxt/test-utils/module',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
   ],

@@ -1,7 +1,5 @@
-// @vitest-environment nuxt
 import type { SanityPage } from '~/@types/sanity'
-import { renderSuspended } from '@nuxt/test-utils/runtime'
-import { screen } from '@testing-library/vue'
+import { render, screen } from '@testing-library/vue'
 import { formatDistance } from 'date-fns'
 import { describe, expect, it, vi } from 'vitest'
 import ArticleCard from '~/components/base/article-card.vue'
@@ -29,8 +27,8 @@ const article: SanityPage = {
 }
 
 describe('article card', () => {
-  it('should display the article as a clickable card linking to the article page', async () => {
-    await renderSuspended(ArticleCard, {
+  it('should display the article as a clickable card linking to the article page', () => {
+    render(ArticleCard, {
       props: { article },
     })
 
@@ -39,8 +37,8 @@ describe('article card', () => {
     expect(link).toBeInTheDocument()
   })
 
-  it('should display the article banner image with proper attributes', async () => {
-    await renderSuspended(ArticleCard, {
+  it('should display the article banner image with proper attributes', () => {
+    render(ArticleCard, {
       props: { article },
     })
 
@@ -51,8 +49,8 @@ describe('article card', () => {
     expect(image).toHaveAttribute('loading', 'lazy')
   })
 
-  it('should display the article title as a heading', async () => {
-    await renderSuspended(ArticleCard, {
+  it('should display the article title as a heading', () => {
+    render(ArticleCard, {
       props: { article },
     })
 
@@ -60,16 +58,16 @@ describe('article card', () => {
     expect(title).toHaveTextContent('Test Article Title')
   })
 
-  it('should display the article excerpt as descriptive text', async () => {
-    await renderSuspended(ArticleCard, {
+  it('should display the article excerpt as descriptive text', () => {
+    render(ArticleCard, {
       props: { article },
     })
 
     expect(screen.getByText('This is a test article excerpt that describes the content.')).toBeInTheDocument()
   })
 
-  it('should display the publication date in a human-readable format', async () => {
-    await renderSuspended(ArticleCard, {
+  it('should display the publication date in a human-readable format', () => {
+    render(ArticleCard, {
       props: { article },
     })
 
@@ -81,13 +79,13 @@ describe('article card', () => {
     )
   })
 
-  it('should handle null creation date by using current date', async () => {
+  it('should handle null creation date by using current date', () => {
     const articleWithNullDate = {
       ...article,
       _createdAt: null as any,
     }
 
-    await renderSuspended(ArticleCard, {
+    render(ArticleCard, {
       props: { article: articleWithNullDate },
     })
 
@@ -99,18 +97,18 @@ describe('article card', () => {
     )
   })
 
-  it('should render with proper CSS module classes for card layout', async () => {
-    await renderSuspended(ArticleCard, {
+  it('should render with proper CSS module classes for card layout', () => {
+    render(ArticleCard, {
       props: { article },
     })
 
     const link = screen.getByRole('link')
-    const cardDiv = link.firstChild as HTMLElement
+    const cardDiv = link.querySelector('div')
     expect(cardDiv).toHaveClass('card')
   })
 
-  it('should apply title styling to the heading element', async () => {
-    await renderSuspended(ArticleCard, {
+  it('should apply title styling to the heading element', () => {
+    render(ArticleCard, {
       props: { article },
     })
 
@@ -118,8 +116,8 @@ describe('article card', () => {
     expect(title).toHaveClass('title')
   })
 
-  it('should apply published date styling to the time element', async () => {
-    await renderSuspended(ArticleCard, {
+  it('should apply published date styling to the time element', () => {
+    render(ArticleCard, {
       props: { article },
     })
 
@@ -128,8 +126,8 @@ describe('article card', () => {
     expect(publishedElement).toHaveClass('published')
   })
 
-  it('should wrap content in a description container with proper styling', async () => {
-    await renderSuspended(ArticleCard, {
+  it('should wrap content in a description container with proper styling', () => {
+    render(ArticleCard, {
       props: { article },
     })
 
@@ -138,8 +136,8 @@ describe('article card', () => {
     expect(descriptionDiv).toHaveClass('description')
   })
 
-  it('should provide a meaningful link containing full article card content for screen readers', async () => {
-    await renderSuspended(ArticleCard, {
+  it('should provide a meaningful link containing full article card content for screen readers', () => {
+    render(ArticleCard, {
       props: { article },
     })
 
@@ -148,8 +146,8 @@ describe('article card', () => {
     expect(link).toContainElement(screen.getByRole('img'))
   })
 
-  it('should use proper heading hierarchy with h3 for article titles', async () => {
-    await renderSuspended(ArticleCard, {
+  it('should use proper heading hierarchy with h3 for article titles', () => {
+    render(ArticleCard, {
       props: { article },
     })
 
@@ -157,8 +155,8 @@ describe('article card', () => {
     expect(title.tagName).toBe('H3')
   })
 
-  it('should provide descriptive alt text for the banner image', async () => {
-    await renderSuspended(ArticleCard, {
+  it('should provide descriptive alt text for the banner image', () => {
+    render(ArticleCard, {
       props: { article },
     })
 

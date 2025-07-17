@@ -1,7 +1,4 @@
-// @vitest-environment nuxt
-
-import { renderSuspended } from '@nuxt/test-utils/runtime'
-import { screen } from '@testing-library/vue'
+import { render, screen } from '@testing-library/vue'
 import { beforeEach, expect, it, vi } from 'vitest'
 
 import TransitionAnimation from '~/components/base/transition-animation.vue'
@@ -23,7 +20,7 @@ beforeEach(() => {
 })
 
 it('should be invisible', async () => {
-  await renderSuspended(TransitionAnimation, {
+  render(TransitionAnimation, {
     props: {
       animationDuration: '1s',
       animationName: 'scale-in',
@@ -42,7 +39,7 @@ it('should be visible', async () => {
     return { value: true }
   })
 
-  await renderSuspended(TransitionAnimation, {
+  render(TransitionAnimation, {
     props: {
       animationDuration: '0s',
       animationName: 'scale-in',

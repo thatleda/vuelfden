@@ -36,6 +36,7 @@
     "@portabletext/types": "2.0.13",
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/vue": "8.1.0",
+    "@vitejs/plugin-vue": "6.0.0",
     "@vue/test-utils": "2.4.6",
     "eslint": "9.31.0",
     "groq": "4.0.0",
