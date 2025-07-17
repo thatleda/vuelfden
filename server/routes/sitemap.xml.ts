@@ -4,7 +4,7 @@ import { sanityClient } from '~/composables/useSanity'
 export default defineEventHandler(async (event) => {
   const client = sanityClient()
 
-  const baseUrl = process.env.URL || 'https://leda.fyi'
+  const baseUrl = process.env.NETLIFY_URL || 'https://leda.fyi'
 
   const query = groq`*[_type == "article" && defined(slug.current)] {
     "slug": slug.current,
