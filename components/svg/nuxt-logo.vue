@@ -23,7 +23,11 @@
 </template>
 
 <script lang="ts" setup>
-import type { SVGProps } from '~/@types/svg'
+import type { SVGAttributes } from 'vue'
 
-const { height = '1rem', width = '1rem', fill, ...svgAttributes } = defineProps<SVGProps>()
+const { height = '1rem', width = '1rem', fill, ...svgAttributes } = defineProps<SVGAttributes & {
+  height?: string | number
+  width?: string | number
+  fill?: string
+}>()
 </script>
