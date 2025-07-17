@@ -1,11 +1,13 @@
 <template>
   <div :class="$style.wrapper">
-    <sanity-content :blocks="props.blocks" :serializers="serializers" />
+    <portable-text :value="props.blocks" :components="components" />
   </div>
 </template>
 
 <script lang="ts" setup>
 import type { PortableTextBlock } from '@portabletext/types'
+import { PortableText } from '@portabletext/vue'
+import { h } from 'vue'
 
 import ArticleImage from '~/components/base/article-image.vue'
 import ArticleLink from '~/components/base/article-link.vue'
@@ -18,17 +20,17 @@ interface SanityContentProps {
 }
 const props = defineProps<SanityContentProps>()
 
-const serializers = {
+const components = {
   marks: {
-    link: ArticleLink,
+    link: (props: any) => h(ArticleLink, { href: props.value.href }, () => props.children),
   },
-  styles: {
-    blockquote: Blockquote,
-    pre: Poem,
-    sub: QuoteAuthor,
+  block: {
+    blockquote: (props: any) => h(Blockquote, {}, { default: () => props.node.children[0].text }),
+    pre: (props: any) => h(Poem, {}, { default: () => props.node.children[0].text }),
+    sub: (props: any) => h(QuoteAuthor, {}, { default: () => props.node.children[0].text }),
   },
   types: {
-    image: ArticleImage,
+    image: (props: any) => h(ArticleImage, { asset: props.value.asset, alt: props.value.alt }),
   },
 }
 </script>

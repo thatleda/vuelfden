@@ -10,6 +10,7 @@
 
 <script setup lang="ts">
 import { useElementVisibility } from '@vueuse/core'
+import { ref } from 'vue'
 
 type TimeUnit = 'ms' | 's'
 

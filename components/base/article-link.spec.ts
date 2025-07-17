@@ -1,13 +1,11 @@
-// @vitest-environment nuxt
 import type { ArticleLinkProps } from '~/components/base/article-link.vue'
-import { renderSuspended } from '@nuxt/test-utils/runtime'
-import { screen } from '@testing-library/vue'
+import { render, screen } from '@testing-library/vue'
 
 import { expect, it } from 'vitest'
 import ArticleLink from '~/components/base/article-link.vue'
 
 it('should add target and rel properties, styling', async () => {
-  await renderSuspended(ArticleLink, { props: { href: 'https://google.com' } as ArticleLinkProps })
+  render(ArticleLink, { props: { href: 'https://google.com' } as ArticleLinkProps })
 
   expect(screen.getByRole('link')).toHaveAttribute('target', '_blank')
   expect(screen.getByRole('link')).toHaveAttribute(
@@ -18,13 +16,13 @@ it('should add target and rel properties, styling', async () => {
 })
 
 it('should add / for internal links', async () => {
-  await renderSuspended(ArticleLink, { props: { href: 'resume.pdf' } as ArticleLinkProps })
+  render(ArticleLink, { props: { href: 'resume.pdf' } as ArticleLinkProps })
 
   expect(screen.getByRole('link')).toHaveAttribute('href', '/resume.pdf')
 })
 
 it('should pass text through slot', async () => {
-  await renderSuspended(ArticleLink, {
+  render(ArticleLink, {
     props: { href: 'resume.pdf' } as ArticleLinkProps,
     slots: { default: () => `I'm telling you softly where to go.` },
   })

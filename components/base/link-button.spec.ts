@@ -1,15 +1,11 @@
-// @vitest-environment nuxt
-
 import type { ButtonProps } from '~/components/base/link-button.vue'
-import { renderSuspended } from '@nuxt/test-utils/runtime'
-import { screen } from '@testing-library/vue'
-
+import { render, screen } from '@testing-library/vue'
 import { expect, it } from 'vitest'
 import LinkButton from '~/components/base/link-button.vue'
 import GitHub from '~/components/svg/github.vue'
 
 it('should render external link as a button', async () => {
-  await renderSuspended(LinkButton, {
+  render(LinkButton, {
     props: {
       to: 'https://google.com',
     } as ButtonProps,
@@ -28,7 +24,7 @@ it('should render external link as a button', async () => {
 })
 
 it('should pass an svg', async () => {
-  await renderSuspended(LinkButton, {
+  render(LinkButton, {
     props: {
       to: 'https://github.com',
     } as ButtonProps,
@@ -41,7 +37,7 @@ it('should pass an svg', async () => {
 })
 
 it('should add the right class to the primary button', async () => {
-  await renderSuspended(LinkButton, {
+  render(LinkButton, {
     props: {
       target: '_blank',
       to: 'https://google.com',
@@ -56,7 +52,7 @@ it('should add the right class to the primary button', async () => {
 })
 
 it('should add the right class to the secondary button', async () => {
-  await renderSuspended(LinkButton, {
+  render(LinkButton, {
     props: {
       to: 'https://google.com',
       variant: 'secondary',
@@ -70,7 +66,7 @@ it('should add the right class to the secondary button', async () => {
 })
 
 it('should add the custom class', async () => {
-  await renderSuspended(LinkButton, {
+  render(LinkButton, {
     props: {
       class: 'customClass',
       to: 'https://google.com',

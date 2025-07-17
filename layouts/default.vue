@@ -7,12 +7,12 @@
 <script lang="ts" setup>
 const header = ref<{ isMenuOpen: boolean }>({ isMenuOpen: false })
 
-const prefersReducedMotion = useMediaQuery('prefers-reduced-motion')
+const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)')
 
 useHead({
   bodyAttrs: {
     class: computed(() => {
-      return header.value.isMenuOpen || prefersReducedMotion ? 'static' : ''
+      return header.value.isMenuOpen || prefersReducedMotion.value ? 'static' : ''
     }),
   },
 })

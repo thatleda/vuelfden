@@ -3,16 +3,44 @@ export default defineNuxtConfig({
   css: ['~/assets/css/animation.css'],
   devtools: { enabled: true },
 
+  // Performance optimizations for Nuxt 4
+  experimental: {
+    payloadExtraction: false,
+    viewTransition: true,
+  },
+
+  // Optimization settings
+  optimization: {
+    keyedComposables: [
+      {
+        name: 'useElementVisibility',
+        argumentLength: 2,
+      },
+    ],
+  },
+
   modules: [
     '@nuxt/fonts',
-    '@nuxtjs/sanity',
     '@nuxtjs/color-mode',
     '@nuxt/image',
     '@vueuse/nuxt',
-    '@nuxt/test-utils/module',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
   ],
+
+  // CSS and asset optimization
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@import "~/assets/css/animation.css";`,
+        },
+      },
+    },
+    build: {
+      cssCodeSplit: false,
+    },
+  },
 
   nitro: {
     preset: 'netlify',
@@ -29,11 +57,6 @@ export default defineNuxtConfig({
     '/ramblings/**': { prerender: true },
     '/ramblings/page/**': { prerender: true },
     '/sitemap.xml': { prerender: true },
-  },
-
-  sanity: {
-    dataset: process.env.NUXT_SANITY_DATASET,
-    projectId: process.env.NUXT_SANITY_PROJECT_ID,
   },
 
   image: {
@@ -54,6 +77,13 @@ export default defineNuxtConfig({
   site: {
     name: 'Vuelfden',
     url: process.env.NETLIFY_URL,
+  },
+
+  runtimeConfig: {
+    public: {
+      sanityProjectId: process.env.NUXT_SANITY_PROJECT_ID || '',
+      sanityDataset: process.env.NUXT_SANITY_DATASET || 'production',
+    },
   },
 
   compatibilityDate: '2025-05-28',
