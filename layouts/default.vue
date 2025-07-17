@@ -77,18 +77,26 @@ html {
   animation: none !important;
 }
 
+.static body::before,
+.static body::after {
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+  animation: none !important;
+}
+
+/* Disable smooth scrolling when users have prefers-reduced-motion enabled */
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   height: 100%;
   background: var(--background-gradient);
   position: relative;
   overflow-x: hidden;
-
-  /* Disable smooth scrolling when users have prefers-reduced-motion enabled */
-  @media screen and (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
-  }
 
   font-size: 18px;
   font-weight: 300;
@@ -141,19 +149,6 @@ body::before {
   width: 100%;
   height: 100%;
   background-image:
-    /* Dense cluster 1 */
-    radial-gradient(1px 1px at 50px 40px, #fff, transparent),
-    radial-gradient(1px 1px at 55px 45px, rgba(255,255,255,0.8), transparent),
-    radial-gradient(2px 2px at 48px 38px, rgba(255,255,255,0.9), transparent),
-    radial-gradient(1px 1px at 52px 42px, rgba(255,255,255,0.7), transparent),
-    radial-gradient(1px 1px at 57px 39px, #fff, transparent),
-
-    /* Dense cluster 2 */
-    radial-gradient(1px 1px at 180px 80px, #fff, transparent),
-    radial-gradient(2px 2px at 185px 85px, rgba(255,255,255,0.8), transparent),
-    radial-gradient(1px 1px at 175px 82px, rgba(255,255,255,0.9), transparent),
-    radial-gradient(1px 1px at 188px 78px, rgba(255,255,255,0.6), transparent),
-    radial-gradient(1px 1px at 182px 88px, #fff, transparent),
 
     /* Dense cluster 3 */
     radial-gradient(1px 1px at 320px 50px, #fff, transparent),
@@ -169,13 +164,12 @@ body::before {
     radial-gradient(1px 1px at 420px 90px, rgba(255,255,255,0.8), transparent),
     radial-gradient(1px 1px at 80px 140px, rgba(255,255,255,0.6), transparent);
   background-repeat: repeat;
-  background-size: 500px 200px;
+  background-size: 1000px 200px;
   animation: twinkle 4s ease-in-out infinite;
   pointer-events: none;
   z-index: -2;
 }
 
-/* Stars layer 2 - Larger accent stars */
 body::after {
   content: '';
   position: fixed;
@@ -200,7 +194,6 @@ body::after {
   z-index: -1;
 }
 
-/* Aurora animation container */
 .dark-mode body {
   background: var(--background-gradient);
 }
