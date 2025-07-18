@@ -167,7 +167,6 @@ defineExpose({
   justify-content: space-around;
   padding: 0;
   width: 2rem;
-  z-index: 12;
 }
 
 .noDisplay {
@@ -184,6 +183,7 @@ defineExpose({
   top: 0;
   visibility: hidden;
   width: 100%;
+  z-index: 10;
 }
 
 .open {
