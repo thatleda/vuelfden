@@ -131,8 +131,20 @@ const { page } = defineProps<HeroProps>()
   text-shadow: var(--background-color) 0 0 20px;
 
   @media (max-width: 655px) {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 1.6rem;
+  }
+
+  @media (max-width: 482px) {
+    font-size: 1.4rem;
+  }
+
+  @media (max-width: 435px) {
+    display: none;
   }
 
   &:hover {
