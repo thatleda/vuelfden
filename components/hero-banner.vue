@@ -82,7 +82,6 @@ const { page } = defineProps<HeroProps>()
   align-items: center;
   background: var(--surface-primary);
   border-radius: var(--border-radius);
-  padding: 2rem;
 
   @media (max-width: 1015px) {
     display: flex;
@@ -131,8 +130,9 @@ const { page } = defineProps<HeroProps>()
   text-align: end;
   text-shadow: var(--background-color) 0 0 20px;
 
-  @media (max-width: 749px) {
-    display: none;
+  @media (max-width: 655px) {
+    font-size: 1.5rem;
+    text-align: center;
   }
 
   &:hover {

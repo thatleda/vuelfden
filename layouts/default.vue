@@ -112,36 +112,7 @@ body {
   }
 }
 
-/* Northern Lights Animation */
-@keyframes aurora {
-  0%, 100% {
-    opacity: 0.3;
-    transform: translateY(0px);
-  }
-  50% {
-    opacity: 0.7;
-    transform: translateY(-10px);
-  }
-}
-
-/* Star twinkling animations */
-@keyframes twinkle {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; }
-}
-
-@keyframes twinkle-slow {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 0.9; }
-}
-
-@keyframes twinkle-fast {
-  0%, 100% { opacity: 0.1; }
-  50% { opacity: 0.8; }
-}
-
-/* Stars layer 1 - Small clustered stars */
-body::before {
+.dark-mode body::before {
   content: '';
   position: fixed;
   top: 0;
@@ -170,7 +141,7 @@ body::before {
   z-index: -2;
 }
 
-body::after {
+.dark-mode body::after {
   content: '';
   position: fixed;
   top: 0;
@@ -198,7 +169,6 @@ body::after {
   background: var(--background-gradient);
 }
 
-/* Hide stars and aurora effects for users with reduced motion preference */
 @media screen and (prefers-reduced-motion: reduce) {
   body::before,
   body::after {

@@ -39,6 +39,7 @@ h2.heading {
 
 .section {
   width: 64rem;
+  max-width: calc(100vw - 2rem);
   height: auto;
   background: var(--background-color);
   border-radius: var(--border-radius);
@@ -49,6 +50,7 @@ h2.heading {
   z-index: 1;
 
   @media (max-width: 749px) {
+    width: 100%;
     margin: 0 auto 2rem auto;
     padding-bottom: 2rem;
   }
