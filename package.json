@@ -24,7 +24,7 @@
     "date-fns": "4.1.0",
     "netlify-cli": "22.3.0",
     "nuxt": "4.0.0",
-    "vue": "3.5.17",
+    "vue": "3.5.18",
     "vue-router": "4.5.1"
   },
   "devDependencies": {
