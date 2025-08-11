@@ -12,7 +12,7 @@ jobs:
       NUXT_SANITY_DATASET: ${{ secrets.NUXT_SANITY_DATASET }}
       NETLIFY_URL: https://leda.fyi
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: pnpm/action-setup@v4
       - name: Set up Node.js
         uses: actions/setup-node@v4
