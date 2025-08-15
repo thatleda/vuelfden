@@ -1,10 +1,12 @@
 <template>
-  <page-header ref="header" />
+  <ClientOnly><page-header ref="header" /></ClientOnly>
   <main><NuxtPage /></main>
   <page-footer />
 </template>
 
 <script lang="ts" setup>
+import PageHeader from '~/components/page-header.vue'
+
 const header = ref<{ isMenuOpen: boolean }>({ isMenuOpen: false })
 
 const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)')
