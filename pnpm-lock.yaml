@@ -15,8 +15,8 @@ importers:
         specifier: 1.11.0
         version: 1.11.0(@netlify/blobs@10.0.8)(db0@0.3.2)(ioredis@5.7.0)(magicast@0.3.5)
       '@portabletext/vue':
-        specifier: 1.0.12
-        version: 1.0.12(vue@3.5.19(typescript@5.9.2))
+        specifier: 1.0.14
+        version: 1.0.14(vue@3.5.19(typescript@5.9.2))
       '@sanity/client':
         specifier: 7.9.0
         version: 7.9.0
@@ -1863,16 +1863,16 @@ packages:
   '@poppinss/exception@1.2.2':
     resolution: {integrity: sha512-m7bpKCD4QMlFCjA/nKTs23fuvoVFoA83brRKmObCUNmi/9tVu8Ve3w4YQAnJu4q3Tjf5fr685HYIC/IA2zHRSg==}
 
-  '@portabletext/toolkit@2.0.17':
-    resolution: {integrity: sha512-5wj+oUaCmHm9Ay1cytPmT1Yc0SrR1twwUIc0qNQ3MtaXaNMPw99Gjt1NcA34yfyKmEf/TAB2NiiT72jFxdddIQ==}
+  '@portabletext/toolkit@2.0.18':
+    resolution: {integrity: sha512-m3v2WwKQTNNk5BFZlUuPuCW0Zi6iDSpwrium4Ej5L2FHDXhFuwAyEMPXDrvwPvqjES/oJzcwmdKLMhYa44T9BQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
 
   '@portabletext/types@2.0.15':
     resolution: {integrity: sha512-2e6i2gSQsrA/5OL5Gm4/9bxB9MNO73Fa47zj+0mT93xkoQUCGCWX5fZh1YBJ86hszaRYlqvqG08oULxvvPPp/Q==}
     engines: {node: ^14.13.1 || >=16.0.0 || >=18.0.0}
 
-  '@portabletext/vue@1.0.12':
-    resolution: {integrity: sha512-RUmdORBquYHpf5rkPgppZEqFYA/SOjR2udUIUcg+HfStc+r48CyaQGUy9Iq4cfFPu7VlVwH9F5Dfr2BT0T3Ayw==}
+  '@portabletext/vue@1.0.14':
+    resolution: {integrity: sha512-piVkECB5RpiLa4+i4aYrtYXp/N9y0V20JYoulOKXQ/ptc35Ql7GkhFzw1vmn7IexhNvHjX1NMzrKUg1mPInynA==}
     peerDependencies:
       vue: ^3.3.4
 
@@ -9390,15 +9390,15 @@ snapshots:
 
   '@poppinss/exception@1.2.2': {}
 
-  '@portabletext/toolkit@2.0.17':
+  '@portabletext/toolkit@2.0.18':
     dependencies:
       '@portabletext/types': 2.0.15
 
   '@portabletext/types@2.0.15': {}
 
-  '@portabletext/vue@1.0.12(vue@3.5.19(typescript@5.9.2))':
+  '@portabletext/vue@1.0.14(vue@3.5.19(typescript@5.9.2))':
     dependencies:
-      '@portabletext/toolkit': 2.0.17
+      '@portabletext/toolkit': 2.0.18
       '@portabletext/types': 2.0.15
       vue: 3.5.19(typescript@5.9.2)
 
