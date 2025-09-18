@@ -30,8 +30,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       netlify-cli:
-        specifier: 23.5.1
-        version: 23.5.1(@types/node@24.4.0)(db0@0.3.2)(ioredis@5.7.0)(picomatch@4.0.3)(rollup@4.50.1)
+        specifier: 23.6.0
+        version: 23.6.0(@types/node@24.4.0)(db0@0.3.2)(ioredis@5.7.0)(picomatch@4.0.3)(rollup@4.50.1)
       nuxt:
         specifier: 4.1.2
         version: 4.1.2(@netlify/blobs@10.0.10)(@parcel/watcher@2.5.1)(@types/node@24.4.0)(@vue/compiler-sfc@3.5.21)(db0@0.3.2)(eslint@9.35.0(jiti@2.5.1))(ioredis@5.7.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.50.1)(terser@5.44.0)(typescript@5.9.2)(vite@7.1.5(@types/node@24.4.0)(jiti@2.5.1)(terser@5.44.0)(yaml@2.8.1))(yaml@2.8.1)
@@ -5008,8 +5008,8 @@ packages:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
     engines: {node: '>= 0.6'}
 
-  netlify-cli@23.5.1:
-    resolution: {integrity: sha512-CeWygxSDEoBMvVz4osfBI0euADqX7rDL0MTM9HW/TZPS54IrubmnfhSdhFRaONB4JtfRuNLzAV0wra5xYSWNTg==}
+  netlify-cli@23.6.0:
+    resolution: {integrity: sha512-2Whz+O2lIGmujp4Zr9+59wVIifzO/tem61zjcBvnYJ08Uq0q+tyTG5306k23WFkYMbbDwipQUKT7DdzU0HFEGg==}
     engines: {node: '>=20.12.2'}
     hasBin: true
 
@@ -8798,7 +8798,7 @@ snapshots:
 
   '@pnpm/tabtab@0.5.4':
     dependencies:
-      debug: 4.4.1(supports-color@10.2.2)
+      debug: 4.4.3(supports-color@10.2.2)
       enquirer: 2.4.1
       minimist: 1.2.8
       untildify: 4.0.0
@@ -10360,11 +10360,9 @@ snapshots:
     dependencies:
       ms: 2.0.0
 
-  debug@4.4.1(supports-color@10.2.2):
+  debug@4.4.1:
     dependencies:
       ms: 2.1.3
-    optionalDependencies:
-      supports-color: 10.2.2
 
   debug@4.4.3(supports-color@10.2.2):
     dependencies:
@@ -11088,7 +11086,7 @@ snapshots:
 
   extract-zip@2.0.1:
     dependencies:
-      debug: 4.4.1(supports-color@10.2.2)
+      debug: 4.4.3(supports-color@10.2.2)
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
@@ -11272,7 +11270,7 @@ snapshots:
 
   follow-redirects@1.15.11(debug@4.4.1):
     optionalDependencies:
-      debug: 4.4.1(supports-color@10.2.2)
+      debug: 4.4.1
 
   fontaine@0.6.0:
     dependencies:
@@ -11615,7 +11613,7 @@ snapshots:
   https-proxy-agent@7.0.6(supports-color@10.2.2):
     dependencies:
       agent-base: 7.1.4
-      debug: 4.4.1(supports-color@10.2.2)
+      debug: 4.4.3(supports-color@10.2.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -12757,7 +12755,7 @@ snapshots:
 
   negotiator@0.6.3: {}
 
-  netlify-cli@23.5.1(@types/node@24.4.0)(db0@0.3.2)(ioredis@5.7.0)(picomatch@4.0.3)(rollup@4.50.1):
+  netlify-cli@23.6.0(@types/node@24.4.0)(db0@0.3.2)(ioredis@5.7.0)(picomatch@4.0.3)(rollup@4.50.1):
     dependencies:
       '@fastify/static': 7.0.4
       '@netlify/api': 14.0.4
@@ -12789,7 +12787,7 @@ snapshots:
       content-type: 1.0.5
       cookie: 1.0.2
       cron-parser: 4.9.0
-      debug: 4.4.1(supports-color@10.2.2)
+      debug: 4.4.1
       decache: 4.6.2
       dot-prop: 9.0.0
       dotenv: 17.2.1
@@ -15158,7 +15156,7 @@ snapshots:
     dependencies:
       chalk: 4.1.2
       commander: 9.5.0
-      debug: 4.4.1(supports-color@10.2.2)
+      debug: 4.4.3(supports-color@10.2.2)
     transitivePeerDependencies:
       - supports-color
 
