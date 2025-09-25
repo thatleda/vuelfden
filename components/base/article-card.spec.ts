@@ -1,7 +1,7 @@
 import type { SanityPage } from '~/@types/sanity'
 import { render, screen } from '@testing-library/vue'
 import { formatDistance } from 'date-fns'
-import { describe, expect, it, vi } from 'vitest'
+import { expect, it, vi } from 'vitest'
 import ArticleCard from '~/components/base/article-card.vue'
 
 vi.mock('date-fns', () => ({
@@ -26,141 +26,111 @@ const article: SanityPage = {
   title: 'Test Article Title',
 }
 
-describe('article card', () => {
-  it('should display the article as a clickable card linking to the article page', () => {
-    render(ArticleCard, {
-      props: { article },
-    })
-
-    const link = screen.getByRole('link')
-    expect(link).toHaveAttribute('href', '/ramblings/test-article-slug')
-    expect(link).toBeInTheDocument()
+it('should display the article as a clickable card linking to the article page', () => {
+  render(ArticleCard, {
+    props: { article },
   })
 
-  it('should display the article banner image with proper attributes', () => {
-    render(ArticleCard, {
-      props: { article },
-    })
+  expect(screen.getByRole('link')).toHaveAttribute('href', '/ramblings/test-article-slug')
+})
 
-    const image = screen.getByRole('img')
-    expect(image).toHaveAttribute('alt', 'Test article banner image')
-    expect(image).toHaveAttribute('width', '100')
-    expect(image).toHaveAttribute('height', '100')
-    expect(image).toHaveAttribute('loading', 'lazy')
+it('should display the article banner image with proper attributes', () => {
+  render(ArticleCard, {
+    props: { article },
   })
 
-  it('should display the article title as a heading', () => {
-    render(ArticleCard, {
-      props: { article },
-    })
+  const image = screen.getByRole('img')
+  expect(image).toHaveAttribute('alt', 'Test article banner image')
+  expect(image).toHaveAttribute('width', '100')
+  expect(image).toHaveAttribute('height', '100')
+  expect(image).toHaveAttribute('loading', 'lazy')
+})
 
-    const title = screen.getByRole('heading', { level: 3 })
-    expect(title).toHaveTextContent('Test Article Title')
+it('should display the article title as a heading', () => {
+  render(ArticleCard, {
+    props: { article },
   })
 
-  it('should display the article excerpt as descriptive text', () => {
-    render(ArticleCard, {
-      props: { article },
-    })
+  expect(screen.getByRole('heading', { level: 3 })).toHaveTextContent('Test Article Title')
+})
 
-    expect(screen.getByText('This is a test article excerpt that describes the content.')).toBeInTheDocument()
+it('should display the article excerpt as descriptive text', () => {
+  render(ArticleCard, {
+    props: { article },
   })
 
-  it('should display the publication date in a human-readable format', () => {
-    render(ArticleCard, {
-      props: { article },
-    })
+  expect(screen.getByText('This is a test article excerpt that describes the content.')).toBeInTheDocument()
+})
 
-    expect(screen.getByText('published 2 days ago')).toBeInTheDocument()
-    expect(formatDistance).toHaveBeenCalledWith(
-      new Date('2023-01-01T00:00:00.000Z'),
-      expect.any(Date),
-      { addSuffix: true },
-    )
+it('should display the publication date in a human-readable format', () => {
+  render(ArticleCard, {
+    props: { article },
   })
 
-  it('should handle null creation date by using current date', () => {
-    const articleWithNullDate = {
-      ...article,
-      _createdAt: null as any,
-    }
+  expect(screen.getByText('published 2 days ago')).toBeInTheDocument()
+  expect(formatDistance).toHaveBeenCalledWith(
+    new Date('2023-01-01T00:00:00.000Z'),
+    expect.any(Date),
+    { addSuffix: true },
+  )
+})
 
-    render(ArticleCard, {
-      props: { article: articleWithNullDate },
-    })
+it('should handle null creation date by using current date', () => {
+  const articleWithNullDate = {
+    ...article,
+    _createdAt: null as any,
+  }
 
-    expect(screen.getByText('published 2 days ago')).toBeInTheDocument()
-    expect(formatDistance).toHaveBeenCalledWith(
-      expect.any(Date),
-      expect.any(Date),
-      { addSuffix: true },
-    )
+  render(ArticleCard, {
+    props: { article: articleWithNullDate },
   })
 
-  it('should render with proper CSS module classes for card layout', () => {
-    render(ArticleCard, {
-      props: { article },
-    })
+  expect(screen.getByText('published 2 days ago')).toBeInTheDocument()
+  expect(formatDistance).toHaveBeenCalledWith(
+    expect.any(Date),
+    expect.any(Date),
+    { addSuffix: true },
+  )
+})
 
-    const link = screen.getByRole('link')
-    const cardDiv = link.querySelector('div')
-    expect(cardDiv).toHaveClass('card')
+it('should render with proper CSS module classes for card layout', () => {
+  render(ArticleCard, {
+    props: { article },
   })
 
-  it('should apply title styling to the heading element', () => {
-    render(ArticleCard, {
-      props: { article },
-    })
+  expect((screen.getByRole('link')).querySelector('div')).toHaveClass('card')
+})
 
-    const title = screen.getByRole('heading', { level: 3 })
-    expect(title).toHaveClass('title')
+it('should apply title styling to the heading element', () => {
+  render(ArticleCard, {
+    props: { article },
   })
 
-  it('should apply published date styling to the time element', () => {
-    render(ArticleCard, {
-      props: { article },
-    })
+  expect(screen.getByRole('heading', { level: 3 })).toHaveClass('title')
+})
 
-    const publishedElement = screen.getByText('published 2 days ago')
-    expect(publishedElement.tagName).toBe('SUB')
-    expect(publishedElement).toHaveClass('published')
+it('should apply published date styling to the time element', () => {
+  render(ArticleCard, {
+    props: { article },
   })
 
-  it('should wrap content in a description container with proper styling', () => {
-    render(ArticleCard, {
-      props: { article },
-    })
+  expect((screen.getByText('published 2 days ago')).tagName).toBe('SUB')
+  expect(screen.getByText('published 2 days ago')).toHaveClass('published')
+})
 
-    const title = screen.getByRole('heading', { level: 3 })
-    const descriptionDiv = title.parentElement
-    expect(descriptionDiv).toHaveClass('description')
+it('should wrap content in a description container with proper styling', () => {
+  render(ArticleCard, {
+    props: { article },
   })
 
-  it('should provide a meaningful link containing full article card content for screen readers', () => {
-    render(ArticleCard, {
-      props: { article },
-    })
+  expect((screen.getByRole('heading', { level: 3 })).parentElement).toHaveClass('description')
+})
 
-    const link = screen.getByRole('link')
-    expect(link).toContainElement(screen.getByRole('heading', { level: 3 }))
-    expect(link).toContainElement(screen.getByRole('img'))
+it('should provide a meaningful link containing full article card content for screen readers', () => {
+  render(ArticleCard, {
+    props: { article },
   })
 
-  it('should use proper heading hierarchy with h3 for article titles', () => {
-    render(ArticleCard, {
-      props: { article },
-    })
-
-    const title = screen.getByRole('heading', { level: 3 })
-    expect(title.tagName).toBe('H3')
-  })
-
-  it('should provide descriptive alt text for the banner image', () => {
-    render(ArticleCard, {
-      props: { article },
-    })
-
-    const image = screen.getByRole('img')
-    expect(image).toHaveAccessibleName('Test article banner image')
-  })
+  expect(screen.getByRole('link')).toContainElement(screen.getByRole('heading', { level: 3 }))
+  expect(screen.getByRole('link')).toContainElement(screen.getByRole('img'))
 })

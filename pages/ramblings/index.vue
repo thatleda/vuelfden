@@ -89,7 +89,7 @@ const articlesQuery = groq`*[_type == "article"] | order(_createdAt desc){
   }
 }`
 
-const { data: allArticles, pending: isLoading } = await useSanityQuery<SanityPage[]>(articlesQuery)
+const { data: allArticles, pending: isLoading } = useSanityQuery<SanityPage[]>(articlesQuery)
 
 const articles = computed(() => getCurrentPageArticles())
 const totalPages = computed(() => calculateTotalPages())

@@ -3,13 +3,11 @@ export default defineNuxtConfig({
   css: ['~/assets/css/animation.css'],
   devtools: { enabled: true },
 
-  // Performance optimizations for Nuxt 4
   experimental: {
     payloadExtraction: false,
     viewTransition: true,
   },
 
-  // Optimization settings
   optimization: {
     keyedComposables: [
       {
@@ -26,7 +24,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
   ],
 
-  // CSS and asset optimization
   vite: {
     css: {
       preprocessorOptions: {
