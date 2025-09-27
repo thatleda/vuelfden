@@ -71,7 +71,7 @@ import groq from 'groq'
 import LinkButton from '~/components/base/link-button.vue'
 import TransitionAnimation from '~/components/base/transition-animation.vue'
 
-const currentPage = 1 // Always page 1 for index
+const currentPage = 1
 const pageSize = 10
 const mainContent = ref<HTMLElement>()
 
@@ -94,10 +94,10 @@ const { data: allArticles, pending: isLoading } = useSanityQuery<SanityPage[]>(a
 const articles = computed(() => getCurrentPageArticles())
 const totalPages = computed(() => calculateTotalPages())
 const hasNextPage = computed(() => currentPage < totalPages.value)
-const hasPreviousPage = computed(() => currentPage > 1) // Always false for index
+const hasPreviousPage = computed(() => currentPage > 1)
 
 const nextPageUrl = computed(() => `/ramblings/page/2`)
-const previousPageUrl = computed(() => '/ramblings') // Not used on index
+const previousPageUrl = computed(() => '/ramblings')
 
 function getCurrentPageArticles() {
   if (!allArticles.value) {
@@ -125,7 +125,6 @@ useSeoMeta({
   title: 'Ramblings',
 })
 
-// Add pagination SEO links
 useHead({
   link: [
     hasNextPage.value

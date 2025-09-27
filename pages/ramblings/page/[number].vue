@@ -75,7 +75,6 @@ const route = useRoute()
 const pageSize = 10
 const mainContent = ref<HTMLElement>()
 
-// Get page number from route params
 const currentPage = computed(() => {
   const pageNumber = Number.parseInt(route.params.number as string, 10)
   return Number.isNaN(pageNumber) || pageNumber < 1 ? 1 : pageNumber
@@ -95,7 +94,7 @@ const articlesQuery = groq`*[_type == "article"] | order(_createdAt desc){
   }
 }`
 
-const { data: allArticles, pending: isLoading } = await useSanityQuery<SanityPage[]>(articlesQuery)
+const { data: allArticles, pending: isLoading } = useSanityQuery<SanityPage[]>(articlesQuery)
 
 const articles = computed(() => getCurrentPageArticles())
 const totalPages = computed(() => calculateTotalPages())
@@ -126,7 +125,6 @@ function calculateTotalPages() {
   return Math.ceil(allArticles.value.length / pageSize)
 }
 
-// 404 if page number is invalid
 if (process.client && currentPage.value > totalPages.value && totalPages.value > 0) {
   throw createError({
     statusCode: 404,
@@ -138,11 +136,10 @@ useSeoMeta({
   description: `Page ${currentPage.value} of Leda Wolf's unhinged ramblings and wisdom nuggets.`,
   ogImage: '/images/wolf.jpeg',
   ogTitle: `Ramblings - Page ${currentPage.value}`,
-  robots: 'noindex, follow', // Don't index paginated pages
+  robots: 'noindex, follow',
   title: `Ramblings - Page ${currentPage.value}`,
 })
 
-// Add pagination SEO links
 useHead({
   link: [
     hasPreviousPage.value

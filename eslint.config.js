@@ -1,6 +1,45 @@
 import antfu from '@antfu/eslint-config'
 import groq from '@asbjorn/eslint-plugin-groq'
 
+const noCommentsRule = {
+  meta: {
+    type: 'problem',
+    docs: {
+      description: 'Comments are not allowed in this project as they can cause unnecessary noise or leak into production code. Check configuration to see the exceptions from this rule.',
+    },
+    fixable: 'code',
+  },
+  create(context) {
+    const sourceCode = context.getSourceCode()
+    function processComment(comment) {
+      if (comment.type === 'Shebang')
+        return
+      const options = context.options[0] || {}
+      const allow = (options && options.allow) || []
+      let re = /^\s?(?:global|eslint|@ts-|@typescript-eslint)/
+      if (allow.length > 0) {
+        re = new RegExp(`^\\s?(${allow.join('|')})`)
+      }
+      if (comment && !re.test(comment.value)) {
+        context.report({
+          fix(fixer) {
+            return fixer.remove(comment)
+          },
+          loc: comment.loc,
+          message: 'Comments are forbidden',
+          node: null,
+        })
+      }
+    }
+    return {
+      Program() {
+        const comments = sourceCode.getAllComments()
+        comments.forEach(processComment)
+      },
+    }
+  },
+}
+
 export default antfu({
   vue: true,
   rules: {
@@ -8,4 +47,21 @@ export default antfu({
     'vue/component-name-in-template-casing': ['warn', 'kebab-case'],
     'vue/block-order': ['warn', { order: ['template', 'script', 'style'] }],
   },
-}).prepend([{ plugins: { groq }, rules: { 'groq/no-syntax-errors': 'error', 'groq/no-template-expressions': 'error' } }])
+}, {
+  plugins: {
+    matt: {
+      rules: {
+        'no-comments': noCommentsRule,
+      },
+    },
+  },
+  rules: {
+    'matt/no-comments': 'error',
+  },
+}, {
+  plugins: { groq },
+  rules: {
+    'groq/no-syntax-errors': 'error',
+    'groq/no-template-expressions': 'error',
+  },
+})
