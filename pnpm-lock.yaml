@@ -30,8 +30,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       netlify-cli:
-        specifier: 23.8.0
-        version: 23.8.0(@types/node@24.5.2)(db0@0.3.2)(ioredis@5.8.0)(picomatch@4.0.3)(rollup@4.52.3)
+        specifier: 23.8.1
+        version: 23.8.1(@types/node@24.5.2)(db0@0.3.2)(ioredis@5.8.0)(picomatch@4.0.3)(rollup@4.52.3)
       nuxt:
         specifier: 4.1.2
         version: 4.1.2(@netlify/blobs@10.0.11)(@parcel/watcher@2.5.1)(@types/node@24.5.2)(@vue/compiler-sfc@3.5.22)(db0@0.3.2)(eslint@9.36.0(jiti@2.6.0))(ioredis@5.8.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.52.3)(terser@5.44.0)(typescript@5.9.2)(vite@7.1.7(@types/node@24.5.2)(jiti@2.6.0)(terser@5.44.0)(yaml@2.8.1))(yaml@2.8.1)
@@ -852,6 +852,9 @@ packages:
 
   '@netlify/edge-functions-bootstrap@2.16.0':
     resolution: {integrity: sha512-v8QQihSbBHj3JxtJsHoepXALpNumD9M7egHoc8z62FYl5it34dWczkaJoFFopEyhiBVKi4K/n0ZYpdzwfujd6g==}
+
+  '@netlify/edge-functions-bootstrap@2.17.1':
+    resolution: {integrity: sha512-KyNJbDhK1rC5wEeI7bXPgfl8QvADMHqNy2nwNJG60EHVRXTF0zxFnOpt/p0m2C512gcMXRrKZxaOZQ032RHVbw==}
 
   '@netlify/edge-functions@2.18.1':
     resolution: {integrity: sha512-Cd/ddhbIyLPkEZ9yMnRIXzKH8UcnUlPAAa1iQva9bypKNjXyFcunt5eNMjfNxMsRMDao/PkDbp1OMGkTRQnwTg==}
@@ -5001,8 +5004,8 @@ packages:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
     engines: {node: '>= 0.6'}
 
-  netlify-cli@23.8.0:
-    resolution: {integrity: sha512-Rnyasw9baPMvovXYxlsv7kpAF0tyD/cUtF5ydS55aPGVQEFSAIR7+NWR1848Zexb95UwWyDmR8r87EVyFOYtLQ==}
+  netlify-cli@23.8.1:
+    resolution: {integrity: sha512-FjKoKejSLQo7dnKk0cfyoJ4KPB2YCuTq9wpzZ98c39cNZ9jpdQT439y408kEoUsU8SWwduIioT5n2k2/xjidrQ==}
     engines: {node: '>=20.12.2'}
     hasBin: true
 
@@ -7994,6 +7997,8 @@ snapshots:
       uuid: 11.1.0
 
   '@netlify/edge-functions-bootstrap@2.16.0': {}
+
+  '@netlify/edge-functions-bootstrap@2.17.1': {}
 
   '@netlify/edge-functions@2.18.1':
     dependencies:
@@ -12761,7 +12766,7 @@ snapshots:
 
   negotiator@0.6.3: {}
 
-  netlify-cli@23.8.0(@types/node@24.5.2)(db0@0.3.2)(ioredis@5.8.0)(picomatch@4.0.3)(rollup@4.52.3):
+  netlify-cli@23.8.1(@types/node@24.5.2)(db0@0.3.2)(ioredis@5.8.0)(picomatch@4.0.3)(rollup@4.52.3):
     dependencies:
       '@fastify/static': 7.0.4
       '@netlify/ai': 0.2.1(@netlify/api@14.0.5)
@@ -12773,6 +12778,7 @@ snapshots:
       '@netlify/dev-utils': 4.2.0
       '@netlify/edge-bundler': 14.5.6
       '@netlify/edge-functions': 2.18.1
+      '@netlify/edge-functions-bootstrap': 2.17.1
       '@netlify/headers-parser': 9.0.2
       '@netlify/local-functions-proxy': 2.0.3
       '@netlify/redirect-parser': 15.0.3
