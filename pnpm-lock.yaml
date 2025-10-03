@@ -18,8 +18,8 @@ importers:
         specifier: 1.0.14
         version: 1.0.14(vue@3.5.22(typescript@5.9.3))
       '@sanity/client':
-        specifier: 7.11.2
-        version: 7.11.2
+        specifier: 7.12.0
+        version: 7.12.0
       '@vueuse/core':
         specifier: 13.9.0
         version: 13.9.0(vue@3.5.22(typescript@5.9.3))
@@ -1745,8 +1745,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@sanity/client@7.11.2':
-    resolution: {integrity: sha512-q7rm2KgbWV60z+umlIZa3l7Nc9xyDRjmicm9tOP7PovOYNM0UK1PP/Auj6wssr+OqEsgcoe2n2pQFDtn/n8N9Q==}
+  '@sanity/client@7.12.0':
+    resolution: {integrity: sha512-RIQ4JXOpLuc3UkUK34xxYA+n9z6m0RCEbsdloKEbS0areaHymM3144IkzeZGFcIokN1YlNenHfnBHNsMjf3TaQ==}
     engines: {node: '>=20'}
 
   '@sanity/eventsource@5.0.2':
@@ -8974,7 +8974,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.52.3':
     optional: true
 
-  '@sanity/client@7.11.2':
+  '@sanity/client@7.12.0':
     dependencies:
       '@sanity/eventsource': 5.0.2
       get-it: 8.6.10
