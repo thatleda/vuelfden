@@ -1,5 +1,42 @@
 import antfu from '@antfu/eslint-config'
 import groq from '@asbjorn/eslint-plugin-groq'
+import emojiRegex from 'emoji-regex'
+
+const noEmojisRule = {
+  meta: {
+    type: 'problem',
+    docs: {
+      description: 'Emojis aren not allowed in this project because I do not need them and they are worth way too many tokens.',
+    },
+    fixable: 'code',
+  },
+  create(context) {
+    const regex = emojiRegex()
+    const sourceCode = context.sourceCode || context.getSourceCode()
+
+    function checkForEmojis(text, node) {
+      if (typeof text !== 'string')
+        return
+      const match = text.match(regex)
+      if (match) {
+        context.report({
+          message: 'Emojis are not allowed in this project',
+          node,
+          fix(fixer) {
+            const nodeText = sourceCode.getText(node)
+            const cleaned = nodeText.replace(/\s*\p{Emoji}\s*/gu, '')
+            return fixer.replaceText(node, cleaned)
+          },
+        })
+      }
+    }
+
+    return {
+      Literal: node => checkForEmojis(node.value, node),
+      TemplateElement: node => checkForEmojis(node.value.raw, node),
+    }
+  },
+}
 
 const noCommentsRule = {
   meta: {
@@ -52,6 +89,7 @@ export default antfu({
     matt: {
       rules: {
         'no-comments': noCommentsRule,
+        'no-emojis': noEmojisRule,
       },
     },
   },
