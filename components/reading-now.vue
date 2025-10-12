@@ -2,46 +2,41 @@
   <div :class="$style.card">
     <div :class="$style.description">
       Probably reading
-      <b :class="$style.title"> {{ book.title }}</b>
+      <b :class="$style.title"> {{ book.title }} ({{ book.release }})</b>
       <sub :class="$style.author">
         by <em>{{ book.author }}</em>
       </sub>
-      <div v-if="book.number" :class="$style.progress">
+      <div v-if="challenge" :class="$style.progress">
         <p>
-          This year's challenge: {{ book.number }} of 80 books completed
+          {{ challenge.description }}: {{ challenge.progress }} of {{ challenge.goal }} books completed
         </p>
-        <progress :class="$style.progressBar" max="80" :value="book.number" />
-      </div>
-      <div v-if="book.url" :class="$style.links">
-        Find it on
-        <base-link-button
-          :to="book.url"
-          variant="secondary"
-          target="_blank"
-        >
-          <svg-amazon width="1rem" height="1rem" />Amazon
-        </base-link-button>
+        <progress :class="$style.progressBar" :max="challenge.goal" :value="challenge.progress" />
       </div>
     </div>
-    <NuxtImg
-      :alt="book.cover.altText ?? book.title"
-      :src="book.cover._id"
+    <img
+      :alt="`The book cover of ${book.title} by ${book.author}`"
+      :src="book.cover || '/images/book-cover-placeholder.png'"
       :class="$style.cover"
       loading="lazy"
       width="300"
-    />
+    >
   </div>
-  <base-sanity-block :blocks="book.notes" />
 </template>
 
 <script lang="ts" setup>
-import type { SanityBook } from '~/@types/sanity'
+const { data } = await useGraphqlQuery('reading')
 
-interface ReadingNowProps {
-  book: SanityBook
-}
+const challenge = computed(() => data.me[0]?.goals[0])
 
-const { book } = defineProps<ReadingNowProps>()
+const book = computed(() => {
+  const userBook = data.me[0]?.goals[0]?.user.user_books[0]
+  return {
+    title: userBook?.book.title ?? 'Unknown Title',
+    author: userBook?.book.contributions[0]?.author?.name ?? 'Unknown Author',
+    cover: userBook?.book.image?.url,
+    release: userBook?.book.release_year ?? 'year unknown',
+  }
+})
 </script>
 
 <style module>

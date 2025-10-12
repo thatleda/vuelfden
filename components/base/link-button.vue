@@ -12,9 +12,9 @@
 </template>
 
 <script setup lang="ts">
-import type { NuxtLinkProps } from '#app'
-
-export interface ButtonProps extends NuxtLinkProps {
+export interface ButtonProps {
+  to?: string
+  prefetch?: boolean
   variant?: 'primary' | 'secondary'
 }
 

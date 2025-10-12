@@ -1,0 +1,27 @@
+query reading {
+  me {
+    goals {
+      progress
+      description
+      goal
+      user {
+        user_books(
+          where: {user_book_status: {status: {_eq: "Currently Reading"}}, _and: {privacy_setting: {setting: {_eq: "Public"}}}}
+        ) {
+          book {
+            title
+            image {
+              url
+            }
+            release_year
+            contributions {
+              author {
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

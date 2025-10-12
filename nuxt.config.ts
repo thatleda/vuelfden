@@ -1,3 +1,5 @@
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
   css: ['~/assets/css/animation.css'],
   devtools: { enabled: true },
@@ -21,7 +23,19 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxt/image',
     '@vueuse/nuxt',
+    'nuxt-graphql-middleware',
   ],
+
+  graphqlMiddleware: {
+    graphqlEndpoint: 'https://api.hardcover.app/v1/graphql',
+    codegenSchemaConfig: {
+      urlSchemaOptions: {
+        headers: {
+          Authorization: process.env.NUXT_HARDCOVER_API_KEY || '',
+        },
+      },
+    },
+  },
 
   vite: {
     css: {
