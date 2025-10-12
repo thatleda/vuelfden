@@ -58,10 +58,10 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { prerender: true },
+    '/': { swr: true },
     '/imprint': { prerender: true },
     '/privacy': { prerender: true },
-    '/ramblings': { prerender: true },
+    '/ramblings': { swr: true },
     '/ramblings/**': { prerender: true },
     '/ramblings/page/**': { prerender: true },
     '/sitemap.xml': { headers: { 'Content-Type': 'application/xml' } },
@@ -86,8 +86,8 @@ export default defineNuxtConfig({
     public: {
       sanityProjectId: process.env.NUXT_SANITY_PROJECT_ID || '',
       sanityDataset: process.env.NUXT_SANITY_DATASET || 'production',
-      hardcoverApiKey: process.env.NUXT_HARDCOVER_API_KEY || '',
     },
+    hardcoverApiKey: process.env.NUXT_HARDCOVER_API_KEY || '',
   },
 
   compatibilityDate: '2025-05-28',

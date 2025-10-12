@@ -17,7 +17,7 @@
     <base-review v-for="review in reviews" :key="review._id" :review="review" />
   </base-page-section>
   <base-page-section anchor="contact" heading="What is she up to?">
-    <reading-now v-if="book" :book="book" />
+    <reading-now />
   </base-page-section>
   <base-page-section>
     <contact-leda />
@@ -98,7 +98,6 @@ const hero = computed(() => homeData.value?.hero)
 const previouslyPage = computed(() => homeData.value?.previously)
 const aboutPage = computed(() => homeData.value?.about)
 const reviews = computed(() => homeData.value?.reviews)
-const book = computed(() => homeData.value?.book)
 
 useHead({
   htmlAttrs: {
