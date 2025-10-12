@@ -51,8 +51,10 @@ const { data } = await useGraphqlQuery('reading')
 
 const challenge = computed(() => data.me[0]?.goals[0])
 
+const user = computed(() => data.me[0]?.goals[0]?.user)
+
 const book = computed(() => {
-  const userBook = data.me[0]?.goals[0]?.user.user_books[0]
+  const userBook = user.value?.user_books[0]
   return {
     title: userBook?.book?.title ?? 'Unknown Title',
     author: userBook?.book?.contributions?.[0]?.author?.name ?? 'Unknown Author',
@@ -61,23 +63,21 @@ const book = computed(() => {
   }
 })
 
-const reviews = computed(() => {
-  const userReviews = data.me[0]?.goals[0]?.user.reviews ?? []
-  return userReviews.map(review => ({
+const latestReview = computed(() => {
+  const userReviews = user.value?.reviews[0]
+  return {
     book: {
-      title: review.book.title ?? 'Unknown Title',
-      author: review.book.contributions[0]?.author?.name ?? 'Unknown Author',
-      cover: review.book.image?.url,
-      release: review.book.release_year ?? 'year unknown',
+      title: userReviews?.book.title ?? 'Unknown Title',
+      author: userReviews?.book.contributions[0]?.author?.name ?? 'Unknown Author',
+      cover: userReviews?.book.image?.url,
+      release: userReviews?.book.release_year ?? 'year unknown',
     },
-    rating: review.rating,
-    text: review.review ?? '',
-    html: review.review_html,
-    hasSpoilers: review.review_has_spoilers,
-  }))
+    rating: userReviews?.rating,
+    text: userReviews?.review ?? '',
+    html: userReviews?.review_html,
+    hasSpoilers: userReviews?.review_has_spoilers,
+  }
 })
-
-const latestReview = computed(() => reviews.value[0])
 </script>
 
 <style module>
