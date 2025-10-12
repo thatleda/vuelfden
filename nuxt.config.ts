@@ -54,12 +54,16 @@ export default defineNuxtConfig({
     preset: 'netlify',
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/imprint', '/privacy', '/ramblings', '/ramblings/**', '/ramblings/page/**'],
     },
   },
 
   routeRules: {
-    '/': { isr: 60 * 60 },
+    '/': { isr: 2 * 60 * 60 },
+    '/imprint': { prerender: true },
+    '/privacy': { prerender: true },
+    '/ramblings': { isr: 2 * 60 * 60 },
+    '/ramblings/**': { prerender: true },
+    '/ramblings/page/**': { isr: 24 * 60 * 60 },
     '/sitemap.xml': { headers: { 'Content-Type': 'application/xml' } },
   },
 
