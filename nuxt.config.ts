@@ -1,3 +1,5 @@
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
   css: ['~/assets/css/animation.css'],
   devtools: { enabled: true },
@@ -21,7 +23,19 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxt/image',
     '@vueuse/nuxt',
+    'nuxt-graphql-middleware',
   ],
+
+  graphqlMiddleware: {
+    graphqlEndpoint: 'https://api.hardcover.app/v1/graphql',
+    codegenSchemaConfig: {
+      urlSchemaOptions: {
+        headers: {
+          Authorization: process.env.NUXT_HARDCOVER_API_KEY || '',
+        },
+      },
+    },
+  },
 
   vite: {
     css: {
@@ -44,12 +58,12 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { prerender: true },
+    '/': { isr: 2 * 60 * 60 },
     '/imprint': { prerender: true },
     '/privacy': { prerender: true },
-    '/ramblings': { prerender: true },
+    '/ramblings': { isr: 2 * 60 * 60 },
     '/ramblings/**': { prerender: true },
-    '/ramblings/page/**': { prerender: true },
+    '/ramblings/page/**': { isr: 24 * 60 * 60 },
     '/sitemap.xml': { headers: { 'Content-Type': 'application/xml' } },
   },
 
@@ -73,6 +87,7 @@ export default defineNuxtConfig({
       sanityProjectId: process.env.NUXT_SANITY_PROJECT_ID || '',
       sanityDataset: process.env.NUXT_SANITY_DATASET || 'production',
     },
+    hardcoverApiKey: process.env.NUXT_HARDCOVER_API_KEY || '',
   },
 
   compatibilityDate: '2025-05-28',

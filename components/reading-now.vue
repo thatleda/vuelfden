@@ -1,47 +1,83 @@
 <template>
-  <div :class="$style.card">
-    <div :class="$style.description">
-      Probably reading
-      <b :class="$style.title"> {{ book.title }}</b>
-      <sub :class="$style.author">
-        by <em>{{ book.author }}</em>
-      </sub>
-      <div v-if="book.number" :class="$style.progress">
-        <p>
-          This year's challenge: {{ book.number }} of 80 books completed
-        </p>
-        <progress :class="$style.progressBar" max="80" :value="book.number" />
+  <div>
+    <div :class="$style.card">
+      <div :class="$style.description">
+        Probably reading
+        <b :class="$style.title"> {{ book.title }} ({{ book.release }})</b>
+        <sub :class="$style.author">
+          by <em>{{ book.author }}</em>
+        </sub>
+        <div v-if="challenge" :class="$style.progress">
+          <p>
+            {{ challenge.description }}: {{ challenge.progress }} of {{ challenge.goal }} books completed
+          </p>
+          <progress :class="$style.progressBar" :max="challenge.goal" :value="challenge.progress" />
+        </div>
       </div>
-      <div v-if="book.url" :class="$style.links">
-        Find it on
-        <base-link-button
-          :to="book.url"
-          variant="secondary"
-          target="_blank"
+      <img
+        :alt="`The book cover of ${book.title} by ${book.author}`"
+        :src="book.cover || '/images/book-cover-placeholder.png'"
+        :class="$style.cover"
+        loading="lazy"
+        width="300"
+      >
+    </div>
+
+    <div v-if="latestReview">
+      <h3>Latest review</h3>
+      <div :class="$style.card">
+        <img
+          :alt="`The book cover of ${latestReview.book.title}`"
+          :src="latestReview.book.cover"
+          loading="lazy"
+          width="150"
+          :class="$style.cover"
         >
-          <svg-amazon width="1rem" height="1rem" />Amazon
-        </base-link-button>
+        <div :class="$style.description">
+          <span><b>{{ latestReview.book.title }} ({{ latestReview.book.release }})</b> by {{ latestReview.book.author }}</span>
+          <span>Rating: {{ latestReview.rating }} / 5</span>
+          <b v-if="latestReview.hasSpoilers">
+            Contains spoilers
+          </b>
+          <div v-else v-html="latestReview.html || latestReview.text" />
+        </div>
       </div>
     </div>
-    <NuxtImg
-      :alt="book.cover.altText ?? book.title"
-      :src="book.cover._id"
-      :class="$style.cover"
-      loading="lazy"
-      width="300"
-    />
   </div>
-  <base-sanity-block :blocks="book.notes" />
 </template>
 
 <script lang="ts" setup>
-import type { SanityBook } from '~/@types/sanity'
+const { data } = await useGraphqlQuery('reading')
 
-interface ReadingNowProps {
-  book: SanityBook
-}
+const challenge = computed(() => data.me[0]?.goals[0])
 
-const { book } = defineProps<ReadingNowProps>()
+const user = computed(() => data.me[0]?.goals[0]?.user)
+
+const book = computed(() => {
+  const userBook = user.value?.user_books[0]
+  return {
+    title: userBook?.book?.title ?? 'Unknown Title',
+    author: userBook?.book?.contributions?.[0]?.author?.name ?? 'Unknown Author',
+    cover: userBook?.book?.image?.url,
+    release: userBook?.book?.release_year ?? 'year unknown',
+  }
+})
+
+const latestReview = computed(() => {
+  const userReviews = user.value?.reviews[0]
+  return {
+    book: {
+      title: userReviews?.book.title ?? 'Unknown Title',
+      author: userReviews?.book.contributions[0]?.author?.name ?? 'Unknown Author',
+      cover: userReviews?.book.image?.url,
+      release: userReviews?.book.release_year ?? 'year unknown',
+    },
+    rating: userReviews?.rating,
+    text: userReviews?.review ?? '',
+    html: userReviews?.review_html,
+    hasSpoilers: userReviews?.review_has_spoilers,
+  }
+})
 </script>
 
 <style module>
@@ -57,10 +93,10 @@ const { book } = defineProps<ReadingNowProps>()
 }
 
 .cover {
-  min-width: 180px;
   @media (max-width: 600px) {
     margin: 0 auto;
   }
+  object-fit: cover
 }
 
 .description {
@@ -94,12 +130,5 @@ const { book } = defineProps<ReadingNowProps>()
 
 .author {
   padding-top: 0.5rem;
-}
-
-.links {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  gap: 1rem;
 }
 </style>

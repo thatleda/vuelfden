@@ -1,11 +1,11 @@
 import type { SanityClient } from '@sanity/client'
 import type { MaybeRef } from '@vueuse/core'
-import type { SanityBook, SanityPage, SanityReview } from '~/@types/sanity'
+import type { SanityPage, SanityReview } from '~/@types/sanity'
 import { createClient } from '@sanity/client'
 
 import { computed, ref, unref, watch } from 'vue'
 
-export type SanityDocument = SanityPage | SanityBook | SanityReview
+export type SanityDocument = SanityPage | SanityReview
 
 let client: SanityClient | null = null
 
