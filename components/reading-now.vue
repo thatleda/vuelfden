@@ -54,10 +54,10 @@ const challenge = computed(() => data.me[0]?.goals[0])
 const book = computed(() => {
   const userBook = data.me[0]?.goals[0]?.user.user_books[0]
   return {
-    title: userBook?.book.title ?? 'Unknown Title',
-    author: userBook?.book.contributions[0]?.author?.name ?? 'Unknown Author',
-    cover: userBook?.book.image?.url,
-    release: userBook?.book.release_year ?? 'year unknown',
+    title: userBook?.book?.title ?? 'Unknown Title',
+    author: userBook?.book?.contributions?.[0]?.author?.name ?? 'Unknown Author',
+    cover: userBook?.book?.image?.url,
+    release: userBook?.book?.release_year ?? 'year unknown',
   }
 })
 
