@@ -35,15 +35,3 @@ export interface SanityReview {
   picture: SanityLinkedImage
   reviewer: string
 }
-
-export interface SanityBook {
-  _createdAt: string
-  _id: string
-  _updatedAt: string
-  author: string
-  cover: SanityLinkedImage
-  notes: PortableTextBlock[]
-  number: number
-  title: string
-  url: string
-}

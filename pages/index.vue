@@ -25,7 +25,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { SanityBook, SanityPage, SanityReview } from '~/@types/sanity'
+import type { SanityPage, SanityReview } from '~/@types/sanity'
 import groq from 'groq'
 import { useSanityQuery } from '~/composables/useSanity'
 
@@ -84,21 +84,6 @@ const homePageQuery = groq`{
       _type,
       altText
     }
-  },
-  "book": *[_type == "book"] | order(_createdAt desc)[0]{
-    _createdAt,
-    _updatedAt,
-    _id,
-    author,
-    notes,
-    number,
-    title,
-    url,
-    "cover": cover.asset->{
-      _id,
-      _type,
-      altText
-    }
   }
 }`
 
@@ -107,7 +92,6 @@ const { data: homeData } = useSanityQuery<{
   previously: SanityPage
   about: SanityPage
   reviews: SanityReview[]
-  book: SanityBook
 }>(homePageQuery)
 
 const hero = computed(() => homeData.value?.hero)
