@@ -26,9 +26,7 @@ query reading {
           order_by: {reviewed_at: desc}
           limit: 1
         ) {
-          review
-          review_html
-          review_has_spoilers
+          review_slate
           rating
           book {
             title

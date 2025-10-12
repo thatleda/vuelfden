@@ -60,13 +60,6 @@ const components = computed(() => ({
       })
     },
   },
-  unknownType: (props: any) => {
-    console.warn('Unknown Sanity type:', props.value._type, props.value)
-    return h('div', {
-      'class': 'unknown-type',
-      'data-type': props.value._type,
-    }, `Unknown content type: ${props.value._type}`)
-  },
 }))
 </script>
 
