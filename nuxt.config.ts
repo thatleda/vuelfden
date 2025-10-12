@@ -59,6 +59,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
+    '/': { swr: 60 * 60 },
     '/sitemap.xml': { headers: { 'Content-Type': 'application/xml' } },
   },
 
