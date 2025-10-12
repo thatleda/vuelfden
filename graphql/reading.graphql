@@ -21,6 +21,28 @@ query reading {
             }
           }
         }
+        reviews: user_books(
+          where: {has_review: {_eq: true}, _and: {privacy_setting: {setting: {_eq: "Public"}}, reviewed_at: {_is_null: false}}}
+          order_by: {reviewed_at: desc}
+          limit: 1
+        ) {
+          review
+          review_html
+          review_has_spoilers
+          rating
+          book {
+            title
+            image {
+              url
+            }
+            release_year
+            contributions {
+              author {
+                name
+              }
+            }
+          }
+        }
       }
     }
   }
