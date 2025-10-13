@@ -2,8 +2,12 @@
   <div>
     <div :class="$style.card">
       <div :class="$style.description">
-        Probably reading
-        <b :class="$style.title"> {{ book.title }} ({{ book.release }})</b>
+        <span>
+          Probably reading
+          <h3 :class="$style.title">
+            {{ book.title }} ({{ book.release }})
+          </h3>
+        </span>
         <sub :class="$style.author">
           by <em>{{ book.author }}</em>
         </sub>
@@ -24,6 +28,14 @@
     </div>
 
     <div v-if="latestReview">
+      Just finished reading
+      <h3>
+        {{ latestReview.book.title }} ({{ latestReview.book.release }})
+      </h3>
+      <sub :class="$style.author">
+        by <em>{{ latestReview.book.author }}</em>
+      </sub>
+      <p>Rating: {{ latestReview.rating }} / 5</p>
       <div :class="$style.card">
         <img
           :alt="`The book cover of ${latestReview.book.title}`"
@@ -33,8 +45,6 @@
           :class="$style.cover"
         >
         <div :class="$style.description">
-          <span><b>{{ latestReview.book.title }} ({{ latestReview.book.release }})</b> by {{ latestReview.book.author }}</span>
-          <span>Rating: {{ latestReview.rating }} / 5</span>
           <base-slate-block v-if="latestReview.slateContent" :document="latestReview.slateContent" />
         </div>
       </div>
@@ -73,8 +83,8 @@ const latestReview = computed(() => {
 
   return {
     book: {
-      title: userReviews.book.title ?? 'Unknown Title',
-      author: userReviews.book.contributions[0]?.author?.name ?? 'Unknown Author',
+      title: userReviews.book.title ?? 'title unknown',
+      author: userReviews.book.contributions[0]?.author?.name ?? 'author unknown',
       cover: userReviews.book.image?.url,
       release: userReviews.book.release_year ?? 'year unknown',
     },
@@ -100,7 +110,8 @@ const latestReview = computed(() => {
   @media (max-width: 600px) {
     margin: 0 auto;
   }
-  object-fit: contain
+  padding: 1rem;
+  object-fit: contain;
 }
 
 .description {
@@ -127,12 +138,12 @@ const latestReview = computed(() => {
   }
 }
 
-.title {
-  text-decoration: underline;
-  font-size: 1.2rem;
-}
-
 .author {
   padding-top: 0.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-top: 0rem;
 }
 </style>
