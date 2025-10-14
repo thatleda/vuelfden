@@ -58,7 +58,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { isr: 2 * 60 * 60 },
+    '/': { prerender: true },
     '/imprint': { prerender: true },
     '/privacy': { prerender: true },
     '/ramblings': { isr: 2 * 60 * 60 },

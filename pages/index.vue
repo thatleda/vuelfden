@@ -17,7 +17,7 @@
     <base-review v-for="review in reviews" :key="review._id" :review="review" />
   </base-page-section>
   <base-page-section anchor="contact" heading="What is she up to?">
-    <reading-now />
+    <client-only><reading-now /></client-only>
   </base-page-section>
   <base-page-section>
     <contact-leda />
