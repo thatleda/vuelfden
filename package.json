@@ -39,7 +39,7 @@
     "emoji-regex": "10.6.0",
     "eslint": "9.37.0",
     "groq": "4.10.3",
-    "happy-dom": "20.0.2",
+    "happy-dom": "20.0.4",
     "typescript": "5.9.3",
     "vitest": "3.2.4"
   }
