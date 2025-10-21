@@ -1,8 +1,15 @@
 <template>
   <nav :class="$style.navigation">
     <div :class="$style.links">
-      <base-link-button to="/" title="Home">
-        <svg-wolf mirror height="5rem" width="5rem" />
+      <base-link-button
+        to="/"
+        title="Home"
+      >
+        <svg-wolf
+          mirror
+          height="5rem"
+          width="5rem"
+        />
       </base-link-button>
       <button
         v-if="smallScreen"
@@ -12,7 +19,10 @@
         :class="isMenuOpen ? $style.noDisplay : $style.burgerMenu"
         @click="openMenu"
       >
-        <svg-burger height="3rem" width="3rem" />
+        <svg-burger
+          height="3rem"
+          width="3rem"
+        />
       </button>
       <template v-else>
         <base-link-button to="/#who">
@@ -45,7 +55,10 @@
       :aria-hidden="!isMenuOpen"
       :tabindex="isMenuOpen ? 1 : -1"
     >
-      <nav ref="outsideRef" :class="$style.sideNavigation">
+      <nav
+        ref="outsideRef"
+        :class="$style.sideNavigation"
+      >
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/#who"

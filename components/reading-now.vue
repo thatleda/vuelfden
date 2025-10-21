@@ -4,18 +4,23 @@
       <div :class="$style.description">
         <span>
           Probably reading
-          <h3 :class="$style.title">
-            {{ book.title }} ({{ book.release }})
-          </h3>
+          <h3>{{ book.title }} ({{ book.release }})</h3>
+          <sub :class="$style.author">
+            by <em>{{ book.author }}</em>
+          </sub>
         </span>
-        <sub :class="$style.author">
-          by <em>{{ book.author }}</em>
-        </sub>
-        <div v-if="challenge" :class="$style.progress">
+        <div
+          v-if="challenge"
+          :class="$style.progress"
+        >
           <p>
             {{ challenge.description }}: {{ challenge.progress }} of {{ challenge.goal }} books completed
           </p>
-          <progress :class="$style.progressBar" :max="challenge.goal" :value="challenge.progress" />
+          <progress
+            :class="$style.progressBar"
+            :max="challenge.goal"
+            :value="challenge.progress"
+          />
         </div>
       </div>
       <img
@@ -27,14 +32,17 @@
       >
     </div>
 
-    <div v-if="latestReview">
-      Just finished reading
-      <h3>
-        {{ latestReview.book.title }} ({{ latestReview.book.release }})
-      </h3>
-      <sub :class="$style.author">
-        by <em>{{ latestReview.book.author }}</em>
-      </sub>
+    <div
+      v-if="latestReview"
+      :class="$style.description"
+    >
+      <span>
+        Just finished reading
+        <h3>{{ latestReview.book.title }} ({{ latestReview.book.release }})</h3>
+        <sub :class="$style.author">
+          by <em>{{ latestReview.book.author }}</em>
+        </sub>
+      </span>
       <p>Rating: {{ latestReview.rating }} / 5</p>
       <div :class="$style.card">
         <img
@@ -44,9 +52,10 @@
           width="150"
           :class="$style.cover"
         >
-        <div :class="$style.description">
-          <base-slate-block v-if="latestReview.slateContent" :document="latestReview.slateContent" />
-        </div>
+        <base-slate-block
+          v-if="latestReview.slateContent"
+          :document="latestReview.slateContent"
+        />
       </div>
     </div>
   </div>
@@ -110,6 +119,7 @@ const latestReview = computed(() => {
   @media (max-width: 600px) {
     margin: 0 auto;
   }
+
   padding: 1rem;
   object-fit: contain;
 }
@@ -121,6 +131,7 @@ const latestReview = computed(() => {
   width: 100%;
   gap: 1rem;
   padding-left: 1rem;
+
   @media (max-width: 600px) {
     padding: 0;
   }
@@ -133,6 +144,7 @@ const latestReview = computed(() => {
 
 .progressBar {
   width: 80%;
+
   @media (max-width: 600px) {
     width: 100%;
   }
@@ -144,6 +156,6 @@ const latestReview = computed(() => {
 
 h3 {
   font-size: 1.2rem;
-  margin-top: 0rem;
+  margin: 0;
 }
 </style>

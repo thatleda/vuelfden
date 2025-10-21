@@ -46,14 +46,12 @@
           </base-link-button>
           <base-link-button
             to="mailto:leda@hey.com"
-
             variant="secondary"
           >
             Mail
           </base-link-button>
           <base-link-button
             to="https://calendly.com/ledawolf/meeting"
-
             variant="primary"
           >
             Calendly
