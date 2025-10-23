@@ -41,6 +41,6 @@
     "groq": "4.11.0",
     "happy-dom": "20.0.8",
     "typescript": "5.9.3",
-    "vitest": "4.0.1"
+    "vitest": "4.0.2"
   }
 }
