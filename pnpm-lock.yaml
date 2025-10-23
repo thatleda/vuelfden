@@ -30,8 +30,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       netlify-cli:
-        specifier: 23.9.2
-        version: 23.9.2(@types/node@24.8.1)(db0@0.3.4)(ioredis@5.8.1)(picomatch@4.0.3)(rollup@4.52.5)
+        specifier: 23.9.3
+        version: 23.9.3(@types/node@24.8.1)(db0@0.3.4)(ioredis@5.8.1)(picomatch@4.0.3)(rollup@4.52.5)
       nuxt:
         specifier: 4.1.3
         version: 4.1.3(@netlify/blobs@10.1.0)(@parcel/watcher@2.5.1)(@types/node@24.8.1)(@vue/compiler-sfc@3.5.22)(db0@0.3.4)(eslint@9.38.0(jiti@2.6.1))(ioredis@5.8.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.52.5)(terser@5.44.0)(typescript@5.9.3)(vite@7.1.10(@types/node@24.8.1)(jiti@2.6.1)(terser@5.44.0)(yaml@2.8.1))(yaml@2.8.1)
@@ -1256,8 +1256,8 @@ packages:
     engines: {node: '>=18.14.0'}
     hasBin: true
 
-  '@netlify/build@35.2.1':
-    resolution: {integrity: sha512-4KXEzAN5Qpls2mpvofTnnZYFEJYOXgQ8VniDerctJNPmmXA2J4scdsU53Lu+uGHHI0yqH+2FpKl7X7tmczgkAA==}
+  '@netlify/build@35.2.7':
+    resolution: {integrity: sha512-M4SMpqzMGnW9o0gUxhYKPop5tQInbtoFubqgnL9FIb2b0ulLW2O4dK0i6X7Q8eik6esw1cKzgQ5BUwo0m2zshQ==}
     engines: {node: '>=18.14.0'}
     hasBin: true
     peerDependencies:
@@ -1276,26 +1276,19 @@ packages:
     engines: {node: '>=18.14.0'}
     hasBin: true
 
-  '@netlify/dev-utils@4.2.0':
-    resolution: {integrity: sha512-P/uLJ5IKB4DhUOd6Q4Mpk7N0YKrnijUhAL3C05dEftNi3U3xJB98YekYfsL3G6GkS3L35pKGMx+vKJRwUHpP1Q==}
-    engines: {node: ^18.14.0 || >=20}
-
   '@netlify/dev-utils@4.3.0':
     resolution: {integrity: sha512-vZAL8pMuj3yPQlmHSgyaA/UQFxc6pZgU0LucFJ1+IPWGJtIzBXHRvuR4acpoP72HtyQPUHJ42s7U9GaaSGVNHg==}
     engines: {node: ^18.14.0 || >=20}
 
-  '@netlify/edge-bundler@14.5.6':
-    resolution: {integrity: sha512-00uOZIOFsoWKa04osBvQ763oAFZDtAGSIjlywU0TS/lZTQCVEs6k39yJz8v4UEhXvK5MCThiFv+tnlpTNJn3fQ==}
+  '@netlify/edge-bundler@14.8.0':
+    resolution: {integrity: sha512-BzIZ9pn8yLaHVXUVPZQqbWgzXVvfbJsRjWSXNjYJHF7dU9vvr/q+seOOqG+epN+9Sbn9xb2KxTcfJasx7wgAmw==}
     engines: {node: '>=18.14.0'}
-
-  '@netlify/edge-functions-bootstrap@2.16.0':
-    resolution: {integrity: sha512-v8QQihSbBHj3JxtJsHoepXALpNumD9M7egHoc8z62FYl5it34dWczkaJoFFopEyhiBVKi4K/n0ZYpdzwfujd6g==}
 
   '@netlify/edge-functions-bootstrap@2.17.1':
     resolution: {integrity: sha512-KyNJbDhK1rC5wEeI7bXPgfl8QvADMHqNy2nwNJG60EHVRXTF0zxFnOpt/p0m2C512gcMXRrKZxaOZQ032RHVbw==}
 
-  '@netlify/edge-functions@2.19.0':
-    resolution: {integrity: sha512-OsTi1Ch59MRmr0/8QUqPADbtpcoGapBU7NLScfax1tKi43tTIleZRynIKlY4fx2X7orJc4tzU+zErf1JXOQZ8A==}
+  '@netlify/edge-functions@3.0.1':
+    resolution: {integrity: sha512-5Rd+gd2uD/iHReiY2p0KhVpgYnWKJsFyey2CN8WwGLQTq0GA7CEWkEMyks1azuAkChlqS4YJbpa//lMBmyrjSA==}
     engines: {node: '>=18.0.0'}
 
   '@netlify/functions-utils@6.2.11':
@@ -5765,8 +5758,8 @@ packages:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
     engines: {node: '>= 0.6'}
 
-  netlify-cli@23.9.2:
-    resolution: {integrity: sha512-VxgQVV+1rFN967+4/6XqwhYkA5LCQjFG0bIfpchdZcVHjyusClJuXvOyguLNda/5JUuyCLIvhgc7axc+bD+Yrg==}
+  netlify-cli@23.9.3:
+    resolution: {integrity: sha512-2GRXD6QUxuPPs2hMZDJCIstLTofyJg8TfT47WLIl1yYkPNHc8JZbkCENGvNScKcMO6jzxFXWGnJpe5qwoL1NzQ==}
     engines: {node: '>=20.12.2'}
     hasBin: true
 
@@ -9354,13 +9347,13 @@ snapshots:
       yaml: 2.8.1
       yargs: 17.7.2
 
-  '@netlify/build@35.2.1(@opentelemetry/api@1.8.0)(@types/node@24.8.1)(picomatch@4.0.3)(rollup@4.52.5)':
+  '@netlify/build@35.2.7(@opentelemetry/api@1.8.0)(@types/node@24.8.1)(picomatch@4.0.3)(rollup@4.52.5)':
     dependencies:
       '@bugsnag/js': 8.6.0
       '@netlify/blobs': 10.1.0
       '@netlify/cache-utils': 6.0.4
       '@netlify/config': 24.0.6
-      '@netlify/edge-bundler': 14.5.6
+      '@netlify/edge-bundler': 14.8.0
       '@netlify/functions-utils': 6.2.11(rollup@4.52.5)(supports-color@10.2.2)
       '@netlify/git-utils': 6.0.2
       '@netlify/opentelemetry-utils': 2.0.1(@opentelemetry/api@1.8.0)
@@ -9456,24 +9449,6 @@ snapshots:
       yargs: 17.7.2
       zod: 4.1.12
 
-  '@netlify/dev-utils@4.2.0':
-    dependencies:
-      '@whatwg-node/server': 0.10.13
-      ansis: 4.2.0
-      chokidar: 4.0.3
-      decache: 4.6.2
-      dettle: 1.0.5
-      dot-prop: 9.0.0
-      empathic: 2.0.0
-      env-paths: 3.0.0
-      image-size: 2.0.2
-      js-image-generator: 1.0.4
-      parse-gitignore: 2.0.0
-      semver: 7.7.3
-      tmp-promise: 3.0.3
-      uuid: 11.1.0
-      write-file-atomic: 5.0.1
-
   '@netlify/dev-utils@4.3.0':
     dependencies:
       '@whatwg-node/server': 0.10.13
@@ -9492,7 +9467,7 @@ snapshots:
       uuid: 11.1.0
       write-file-atomic: 5.0.1
 
-  '@netlify/edge-bundler@14.5.6':
+  '@netlify/edge-bundler@14.8.0':
     dependencies:
       '@import-maps/resolve': 2.0.0
       ajv: 8.17.1
@@ -9515,18 +9490,11 @@ snapshots:
       urlpattern-polyfill: 8.0.2
       uuid: 11.1.0
 
-  '@netlify/edge-functions-bootstrap@2.16.0': {}
-
   '@netlify/edge-functions-bootstrap@2.17.1': {}
 
-  '@netlify/edge-functions@2.19.0':
+  '@netlify/edge-functions@3.0.1':
     dependencies:
-      '@netlify/dev-utils': 4.3.0
-      '@netlify/edge-bundler': 14.5.6
-      '@netlify/edge-functions-bootstrap': 2.16.0
-      '@netlify/runtime-utils': 2.2.0
       '@netlify/types': 2.1.0
-      get-port: 7.1.0
 
   '@netlify/functions-utils@6.2.11(rollup@4.52.5)(supports-color@10.2.2)':
     dependencies:
@@ -14672,18 +14640,18 @@ snapshots:
 
   negotiator@0.6.3: {}
 
-  netlify-cli@23.9.2(@types/node@24.8.1)(db0@0.3.4)(ioredis@5.8.1)(picomatch@4.0.3)(rollup@4.52.5):
+  netlify-cli@23.9.3(@types/node@24.8.1)(db0@0.3.4)(ioredis@5.8.1)(picomatch@4.0.3)(rollup@4.52.5):
     dependencies:
       '@fastify/static': 7.0.4
       '@netlify/ai': 0.3.0(@netlify/api@14.0.7)
       '@netlify/api': 14.0.7
       '@netlify/blobs': 10.1.0
-      '@netlify/build': 35.2.1(@opentelemetry/api@1.8.0)(@types/node@24.8.1)(picomatch@4.0.3)(rollup@4.52.5)
+      '@netlify/build': 35.2.7(@opentelemetry/api@1.8.0)(@types/node@24.8.1)(picomatch@4.0.3)(rollup@4.52.5)
       '@netlify/build-info': 10.0.9
       '@netlify/config': 24.0.6
-      '@netlify/dev-utils': 4.2.0
-      '@netlify/edge-bundler': 14.5.6
-      '@netlify/edge-functions': 2.19.0
+      '@netlify/dev-utils': 4.3.0
+      '@netlify/edge-bundler': 14.8.0
+      '@netlify/edge-functions': 3.0.1
       '@netlify/edge-functions-bootstrap': 2.17.1
       '@netlify/headers-parser': 9.0.2
       '@netlify/local-functions-proxy': 2.0.3
