@@ -125,7 +125,7 @@ function calculateTotalPages() {
   return Math.ceil(allArticles.value.length / pageSize)
 }
 
-if (process.client && currentPage.value > totalPages.value && totalPages.value > 0) {
+if (currentPage.value > totalPages.value && totalPages.value > 0) {
   throw createError({
     statusCode: 404,
     statusMessage: 'Page not found',
