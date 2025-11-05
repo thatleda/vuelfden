@@ -34,7 +34,7 @@
     "@asbjorn/eslint-plugin-groq": "2.0.0",
     "@nuxt/test-utils": "3.20.1",
     "@nuxtjs/color-mode": "3.5.2",
-    "@portabletext/types": "2.0.15",
+    "@portabletext/types": "3.0.0",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/vue": "8.1.0",
     "@vitejs/plugin-vue": "6.0.1",

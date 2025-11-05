@@ -58,8 +58,8 @@ importers:
         specifier: 3.5.2
         version: 3.5.2(magicast@0.5.1)
       '@portabletext/types':
-        specifier: 2.0.15
-        version: 2.0.15
+        specifier: 3.0.0
+        version: 3.0.0
       '@testing-library/jest-dom':
         specifier: 6.9.1
         version: 6.9.1
@@ -2102,6 +2102,10 @@ packages:
   '@portabletext/types@2.0.15':
     resolution: {integrity: sha512-2e6i2gSQsrA/5OL5Gm4/9bxB9MNO73Fa47zj+0mT93xkoQUCGCWX5fZh1YBJ86hszaRYlqvqG08oULxvvPPp/Q==}
     engines: {node: ^14.13.1 || >=16.0.0 || >=18.0.0}
+
+  '@portabletext/types@3.0.0':
+    resolution: {integrity: sha512-7U8+bFcnguNtXr4rwMDj0EvJJDRzLaaof2mQqCjUcqxuuJpAppFaATZgrKmPI1uBgtFMi4unk1nIaOOmLHrX8Q==}
+    engines: {node: '>=20.19 <22 || >=22.12'}
 
   '@portabletext/vue@1.0.14':
     resolution: {integrity: sha512-piVkECB5RpiLa4+i4aYrtYXp/N9y0V20JYoulOKXQ/ptc35Ql7GkhFzw1vmn7IexhNvHjX1NMzrKUg1mPInynA==}
@@ -10728,6 +10732,8 @@ snapshots:
       '@portabletext/types': 2.0.15
 
   '@portabletext/types@2.0.15': {}
+
+  '@portabletext/types@3.0.0': {}
 
   '@portabletext/vue@1.0.14(vue@3.5.22(typescript@5.9.3))':
     dependencies:
