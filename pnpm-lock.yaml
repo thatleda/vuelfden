@@ -55,8 +55,8 @@ importers:
         specifier: 3.20.1
         version: 3.20.1(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.24)(vue@3.5.24(typescript@5.9.3)))(@vue/test-utils@2.4.6)(happy-dom@20.0.10)(magicast@0.5.1)(typescript@5.9.3)(vitest@4.0.8(@types/debug@4.1.12)(@types/node@24.10.0)(happy-dom@20.0.10)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1)(yaml@2.8.1))
       '@nuxtjs/color-mode':
-        specifier: 3.5.2
-        version: 3.5.2(magicast@0.5.1)
+        specifier: 4.0.0
+        version: 4.0.0(magicast@0.5.1)
       '@portabletext/types':
         specifier: 3.0.0
         version: 3.0.0
@@ -1566,8 +1566,8 @@ packages:
       rolldown:
         optional: true
 
-  '@nuxtjs/color-mode@3.5.2':
-    resolution: {integrity: sha512-cC6RfgZh3guHBMLLjrBB2Uti5eUoGM9KyauOaYS9ETmxNWBMTvpgjvSiSJp1OFljIXPIqVTJ3xtJpSNZiO3ZaA==}
+  '@nuxtjs/color-mode@4.0.0':
+    resolution: {integrity: sha512-xyaVR/TPLdMuRa2VOgH6b75jvmFEsn9QKL6ISldaAw38ooFJfWY1ts2F3ye43wcT/goCbcuvPuskF2f8yUZhlw==}
 
   '@octokit/auth-token@6.0.0':
     resolution: {integrity: sha512-P4YJBPdPSpWTQ1NU4XYdvHvXJJDxM6YwpS0FZHRgP7YFkdVxsWcpWGy/NVqlAA7PcPCnMacXlRm1y2PFZRWL/w==}
@@ -4244,6 +4244,9 @@ packages:
 
   exsolve@1.0.7:
     resolution: {integrity: sha512-VO5fQUzZtI6C+vx4w/4BWJpg3s/5l+6pRQEHzFRM8WFi4XffSP1Z+4qi7GbjWbvRQEbdIco5mIMq+zX4rPuLrw==}
+
+  exsolve@1.0.8:
+    resolution: {integrity: sha512-LmDxfWXwcTArk8fUEnOfSZpHOJ6zOMUJKOtFLFqJLoKJetuQG874Uc7/Kki7zFLzYybmZhp1M7+98pfMqeX8yA==}
 
   ext-list@2.2.2:
     resolution: {integrity: sha512-u+SQgsubraE6zItfVA0tBuCBhfU9ogSRnsvygI7wht9TS510oLkBRXBsqopeUG/GBOIQyKZO9wjTqIu/sf5zFA==}
@@ -9435,7 +9438,7 @@ snapshots:
       https-proxy-agent: 7.0.6(supports-color@10.2.2)
       node-fetch: 2.7.0
       nopt: 8.1.0
-      semver: 7.7.2
+      semver: 7.7.3
       tar: 7.5.2
     transitivePeerDependencies:
       - encoding
@@ -9482,7 +9485,7 @@ snapshots:
       find-up: 7.0.0
       minimatch: 9.0.5
       read-pkg: 9.0.1
-      semver: 7.7.2
+      semver: 7.7.3
       yaml: 2.8.1
       yargs: 17.7.2
 
@@ -9530,7 +9533,7 @@ snapshots:
       resolve: 2.0.0-next.5
       rfdc: 1.4.1
       safe-json-stringify: 1.2.0
-      semver: 7.7.2
+      semver: 7.7.3
       string-width: 7.2.0
       supports-color: 10.2.2
       terminal-link: 4.0.0
@@ -9601,7 +9604,7 @@ snapshots:
       image-size: 2.0.2
       js-image-generator: 1.0.4
       parse-gitignore: 2.0.0
-      semver: 7.7.2
+      semver: 7.7.3
       tmp-promise: 3.0.3
       uuid: 11.1.0
       write-file-atomic: 5.0.1
@@ -9619,7 +9622,7 @@ snapshots:
       image-size: 2.0.2
       js-image-generator: 1.0.4
       parse-gitignore: 2.0.0
-      semver: 7.7.2
+      semver: 7.7.3
       tmp-promise: 3.0.3
       uuid: 11.1.0
       write-file-atomic: 5.0.1
@@ -9641,7 +9644,7 @@ snapshots:
       p-wait-for: 5.0.2
       parse-imports: 2.2.1
       path-key: 4.0.0
-      semver: 7.7.2
+      semver: 7.7.3
       tar: 7.5.2
       tmp-promise: 3.0.3
       urlpattern-polyfill: 8.0.2
@@ -9798,7 +9801,7 @@ snapshots:
       precinct: 12.2.0(supports-color@10.2.2)
       require-package-name: 2.0.1
       resolve: 2.0.0-next.5
-      semver: 7.7.2
+      semver: 7.7.3
       tmp-promise: 3.0.3
       toml: 3.0.0
       unixify: 1.0.0
@@ -10239,11 +10242,12 @@ snapshots:
       - vue-tsc
       - yaml
 
-  '@nuxtjs/color-mode@3.5.2(magicast@0.5.1)':
+  '@nuxtjs/color-mode@4.0.0(magicast@0.5.1)':
     dependencies:
-      '@nuxt/kit': 3.20.1(magicast@0.5.1)
-      pathe: 1.1.2
-      pkg-types: 1.3.1
+      '@nuxt/kit': 4.2.1(magicast@0.5.1)
+      exsolve: 1.0.8
+      pathe: 2.0.3
+      pkg-types: 2.3.0
       semver: 7.7.3
     transitivePeerDependencies:
       - magicast
@@ -10403,7 +10407,7 @@ snapshots:
       '@opentelemetry/propagator-b3': 1.30.1(@opentelemetry/api@1.9.0)
       '@opentelemetry/propagator-jaeger': 1.30.1(@opentelemetry/api@1.9.0)
       '@opentelemetry/sdk-trace-base': 1.30.1(@opentelemetry/api@1.9.0)
-      semver: 7.7.2
+      semver: 7.7.3
 
   '@opentelemetry/semantic-conventions@1.28.0': {}
 
@@ -13047,6 +13051,8 @@ snapshots:
 
   exsolve@1.0.7: {}
 
+  exsolve@1.0.8: {}
+
   ext-list@2.2.2:
     dependencies:
       mime-db: 1.54.0
@@ -13134,7 +13140,7 @@ snapshots:
       proxy-addr: 2.0.7
       rfdc: 1.4.1
       secure-json-parse: 2.7.0
-      semver: 7.7.2
+      semver: 7.7.3
       toad-cache: 3.7.0
 
   fastq@1.19.1:
@@ -13428,7 +13434,7 @@ snapshots:
     dependencies:
       '@xhmikosr/downloader': 13.0.1
       node-fetch: 3.3.2
-      semver: 7.7.2
+      semver: 7.7.3
     transitivePeerDependencies:
       - bare-abort-controller
       - react-native-b4a
@@ -14200,7 +14206,7 @@ snapshots:
       lodash.isstring: 4.0.1
       lodash.once: 4.1.1
       ms: 2.1.3
-      semver: 7.7.2
+      semver: 7.7.3
 
   junk@4.0.1: {}
 
@@ -14500,7 +14506,7 @@ snapshots:
 
   make-dir@4.0.0:
     dependencies:
-      semver: 7.7.2
+      semver: 7.7.3
 
   make-error@1.3.6: {}
 
@@ -15269,13 +15275,13 @@ snapshots:
   normalize-package-data@6.0.2:
     dependencies:
       hosted-git-info: 7.0.2
-      semver: 7.7.2
+      semver: 7.7.3
       validate-npm-package-license: 3.0.4
 
   normalize-package-data@7.0.1:
     dependencies:
       hosted-git-info: 8.1.0
-      semver: 7.7.2
+      semver: 7.7.3
       validate-npm-package-license: 3.0.4
 
   normalize-path@2.1.1:
@@ -15689,7 +15695,7 @@ snapshots:
       ky: 1.14.0
       registry-auth-token: 5.1.0
       registry-url: 6.0.1
-      semver: 7.7.2
+      semver: 7.7.3
 
   package-manager-detector@1.5.0: {}
 
@@ -15843,7 +15849,7 @@ snapshots:
   pkg-types@2.3.0:
     dependencies:
       confbox: 0.2.2
-      exsolve: 1.0.7
+      exsolve: 1.0.8
       pathe: 2.0.3
 
   pluralize@8.0.0: {}
@@ -17279,7 +17285,7 @@ snapshots:
       is-npm: 6.1.0
       latest-version: 9.0.0
       pupa: 3.3.0
-      semver: 7.7.2
+      semver: 7.7.3
       xdg-basedir: 5.1.0
 
   upper-case-first@2.0.2:
