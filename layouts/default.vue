@@ -11,16 +11,20 @@ import PageHeader from '~/components/page-header.vue'
 const header = ref<{ isMenuOpen: boolean }>({ isMenuOpen: false })
 
 const prefersReducedMotion = usePreferredReducedMotion()
-const darkMode = useDark({ storageKey: 'vuelfden-dark-mode' })
+useDark({
+  storageKey: 'vuelfden-dark-mode',
+  selector: 'body',
+  valueDark: 'dark-mode',
+  valueLight: 'light-mode',
+})
 
 useHead({
   bodyAttrs: {
     class: computed(() => {
-      const bodyClass = darkMode.value ? 'dark-mode' : 'light-mode'
       if (header.value.isMenuOpen || prefersReducedMotion.value === 'reduce') {
-        return `${bodyClass} static`
+        return 'reduce-motion'
       }
-      return bodyClass
+      return ''
     }),
   },
 })
@@ -78,15 +82,15 @@ html {
   --box-shadow-hover-color: rgba(0, 0, 0, 0.32);
 }
 
-.static * {
+.reduce-motion * {
   -webkit-animation: none !important;
   -moz-animation: none !important;
   -o-animation: none !important;
   animation: none !important;
 }
 
-.static body::before,
-.static body::after {
+.reduce-motion body::before,
+.reduce-motion body::after {
   -webkit-animation: none !important;
   -moz-animation: none !important;
   -o-animation: none !important;
@@ -127,14 +131,11 @@ body {
   width: 100%;
   height: 100%;
   background-image:
-
-    /* Dense cluster 3 */
     radial-gradient(1px 1px at 320px 50px, #fff, transparent),
     radial-gradient(1px 1px at 325px 55px, rgba(255,255,255,0.8), transparent),
     radial-gradient(2px 2px at 318px 48px, rgba(255,255,255,0.9), transparent),
     radial-gradient(1px 1px at 322px 51px, rgba(255,255,255,0.7), transparent),
 
-    /* Scattered individual stars */
     radial-gradient(1px 1px at 100px 30px, rgba(255,255,255,0.8), transparent),
     radial-gradient(1px 1px at 150px 150px, rgba(255,255,255,0.6), transparent),
     radial-gradient(1px 1px at 250px 32px, rgba(255,255,255,0.9), transparent),
@@ -156,7 +157,6 @@ body {
   width: 100%;
   height: 100%;
   background-image:
-    /* Bright accent stars */
     radial-gradient(3px 3px at 120px 60px, rgba(200,200,255,0.9), transparent),
     radial-gradient(2px 2px at 280px 40px, rgba(255,200,200,0.8), transparent),
     radial-gradient(3px 3px at 400px 110px, rgba(200,255,200,0.9), transparent),
