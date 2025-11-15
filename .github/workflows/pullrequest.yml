@@ -117,7 +117,7 @@ jobs:
       - name: Build production bundle
         run: pnpm build
       - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: build-output
           path: dist
@@ -147,7 +147,7 @@ jobs:
             .nuxt
           key: build-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
       - name: Download build artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: build-output
           path: dist
@@ -173,7 +173,7 @@ jobs:
         continue-on-error: true
 
       - name: Upload Playwright report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         if: always()
         with:
           name: playwright-report
@@ -181,7 +181,7 @@ jobs:
           retention-days: 30
 
       - name: Upload Lighthouse reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         if: always()
         with:
           name: lighthouse-reports
