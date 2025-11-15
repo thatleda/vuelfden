@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { SanityPage } from '~/@types/sanity';
+import type { SanityPage } from '~/@types/sanity'
 
 interface AboutLedaProps {
   aboutPage: SanityPage

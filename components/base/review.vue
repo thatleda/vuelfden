@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { SanityReview } from '~/@types/sanity';
+import type { SanityReview } from '~/@types/sanity'
 
 interface ReviewProps {
   review: SanityReview
