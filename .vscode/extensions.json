@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "usernamehw.errorlens",
+    "dbaeumer.vscode-eslint",
+    "GitHub.vscode-pull-request-github",
+    "sanity-io.vscode-sanity",
+    "vitest.explorer",
+    "antfu.vite",
+    "Vue.volar",
+  ]
+}
