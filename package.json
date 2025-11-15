@@ -13,6 +13,8 @@
     "lint": "eslint . --fix",
     "lint:ci": "eslint .",
     "test": "vitest run",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
     "deploy": "netlify deploy"
   },
   "dependencies": {
@@ -34,6 +36,7 @@
     "@asbjorn/eslint-plugin-groq": "2.0.0",
     "@nuxt/test-utils": "3.20.1",
     "@nuxtjs/color-mode": "4.0.0",
+    "@playwright/test": "1.56.1",
     "@portabletext/types": "3.0.0",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/vue": "8.1.0",
@@ -43,6 +46,8 @@
     "eslint": "9.39.1",
     "groq": "4.15.0",
     "happy-dom": "20.0.10",
+    "playwright": "1.56.1",
+    "playwright-lighthouse": "4.0.0",
     "typescript": "5.9.3",
     "vitest": "4.0.9"
   }
