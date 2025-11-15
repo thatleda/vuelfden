@@ -29,11 +29,15 @@ jobs:
           cache: pnpm
       - name: Install dependencies
         run: pnpm install --shamefully-hoist
-      - name: Cache node_modules
+      - name: Prepare Nuxt
+        run: pnpm exec nuxt prepare
+      - name: Cache node_modules and .nuxt
         uses: actions/cache/save@v4
         with:
-          path: node_modules
-          key: node-modules-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          path: |
+            node_modules
+            .nuxt
+          key: build-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
 
   lint:
     name: Lint
@@ -51,11 +55,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24.11.1
-      - name: Restore node_modules
+      - name: Restore build cache
         uses: actions/cache/restore@v4
         with:
-          path: node_modules
-          key: node-modules-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          path: |
+            node_modules
+            .nuxt
+          key: build-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
       - name: Run linter
         run: pnpm lint:ci
 
@@ -75,11 +81,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24.11.1
-      - name: Restore node_modules
+      - name: Restore build cache
         uses: actions/cache/restore@v4
         with:
-          path: node_modules
-          key: node-modules-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          path: |
+            node_modules
+            .nuxt
+          key: build-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
       - name: Run tests
         run: pnpm test
 
@@ -99,11 +107,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24.11.1
-      - name: Restore node_modules
+      - name: Restore build cache
         uses: actions/cache/restore@v4
         with:
-          path: node_modules
-          key: node-modules-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          path: |
+            node_modules
+            .nuxt
+          key: build-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
       - name: Build production bundle
         run: pnpm build
       - name: Upload build artifact
@@ -129,11 +139,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24.11.1
-      - name: Restore node_modules
+      - name: Restore build cache
         uses: actions/cache/restore@v4
         with:
-          path: node_modules
-          key: node-modules-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          path: |
+            node_modules
+            .nuxt
+          key: build-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
