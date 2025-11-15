@@ -133,6 +133,9 @@ useHead({
         }
       : null,
   ].filter(Boolean),
+  htmlAttrs: {
+    lang: 'en',
+  },
 })
 </script>
 

@@ -27,6 +27,9 @@ useHead({
       return ''
     }),
   },
+  htmlAttrs: {
+    lang: 'en',
+  },
 })
 </script>
 
