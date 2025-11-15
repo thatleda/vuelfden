@@ -3,7 +3,7 @@ name: Pull Request CI
 on: pull_request
 
 concurrency:
-  group: pr-${{ github.ref }}
+  group: production
   cancel-in-progress: true
 
 permissions:

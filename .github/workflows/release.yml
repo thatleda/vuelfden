@@ -6,7 +6,7 @@ on:
       - main
 
 concurrency:
-  group: release-${{ github.ref }}
+  group: production
   cancel-in-progress: false
 
 permissions:
