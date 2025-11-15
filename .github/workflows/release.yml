@@ -102,28 +102,20 @@ jobs:
         run: pnpm run deploy --prod --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_TOKEN }} --message "${{ github.event.head_commit.message }}"
       - run: echo "Deployed to production at https://leda.fyi" >> $GITHUB_STEP_SUMMARY
 
-      - name: Audit production using Lighthouse
-        id: lighthouse
-        uses: treosh/lighthouse-ci-action@v12
+      - name: Run Lighthouse audits
+        run: pnpm lighthouse
+
+      - name: Upload Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          urls: |
-            https://leda.fyi
-            https://leda.fyi/ramblings
-          temporaryPublicStorage: true
-      - name: Lighthouse results summary
-        run: |
-          echo '### Lighthouse check :white_check_mark:' >> $GITHUB_STEP_SUMMARY
-          echo ' ' >> $GITHUB_STEP_SUMMARY
-          echo "**Home:**" >> $GITHUB_STEP_SUMMARY
-          echo "Performance: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.performance }}" >> $GITHUB_STEP_SUMMARY
-          echo "Accessibility: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.accessibility }}" >> $GITHUB_STEP_SUMMARY
-          echo "Best Practices: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.best-practices }}" >> $GITHUB_STEP_SUMMARY
-          echo "SEO: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.seo }}" >> $GITHUB_STEP_SUMMARY
-          echo "PWA: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.pwa }}" >> $GITHUB_STEP_SUMMARY
-          echo ' ' >> $GITHUB_STEP_SUMMARY
-          echo "**Ramblings:**" >> $GITHUB_STEP_SUMMARY
-          echo "Performance: ${{ fromJSON(steps.lighthouse.outputs.manifest)[1].summary.performance }}" >> $GITHUB_STEP_SUMMARY
-          echo "Accessibility: ${{ fromJSON(steps.lighthouse.outputs.manifest)[1].summary.accessibility }}" >> $GITHUB_STEP_SUMMARY
-          echo "Best Practices: ${{ fromJSON(steps.lighthouse.outputs.manifest)[1].summary.best-practices }}" >> $GITHUB_STEP_SUMMARY
-          echo "SEO: ${{ fromJSON(steps.lighthouse.outputs.manifest)[1].summary.seo }}" >> $GITHUB_STEP_SUMMARY
-          echo "PWA: ${{ fromJSON(steps.lighthouse.outputs.manifest)[1].summary.pwa }}" >> $GITHUB_STEP_SUMMARY
+          name: lighthouse-reports
+          path: |
+            lighthouse-*.html
+            lighthouse-*.json
+            lighthouse-summary.md
+          retention-days: 30
+
+      - name: Display Lighthouse summary
+        if: always()
+        run: cat lighthouse-summary.md >> $GITHUB_STEP_SUMMARY

@@ -13,8 +13,9 @@
     "lint": "eslint . --fix",
     "lint:ci": "eslint .",
     "test": "vitest run",
-    "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui",
+    "test:e2e": "dotenv -- playwright test",
+    "test:e2e:ui": "dotenv -- playwright test --ui",
+    "lighthouse": "node --experimental-strip-types scripts/lighthouse-audit.ts",
     "deploy": "netlify deploy"
   },
   "dependencies": {
@@ -34,7 +35,6 @@
   "devDependencies": {
     "@antfu/eslint-config": "6.2.0",
     "@asbjorn/eslint-plugin-groq": "2.0.0",
-    "@nuxt/test-utils": "3.20.1",
     "@nuxtjs/color-mode": "4.0.0",
     "@playwright/test": "1.56.1",
     "@portabletext/types": "3.0.0",
@@ -42,12 +42,13 @@
     "@testing-library/vue": "8.1.0",
     "@vitejs/plugin-vue": "6.0.1",
     "@vue/test-utils": "2.4.6",
+    "dotenv-cli": "11.0.0",
     "emoji-regex": "10.6.0",
     "eslint": "9.39.1",
     "groq": "4.15.0",
     "happy-dom": "20.0.10",
+    "lighthouse": "^13.0.1",
     "playwright": "1.56.1",
-    "playwright-lighthouse": "4.0.0",
     "typescript": "5.9.3",
     "vitest": "4.0.9"
   }
