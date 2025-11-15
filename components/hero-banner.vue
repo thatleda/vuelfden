@@ -5,8 +5,6 @@
         :src="page.banner._id"
         :alt="page.banner.altText"
         width="200"
-        height="200"
-        :class="$style.photo"
         loading="lazy"
         placeholder
       />
@@ -63,7 +61,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { SanityPage } from '~/@types/sanity'
+import type { SanityPage } from '~/@types/sanity';
 
 interface HeroProps {
   page: SanityPage
@@ -87,10 +85,6 @@ const { page } = defineProps<HeroProps>()
     align-items: flex-end;
     gap: 0;
   }
-}
-
-.photo {
-  border-radius: 100%;
 }
 
 .callToAction {

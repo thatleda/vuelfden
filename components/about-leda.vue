@@ -5,8 +5,6 @@
         :src="aboutPage.banner._id"
         :alt="aboutPage.banner.altText"
         width="200"
-        height="269"
-        :class="$style.photo"
         loading="lazy"
       />
     </div>
@@ -15,7 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { SanityPage } from '~/@types/sanity'
+import type { SanityPage } from '~/@types/sanity';
 
 interface AboutLedaProps {
   aboutPage: SanityPage
@@ -37,9 +35,5 @@ const { aboutPage } = defineProps<AboutLedaProps>()
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.photo {
-  border-radius: var(--border-radius);
 }
 </style>

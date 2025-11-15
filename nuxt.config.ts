@@ -70,11 +70,10 @@ export default defineNuxtConfig({
   image: {
     provider: 'sanity',
     sanity: {
-      baseURL: 'https://cdn.sanity.io/',
-      projectId: process.env.NUXT_SANITY_PROJECT_ID,
+      projectId: process.env.NUXT_SANITY_PROJECT_ID!,
       modifiers: {
-        fit: 'cover',
         crop: 'center',
+        auto: 'format,compress',
       },
     },
     alias: {

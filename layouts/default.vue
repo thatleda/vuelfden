@@ -10,11 +10,16 @@ import PageHeader from '~/components/page-header.vue'
 const header = ref<{ isMenuOpen: boolean }>({ isMenuOpen: false })
 
 const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)')
+const darkMode = useMediaQuery('(prefers-color-scheme: dark)')
 
 useHead({
   bodyAttrs: {
     class: computed(() => {
-      return header.value.isMenuOpen || prefersReducedMotion.value ? 'static' : ''
+      let bodyClass = (darkMode.value) ? 'dark-mode' : 'light-mode'
+      if (header.value.isMenuOpen || prefersReducedMotion.value) {
+        bodyClass += ' static'
+      }
+      return bodyClass
     }),
   },
 })
@@ -87,7 +92,6 @@ html {
   animation: none !important;
 }
 
-/* Disable smooth scrolling when users have prefers-reduced-motion enabled */
 @media screen and (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -200,6 +204,10 @@ a {
 
 svg {
   fill: var(--text-color);
+}
+
+img {
+  border-radius: var(--border-radius);
 }
 
 h1 {
