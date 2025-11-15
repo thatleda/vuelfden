@@ -5,7 +5,6 @@
         :src="article.banner._id"
         :alt="article.banner.altText"
         width="100"
-        height="100"
         loading="lazy"
       />
       <div :class="$style.description">
@@ -20,9 +19,9 @@
 </template>
 
 <script lang="ts" setup>
-import type { SanityPage } from '~/@types/sanity'
+import type { SanityPage } from '~/@types/sanity';
 
-import { formatDistance } from 'date-fns'
+import { formatDistance } from 'date-fns';
 
 interface ArticleProps {
   article: SanityPage

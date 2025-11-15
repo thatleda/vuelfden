@@ -42,7 +42,6 @@ it('should display the article banner image with proper attributes', () => {
   const image = screen.getByRole('img')
   expect(image).toHaveAttribute('alt', 'Test article banner image')
   expect(image).toHaveAttribute('width', '100')
-  expect(image).toHaveAttribute('height', '100')
   expect(image).toHaveAttribute('loading', 'lazy')
 })
 
