@@ -47,6 +47,15 @@
         >
           CV
         </base-link-button>
+        <button
+          type="button"
+          aria-label="Toggle dark mode"
+          :class="$style.darkModeToggle"
+          @click="toggleDarkMode"
+        >
+          <svg-sun v-if="darkMode" height="2rem" width="2rem" />
+          <svg-moon v-else height="2rem" width="2rem" />
+        </button>
       </template>
     </div>
     <div
@@ -110,7 +119,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onClickOutside } from '@vueuse/core'
+import { onClickOutside, useDark, useToggle } from '@vueuse/core'
 import { ref } from 'vue'
 
 const smallScreen = useMediaQuery('(max-width: 1030px)')
@@ -118,12 +127,19 @@ const smallScreen = useMediaQuery('(max-width: 1030px)')
 const isMenuOpen = ref(false)
 const outsideRef = ref(null)
 
+const darkMode = useDark({ storageKey: 'vuelfden-dark-mode' })
+const toggle = useToggle(darkMode)
+
 function openMenu() {
   isMenuOpen.value = true
 }
 
 function closeMenu() {
   isMenuOpen.value = false
+}
+
+function toggleDarkMode() {
+  toggle()
 }
 
 onClickOutside(outsideRef, closeMenu)
@@ -181,6 +197,28 @@ defineExpose({
   justify-content: space-around;
   padding: 0;
   width: 2rem;
+}
+
+.darkModeToggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  transition: 0.25s ease-in-out;
+  transition-property: background-color;
+
+  svg {
+    transition: fill 0.25s ease-in-out;
+  }
+
+  &:hover {
+    svg {
+      fill: var(--primary-color);
+    }
+  }
 }
 
 .noDisplay {

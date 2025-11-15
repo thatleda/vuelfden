@@ -16,9 +16,9 @@ const darkMode = useDark({ storageKey: 'vuelfden-dark-mode' })
 useHead({
   bodyAttrs: {
     class: computed(() => {
-      let bodyClass = (darkMode.value) ? 'dark-mode' : 'light-mode'
-      if (header.value.isMenuOpen || prefersReducedMotion.value) {
-        bodyClass += ' static'
+      const bodyClass = darkMode.value ? 'dark-mode' : 'light-mode'
+      if (header.value.isMenuOpen || prefersReducedMotion.value === 'reduce') {
+        return `${bodyClass} static`
       }
       return bodyClass
     }),
