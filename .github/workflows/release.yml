@@ -122,7 +122,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-output
-          path: .output
+          path: dist
           retention-days: 1
 
   deploy:
@@ -152,7 +152,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-output
-          path: .output
+          path: dist
       - name: Deploy to production
         run: pnpm run deploy --prod --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_TOKEN }} --message "${{ github.event.head_commit.message }}"
       - run: echo "Deployed to production at https://leda.fyi" >> $GITHUB_STEP_SUMMARY
