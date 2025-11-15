@@ -10,6 +10,11 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
+    env:
+      NUXT_SANITY_PROJECT_ID: ${{ secrets.NUXT_SANITY_PROJECT_ID }}
+      NUXT_SANITY_DATASET: ${{ secrets.NUXT_SANITY_DATASET }}
+      NUXT_HARDCOVER_API_KEY: ${{ secrets.NUXT_HARDCOVER_API_KEY }}
+      NETLIFY_URL: https://leda.fyi
     steps:
       - uses: actions/checkout@v5
       - uses: pnpm/action-setup@v4
@@ -32,6 +37,11 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
+    env:
+      NUXT_SANITY_PROJECT_ID: ${{ secrets.NUXT_SANITY_PROJECT_ID }}
+      NUXT_SANITY_DATASET: ${{ secrets.NUXT_SANITY_DATASET }}
+      NUXT_HARDCOVER_API_KEY: ${{ secrets.NUXT_HARDCOVER_API_KEY }}
+      NETLIFY_URL: https://leda.fyi
     steps:
       - uses: actions/checkout@v5
       - uses: pnpm/action-setup@v4
