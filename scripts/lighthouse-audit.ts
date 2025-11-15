@@ -19,9 +19,11 @@ interface AuditResult {
   }
 }
 
+const baseUrl = process.env.NETLIFY_URL || 'https://leda.fyi'
+
 const urls: AuditTarget[] = [
-  { name: 'Home', url: 'https://leda.fyi' },
-  { name: 'Ramblings', url: 'https://leda.fyi/ramblings' },
+  { name: 'Home', url: baseUrl },
+  { name: 'Ramblings', url: `${baseUrl}/ramblings` },
 ]
 
 const categories = ['performance', 'accessibility', 'best-practices', 'seo'] as const
