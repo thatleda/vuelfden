@@ -6,6 +6,6 @@
     "sanity-io.vscode-sanity",
     "vitest.explorer",
     "antfu.vite",
-    "Vue.volar",
+    "Vue.volar"
   ]
 }
