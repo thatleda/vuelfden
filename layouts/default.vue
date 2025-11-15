@@ -123,7 +123,7 @@ body {
   }
 }
 
-.dark-mode body::before {
+body.dark-mode::before {
   content: '';
   position: fixed;
   top: 0;
@@ -131,25 +131,26 @@ body {
   width: 100%;
   height: 100%;
   background-image:
-    radial-gradient(1px 1px at 320px 50px, #fff, transparent),
-    radial-gradient(1px 1px at 325px 55px, rgba(255,255,255,0.8), transparent),
-    radial-gradient(2px 2px at 318px 48px, rgba(255,255,255,0.9), transparent),
-    radial-gradient(1px 1px at 322px 51px, rgba(255,255,255,0.7), transparent),
-
-    radial-gradient(1px 1px at 100px 30px, rgba(255,255,255,0.8), transparent),
-    radial-gradient(1px 1px at 150px 150px, rgba(255,255,255,0.6), transparent),
-    radial-gradient(1px 1px at 250px 32px, rgba(255,255,255,0.9), transparent),
-    radial-gradient(1px 1px at 390px 120px, rgba(255,255,255,0.7), transparent),
-    radial-gradient(1px 1px at 420px 92px, rgba(255,255,255,0.8), transparent),
-    radial-gradient(1px 1px at 80px 140px, rgba(255,255,255,0.6), transparent);
+    radial-gradient(1px 1px at 47px 83px, #fff, transparent),
+    radial-gradient(1px 1px at 189px 142px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 312px 31px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 521px 167px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 634px 94px, rgba(255,255,255,0.85), transparent),
+    radial-gradient(1px 1px at 98px 178px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 743px 51px, rgba(255,255,255,0.75), transparent),
+    radial-gradient(1px 1px at 271px 129px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 456px 7px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 823px 114px, rgba(255,255,255,0.65), transparent),
+    radial-gradient(2px 2px at 147px 23px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 592px 186px, rgba(255,255,255,0.7), transparent);
   background-repeat: repeat;
-  background-size: 400px 200px;
+  background-size: 900px 200px;
   animation: twinkle 4s ease-in-out infinite;
   pointer-events: none;
   z-index: -2;
 }
 
-.dark-mode body::after {
+body.dark-mode::after {
   content: '';
   position: fixed;
   top: 0;
@@ -157,33 +158,40 @@ body {
   width: 100%;
   height: 100%;
   background-image:
-    radial-gradient(3px 3px at 120px 60px, rgba(200,200,255,0.9), transparent),
-    radial-gradient(2px 2px at 280px 40px, rgba(255,200,200,0.8), transparent),
-    radial-gradient(3px 3px at 400px 110px, rgba(200,255,200,0.9), transparent),
-    radial-gradient(2px 2px at 201px 123px, rgba(255,255,200,0.8), transparent),
-    radial-gradient(3px 3px at 354px 184px, rgba(200,200,255,0.7), transparent),
-    radial-gradient(2px 2px at 84px 90px, rgba(255,200,255,0.8), transparent),
-    radial-gradient(3px 3px at 459px 70px, rgba(200,255,255,0.9), transparent),
-    radial-gradient(2px 2px at 30px 160px, rgba(255,255,200,0.7), transparent);
+    radial-gradient(2px 2px at 234px 87px, rgba(200,200,255,0.85), transparent),
+    radial-gradient(3px 3px at 678px 143px, rgba(255,200,200,0.75), transparent),
+    radial-gradient(2px 2px at 89px 219px, rgba(200,255,200,0.8), transparent),
+    radial-gradient(3px 3px at 512px 34px, rgba(255,255,200,0.9), transparent),
+    radial-gradient(2px 2px at 321px 176px, rgba(200,200,255,0.7), transparent),
+    radial-gradient(3px 3px at 756px 98px, rgba(255,200,255,0.85), transparent),
+    radial-gradient(2px 2px at 123px 12px, rgba(200,255,255,0.8), transparent),
+    radial-gradient(3px 3px at 445px 201px, rgba(255,255,200,0.75), transparent),
+    radial-gradient(2px 2px at 890px 67px, rgba(200,200,255,0.7), transparent),
+    radial-gradient(3px 3px at 167px 154px, rgba(255,200,200,0.8), transparent);
   background-repeat: repeat;
-  background-size: 800px 250px;
+  background-size: 950px 250px;
   animation: twinkle-slow 6s ease-in-out infinite;
   pointer-events: none;
   z-index: -1;
 }
 
-.dark-mode body {
+body.dark-mode {
   background: var(--background-gradient);
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-  body::before,
-  body::after {
+  body.dark-mode::before,
+  body.dark-mode::after {
     animation: none !important;
   }
-  .dark-mode body {
+  body.dark-mode {
     animation: none !important;
   }
+}
+
+body.dark-mode.reduce-motion::before,
+body.dark-mode.reduce-motion::after {
+  animation: none !important;
 }
 
 a {
