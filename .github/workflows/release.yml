@@ -32,9 +32,7 @@ jobs:
           node-version: 24.11.1
           cache: pnpm
       - name: Install dependencies
-        run: pnpm install --shamefully-hoist
-      - name: Prepare Nuxt
-        run: pnpm exec nuxt prepare
+        run: pnpm install
       - name: Cache node_modules and .nuxt
         uses: actions/cache/save@v4
         with:
