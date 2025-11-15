@@ -34,7 +34,6 @@ jobs:
           cache: pnpm
       - name: Install dependencies
         run: pnpm install
-
       - name: Run linter & tests in parallel
         run: |
           pnpm lint:ci &
@@ -43,29 +42,22 @@ jobs:
           TEST_PID=$!
           wait $LINT_PID
           wait $TEST_PID
-
       - name: Build production bundle
         run: pnpm build
-
       - name: Deploy preview
         id: deploy
         run: |
           ALIAS="pr-${{ github.event.pull_request.number }}"
           pnpm run deploy --alias "${ALIAS}" --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_TOKEN }} --message "Deploying PR #${{ github.event.pull_request.number }}"
-
       - run: echo "Published preview at ${{ env.NETLIFY_URL }}" >> $GITHUB_STEP_SUMMARY
-
       - name: Install Playwright browsers
         run: pnpm exec playwright install chromium --with-deps
-
       - name: Run E2E tests
         run: pnpm test:e2e
         continue-on-error: true
-
       - name: Run Lighthouse audits
         run: node --experimental-strip-types scripts/lighthouse-audit.ts
         continue-on-error: true
-
       - name: Upload Playwright report
         uses: actions/upload-artifact@v5
         if: always()
@@ -73,7 +65,6 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-
       - name: Upload Lighthouse reports
         uses: actions/upload-artifact@v5
         if: always()
@@ -84,7 +75,6 @@ jobs:
             lighthouse-*.json
             lighthouse-summary.md
           retention-days: 30
-
       - name: Prepare reports for GitHub Pages
         if: always()
         run: |
@@ -92,16 +82,13 @@ jobs:
           cp -r playwright-report _site/playwright 2>/dev/null || true
           cp lighthouse-index.html _site/index.html 2>/dev/null || true
           cp lighthouse-*.html lighthouse-*.json _site/ 2>/dev/null || true
-
       - name: Upload reports to GitHub Pages
         if: always()
         uses: actions/upload-pages-artifact@v4
-
       - name: Deploy to GitHub Pages
         if: always()
         uses: actions/deploy-pages@v4
         id: deployment
-
       - name: Read Lighthouse summary
         if: always()
         id: lighthouse
@@ -112,7 +99,6 @@ jobs:
             echo "EOF" >> $GITHUB_OUTPUT
           fi
         continue-on-error: true
-
       - name: Comment PR with results
         if: always()
         uses: thollander/actions-comment-pull-request@v3
