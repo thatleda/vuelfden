@@ -17,7 +17,7 @@ jobs:
     name: Build, Deploy & Audit
     runs-on: ubuntu-latest
     environment:
-      name: preview-${{ github.event.pull_request.number }}
+      name: development
       url: https://pr-${{ github.event.pull_request.number }}--vuelfden.netlify.app
     env:
       NUXT_SANITY_PROJECT_ID: ${{ secrets.NUXT_SANITY_PROJECT_ID }}
