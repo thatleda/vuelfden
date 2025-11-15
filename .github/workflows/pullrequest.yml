@@ -45,7 +45,7 @@ jobs:
           comment-tag: execution
           message: |
             ### Lighthouse check :white_check_mark:
-            Triggered by **${{ github.actor }}** ∙ deployed from **${{ github.ref_name }}** to ${{ steps.deploy.outputs.url }}
+            Triggered by **${{ github.actor }}** ∙ deployed from **${{ github.event.pull_request.base.ref }}** to ${{ steps.deploy.outputs.url }}
             **Results:**
             Performance: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.performance }}
             Accessibility: ${{ fromJSON(steps.lighthouse.outputs.manifest)[0].summary.accessibility }}
