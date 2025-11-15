@@ -33,14 +33,13 @@
       </link-button>
     </nav>
 
-    <div
+    <output
       v-if="isLoading"
       :class="$style.loading"
       aria-live="polite"
-      role="status"
     >
       Loading articles...
-    </div>
+    </output>
 
     <main
       ref="mainContent"

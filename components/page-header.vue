@@ -1,5 +1,5 @@
 <template>
-  <nav :class="$style.navigation">
+  <nav :class="$style.navigation" role="navigation" aria-label="Main navigation">
     <div :class="$style.links">
       <base-link-button
         to="/"
@@ -58,11 +58,12 @@
       <nav
         ref="outsideRef"
         :class="$style.sideNavigation"
+        aria-label="Mobile navigation"
       >
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/#who"
-          :onclick="closeMenu"
+          @click="closeMenu"
         >
           Who?
         </base-link-button>

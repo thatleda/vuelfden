@@ -1,5 +1,5 @@
 import type { SanityClient } from '@sanity/client'
-import type { MaybeRef } from '@vueuse/core'
+import type { MaybeRef } from 'vue'
 import type { SanityPage, SanityReview } from '~/@types/sanity'
 import { createClient } from '@sanity/client'
 
@@ -11,14 +11,12 @@ let client: SanityClient | null = null
 
 function getSanityClient(): SanityClient {
   const config = useRuntimeConfig()
-  if (!client) {
-    client = createClient({
-      projectId: config.public.sanityProjectId || '',
-      dataset: config.public.sanityDataset || '',
-      useCdn: true,
-      apiVersion: '2023-01-01',
-    })
-  }
+  client ??= createClient({
+    projectId: config.public.sanityProjectId || '',
+    dataset: config.public.sanityDataset || '',
+    useCdn: true,
+    apiVersion: '2023-01-01',
+  })
   return client
 }
 

@@ -1,10 +1,10 @@
 <template>
-  <div :class="$style.wrapper" role="article">
+  <article :class="$style.wrapper">
     <portable-text
       :value="props.blocks"
       :components="components"
     />
-  </div>
+  </article>
 </template>
 
 <script lang="ts" setup>
