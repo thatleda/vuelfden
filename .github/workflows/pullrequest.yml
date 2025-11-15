@@ -9,6 +9,8 @@ concurrency:
 permissions:
   contents: read
   pull-requests: write
+  pages: write
+  id-token: write
 
 jobs:
   setup:
@@ -189,6 +191,34 @@ jobs:
             lighthouse-summary.md
           retention-days: 30
 
+      - name: Prepare reports for GitHub Pages
+        if: always()
+        run: |
+          mkdir -p _site
+          cp -r playwright-report _site/playwright 2>/dev/null || true
+          cp lighthouse-index.html _site/index.html 2>/dev/null || true
+          cp lighthouse-*.html lighthouse-*.json _site/ 2>/dev/null || true
+
+      - name: Upload reports to GitHub Pages
+        if: always()
+        uses: actions/upload-pages-artifact@v3
+
+      - name: Deploy to GitHub Pages
+        if: always()
+        uses: actions/deploy-pages@v4
+        id: deployment
+
+      - name: Read Lighthouse summary
+        if: always()
+        id: lighthouse
+        run: |
+          if [ -f lighthouse-summary.md ]; then
+            echo "SUMMARY<<EOF" >> $GITHUB_OUTPUT
+            cat lighthouse-summary.md >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          fi
+        continue-on-error: true
+
       - name: Comment PR with results
         if: always()
         uses: thollander/actions-comment-pull-request@v3
@@ -196,14 +226,9 @@ jobs:
           comment-tag: execution
           message: |
             ### Test Results
-            Triggered by **${{ github.actor }}** deployed to ${{ steps.deploy.outputs.url }}
+            Preview deployed to ${{ steps.deploy.outputs.url }}
 
-            **Playwright Tests:** [View Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
-            **Lighthouse Audits:** Download the `lighthouse-reports` artifact above
+            **[View Lighthouse Reports](${{ steps.deployment.outputs.page_url }})** | **[View Playwright Reports](${{ steps.deployment.outputs.page_url }}playwright)**
 
-            The reports include:
-            - E2E functional tests (navigation, content, accessibility)
-            - Performance, accessibility, SEO, and best practices audits
-            - Detailed metrics and screenshots
-
-            Download the artifacts to view the complete HTML reports.
+            #### Lighthouse Audits
+            ${{ steps.lighthouse.outputs.SUMMARY || 'Lighthouse audit results are available above.' }}
