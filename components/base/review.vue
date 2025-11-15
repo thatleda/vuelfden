@@ -5,6 +5,7 @@
         :src="review.picture._id"
         :alt="review.picture.altText"
         :class="$style.picture"
+        :aria-label="`${review.reviewer}'s portrait`"
         width="200"
         height="200"
         loading="lazy"
@@ -19,7 +20,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { SanityReview } from '~/@types/sanity'
+import type { SanityReview } from '~/@types/sanity';
 
 interface ReviewProps {
   review: SanityReview

@@ -4,6 +4,7 @@
       <NuxtImg
         :src="page.banner._id"
         :alt="page.banner.altText"
+        :aria-label="page.banner.altText"
         width="200"
         loading="lazy"
         placeholder
@@ -27,30 +28,35 @@
           <base-link-button
             to="https://discord.com/users/732667625255075951"
             variant="secondary"
+            aria-label="Discord"
           >
             Discord
           </base-link-button>
           <base-link-button
             to="https://github.com/thatleda"
             variant="secondary"
+            aria-label="GitHub"
           >
             GitHub
           </base-link-button>
           <base-link-button
             to="https://www.linkedin.com/in/thatleda/"
             variant="secondary"
+            aria-label="LinkedIn"
           >
             LinkedIn
           </base-link-button>
           <base-link-button
             to="mailto:leda@hey.com"
             variant="secondary"
+            aria-label="Mail"
           >
             Mail
           </base-link-button>
           <base-link-button
             to="https://calendly.com/ledawolf/meeting"
             variant="primary"
+            aria-label="Calendly"
           >
             Calendly
           </base-link-button>
@@ -61,7 +67,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { SanityPage } from '~/@types/sanity'
+import type { SanityPage } from '~/@types/sanity';
 
 interface HeroProps {
   page: SanityPage

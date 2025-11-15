@@ -4,6 +4,7 @@
       <NuxtImg
         :src="aboutPage.banner._id"
         :alt="aboutPage.banner.altText"
+        :aria-label="aboutPage.banner.altText"
         width="200"
         loading="lazy"
       />
@@ -13,7 +14,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { SanityPage } from '~/@types/sanity'
+import type { SanityPage } from '~/@types/sanity';
 
 interface AboutLedaProps {
   aboutPage: SanityPage
