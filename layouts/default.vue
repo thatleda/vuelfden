@@ -5,12 +5,13 @@
 </template>
 
 <script lang="ts" setup>
+import { useDark, usePreferredReducedMotion } from '@vueuse/core'
 import PageHeader from '~/components/page-header.vue'
 
 const header = ref<{ isMenuOpen: boolean }>({ isMenuOpen: false })
 
-const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)')
-const darkMode = useMediaQuery('(prefers-color-scheme: dark)')
+const prefersReducedMotion = usePreferredReducedMotion()
+const darkMode = useDark({ storageKey: 'vuelfden-dark-mode' })
 
 useHead({
   bodyAttrs: {
