@@ -11,6 +11,8 @@ concurrency:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
 
 jobs:
   lint:
@@ -102,20 +104,35 @@ jobs:
         run: pnpm run deploy --prod --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_TOKEN }} --message "${{ github.event.head_commit.message }}"
       - run: echo "Deployed to production at https://leda.fyi" >> $GITHUB_STEP_SUMMARY
 
+      - name: Run E2E tests
+        run: pnpm test:e2e
+
       - name: Run Lighthouse audits
         run: pnpm lighthouse
 
-      - name: Upload Lighthouse reports
+      - name: Prepare reports for GitHub Pages
         if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: lighthouse-reports
-          path: |
-            lighthouse-*.html
-            lighthouse-*.json
-            lighthouse-summary.md
-          retention-days: 30
+        run: |
+          mkdir -p _site
+          cp -r playwright-report _site/playwright 2>/dev/null || true
+          cp lighthouse-index.html _site/index.html
+          cp lighthouse-*.html lighthouse-*.json _site/ 2>/dev/null || true
 
-      - name: Display Lighthouse summary
+      - name: Upload reports to GitHub Pages
         if: always()
-        run: cat lighthouse-summary.md >> $GITHUB_STEP_SUMMARY
+        uses: actions/upload-pages-artifact@v3
+
+      - name: Deploy to GitHub Pages
+        if: always()
+        uses: actions/deploy-pages@v4
+        id: deployment
+
+      - name: Display reports summary
+        if: always()
+        run: |
+          echo "### Test Reports" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "[View Lighthouse Reports](${{ steps.deployment.outputs.page_url }})" >> $GITHUB_STEP_SUMMARY
+          echo "[View Playwright Reports](${{ steps.deployment.outputs.page_url }}playwright)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          cat lighthouse-summary.md >> $GITHUB_STEP_SUMMARY

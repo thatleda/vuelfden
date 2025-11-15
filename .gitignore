@@ -20,3 +20,4 @@ playwright-report
 lighthouse-*.html
 lighthouse-*.json
 lighthouse-summary.md
+lighthouse-index.html
