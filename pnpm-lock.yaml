@@ -18,8 +18,8 @@ importers:
         specifier: 1.0.14
         version: 1.0.14(vue@3.5.24(typescript@5.9.3))
       '@sanity/client':
-        specifier: 7.12.1
-        version: 7.12.1
+        specifier: 7.13.0
+        version: 7.13.0
       '@vueuse/core':
         specifier: 14.0.0
         version: 14.0.0(vue@3.5.24(typescript@5.9.3))
@@ -82,8 +82,8 @@ importers:
         specifier: 9.39.1
         version: 9.39.1(jiti@2.6.1)
       groq:
-        specifier: 4.15.0
-        version: 4.15.0
+        specifier: 4.16.0
+        version: 4.16.0
       happy-dom:
         specifier: 20.0.10
         version: 20.0.10
@@ -2509,8 +2509,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@sanity/client@7.12.1':
-    resolution: {integrity: sha512-AG4vW21+myuoQAWETF+zRtzeokruJfparVUT18DHb81lzabyb+d90+Be5Bo44P8leWDACPrJqmw9ES2KuotWnw==}
+  '@sanity/client@7.13.0':
+    resolution: {integrity: sha512-+iqJxxIqak5Q43Ullt8gsxL8K9B64lvX52ilhOS1yPZ3NPwcsBSuV1ipTPJFy5LfUxDLCuyQfKJlWzxDlDkuWQ==}
     engines: {node: '>=20'}
 
   '@sanity/eventsource@5.0.2':
@@ -4992,8 +4992,8 @@ packages:
   groq-js@0.2.0:
     resolution: {integrity: sha512-qJeuEgziddryH1ClsJvMoZM9aXNQbBViNZZrJwhHKr2wU8HGGM7uNWNVFglWXMX60MMaa2SClX3UohP76Ut68g==}
 
-  groq@4.15.0:
-    resolution: {integrity: sha512-RB6juU52O5n+jwHOQ1fZl33/KMH+KosNJ13K5ArUj8bQnSg3lTnNZr/3Tswk961KPA6lplN+p45eouh2OVXKTQ==}
+  groq@4.16.0:
+    resolution: {integrity: sha512-t+heDvJwgPEueWfzlY7yet4iAhdB9ngi9DBasQqgn4gPeFgqUEH63zLV12wmkVYgGVLOashsISgW3eH56GbmAg==}
     engines: {node: '>=20.19 <22 || >=22.12'}
 
   gzip-size@7.0.0:
@@ -11514,7 +11514,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.53.2':
     optional: true
 
-  '@sanity/client@7.12.1':
+  '@sanity/client@7.13.0':
     dependencies:
       '@sanity/eventsource': 5.0.2
       get-it: 8.6.10
@@ -14463,7 +14463,7 @@ snapshots:
 
   groq-js@0.2.0: {}
 
-  groq@4.15.0: {}
+  groq@4.16.0: {}
 
   gzip-size@7.0.0:
     dependencies:
