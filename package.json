@@ -22,7 +22,7 @@
     "@nuxt/fonts": "0.12.1",
     "@nuxt/image": "2.0.0",
     "@portabletext/vue": "1.0.14",
-    "@sanity/client": "7.12.1",
+    "@sanity/client": "7.13.0",
     "@vueuse/core": "14.0.0",
     "@vueuse/nuxt": "14.0.0",
     "date-fns": "4.1.0",
