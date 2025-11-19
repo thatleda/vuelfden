@@ -40,7 +40,7 @@
     "@portabletext/types": "3.0.0",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/vue": "8.1.0",
-    "@vitejs/plugin-vue": "6.0.1",
+    "@vitejs/plugin-vue": "6.0.2",
     "@vue/test-utils": "2.4.6",
     "dotenv-cli": "11.0.0",
     "emoji-regex": "10.6.0",
