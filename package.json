@@ -46,7 +46,7 @@
     "emoji-regex": "10.6.0",
     "eslint": "9.39.1",
     "groq": "4.19.0",
-    "happy-dom": "20.0.10",
+    "happy-dom": "20.0.11",
     "lighthouse": "^13.0.1",
     "playwright": "1.57.0",
     "typescript": "5.9.3",
