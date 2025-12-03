@@ -33,7 +33,7 @@
     "vue-router": "4.6.3"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "6.2.0",
+    "@antfu/eslint-config": "6.3.0",
     "@asbjorn/eslint-plugin-groq": "2.0.0",
     "@nuxtjs/color-mode": "4.0.0",
     "@playwright/test": "1.57.0",
