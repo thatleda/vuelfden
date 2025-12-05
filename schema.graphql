@@ -337,6 +337,10 @@ type LikeType {
   likes_count: Int!
 }
 
+input LinkInput {
+  url: String!
+}
+
 type ListBookDeleteType {
   id: Int
   list: lists
@@ -19012,6 +19016,7 @@ input update_user_input {
   email: String
   image: String
   link: String
+  links: [LinkInput]
   location: String
   name: String
   onboarded: Boolean
