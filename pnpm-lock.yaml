@@ -76,7 +76,7 @@ catalogs:
       specifier: 23.12.3
       version: 23.12.3
     nuxt:
-      specifier: 4.2.1
+      specifier: 'catalog:'
       version: 4.2.1
     nuxt-graphql-middleware:
       specifier: 5.2.3
