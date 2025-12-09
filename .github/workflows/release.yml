@@ -69,6 +69,8 @@ jobs:
         if: always()
         uses: actions/deploy-pages@v4
         id: deployment
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Display reports summary
         if: always()
         run: |
