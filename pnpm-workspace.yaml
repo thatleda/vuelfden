@@ -13,7 +13,7 @@ catalog:
   '@nuxt/image': 2.0.0
   '@nuxtjs/color-mode': 4.0.0
   '@playwright/test': 1.57.0
-  '@portabletext/types': 3.0.0
+  '@portabletext/types': 3.0.1
   '@portabletext/vue': 1.0.14
   '@sanity/client': 7.13.1
   '@testing-library/jest-dom': 6.9.1
