@@ -1,11 +1,13 @@
-catalogMode: strict
+catalogMode: prefer
+
 cleanupUnusedCatalogs: true
 
 shellEmulator: true
+
 trustPolicy: no-downgrade
 
 catalog:
-  '@antfu/eslint-config': 6.4.2
+  '@antfu/eslint-config': 6.5.1
   '@asbjorn/eslint-plugin-groq': 2.0.0
   '@nuxt/fonts': 0.12.1
   '@nuxt/image': 2.0.0
@@ -35,4 +37,3 @@ catalog:
   vitest: 4.0.15
   vue: 3.5.25
   vue-router: 4.6.3
-
