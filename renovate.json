@@ -1,15 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-  "assignees": ["thatleda"],
+  "extends": [
+    "config:recommended"
+  ],
+  "assignees": [
+    "thatleda"
+  ],
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true
   },
   "packageRules": [
     {
-      "matchDepTypes": ["pnpm.catalog*"],
-      "recreateClosed": true
+      "matchDepTypes": [
+        "pnpm.catalog*"
+      ],
+      "recreateWhen": "always"
     }
   ]
 }
