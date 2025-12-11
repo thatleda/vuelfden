@@ -4,7 +4,8 @@ cleanupUnusedCatalogs: true
 
 shellEmulator: true
 
-trustPolicy: no-downgrade
+trustPolicy: no-downgrade 
+
 catalog:
   '@antfu/eslint-config': 6.5.1
   '@asbjorn/eslint-plugin-groq': 2.0.0
@@ -29,7 +30,7 @@ catalog:
   happy-dom: 20.0.11
   lighthouse: 13.0.1
   netlify-cli: 23.12.3
-  nuxt: 'catalog:'
+  nuxt: 4.2.1
   nuxt-graphql-middleware: 5.2.3
   playwright: 1.57.0
   typescript: 5.9.3
