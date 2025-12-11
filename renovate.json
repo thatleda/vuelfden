@@ -8,8 +8,8 @@
   },
   "packageRules": [
     {
-      "matchDepTypes": "devDependencies",
-      "automerge": true
+      "matchDepTypes": ["pnpm.catalog"],
+      "rangeStrategy": "update-lockfile"
     }
   ]
 }
