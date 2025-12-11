@@ -33,7 +33,7 @@ jobs:
           node-version: 24.12.0
           cache: pnpm
       - name: Install dependencies
-        run: pnpm install ${{ github.actor == 'renovate[bot]' && '--no-frozen-lockfile' || '' }}
+        run: pnpm install
       - name: Run linter & tests in parallel
         run: |
           pnpm lint:ci &
