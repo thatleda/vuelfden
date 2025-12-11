@@ -12,7 +12,7 @@
   },
   "packageRules": [
     {
-      "matchFiles": [
+      "matchFileNames": [
         "pnpm-workspace.yaml"
       ],
       "rangeStrategy": "replace",
