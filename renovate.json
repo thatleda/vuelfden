@@ -8,8 +8,8 @@
   },
   "packageRules": [
     {
-      "matchDepTypes": ["pnpm.catalog"],
-      "rangeStrategy": "update-lockfile"
+      "matchDepTypes": ["pnpm.catalog*"],
+      "recreateClosed": true
     }
   ]
 }
