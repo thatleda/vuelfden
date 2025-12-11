@@ -12,9 +12,10 @@
   },
   "packageRules": [
     {
-      "matchDepTypes": [
-        "pnpm.catalog*"
+      "matchFiles": [
+        "pnpm-workspace.yaml"
       ],
+      "rangeStrategy": "replace",
       "recreateWhen": "always"
     }
   ]
