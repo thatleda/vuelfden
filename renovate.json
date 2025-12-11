@@ -1,22 +1,48 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    ":dependencyDashboard"
   ],
   "assignees": [
     "thatleda"
   ],
   "lockFileMaintenance": {
     "enabled": true,
-    "automerge": true
+    "automerge": true,
+    "schedule": [
+      "before 5am on monday"
+    ]
   },
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": [
+      "security"
+    ]
+  },
+  "osvVulnerabilityAlerts": true,
   "packageRules": [
     {
-      "matchFileNames": [
-        "pnpm-workspace.yaml"
+      "matchDepTypes": [
+        "devDependencies"
       ],
-      "rangeStrategy": "replace",
-      "recreateWhen": "always"
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "automerge": false,
+      "labels": [
+        "major-update"
+      ]
+    },
+    {
+      "matchPackageNames": [
+        "nuxt"
+      ],
+      "prCreation": "not-pending",
+      "minimumReleaseAge": "3 days"
     }
   ]
 }

@@ -5,6 +5,7 @@ cleanupUnusedCatalogs: true
 shellEmulator: true
 
 trustPolicy: no-downgrade
+
 catalog:
   '@antfu/eslint-config': 6.5.1
   '@asbjorn/eslint-plugin-groq': 2.0.0
