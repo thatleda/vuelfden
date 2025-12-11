@@ -15,7 +15,7 @@ catalog:
   '@playwright/test': 1.57.0
   '@portabletext/types': 4.0.0
   '@portabletext/vue': 1.0.14
-  '@sanity/client': 7.13.1
+  '@sanity/client': 7.13.2
   '@testing-library/jest-dom': 6.9.1
   '@testing-library/vue': 8.1.0
   '@vitejs/plugin-vue': 6.0.2
