@@ -1,5 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "abandonmentThreshold": "6 months",
   "extends": [
     "config:recommended",
     ":dependencyDashboard"
@@ -7,6 +8,14 @@
   "assignees": [
     "thatleda"
   ],
+  "npm": {
+    "managerFilePatterns": [
+      "/(^|/)package\\.json$/",
+      "/(^|/)pnpm-lock\\.yaml$/",
+      "/(^|/)pnpm-workspace\\.yaml$/",
+      "/(^|/)\\.yarnrc\\.yml$/"
+    ]
+  },
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
