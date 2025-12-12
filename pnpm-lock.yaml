@@ -31,8 +31,8 @@ catalogs:
       specifier: 1.0.14
       version: 1.0.14
     '@sanity/client':
-      specifier: 7.13.1
-      version: 7.13.1
+      specifier: 7.13.2
+      version: 7.13.2
     '@testing-library/jest-dom':
       specifier: 6.9.1
       version: 6.9.1
@@ -112,7 +112,7 @@ importers:
         version: 1.0.14(vue@3.5.25(typescript@5.9.3))
       '@sanity/client':
         specifier: 'catalog:'
-        version: 7.13.1
+        version: 7.13.2
       '@vueuse/core':
         specifier: 'catalog:'
         version: 14.1.0(vue@3.5.25(typescript@5.9.3))
@@ -2786,8 +2786,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@sanity/client@7.13.1':
-    resolution: {integrity: sha512-Bs+Bg5Fd/2tSR7AYS3+ehUlHtHjrXgH9MwNfTaKUfke158KjAQ4jw1mJVX+jp+171BLwlaaVKYw+mfRkmOCvHw==}
+  '@sanity/client@7.13.2':
+    resolution: {integrity: sha512-bXuQGWgrpkSInZy8lfCMmOgdTNpsoZ7PORW0+zXss8qVpNo1DC002l1c8to6kfxNF0OaL9v7LwsPqKcTZ/VWrw==}
     engines: {node: '>=20'}
 
   '@sanity/eventsource@5.0.2':
@@ -5123,8 +5123,8 @@ packages:
     resolution: {integrity: sha512-9fSjSaos/fRIVIp+xSJlE6lfwhES7LNtKaCBIamHsjr2na1BiABJPo0mOjjz8GJDURarmCPGqaiVg5mfjb98CQ==}
     engines: {node: '>= 0.4'}
 
-  get-it@8.6.10:
-    resolution: {integrity: sha512-27StIK860ZVp2bhsG/aTWpcoA4OrFxtMqBbesa5sR23m5OxfVQYCnpm2rPQeo3gs5qsUk0FdkISLgXRJ4HynNw==}
+  get-it@8.7.0:
+    resolution: {integrity: sha512-uong/+jOz0GiuIWIUJXp2tnQKgQKukC99LEqOxLckPUoHYoerQbV6vC0Tu+/pSgk0tgHh1xX2aJtCk4y35LLLg==}
     engines: {node: '>=14.0.0'}
 
   get-port-please@3.2.0:
@@ -11949,10 +11949,10 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.53.3':
     optional: true
 
-  '@sanity/client@7.13.1':
+  '@sanity/client@7.13.2':
     dependencies:
       '@sanity/eventsource': 5.0.2
-      get-it: 8.6.10
+      get-it: 8.7.0
       nanoid: 3.3.11
       rxjs: 7.8.2
     transitivePeerDependencies:
@@ -14748,7 +14748,7 @@ snapshots:
       hasown: 2.0.2
       math-intrinsics: 1.1.0
 
-  get-it@8.6.10:
+  get-it@8.7.0:
     dependencies:
       '@types/follow-redirects': 1.14.4
       decompress-response: 7.0.0
