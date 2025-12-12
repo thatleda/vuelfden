@@ -9,12 +9,7 @@
     "thatleda"
   ],
   "npm": {
-    "managerFilePatterns": [
-      "/(^|/)package\\.json$/",
-      "/(^|/)pnpm-lock\\.yaml$/",
-      "/(^|/)pnpm-workspace\\.yaml$/",
-      "/(^|/)\\.yarnrc\\.yml$/"
-    ]
+    "postUpdateOptions": ["npmInstallTwice", "pnpmDedupe"]
   },
   "lockFileMaintenance": {
     "enabled": true,
