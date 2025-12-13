@@ -59,14 +59,14 @@ jobs:
         run: node --experimental-strip-types scripts/lighthouse-audit.ts
         continue-on-error: true
       - name: Upload Playwright report
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         if: always()
         with:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
       - name: Upload Lighthouse reports
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         if: always()
         with:
           name: lighthouse-reports
