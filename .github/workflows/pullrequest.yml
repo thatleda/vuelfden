@@ -15,7 +15,7 @@ permissions:
 jobs:
   preview:
     name: Build, Deploy & Audit
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     environment:
       name: development
       url: https://pr-${{ github.event.pull_request.number }}--vuelfden.netlify.app

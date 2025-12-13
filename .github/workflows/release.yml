@@ -17,7 +17,7 @@ permissions:
 jobs:
   deploy:
     name: Build, Deploy & Audit
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     environment:
       name: production
       url: https://ledawolf.info
