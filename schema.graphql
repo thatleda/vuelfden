@@ -8022,17 +8022,6 @@ input goals_min_order_by {
   user_id: order_by
 }
 
-"""
-response of any mutation on the table "goals"
-"""
-type goals_mutation_response {
-  """number of rows affected by the mutation"""
-  affected_rows: Int!
-
-  """data from the rows affected by the mutation"""
-  returning: [goals!]!
-}
-
 """Ordering options when selecting data from "goals"."""
 input goals_order_by {
   archived: order_by
@@ -10144,7 +10133,7 @@ type mutation_root {
   delete_followed_prompts_by_pk(id: Int!): followed_prompts
 
   """delete_followed_user"""
-  delete_followed_user(user_id: Int!): FollowedUserType
+  delete_followed_user(remove_follower: Boolean, user_id: Int!): FollowedUserType
 
   """
   delete data from the table: "followed_users"
@@ -10159,18 +10148,8 @@ type mutation_root {
   """
   delete_followed_users_by_pk(id: Int!): followed_users
 
-  """
-  delete data from the table: "goals"
-  """
-  delete_goals(
-    """filter the rows which have to be deleted"""
-    where: goals_bool_exp!
-  ): goals_mutation_response
-
-  """
-  delete single row from the table: "goals"
-  """
-  delete_goals_by_pk(id: Int!): goals
+  """delete_goal"""
+  delete_goal(id: Int!): GoalIdType
 
   """delete_like"""
   delete_like(likeable_id: Int!, likeable_type: String!): LikeDeleteType
