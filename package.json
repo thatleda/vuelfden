@@ -45,6 +45,8 @@
     "dotenv-cli": "catalog:",
     "emoji-regex": "catalog:",
     "eslint": "catalog:",
+    "eslint-plugin-playwright": "catalog:",
+    "eslint-plugin-testing-library": "catalog:",
     "groq": "catalog:",
     "happy-dom": "catalog:",
     "lighthouse": "catalog:",

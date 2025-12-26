@@ -35,10 +35,9 @@ it('should display the article banner image with proper attributes', () => {
     props: { article },
   })
 
-  const image = screen.getByRole('img')
-  expect(image).toHaveAttribute('alt', 'Test article banner image')
-  expect(image).toHaveAttribute('width', '100')
-  expect(image).toHaveAttribute('loading', 'lazy')
+  expect(screen.getByRole('img')).toHaveAttribute('alt', 'Test article banner image')
+  expect(screen.getByRole('img')).toHaveAttribute('width', '100')
+  expect(screen.getByRole('img')).toHaveAttribute('loading', 'lazy')
 })
 
 it('should display the article title as a heading', () => {
@@ -83,7 +82,7 @@ it('should render with proper CSS module classes for card layout', () => {
     props: { article },
   })
 
-  expect((screen.getByRole('link')).querySelector('div')).toHaveClass('card')
+  expect(screen.getByTestId('article-card')).toHaveClass('card')
 })
 
 it('should apply title styling to the heading element', () => {
@@ -108,7 +107,7 @@ it('should wrap content in a description container with proper styling', () => {
     props: { article },
   })
 
-  expect((screen.getByRole('heading', { level: 3 })).parentElement).toHaveClass('description')
+  expect(screen.getByTestId('article-description')).toHaveClass('description')
 })
 
 it('should provide a meaningful link containing full article card content for screen readers', () => {

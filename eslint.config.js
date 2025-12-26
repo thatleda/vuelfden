@@ -1,12 +1,14 @@
 import antfu from '@antfu/eslint-config'
 import groq from '@asbjorn/eslint-plugin-groq'
 import emojiRegex from 'emoji-regex'
+import playwright from 'eslint-plugin-playwright'
+import testingLibrary from 'eslint-plugin-testing-library'
 
 const noEmojisRule = {
   meta: {
     type: 'problem',
     docs: {
-      description: 'Emojis aren not allowed in this project because I do not need them and they are worth way too many tokens.',
+      description: 'Emojis aren\'t allowed in this project because I do not need them and they are worth way too many tokens.',
     },
     fixable: 'code',
   },
@@ -102,4 +104,12 @@ export default antfu({
     'groq/no-syntax-errors': 'error',
     'groq/no-template-expressions': 'error',
   },
+}, {
+  files: [
+    'components/**/*.spec.{js,ts,vue}',
+  ],
+  ...testingLibrary.configs['flat/vue'],
+}, {
+  files: ['e2e/**/*.spec.{js,ts}'],
+  ...playwright.configs['flat/recommended'],
 })

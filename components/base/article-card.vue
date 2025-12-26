@@ -1,13 +1,13 @@
 <template>
   <NuxtLink :to="`/ramblings/${article.slug.current}`">
-    <div :class="$style.card">
+    <div :class="$style.card" data-testid="article-card">
       <NuxtImg
         :src="article.banner._id"
         :alt="article.banner.altText"
         width="100"
         loading="lazy"
       />
-      <div :class="$style.description">
+      <div :class="$style.description" data-testid="article-description">
         <h3 :class="$style.title">
           {{ article.title }}
         </h3>
