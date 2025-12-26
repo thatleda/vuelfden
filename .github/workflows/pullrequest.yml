@@ -7,7 +7,7 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: write
+  contents: read
   pull-requests: write
   pages: write
   id-token: write
@@ -82,13 +82,13 @@ jobs:
           cp -r playwright-report _site/playwright 2>/dev/null || true
           cp lighthouse-index.html _site/index.html 2>/dev/null || true
           cp lighthouse-*.html lighthouse-*.json _site/ 2>/dev/null || true
+      - name: Upload reports to GitHub Pages
+        if: always()
+        uses: actions/upload-pages-artifact@v4
       - name: Deploy to GitHub Pages
         if: always()
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: actions/deploy-pages@v4
         id: deployment
-        with:
-          folder: _site
-          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Read Lighthouse summary
         if: always()
         id: lighthouse
