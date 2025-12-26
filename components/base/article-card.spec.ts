@@ -1,17 +1,13 @@
 import type { SanityPage } from '~/@types/sanity'
 import { render, screen } from '@testing-library/vue'
-import { formatDistance } from 'date-fns'
-import { expect, it, vi } from 'vitest'
+import dayjs from 'dayjs'
+import { expect, it } from 'vitest'
 import ArticleCard from '~/components/base/article-card.vue'
-
-vi.mock('date-fns', () => ({
-  formatDistance: vi.fn(() => '2 days ago'),
-}))
 
 const article: SanityPage = {
   _id: 'test-article-id',
-  _createdAt: '2023-01-01T00:00:00.000Z',
-  _updatedAt: '2023-01-01T00:00:00.000Z',
+  _createdAt: dayjs().subtract(2, 'day').toISOString(),
+  _updatedAt: dayjs().subtract(1, 'day').toISOString(),
   banner: {
     _id: 'test-banner-id',
     _type: 'sanity.imageAsset',
@@ -67,11 +63,6 @@ it('should display the publication date in a human-readable format', () => {
   })
 
   expect(screen.getByText('published 2 days ago')).toBeInTheDocument()
-  expect(formatDistance).toHaveBeenCalledWith(
-    new Date('2023-01-01T00:00:00.000Z'),
-    expect.any(Date),
-    { addSuffix: true },
-  )
 })
 
 it('should handle null creation date by using current date', () => {
@@ -84,12 +75,7 @@ it('should handle null creation date by using current date', () => {
     props: { article: articleWithNullDate },
   })
 
-  expect(screen.getByText('published 2 days ago')).toBeInTheDocument()
-  expect(formatDistance).toHaveBeenCalledWith(
-    expect.any(Date),
-    expect.any(Date),
-    { addSuffix: true },
-  )
+  expect(screen.getByText('published a few seconds ago')).toBeInTheDocument()
 })
 
 it('should render with proper CSS module classes for card layout', () => {

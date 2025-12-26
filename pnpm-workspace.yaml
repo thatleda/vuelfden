@@ -22,7 +22,7 @@ catalog:
   '@vue/test-utils': 2.4.6
   '@vueuse/core': 14.1.0
   '@vueuse/nuxt': 14.1.0
-  date-fns: 4.1.0
+  dayjs: 1.11.19
   dotenv-cli: 11.0.0
   emoji-regex: 10.6.0
   eslint: 9.39.2

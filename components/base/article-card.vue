@@ -12,7 +12,7 @@
           {{ article.title }}
         </h3>
         <p>{{ article.excerpt }}</p>
-        <sub :class="$style.published">published {{ whatTimeAgo }}</sub>
+        <sub :class="$style.published">published {{ howLong }} ago</sub>
       </div>
     </div>
   </NuxtLink>
@@ -21,18 +21,21 @@
 <script lang="ts" setup>
 import type { SanityPage } from '~/@types/sanity'
 
-import { formatDistance } from 'date-fns'
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+
+const { article } = defineProps<ArticleProps>()
+
+dayjs.extend(relativeTime)
 
 interface ArticleProps {
   article: SanityPage
 }
 
-const { article } = defineProps<ArticleProps>()
 const articleReleaseDate
   = article._createdAt === null ? new Date() : new Date(article._createdAt)
-const whatTimeAgo = formatDistance(articleReleaseDate, new Date(), {
-  addSuffix: true,
-})
+
+const howLong = dayjs(articleReleaseDate).toNow(true)
 </script>
 
 <style module>
