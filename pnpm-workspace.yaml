@@ -27,7 +27,7 @@ catalog:
   emoji-regex: 10.6.0
   eslint: 9.39.2
   eslint-plugin-playwright: 2.4.0
-  eslint-plugin-testing-library: 7.15.3
+  eslint-plugin-testing-library: 7.15.4
   groq: 5.1.0
   happy-dom: 20.0.11
   lighthouse: 13.0.1
