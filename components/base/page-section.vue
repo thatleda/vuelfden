@@ -64,7 +64,7 @@ h2.heading {
   height: 100%;
   max-width: var(--page-width);
   margin: 0 auto 0 auto;
-  padding: var(--page-padding);
+  padding: v-bind('padding');
   position: relative;
   z-index: 2;
 
