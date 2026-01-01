@@ -218,10 +218,6 @@ svg {
   fill: var(--text-color);
 }
 
-img {
-  border-radius: var(--border-radius);
-}
-
 h1 {
   font-family: Silkscreen, sans-serif;
   font-size: 2.5rem;

@@ -7,6 +7,7 @@
         :aria-label="aboutPage.banner.altText"
         width="200"
         loading="lazy"
+        :class="$style.image"
       />
     </div>
     <base-sanity-block :blocks="aboutPage.content" />
@@ -14,7 +15,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { SanityPage } from '~/@types/sanity'
+import type { SanityPage } from '~/@types/sanity';
 
 interface AboutLedaProps {
   aboutPage: SanityPage
@@ -30,6 +31,10 @@ const { aboutPage } = defineProps<AboutLedaProps>()
   @media (max-width: 749px) {
     flex-direction: column;
   }
+}
+
+.image {
+  border-radius: var(--border-radius);
 }
 
 .frame {

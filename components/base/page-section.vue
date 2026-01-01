@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import type { AnimationProps } from '~/components/base/transition-animation.vue'
+import type { AnimationProps } from '~/components/base/transition-animation.vue';
 
 interface SectionProps {
   anchor?: string
@@ -73,7 +73,7 @@ h2.heading {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 2rem 0;
+  padding: 0;
   border-radius: var(--border-radius);
   position: relative;
   z-index: 3;

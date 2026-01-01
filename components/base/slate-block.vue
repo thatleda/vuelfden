@@ -141,7 +141,7 @@ function renderText(node: SlateText): any {
 .wrapper :global(.spoiler-button) {
   background: var(--background-color);
   border: 1px solid var(--text-color);
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   padding: 0.25rem 0.5rem;
   cursor: pointer;
   font-family: inherit;

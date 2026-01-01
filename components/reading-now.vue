@@ -1,13 +1,10 @@
 <template>
-  <div>
-    <img
+  <div :class="$style.card">
+    <NuxtImg
       :alt="`The book cover of ${book.title} by ${book.author}`"
-      :src="book.cover || '/images/book-cover-placeholder.png'"
-      :class="$style.cover"
-      loading="lazy"
-      width="200"
-      style="float: right; padding-left: 2rem;"
-    >
+      :srcset="book.cover || '/images/book-cover-placeholder.png'"
+      :class="[$style.bookCover, $style.image]"
+    />
     Probably reading
     <h3>{{ book.title }} ({{ book.release }})</h3>
     <sub :class="$style.author">
@@ -25,15 +22,14 @@
 
   <div
     v-if="latestReview"
+    :class="$style.card"
   >
-    <img
+    <NuxtImg
       :alt="`The book cover of ${latestReview.book.title}`"
-      :src="latestReview.book.cover"
+      :srcset="latestReview.book.cover"
       loading="lazy"
-      width="200"
-      :class="$style.cover"
-      style="float: left; padding-right: 2rem;"
-    >
+      :class="[$style.image, $style.reviewCover]"
+    />
     Just finished reading
     <h3>{{ latestReview.book.title }} ({{ latestReview.book.release }})</h3>
     <sub :class="$style.author">
@@ -91,12 +87,36 @@ const latestReview = computed(() => {
 </script>
 
 <style module>
-.cover {
-  @media (max-width: 600px) {
-    margin: 0 auto;
+.card {
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
   }
+}
+
+.image {
+  max-width: 15rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 2rem;
   object-fit: contain;
-  padding-bottom: 2rem;
+}
+
+.bookCover {
+  float: right;
+  margin-left: 2rem;
+  @media (max-width: 700px) {
+    float: none;
+    margin: 1rem auto;
+  }
+}
+
+.reviewCover {
+  float: left;
+  margin-right: 2rem;
+  @media (max-width: 700px) {
+    float: none;
+    margin: 1rem auto;
+  }
 }
 
 .progress {

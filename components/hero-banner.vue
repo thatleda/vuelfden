@@ -8,6 +8,7 @@
         width="200"
         loading="lazy"
         placeholder
+        :class="$style.image"
       />
       <div :class="$style.callToAction">
         <h1 :class="$style.greeting">
@@ -67,7 +68,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { SanityPage } from '~/@types/sanity'
+import type { SanityPage } from '~/@types/sanity';
 
 interface HeroProps {
   page: SanityPage
@@ -91,6 +92,10 @@ const { page } = defineProps<HeroProps>()
     align-items: flex-end;
     gap: 0;
   }
+}
+
+.image {
+  border-radius: var(--border-radius);
 }
 
 .callToAction {

@@ -68,16 +68,10 @@ export default defineNuxtConfig({
   },
 
   image: {
+    domains: ['cdn.sanity.io', 'assets.hardcover.app'],
     provider: 'sanity',
     sanity: {
       projectId: process.env.NUXT_SANITY_PROJECT_ID!,
-      modifiers: {
-        crop: 'center',
-        auto: 'format,compress',
-      },
-    },
-    alias: {
-      domain: 'https://cdn.sanity.io',
     },
   },
 
