@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import type { AnimationProps } from '~/components/base/transition-animation.vue';
+import type { AnimationProps } from '~/components/base/transition-animation.vue'
 
 interface SectionProps {
   anchor?: string
