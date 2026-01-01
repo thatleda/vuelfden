@@ -1,6 +1,6 @@
 query reading {
   me {
-    goals {
+    goals(where: {archived: {_eq: false}}) {
       progress
       description
       goal

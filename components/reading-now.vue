@@ -1,63 +1,50 @@
 <template>
   <div>
-    <div :class="$style.card">
-      <div :class="$style.description">
-        <span>
-          Probably reading
-          <h3>{{ book.title }} ({{ book.release }})</h3>
-          <sub :class="$style.author">
-            by <em>{{ book.author }}</em>
-          </sub>
-        </span>
-        <div
-          v-if="challenge"
-          :class="$style.progress"
-        >
-          <p>
-            {{ challenge.description }}: {{ challenge.progress }} of {{ challenge.goal }} books completed
-          </p>
-          <progress
-            :class="$style.progressBar"
-            :max="challenge.goal"
-            :value="challenge.progress"
-          />
-        </div>
-      </div>
-      <img
-        :alt="`The book cover of ${book.title} by ${book.author}`"
-        :src="book.cover || '/images/book-cover-placeholder.png'"
-        :class="$style.cover"
-        loading="lazy"
-        width="300"
-      >
-    </div>
-
-    <div
-      v-if="latestReview"
-      :class="$style.description"
+    <img
+      :alt="`The book cover of ${book.title} by ${book.author}`"
+      :src="book.cover || '/images/book-cover-placeholder.png'"
+      :class="$style.cover"
+      loading="lazy"
+      width="200"
+      style="float: right; padding-left: 2rem;"
     >
-      <span>
-        Just finished reading
-        <h3>{{ latestReview.book.title }} ({{ latestReview.book.release }})</h3>
-        <sub :class="$style.author">
-          by <em>{{ latestReview.book.author }}</em>
-        </sub>
-      </span>
-      <p>Rating: {{ latestReview.rating }} / 5</p>
-      <div :class="$style.card">
-        <img
-          :alt="`The book cover of ${latestReview.book.title}`"
-          :src="latestReview.book.cover"
-          loading="lazy"
-          width="150"
-          :class="$style.cover"
-        >
-        <base-slate-block
-          v-if="latestReview.slateContent"
-          :document="latestReview.slateContent"
-        />
-      </div>
-    </div>
+    Probably reading
+    <h3>{{ book.title }} ({{ book.release }})</h3>
+    <sub :class="$style.author">
+      by <em>{{ book.author }}</em>
+    </sub>
+    <p v-if="challenge" :class="$style.progress">
+      {{ challenge.description }}: {{ challenge.progress }} of {{ challenge.goal }} books completed
+      <progress
+        :class="$style.progressBar"
+        :max="challenge.goal"
+        :value="challenge.progress"
+      />
+    </p>
+  </div>
+
+  <div
+    v-if="latestReview"
+  >
+    <img
+      :alt="`The book cover of ${latestReview.book.title}`"
+      :src="latestReview.book.cover"
+      loading="lazy"
+      width="200"
+      :class="$style.cover"
+      style="float: left; padding-right: 2rem;"
+    >
+    Just finished reading
+    <h3>{{ latestReview.book.title }} ({{ latestReview.book.release }})</h3>
+    <sub :class="$style.author">
+      by <em>{{ latestReview.book.author }}</em>
+    </sub>
+    <p>Rating: {{ latestReview.rating }} / 5</p>
+
+    <base-slate-block
+      v-if="latestReview.slateContent"
+      :document="latestReview.slateContent"
+    />
   </div>
 </template>
 
@@ -104,37 +91,12 @@ const latestReview = computed(() => {
 </script>
 
 <style module>
-.card {
-  display: flex;
-  flex-direction: row;
-  margin: 0 auto;
-  gap: 1rem;
-
-  @media (max-width: 600px) {
-    flex-direction: column;
-  }
-}
-
 .cover {
   @media (max-width: 600px) {
     margin: 0 auto;
   }
-
-  padding: 1rem;
   object-fit: contain;
-}
-
-.description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  gap: 1rem;
-  padding-left: 1rem;
-
-  @media (max-width: 600px) {
-    padding: 0;
-  }
+  padding-bottom: 2rem;
 }
 
 .progress {
