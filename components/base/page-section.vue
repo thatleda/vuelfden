@@ -11,9 +11,10 @@
         <h2 v-if="props.heading" :class="$style.heading">
           {{ props.heading }}
         </h2>
-        <div :class="$style.cards">
+        <div v-if="props.isCard" :class="$style.cards">
           <slot />
         </div>
+        <slot v-else />
       </div>
     </section>
   </base-transition-animation>
@@ -21,14 +22,18 @@
 
 <script setup lang="ts">
 import type { AnimationProps } from '~/components/base/transition-animation.vue'
+import { computed } from 'vue'
 
 interface SectionProps {
   anchor?: string
   animationProps?: Partial<AnimationProps>
   heading?: null | string
+  isCard?: boolean
 }
 
 const props = defineProps<SectionProps>()
+
+const padding = computed(() => (props.isCard ? 'var(--page-padding)' : '0'))
 </script>
 
 <style module>
@@ -44,7 +49,7 @@ h2.heading {
   background: var(--background-color);
   border-radius: var(--border-radius);
   scroll-margin-top: 60px;
-  padding: var(--page-padding);
+  padding:  v-bind('padding');
   margin: 0 auto 4rem auto;
   position: relative;
   z-index: 1;
@@ -52,7 +57,6 @@ h2.heading {
   @media (max-width: 749px) {
     width: 100%;
     margin: 0 auto 2rem auto;
-    padding-bottom: 2rem;
   }
 }
 
@@ -73,7 +77,7 @@ h2.heading {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 0;
+  padding: 2rem 0;
   border-radius: var(--border-radius);
   position: relative;
   z-index: 3;

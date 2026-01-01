@@ -68,7 +68,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { SanityPage } from '~/@types/sanity'
+import type { SanityPage } from '~/@types/sanity';
 
 interface HeroProps {
   page: SanityPage
@@ -96,6 +96,9 @@ const { page } = defineProps<HeroProps>()
 
 .image {
   border-radius: var(--border-radius);
+  @media (max-width: 655px) {
+    margin: 0 auto;
+  }
 }
 
 .callToAction {
