@@ -19871,6 +19871,7 @@ type user_books {
   likes_count: Int!
   media_url: String
   merged_at: timestamp
+  mod_status: Int!
   object_type: String!
   original_book_id: Int
   original_edition_id: Int
@@ -20086,6 +20087,7 @@ type user_books_avg_fields {
   edition_id: Float
   id: Float
   likes_count: Float
+  mod_status: Float
   original_book_id: Float
   original_edition_id: Float
   owned_copies: Float
@@ -20106,6 +20108,7 @@ input user_books_avg_order_by {
   edition_id: order_by
   id: order_by
   likes_count: order_by
+  mod_status: order_by
   original_book_id: order_by
   original_edition_id: order_by
   owned_copies: order_by
@@ -20142,6 +20145,7 @@ input user_books_bool_exp {
   likes_count: Int_comparison_exp
   media_url: String_comparison_exp
   merged_at: timestamp_comparison_exp
+  mod_status: Int_comparison_exp
   object_type: String_comparison_exp
   original_book_id: Int_comparison_exp
   original_edition_id: Int_comparison_exp
@@ -20194,6 +20198,7 @@ type user_books_max_fields {
   likes_count: Int
   media_url: String
   merged_at: timestamp
+  mod_status: Int
   object_type: String
   original_book_id: Int
   original_edition_id: Int
@@ -20231,6 +20236,7 @@ input user_books_max_order_by {
   likes_count: order_by
   media_url: order_by
   merged_at: order_by
+  mod_status: order_by
   object_type: order_by
   original_book_id: order_by
   original_edition_id: order_by
@@ -20266,6 +20272,7 @@ type user_books_min_fields {
   likes_count: Int
   media_url: String
   merged_at: timestamp
+  mod_status: Int
   object_type: String
   original_book_id: Int
   original_edition_id: Int
@@ -20303,6 +20310,7 @@ input user_books_min_order_by {
   likes_count: order_by
   media_url: order_by
   merged_at: order_by
+  mod_status: order_by
   object_type: order_by
   original_book_id: order_by
   original_edition_id: order_by
@@ -20344,6 +20352,7 @@ input user_books_order_by {
   likes_count: order_by
   media_url: order_by
   merged_at: order_by
+  mod_status: order_by
   object_type: order_by
   original_book_id: order_by
   original_edition_id: order_by
@@ -20423,6 +20432,9 @@ enum user_books_select_column {
 
   """column name"""
   merged_at
+
+  """column name"""
+  mod_status
 
   """column name"""
   object_type
@@ -20564,6 +20576,7 @@ type user_books_stddev_fields {
   edition_id: Float
   id: Float
   likes_count: Float
+  mod_status: Float
   original_book_id: Float
   original_edition_id: Float
   owned_copies: Float
@@ -20584,6 +20597,7 @@ input user_books_stddev_order_by {
   edition_id: order_by
   id: order_by
   likes_count: order_by
+  mod_status: order_by
   original_book_id: order_by
   original_edition_id: order_by
   owned_copies: order_by
@@ -20602,6 +20616,7 @@ type user_books_stddev_pop_fields {
   edition_id: Float
   id: Float
   likes_count: Float
+  mod_status: Float
   original_book_id: Float
   original_edition_id: Float
   owned_copies: Float
@@ -20622,6 +20637,7 @@ input user_books_stddev_pop_order_by {
   edition_id: order_by
   id: order_by
   likes_count: order_by
+  mod_status: order_by
   original_book_id: order_by
   original_edition_id: order_by
   owned_copies: order_by
@@ -20640,6 +20656,7 @@ type user_books_stddev_samp_fields {
   edition_id: Float
   id: Float
   likes_count: Float
+  mod_status: Float
   original_book_id: Float
   original_edition_id: Float
   owned_copies: Float
@@ -20660,6 +20677,7 @@ input user_books_stddev_samp_order_by {
   edition_id: order_by
   id: order_by
   likes_count: order_by
+  mod_status: order_by
   original_book_id: order_by
   original_edition_id: order_by
   owned_copies: order_by
@@ -20698,6 +20716,7 @@ input user_books_stream_cursor_value_input {
   likes_count: Int
   media_url: String
   merged_at: timestamp
+  mod_status: Int
   object_type: String
   original_book_id: Int
   original_edition_id: Int
@@ -20733,6 +20752,7 @@ type user_books_sum_fields {
   edition_id: Int
   id: Int
   likes_count: Int
+  mod_status: Int
   original_book_id: Int
   original_edition_id: Int
   owned_copies: Int
@@ -20753,6 +20773,7 @@ input user_books_sum_order_by {
   edition_id: order_by
   id: order_by
   likes_count: order_by
+  mod_status: order_by
   original_book_id: order_by
   original_edition_id: order_by
   owned_copies: order_by
@@ -20771,6 +20792,7 @@ type user_books_var_pop_fields {
   edition_id: Float
   id: Float
   likes_count: Float
+  mod_status: Float
   original_book_id: Float
   original_edition_id: Float
   owned_copies: Float
@@ -20791,6 +20813,7 @@ input user_books_var_pop_order_by {
   edition_id: order_by
   id: order_by
   likes_count: order_by
+  mod_status: order_by
   original_book_id: order_by
   original_edition_id: order_by
   owned_copies: order_by
@@ -20809,6 +20832,7 @@ type user_books_var_samp_fields {
   edition_id: Float
   id: Float
   likes_count: Float
+  mod_status: Float
   original_book_id: Float
   original_edition_id: Float
   owned_copies: Float
@@ -20829,6 +20853,7 @@ input user_books_var_samp_order_by {
   edition_id: order_by
   id: order_by
   likes_count: order_by
+  mod_status: order_by
   original_book_id: order_by
   original_edition_id: order_by
   owned_copies: order_by
@@ -20847,6 +20872,7 @@ type user_books_variance_fields {
   edition_id: Float
   id: Float
   likes_count: Float
+  mod_status: Float
   original_book_id: Float
   original_edition_id: Float
   owned_copies: Float
@@ -20867,6 +20893,7 @@ input user_books_variance_order_by {
   edition_id: order_by
   id: order_by
   likes_count: order_by
+  mod_status: order_by
   original_book_id: order_by
   original_edition_id: order_by
   owned_copies: order_by

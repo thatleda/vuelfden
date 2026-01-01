@@ -1,11 +1,3 @@
-catalogMode: prefer
-
-cleanupUnusedCatalogs: true
-
-shellEmulator: true
-
-trustPolicy: no-downgrade
-
 catalog:
   '@antfu/eslint-config': 6.7.3
   '@asbjorn/eslint-plugin-groq': 2.0.0
@@ -39,3 +31,11 @@ catalog:
   vitest: 4.0.16
   vue: 3.5.26
   vue-router: 4.6.4
+
+catalogMode: prefer
+
+cleanupUnusedCatalogs: true
+
+shellEmulator: true
+
+trustPolicy: no-downgrade

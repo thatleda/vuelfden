@@ -85,6 +85,7 @@ export default antfu({
     'node/prefer-global/process': 'off',
     'vue/component-name-in-template-casing': ['warn', 'kebab-case'],
     'vue/block-order': ['warn', { order: ['template', 'script', 'style'] }],
+    'yaml/sort-keys': 'off',
   },
 }, {
   plugins: {
