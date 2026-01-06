@@ -31,8 +31,8 @@ catalogs:
       specifier: 1.0.14
       version: 1.0.14
     '@sanity/client':
-      specifier: 7.13.2
-      version: 7.13.2
+      specifier: 7.14.0
+      version: 7.14.0
     '@testing-library/jest-dom':
       specifier: 6.9.1
       version: 6.9.1
@@ -118,7 +118,7 @@ importers:
         version: 1.0.14(vue@3.5.26(typescript@5.9.3))
       '@sanity/client':
         specifier: 'catalog:'
-        version: 7.13.2
+        version: 7.14.0
       '@vueuse/core':
         specifier: 'catalog:'
         version: 14.1.0(vue@3.5.26(typescript@5.9.3))
@@ -2950,8 +2950,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@sanity/client@7.13.2':
-    resolution: {integrity: sha512-bXuQGWgrpkSInZy8lfCMmOgdTNpsoZ7PORW0+zXss8qVpNo1DC002l1c8to6kfxNF0OaL9v7LwsPqKcTZ/VWrw==}
+  '@sanity/client@7.14.0':
+    resolution: {integrity: sha512-eXue3rc4MqJh89mvuTC0h0pdoY8lwXjlV8odFB3EF7aSFKF7F5BL0NU2mlTrCZYbPAlV3JTvMPPLGJCORqOKDw==}
     engines: {node: '>=20'}
 
   '@sanity/eventsource@5.0.2':
@@ -12232,7 +12232,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.53.3':
     optional: true
 
-  '@sanity/client@7.13.2':
+  '@sanity/client@7.14.0':
     dependencies:
       '@sanity/eventsource': 5.0.2
       get-it: 8.7.0
