@@ -8,10 +8,6 @@
   "assignees": [
     "thatleda"
   ],
-  "npm": {
-    "postUpdateOptions": ["pnpmDedupe"]
-  },
-  "rangeStrategy": "update-lockfile",
   "rebaseWhen": "behind-base-branch",
   "vulnerabilityAlerts": {
     "enabled": true,
