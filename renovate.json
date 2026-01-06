@@ -9,15 +9,10 @@
     "thatleda"
   ],
   "npm": {
-    "postUpdateOptions": ["npmInstallTwice", "pnpmDedupe"]
+    "postUpdateOptions": ["pnpmDedupe"]
   },
-  "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true,
-    "schedule": [
-      "before 5am on monday"
-    ]
-  },
+  "rangeStrategy": "update-lockfile",
+  "rebaseWhen": "behind-base-branch",
   "vulnerabilityAlerts": {
     "enabled": true,
     "labels": [

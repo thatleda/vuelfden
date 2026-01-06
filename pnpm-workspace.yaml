@@ -39,3 +39,17 @@ cleanupUnusedCatalogs: true
 shellEmulator: true
 
 trustPolicy: no-downgrade
+
+trustPolicyExclude:
+  - '@netlify/edge-bundler@14.9.0'
+  - '@netlify/zip-it-and-ship-it@14.1.14'
+  - '@netlify/serverless-functions-api@2.7.2'
+  - chokidar@4.0.3
+  - pino@9.14.0
+  - undici-types@6.21.0
+  - '@graphql-tools/*'
+  - semver@6.3.1
+  - ua-parser-js@1.0.41
+
+packages:
+  - .
