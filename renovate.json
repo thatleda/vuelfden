@@ -9,14 +9,7 @@
     "thatleda"
   ],
   "npm": {
-    "postUpdateOptions": ["npmInstallTwice", "pnpmDedupe"]
-  },
-  "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true,
-    "schedule": [
-      "before 5am on monday"
-    ]
+    "postUpdateOptions": ["pnpmDedupe"]
   },
   "vulnerabilityAlerts": {
     "enabled": true,
