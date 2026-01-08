@@ -1,3 +1,6 @@
+packages:
+  - .
+
 catalog:
   '@antfu/eslint-config': 6.7.3
   '@asbjorn/eslint-plugin-groq': 2.0.0
@@ -20,10 +23,10 @@ catalog:
   eslint: 9.39.2
   eslint-plugin-playwright: 2.4.0
   eslint-plugin-testing-library: 7.15.4
-  groq: 5.1.0
-  happy-dom: 20.0.11
+  groq: 5.2.0
+  happy-dom: 20.1.0
   lighthouse: 13.0.1
-  netlify-cli: 23.13.1
+  netlify-cli: 23.13.3
   nuxt: 4.2.2
   nuxt-graphql-middleware: 5.3.2
   playwright: 1.57.0
@@ -41,8 +44,8 @@ shellEmulator: true
 trustPolicy: no-downgrade
 
 trustPolicyExclude:
-  - '@netlify/edge-bundler@14.9.0'
-  - '@netlify/zip-it-and-ship-it@14.1.14'
+  - '@netlify/edge-bundler@14.9.2'
+  - '@netlify/zip-it-and-ship-it@14.1.18'
   - '@netlify/serverless-functions-api'
   - chokidar@4.0.3
   - pino@9.14.0
@@ -50,6 +53,3 @@ trustPolicyExclude:
   - '@graphql-tools/*'
   - semver@6.3.1
   - ua-parser-js@1.0.41
-
-packages:
-  - .
