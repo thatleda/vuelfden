@@ -27,6 +27,7 @@ export default defineNuxtConfig({
   ],
 
   graphqlMiddleware: {
+    downloadSchema: false,
     graphqlEndpoint: 'https://api.hardcover.app/v1/graphql',
     codegenSchemaConfig: {
       urlSchemaOptions: {
