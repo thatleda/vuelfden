@@ -19,9 +19,14 @@
   "packageRules": [
     {
       "description": "Group Node.js runtime versions across all files",
-      "matchDatasources": ["github-actions", "node-version"],
-      "matchPackageNames": ["node"],
-      "matchPackagePatterns": ["^node$"],
+      "matchDatasources": [
+        "github-actions",
+        "node-version"
+      ],
+      "matchPackageNames": [
+        "node",
+        "/^node$/"
+      ],
       "groupName": "Node.js runtime",
       "groupSlug": "nodejs-runtime"
     },
