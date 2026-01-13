@@ -5,7 +5,8 @@ export default defineGraphqlServerOptions({
     const config = useRuntimeConfig()
     return {
       headers: {
-        Authorization: config.hardcoverApiKey,
+        'content-type': 'application/json',
+        'Authorization': config.hardcoverApiKey,
       },
     }
   },
