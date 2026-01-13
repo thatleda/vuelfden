@@ -18,6 +18,14 @@
   "osvVulnerabilityAlerts": true,
   "packageRules": [
     {
+      "description": "Group Node.js runtime versions across all files",
+      "matchDatasources": ["github-actions", "node-version"],
+      "matchPackageNames": ["node"],
+      "matchPackagePatterns": ["^node$"],
+      "groupName": "Node.js runtime",
+      "groupSlug": "nodejs-runtime"
+    },
+    {
       "matchDepTypes": [
         "devDependencies"
       ],
