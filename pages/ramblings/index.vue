@@ -53,7 +53,7 @@
         :key="article._id"
         animation-name="fade-up"
         animation-duration="0.6s"
-        :animation-delay="`${index * 0.1}s`"
+        :animation-delay="`${Number(index) * 0.1}s`"
         animation-timing="ease-out"
       >
         <base-article-card
