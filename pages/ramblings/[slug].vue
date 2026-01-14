@@ -1,5 +1,5 @@
 <template>
-  <base-page-section v-if="article">
+  <base-page-section v-if="article" :is-card="true">
     <h1>{{ article.title }}</h1>
     <NuxtImg
       v-if="article.banner"
