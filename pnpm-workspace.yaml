@@ -2,7 +2,7 @@ packages:
   - .
 
 catalog:
-  '@antfu/eslint-config': 7.0.1
+  '@antfu/eslint-config': 7.1.0
   '@asbjorn/eslint-plugin-groq': 2.0.0
   '@nuxt/fonts': 0.12.1
   '@nuxt/image': 2.0.0
@@ -23,8 +23,8 @@ catalog:
   eslint: 9.39.2
   eslint-plugin-playwright: 2.5.0
   eslint-plugin-testing-library: 7.15.4
-  groq: 5.4.0
-  happy-dom: 20.3.1
+  groq: 5.5.0
+  happy-dom: 20.3.4
   lighthouse: 13.0.1
   netlify-cli: 23.13.4
   nuxt: 4.2.2
@@ -32,7 +32,7 @@ catalog:
   playwright: 1.57.0
   typescript: 5.9.3
   vitest: 4.0.17
-  vue: 3.5.26
+  vue: 3.5.27
   vue-router: 4.6.4
 
 catalogMode: prefer
