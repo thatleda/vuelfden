@@ -31,6 +31,12 @@
       "groupSlug": "nodejs-runtime"
     },
     {
+      "description": "Group pnpm versions across all files",
+      "matchPackageNames": ["pnpm"],
+      "groupName": "pnpm package manager",
+      "groupSlug": "pnpm"
+    },
+    {
       "matchDepTypes": [
         "devDependencies"
       ],
