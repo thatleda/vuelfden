@@ -2,12 +2,12 @@ packages:
   - .
 
 catalog:
-  '@antfu/eslint-config': 7.1.0
+  '@antfu/eslint-config': 7.2.0
   '@asbjorn/eslint-plugin-groq': 2.0.0
-  '@nuxt/fonts': 0.12.1
+  '@nuxt/fonts': 0.13.0
   '@nuxt/image': 2.0.0
   '@nuxtjs/color-mode': 4.0.0
-  '@playwright/test': 1.57.0
+  '@playwright/test': 1.58.0
   '@portabletext/types': 4.0.1
   '@portabletext/vue': 1.0.14
   '@sanity/client': 7.14.1
@@ -23,15 +23,15 @@ catalog:
   eslint: 9.39.2
   eslint-plugin-playwright: 2.5.0
   eslint-plugin-testing-library: 7.15.4
-  groq: 5.5.0
+  groq: 5.6.0
   happy-dom: 20.3.7
   lighthouse: 13.0.1
-  netlify-cli: 23.13.4
-  nuxt: 4.2.2
+  netlify-cli: 23.13.5
+  nuxt: 4.3.0
   nuxt-graphql-middleware: 5.3.2
-  playwright: 1.57.0
+  playwright: 1.58.0
   typescript: 5.9.3
-  vitest: 4.0.17
+  vitest: 4.0.18
   vue: 3.5.27
   vue-router: 4.6.4
 
