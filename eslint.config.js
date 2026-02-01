@@ -19,14 +19,14 @@ const noEmojisRule = {
     function checkForEmojis(text, node) {
       if (typeof text !== 'string')
         return
-      const match = text.match(regex)
+      const match = new RegExp(regex).exec(text)
       if (match) {
         context.report({
           message: 'Emojis are not allowed in this project',
           node,
           fix(fixer) {
             const nodeText = sourceCode.getText(node)
-            const cleaned = nodeText.replace(/\s*\p{Emoji}\s*/gu, '')
+            const cleaned = nodeText.replaceAll(/\s*\p{Emoji}\s*/gu, '')
             return fixer.replaceText(node, cleaned)
           },
         })
@@ -54,10 +54,10 @@ const noCommentsRule = {
       if (comment.type === 'Shebang')
         return
       const options = context.options[0] || {}
-      const allow = (options && options.allow) || []
+      const allow = (options?.allow) || []
       let re = /^\s?(?:global|eslint|@ts-|@typescript-eslint)/
       if (allow.length > 0) {
-        re = new RegExp(`^\\s?(${allow.join('|')})`)
+        re = new RegExp(String.raw`^\s?(${allow.join('|')})`)
       }
       if (comment && !re.test(comment.value)) {
         context.report({

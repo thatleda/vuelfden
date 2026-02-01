@@ -7,7 +7,7 @@ catalog:
   '@nuxt/fonts': 0.13.0
   '@nuxt/image': 2.0.0
   '@nuxtjs/color-mode': 4.0.0
-  '@playwright/test': 1.58.0
+  '@playwright/test': 1.58.1
   '@portabletext/types': 4.0.1
   '@portabletext/vue': 1.0.14
   '@sanity/client': 7.14.1
@@ -15,25 +15,25 @@ catalog:
   '@testing-library/vue': 8.1.0
   '@vitejs/plugin-vue': 6.0.3
   '@vue/test-utils': 2.4.6
-  '@vueuse/core': 14.1.0
-  '@vueuse/nuxt': 14.1.0
+  '@vueuse/core': 14.2.0
+  '@vueuse/nuxt': 14.2.0
   dayjs: 1.11.19
   dotenv-cli: 11.0.0
   emoji-regex: 10.6.0
   eslint: 9.39.2
-  eslint-plugin-playwright: 2.5.0
+  eslint-plugin-playwright: 2.5.1
   eslint-plugin-testing-library: 7.15.4
-  groq: 5.6.0
-  happy-dom: 20.3.7
+  groq: 5.7.0
+  happy-dom: 20.4.0
   lighthouse: 13.0.1
-  netlify-cli: 23.13.5
+  netlify-cli: 23.14.0
   nuxt: 4.3.0
   nuxt-graphql-middleware: 5.3.2
-  playwright: 1.58.0
+  playwright: 1.58.1
   typescript: 5.9.3
   vitest: 4.0.18
   vue: 3.5.27
-  vue-router: 4.6.4
+  vue-router: 5.0.1
 
 catalogMode: prefer
 
