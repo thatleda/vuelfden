@@ -66,7 +66,6 @@ const howLong = dayjs(articleReleaseDate).toNow(true)
 }
 
 .description {
-
   width: 100%;
   display: flex;
   flex-direction: column;
