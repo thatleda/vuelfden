@@ -83,7 +83,7 @@ async function generateReport(): Promise<void> {
   }
 
   for (const result of results) {
-    const slug = result.name.toLowerCase().replace(/\s+/g, '-')
+    const slug = result.name.toLowerCase().replaceAll(/\s+/g, '-')
     await writeFile(`lighthouse-${slug}.html`, result.report.html)
     await writeFile(`lighthouse-${slug}.json`, result.report.json)
   }
@@ -117,6 +117,14 @@ function generateMarkdownSummary(results: AuditResult[]): string {
   }
 
   return md
+}
+
+function generateScoreClass(score: number): string {
+  if (score >= 90)
+    return 'good'
+  if (score >= 50)
+    return 'average'
+  return 'poor'
 }
 
 function generateHtmlIndex(results: AuditResult[]): string {
@@ -206,7 +214,7 @@ function generateHtmlIndex(results: AuditResult[]): string {
 `
 
   for (const result of results) {
-    const slug = result.name.toLowerCase().replace(/\s+/g, '-')
+    const slug = result.name.toLowerCase().replaceAll(/\s+/g, '-')
     html += `
     <div class="page-result">
       <h2>${result.name}</h2>
@@ -217,7 +225,7 @@ function generateHtmlIndex(results: AuditResult[]): string {
 
     for (const [category, score] of Object.entries(result.scores)) {
       const label = category.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
-      const scoreClass = score >= 90 ? 'good' : score >= 50 ? 'average' : 'poor'
+      const scoreClass = generateScoreClass(score)
 
       html += `
         <div class="score-card ${scoreClass}">
