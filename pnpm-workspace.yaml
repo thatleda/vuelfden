@@ -2,18 +2,18 @@ packages:
   - .
 
 catalog:
-  '@antfu/eslint-config': 7.2.0
+  '@antfu/eslint-config': 7.3.0
   '@asbjorn/eslint-plugin-groq': 2.0.0
   '@nuxt/fonts': 0.13.0
   '@nuxt/image': 2.0.0
   '@nuxtjs/color-mode': 4.0.0
-  '@playwright/test': 1.58.1
+  '@playwright/test': 1.58.2
   '@portabletext/types': 4.0.1
   '@portabletext/vue': 1.0.14
   '@sanity/client': 7.14.1
   '@testing-library/jest-dom': 6.9.1
   '@testing-library/vue': 8.1.0
-  '@vitejs/plugin-vue': 6.0.3
+  '@vitejs/plugin-vue': 6.0.4
   '@vue/test-utils': 2.4.6
   '@vueuse/core': 14.2.0
   '@vueuse/nuxt': 14.2.0
@@ -23,13 +23,13 @@ catalog:
   eslint: 9.39.2
   eslint-plugin-playwright: 2.5.1
   eslint-plugin-testing-library: 7.15.4
-  groq: 5.7.0
-  happy-dom: 20.4.0
-  lighthouse: 13.0.1
-  netlify-cli: 23.14.0
+  groq: 5.8.1
+  happy-dom: 20.5.3
+  lighthouse: 13.0.2
+  netlify-cli: 23.15.1
   nuxt: 4.3.0
   nuxt-graphql-middleware: 5.3.2
-  playwright: 1.58.1
+  playwright: 1.58.2
   typescript: 5.9.3
   vitest: 4.0.18
   vue: 3.5.27
@@ -47,6 +47,7 @@ trustPolicyExclude:
   - '@netlify/edge-bundler'
   - '@netlify/zip-it-and-ship-it'
   - '@netlify/serverless-functions-api'
+  - '@netlify/images'
   - chokidar@4.0.3
   - pino@9.14.0
   - undici-types@6.21.0
