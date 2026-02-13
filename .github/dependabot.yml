@@ -1,11 +1,45 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-
 version: 2
 updates:
-  - package-ecosystem: "pnpm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: github-actions
+    directory: .github/workflows
+    rebase-strategy: auto
     schedule:
-      interval: "daily"
+      interval: daily
+    assignees:
+      - thatleda
+    labels:
+      - dependencies
+
+  - package-ecosystem: npm
+    directory: /
+    rebase-strategy: auto
+    schedule:
+      interval: daily
+    assignees:
+      - thatleda
+    labels:
+      - dependencies
+    allow:
+      - dependency-type: all
+    versioning-strategy: auto
+    pull-request-branch-name:
+      separator: /
+    groups:
+      node-runtime:
+        update-types:
+          - minor
+          - patch
+        patterns:
+          - node
+      pnpm:
+        update-types:
+          - minor
+          - patch
+        patterns:
+          - pnpm
+      nuxt:
+        patterns:
+          - nuxt
+        update-types:
+          - minor
+          - patch
