@@ -7,8 +7,6 @@ updates:
       interval: daily
     assignees:
       - thatleda
-    labels:
-      - dependencies
 
   - package-ecosystem: npm
     directory: /
