@@ -2,7 +2,7 @@ packages:
   - .
 
 catalog:
-  '@antfu/eslint-config': 7.3.0
+  '@antfu/eslint-config': 7.4.3
   '@asbjorn/eslint-plugin-groq': 2.0.0
   '@nuxt/fonts': 0.13.0
   '@nuxt/image': 2.0.0
