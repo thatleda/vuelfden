@@ -23,17 +23,17 @@ catalog:
   eslint: 9.39.2
   eslint-plugin-playwright: 2.5.1
   eslint-plugin-testing-library: 7.15.4
-  groq: 5.8.1
-  happy-dom: 20.5.3
-  lighthouse: 13.0.2
+  groq: 5.9.0
+  happy-dom: 20.6.1
+  lighthouse: 13.0.3
   netlify-cli: 23.15.1
-  nuxt: 4.3.0
+  nuxt: 4.3.1
   nuxt-graphql-middleware: 5.3.2
   playwright: 1.58.2
   typescript: 5.9.3
   vitest: 4.0.18
-  vue: 3.5.27
-  vue-router: 5.0.1
+  vue: 3.5.28
+  vue-router: 5.0.2
 
 catalogMode: prefer
 
