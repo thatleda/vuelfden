@@ -1,43 +1,10 @@
 version: 2
 updates:
-  - package-ecosystem: github-actions
-    directory: .github/workflows
-    rebase-strategy: auto
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
-      interval: daily
-    assignees:
-      - thatleda
-
-  - package-ecosystem: npm
-    directory: /
-    rebase-strategy: auto
-    schedule:
-      interval: daily
-    assignees:
-      - thatleda
-    labels:
-      - dependencies
-    allow:
-      - dependency-type: all
-    versioning-strategy: auto
-    pull-request-branch-name:
-      separator: /
-    groups:
-      node-runtime:
-        update-types:
-          - minor
-          - patch
-        patterns:
-          - node
-      pnpm:
-        update-types:
-          - minor
-          - patch
-        patterns:
-          - pnpm
-      nuxt:
-        patterns:
-          - nuxt
-        update-types:
-          - minor
-          - patch
+      interval: "weekly"
+    ignore:
+      - dependency-name: "*"
+        versions:
+          - "*"
