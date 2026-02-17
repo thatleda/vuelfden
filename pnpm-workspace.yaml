@@ -4,7 +4,7 @@ packages:
 catalog:
   '@antfu/eslint-config': 7.4.3
   '@asbjorn/eslint-plugin-groq': 2.0.0
-  '@nuxt/fonts': 0.13.0
+  '@nuxt/fonts': 0.14.0
   '@nuxt/image': 2.0.0
   '@nuxtjs/color-mode': 4.0.0
   '@playwright/test': 1.58.2
