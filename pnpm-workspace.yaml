@@ -23,7 +23,7 @@ catalog:
   eslint: 9.39.2
   eslint-plugin-playwright: 2.7.0
   eslint-plugin-testing-library: 7.16.0
-  groq: 5.10.0
+  groq: 5.11.0
   happy-dom: 20.6.3
   lighthouse: 13.0.3
   netlify-cli: 23.15.1
