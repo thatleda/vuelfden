@@ -1,13 +1,3 @@
-<template>
-  <div
-    ref="target"
-    :style="targetIsVisible ? props : { opacity: 0 }"
-    :class="props.class"
-  >
-    <slot />
-  </div>
-</template>
-
 <script setup lang="ts">
 import { useElementVisibility } from '@vueuse/core'
 import { ref } from 'vue'
@@ -40,3 +30,13 @@ const props = withDefaults(defineProps<AnimationProps>(), {
 const target = ref(null)
 const targetIsVisible = useElementVisibility(target, { threshold: 0.05 })
 </script>
+
+<template>
+  <div
+    ref="target"
+    :style="targetIsVisible ? props : { opacity: 0 }"
+    :class="props.class"
+  >
+    <slot />
+  </div>
+</template>

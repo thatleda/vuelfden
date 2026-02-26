@@ -1,3 +1,13 @@
+<script lang="ts" setup>
+import type { SanityReview } from '~/@types/sanity'
+
+interface ReviewProps {
+  review: SanityReview
+}
+
+const { review } = defineProps<ReviewProps>()
+</script>
+
 <template>
   <div :class="$style.card">
     <div :class="$style.frame">
@@ -18,16 +28,6 @@
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-import type { SanityReview } from '~/@types/sanity'
-
-interface ReviewProps {
-  review: SanityReview
-}
-
-const { review } = defineProps<ReviewProps>()
-</script>
 
 <style module>
 .card {

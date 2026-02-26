@@ -1,10 +1,3 @@
-<template>
-  <base-page-section v-if="page">
-    <h1>{{ page.title }}</h1>
-    <base-sanity-block :blocks="page.content" />
-  </base-page-section>
-</template>
-
 <script lang="ts" setup>
 import type { SanityPage } from '~/@types/sanity'
 import groq from 'groq'
@@ -39,3 +32,10 @@ useSeoMeta({
   title: page.value?.title ?? 'Vuelfden',
 })
 </script>
+
+<template>
+  <base-page-section v-if="page">
+    <h1>{{ page.title }}</h1>
+    <base-sanity-block :blocks="page.content" />
+  </base-page-section>
+</template>

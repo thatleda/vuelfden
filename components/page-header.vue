@@ -1,3 +1,33 @@
+<script lang="ts" setup>
+import { onClickOutside, useDark, useToggle } from '@vueuse/core'
+import { ref } from 'vue'
+
+const smallScreen = useMediaQuery('(max-width: 1030px)')
+
+const isMenuOpen = ref(false)
+const outsideRef = ref(null)
+
+const darkMode = useDark({ storageKey: 'vuelfden-dark-mode' })
+const toggle = useToggle(darkMode)
+
+function openMenu() {
+  isMenuOpen.value = true
+}
+
+function closeMenu() {
+  isMenuOpen.value = false
+}
+
+function toggleDarkMode() {
+  toggle()
+}
+
+onClickOutside(outsideRef, closeMenu)
+defineExpose({
+  isMenuOpen,
+})
+</script>
+
 <template>
   <nav :class="$style.navigation" role="navigation" aria-label="Main navigation">
     <div :class="$style.links">
@@ -117,36 +147,6 @@
     </div>
   </nav>
 </template>
-
-<script lang="ts" setup>
-import { onClickOutside, useDark, useToggle } from '@vueuse/core'
-import { ref } from 'vue'
-
-const smallScreen = useMediaQuery('(max-width: 1030px)')
-
-const isMenuOpen = ref(false)
-const outsideRef = ref(null)
-
-const darkMode = useDark({ storageKey: 'vuelfden-dark-mode' })
-const toggle = useToggle(darkMode)
-
-function openMenu() {
-  isMenuOpen.value = true
-}
-
-function closeMenu() {
-  isMenuOpen.value = false
-}
-
-function toggleDarkMode() {
-  toggle()
-}
-
-onClickOutside(outsideRef, closeMenu)
-defineExpose({
-  isMenuOpen,
-})
-</script>
 
 <style module>
 .navigation {

@@ -1,3 +1,13 @@
+<script lang="ts" setup>
+import type { SanityPage } from '~/@types/sanity'
+
+interface HeroProps {
+  page: SanityPage
+}
+
+const { page } = defineProps<HeroProps>()
+</script>
+
 <template>
   <base-page-section :animation-props="{ animationDuration: '0ms' }">
     <div :class="$style.card">
@@ -66,16 +76,6 @@
     </div>
   </base-page-section>
 </template>
-
-<script lang="ts" setup>
-import type { SanityPage } from '~/@types/sanity'
-
-interface HeroProps {
-  page: SanityPage
-}
-
-const { page } = defineProps<HeroProps>()
-</script>
 
 <style module>
 .card {

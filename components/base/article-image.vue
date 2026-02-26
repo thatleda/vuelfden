@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+import type { SanityBlockImage } from '~/@types/sanity'
+
+const props = defineProps<SanityBlockImage>()
+</script>
+
 <template>
   <div :class="$style.frame">
     <NuxtImg
@@ -8,12 +14,6 @@
     />
   </div>
 </template>
-
-<script lang="ts" setup>
-import type { SanityBlockImage } from '~/@types/sanity'
-
-const props = defineProps<SanityBlockImage>()
-</script>
 
 <style module>
 .frame {

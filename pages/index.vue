@@ -1,30 +1,3 @@
-<template>
-  <hero-banner v-if="hero" :page="hero" :is-card="true" />
-  <base-page-section anchor="who" heading="Who?" :is-card="true">
-    <about-leda v-if="aboutPage" :about-page="aboutPage" :is-card="true" />
-  </base-page-section>
-  <base-page-section>
-    <lazy-work-playlist />
-  </base-page-section>
-  <base-page-section
-    v-if="previouslyPage"
-    :heading="previouslyPage.title"
-    anchor="previously"
-    :is-card="true"
-  >
-    <base-sanity-block :blocks="previouslyPage.content" />
-  </base-page-section>
-  <base-page-section v-if="reviews" anchor="reviews" heading="Reviews" :is-card="true">
-    <base-review v-for="review in reviews" :key="review._id" :review="review" />
-  </base-page-section>
-  <base-page-section anchor="contact" heading="What is she up to?" :is-card="true">
-    <reading-now />
-  </base-page-section>
-  <base-page-section :is-card="true">
-    <contact-leda />
-  </base-page-section>
-</template>
-
 <script lang="ts" setup>
 import type { SanityPage, SanityReview } from '~/@types/sanity'
 import groq from 'groq'
@@ -140,3 +113,30 @@ useSeoMeta({
   title: 'Vuelfden',
 })
 </script>
+
+<template>
+  <hero-banner v-if="hero" :page="hero" :is-card="true" />
+  <base-page-section anchor="who" heading="Who?" :is-card="true">
+    <about-leda v-if="aboutPage" :about-page="aboutPage" :is-card="true" />
+  </base-page-section>
+  <base-page-section>
+    <lazy-work-playlist />
+  </base-page-section>
+  <base-page-section
+    v-if="previouslyPage"
+    :heading="previouslyPage.title"
+    anchor="previously"
+    :is-card="true"
+  >
+    <base-sanity-block :blocks="previouslyPage.content" />
+  </base-page-section>
+  <base-page-section v-if="reviews" anchor="reviews" heading="Reviews" :is-card="true">
+    <base-review v-for="review in reviews" :key="review._id" :review="review" />
+  </base-page-section>
+  <base-page-section anchor="contact" heading="What is she up to?" :is-card="true">
+    <reading-now />
+  </base-page-section>
+  <base-page-section :is-card="true">
+    <contact-leda />
+  </base-page-section>
+</template>

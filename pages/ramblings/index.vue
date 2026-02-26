@@ -1,69 +1,3 @@
-<template>
-  <base-page-section heading="Unhinged ramblings">
-    <nav
-      v-if="articles?.length || hasPreviousPage"
-      :class="$style.pagination"
-      aria-label="Blog pagination"
-      role="navigation"
-    >
-      <link-button
-        v-if="hasPreviousPage"
-        :to="previousPageUrl"
-        variant="secondary"
-        :aria-label="`Go to previous page, page ${currentPage - 1}`"
-      >
-        ← Previous
-      </link-button>
-
-      <span
-        :class="$style.pageInfo"
-        aria-live="polite"
-        aria-current="page"
-      >
-        Page {{ currentPage }} of {{ totalPages }}
-      </span>
-
-      <link-button
-        v-if="hasNextPage"
-        :to="nextPageUrl"
-        variant="secondary"
-        :aria-label="`Go to next page, page ${currentPage + 1}`"
-      >
-        Next →
-      </link-button>
-    </nav>
-
-    <output
-      v-if="isLoading"
-      :class="$style.loading"
-      aria-live="polite"
-    >
-      Loading articles...
-    </output>
-
-    <main
-      ref="mainContent"
-      :class="$style.articles"
-      role="main"
-      aria-label="Blog articles"
-      tabindex="-1"
-    >
-      <transition-animation
-        v-for="(article, index) in articles"
-        :key="article._id"
-        animation-name="fade-up"
-        animation-duration="0.6s"
-        :animation-delay="`${Number(index) * 0.1}s`"
-        animation-timing="ease-out"
-      >
-        <base-article-card
-          :article="article"
-        />
-      </transition-animation>
-    </main>
-  </base-page-section>
-</template>
-
 <script lang="ts" setup>
 import type { SanityPage } from '~/@types/sanity'
 import groq from 'groq'
@@ -138,6 +72,72 @@ useHead({
   },
 })
 </script>
+
+<template>
+  <base-page-section heading="Unhinged ramblings">
+    <nav
+      v-if="articles?.length || hasPreviousPage"
+      :class="$style.pagination"
+      aria-label="Blog pagination"
+      role="navigation"
+    >
+      <LinkButton
+        v-if="hasPreviousPage"
+        :to="previousPageUrl"
+        variant="secondary"
+        :aria-label="`Go to previous page, page ${currentPage - 1}`"
+      >
+        ← Previous
+      </LinkButton>
+
+      <span
+        :class="$style.pageInfo"
+        aria-live="polite"
+        aria-current="page"
+      >
+        Page {{ currentPage }} of {{ totalPages }}
+      </span>
+
+      <LinkButton
+        v-if="hasNextPage"
+        :to="nextPageUrl"
+        variant="secondary"
+        :aria-label="`Go to next page, page ${currentPage + 1}`"
+      >
+        Next →
+      </LinkButton>
+    </nav>
+
+    <output
+      v-if="isLoading"
+      :class="$style.loading"
+      aria-live="polite"
+    >
+      Loading articles...
+    </output>
+
+    <main
+      ref="mainContent"
+      :class="$style.articles"
+      role="main"
+      aria-label="Blog articles"
+      tabindex="-1"
+    >
+      <TransitionAnimation
+        v-for="(article, index) in articles"
+        :key="article._id"
+        animation-name="fade-up"
+        animation-duration="0.6s"
+        :animation-delay="`${Number(index) * 0.1}s`"
+        animation-timing="ease-out"
+      >
+        <base-article-card
+          :article="article"
+        />
+      </TransitionAnimation>
+    </main>
+  </base-page-section>
+</template>
 
 <style module>
 .articles {

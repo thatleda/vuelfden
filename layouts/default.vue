@@ -1,9 +1,3 @@
-<template>
-  <ClientOnly><page-header ref="header" /></ClientOnly>
-  <main><NuxtPage /></main>
-  <page-footer />
-</template>
-
 <script lang="ts" setup>
 import { useDark, usePreferredReducedMotion } from '@vueuse/core'
 import PageHeader from '~/components/page-header.vue'
@@ -32,6 +26,12 @@ useHead({
   },
 })
 </script>
+
+<template>
+  <ClientOnly><PageHeader ref="header" /></ClientOnly>
+  <main><NuxtPage /></main>
+  <page-footer />
+</template>
 
 <style>
 html {

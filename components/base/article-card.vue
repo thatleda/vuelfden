@@ -1,23 +1,3 @@
-<template>
-  <NuxtLink :to="`/ramblings/${article.slug.current}`">
-    <div :class="$style.card" data-testid="article-card">
-      <NuxtImg
-        :src="article.banner._id"
-        :alt="article.banner.altText"
-        width="100"
-        loading="lazy"
-      />
-      <div :class="$style.description" data-testid="article-description">
-        <h3 :class="$style.title">
-          {{ article.title }}
-        </h3>
-        <p>{{ article.excerpt }}</p>
-        <sub :class="$style.published">published {{ howLong }} ago</sub>
-      </div>
-    </div>
-  </NuxtLink>
-</template>
-
 <script lang="ts" setup>
 import type { SanityPage } from '~/@types/sanity'
 
@@ -37,6 +17,26 @@ const articleReleaseDate
 
 const howLong = dayjs(articleReleaseDate).toNow(true)
 </script>
+
+<template>
+  <NuxtLink :to="`/ramblings/${article.slug.current}`">
+    <div :class="$style.card" data-testid="article-card">
+      <NuxtImg
+        :src="article.banner._id"
+        :alt="article.banner.altText"
+        width="100"
+        loading="lazy"
+      />
+      <div :class="$style.description" data-testid="article-description">
+        <h3 :class="$style.title">
+          {{ article.title }}
+        </h3>
+        <p>{{ article.excerpt }}</p>
+        <sub :class="$style.published">published {{ howLong }} ago</sub>
+      </div>
+    </div>
+  </NuxtLink>
+</template>
 
 <style module>
 .card {

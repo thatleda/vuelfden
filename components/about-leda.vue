@@ -1,3 +1,12 @@
+<script lang="ts" setup>
+import type { SanityPage } from '~/@types/sanity'
+
+interface AboutLedaProps {
+  aboutPage: SanityPage
+}
+const { aboutPage } = defineProps<AboutLedaProps>()
+</script>
+
 <template>
   <div :class="$style.card">
     <div :class="$style.frame">
@@ -13,15 +22,6 @@
     <base-sanity-block :blocks="aboutPage.content" />
   </div>
 </template>
-
-<script lang="ts" setup>
-import type { SanityPage } from '~/@types/sanity'
-
-interface AboutLedaProps {
-  aboutPage: SanityPage
-}
-const { aboutPage } = defineProps<AboutLedaProps>()
-</script>
 
 <style module>
 .card {
