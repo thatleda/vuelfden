@@ -1,3 +1,15 @@
+<script lang="ts" setup>
+import type { SVGProps } from '~/@types/svg'
+
+interface WolfProps extends SVGProps {
+  height?: string | number
+  width?: string | number
+  mirror?: boolean
+}
+
+const { mirror = false, width = '50px', height = '50px', ...svgAttributes } = defineProps<WolfProps>()
+</script>
+
 <template>
   <svg
     :class="mirror && $style.mirror"
@@ -70,18 +82,6 @@
     </g>
   </svg>
 </template>
-
-<script lang="ts" setup>
-import type { SVGProps } from '~/@types/svg'
-
-interface WolfProps extends SVGProps {
-  height?: string | number
-  width?: string | number
-  mirror?: boolean
-}
-
-const { mirror = false, width = '50px', height = '50px', ...svgAttributes } = defineProps<WolfProps>()
-</script>
 
 <style module>
 .mirror {

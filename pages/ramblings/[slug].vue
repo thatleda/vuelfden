@@ -1,18 +1,3 @@
-<template>
-  <base-page-section v-if="article" :is-card="true">
-    <h1>{{ article.title }}</h1>
-    <NuxtImg
-      v-if="article.banner"
-      :alt="article.banner.altText"
-      :src="article.banner._id"
-      width="750"
-      :class="$style.banner"
-      loading="lazy"
-    />
-    <base-sanity-block :blocks="article.content" />
-  </base-page-section>
-</template>
-
 <script lang="ts" setup>
 import type { SanityPage } from '~/@types/sanity'
 import groq from 'groq'
@@ -50,6 +35,21 @@ useSeoMeta({
   articlePublishedTime: article.value?._createdAt,
 })
 </script>
+
+<template>
+  <base-page-section v-if="article" :is-card="true">
+    <h1>{{ article.title }}</h1>
+    <NuxtImg
+      v-if="article.banner"
+      :alt="article.banner.altText"
+      :src="article.banner._id"
+      width="750"
+      :class="$style.banner"
+      loading="lazy"
+    />
+    <base-sanity-block :blocks="article.content" />
+  </base-page-section>
+</template>
 
 <style module>
 .banner {

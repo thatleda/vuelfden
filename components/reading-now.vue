@@ -1,49 +1,3 @@
-<template>
-  <div :class="$style.card">
-    <NuxtImg
-      :alt="`The book cover of ${book.title} by ${book.author}`"
-      :srcset="book.cover || '/images/book-cover-placeholder.png'"
-      :class="[$style.bookCover, $style.image]"
-    />
-    Probably reading
-    <h3>{{ book.title }} ({{ book.release }})</h3>
-    <sub :class="$style.author">
-      by <em>{{ book.author }}</em>
-    </sub>
-    <p v-if="challenge" :class="$style.progress">
-      {{ challenge.description }}: {{ challenge.progress }} of {{ challenge.goal }} books completed
-      <progress
-        :class="$style.progressBar"
-        :max="challenge.goal"
-        :value="challenge.progress"
-      />
-    </p>
-  </div>
-
-  <div
-    v-if="latestReview"
-    :class="$style.card"
-  >
-    <NuxtImg
-      :alt="`The book cover of ${latestReview.book.title}`"
-      :srcset="latestReview.book.cover"
-      loading="lazy"
-      :class="[$style.image, $style.reviewCover]"
-    />
-    Just finished reading
-    <h3>{{ latestReview.book.title }} ({{ latestReview.book.release }})</h3>
-    <sub :class="$style.author">
-      by <em>{{ latestReview.book.author }}</em>
-    </sub>
-    <p>Rating: {{ latestReview.rating }} / 5</p>
-
-    <base-slate-block
-      v-if="latestReview.slateContent"
-      :document="latestReview.slateContent"
-    />
-  </div>
-</template>
-
 <script lang="ts" setup>
 import BaseSlateBlock from '~/components/base/slate-block.vue'
 
@@ -85,6 +39,52 @@ const latestReview = computed(() => {
   }
 })
 </script>
+
+<template>
+  <div :class="$style.card">
+    <NuxtImg
+      :alt="`The book cover of ${book.title} by ${book.author}`"
+      :srcset="book.cover || '/images/book-cover-placeholder.png'"
+      :class="[$style.bookCover, $style.image]"
+    />
+    Probably reading
+    <h3>{{ book.title }} ({{ book.release }})</h3>
+    <sub :class="$style.author">
+      by <em>{{ book.author }}</em>
+    </sub>
+    <p v-if="challenge" :class="$style.progress">
+      {{ challenge.description }}: {{ challenge.progress }} of {{ challenge.goal }} books completed
+      <progress
+        :class="$style.progressBar"
+        :max="challenge.goal"
+        :value="challenge.progress"
+      />
+    </p>
+  </div>
+
+  <div
+    v-if="latestReview"
+    :class="$style.card"
+  >
+    <NuxtImg
+      :alt="`The book cover of ${latestReview.book.title}`"
+      :srcset="latestReview.book.cover"
+      loading="lazy"
+      :class="[$style.image, $style.reviewCover]"
+    />
+    Just finished reading
+    <h3>{{ latestReview.book.title }} ({{ latestReview.book.release }})</h3>
+    <sub :class="$style.author">
+      by <em>{{ latestReview.book.author }}</em>
+    </sub>
+    <p>Rating: {{ latestReview.rating }} / 5</p>
+
+    <BaseSlateBlock
+      v-if="latestReview.slateContent"
+      :document="latestReview.slateContent"
+    />
+  </div>
+</template>
 
 <style module>
 .card {

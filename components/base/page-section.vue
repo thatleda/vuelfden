@@ -1,3 +1,19 @@
+<script setup lang="ts">
+import type { AnimationProps } from '~/components/base/transition-animation.vue'
+import { computed } from 'vue'
+
+interface SectionProps {
+  anchor?: string
+  animationProps?: Partial<AnimationProps>
+  heading?: null | string
+  isCard?: boolean
+}
+
+const props = defineProps<SectionProps>()
+
+const padding = computed(() => (props.isCard ? 'var(--page-padding)' : '0'))
+</script>
+
 <template>
   <base-transition-animation
     :animation-duration="props.animationProps?.animationDuration ?? '1s'"
@@ -19,22 +35,6 @@
     </section>
   </base-transition-animation>
 </template>
-
-<script setup lang="ts">
-import type { AnimationProps } from '~/components/base/transition-animation.vue'
-import { computed } from 'vue'
-
-interface SectionProps {
-  anchor?: string
-  animationProps?: Partial<AnimationProps>
-  heading?: null | string
-  isCard?: boolean
-}
-
-const props = defineProps<SectionProps>()
-
-const padding = computed(() => (props.isCard ? 'var(--page-padding)' : '0'))
-</script>
 
 <style module>
 h2.heading {

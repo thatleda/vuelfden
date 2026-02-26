@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+import type { SVGProps } from '~/@types/svg'
+
+const { height = '1rem', width = '1rem', ...svgAttributes } = defineProps<SVGProps>()
+</script>
+
 <template>
   <svg
     :style="{ height, width }"
@@ -24,9 +30,3 @@
     </g>
   </svg>
 </template>
-
-<script lang="ts" setup>
-import type { SVGProps } from '~/@types/svg'
-
-const { height = '1rem', width = '1rem', ...svgAttributes } = defineProps<SVGProps>()
-</script>

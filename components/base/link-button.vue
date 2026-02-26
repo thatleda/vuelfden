@@ -1,16 +1,3 @@
-<template>
-  <NuxtLink
-    :class="[
-      variant === 'primary' && $style.primary,
-      variant === 'secondary' && $style.secondary,
-      $style.button,
-    ]"
-    v-bind="nuxtLinkProps"
-  >
-    <slot />
-  </NuxtLink>
-</template>
-
 <script setup lang="ts">
 export interface ButtonProps {
   to?: string
@@ -30,6 +17,19 @@ const nuxtLinkProps = to.toString().startsWith('/')
       target: '_blank',
     }
 </script>
+
+<template>
+  <NuxtLink
+    :class="[
+      variant === 'primary' && $style.primary,
+      variant === 'secondary' && $style.secondary,
+      $style.button,
+    ]"
+    v-bind="nuxtLinkProps"
+  >
+    <slot />
+  </NuxtLink>
+</template>
 
 <style module>
 .button {

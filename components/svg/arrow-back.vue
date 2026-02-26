@@ -1,3 +1,12 @@
+<script lang="ts" setup>
+import type { SVGAttributes } from 'vue'
+
+const { height = '1rem', width = '1rem', ...svgAttributes } = defineProps<SVGAttributes & {
+  height?: string | number
+  width?: string | number
+}>()
+</script>
+
 <template>
   <svg
     :style="{ height, width }"
@@ -9,12 +18,3 @@
     <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
   </svg>
 </template>
-
-<script lang="ts" setup>
-import type { SVGAttributes } from 'vue'
-
-const { height = '1rem', width = '1rem', ...svgAttributes } = defineProps<SVGAttributes & {
-  height?: string | number
-  width?: string | number
-}>()
-</script>

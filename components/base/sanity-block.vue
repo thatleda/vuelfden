@@ -1,12 +1,3 @@
-<template>
-  <article :class="$style.wrapper">
-    <portable-text
-      :value="props.blocks"
-      :components="components"
-    />
-  </article>
-</template>
-
 <script lang="ts" setup>
 import type { PortableTextBlock } from '@portabletext/types'
 import { PortableText } from '@portabletext/vue'
@@ -62,6 +53,15 @@ const components = computed(() => ({
   },
 }))
 </script>
+
+<template>
+  <article :class="$style.wrapper">
+    <PortableText
+      :value="props.blocks"
+      :components="components"
+    />
+  </article>
+</template>
 
 <style module>
 .wrapper {

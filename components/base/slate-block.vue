@@ -1,9 +1,3 @@
-<template>
-  <article :class="$style.wrapper">
-    <slate-renderer :document="document" />
-  </article>
-</template>
-
 <script lang="ts" setup>
 import { h } from 'vue'
 import Blockquote from '~/components/base/blockquote.vue'
@@ -132,6 +126,12 @@ function renderText(node: SlateText): any {
   return content
 }
 </script>
+
+<template>
+  <article :class="$style.wrapper">
+    <SlateRenderer :document="document" />
+  </article>
+</template>
 
 <style module>
 .wrapper {

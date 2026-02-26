@@ -1,3 +1,13 @@
+<script lang="ts" setup>
+import type { SVGProps } from '~/@types/svg'
+
+const { height = '1rem', width = '1rem', fill, ...svgAttributes } = defineProps<SVGProps & {
+  height?: string | number
+  width?: string | number
+  fill?: string
+}>()
+</script>
+
 <template>
   <svg
     :style="{ height: height ?? '1rem', width: width ?? '1rem' }"
@@ -21,13 +31,3 @@
     </g>
   </svg>
 </template>
-
-<script lang="ts" setup>
-import type { SVGProps } from '~/@types/svg'
-
-const { height = '1rem', width = '1rem', fill, ...svgAttributes } = defineProps<SVGProps & {
-  height?: string | number
-  width?: string | number
-  fill?: string
-}>()
-</script>
