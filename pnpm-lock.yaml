@@ -64,8 +64,8 @@ catalogs:
       specifier: 9.39.2
       version: 9.39.2
     eslint-plugin-playwright:
-      specifier: 2.7.1
-      version: 2.7.1
+      specifier: 2.8.0
+      version: 2.8.0
     eslint-plugin-testing-library:
       specifier: 7.16.0
       version: 7.16.0
@@ -182,7 +182,7 @@ importers:
         version: 9.39.2(jiti@2.6.1)
       eslint-plugin-playwright:
         specifier: 'catalog:'
-        version: 2.7.1(eslint@9.39.2(jiti@2.6.1))
+        version: 2.8.0(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-testing-library:
         specifier: 'catalog:'
         version: 7.16.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
@@ -3830,6 +3830,7 @@ packages:
   basic-ftp@5.1.0:
     resolution: {integrity: sha512-RkaJzeJKDbaDWTIPiJwubyljaEPwpVWkm9Rt5h9Nd6h7tEXTJ3VB4qxdZBioV7JO5yLUaOKwz7vDOzlncUsegw==}
     engines: {node: '>=10.0.0'}
+    deprecated: Security vulnerability fixed in 5.2.0, please upgrade
 
   before-after-hook@4.0.0:
     resolution: {integrity: sha512-q6tR3RPqIB1pMiTRMFcZwuG5T8vwp+vUvEG0vuI6B+Rikh5BfPp2fQ82c925FOs+b0lcFQ8CFrL+KbilfZFhOQ==}
@@ -4887,8 +4888,8 @@ packages:
     peerDependencies:
       eslint: ^8.45.0 || ^9.0.0 || ^10.0.0
 
-  eslint-plugin-playwright@2.7.1:
-    resolution: {integrity: sha512-IGwSjYN6N5E0I+xbRpmLXXRKQfiRaEEGEasMWKmIoiLFe+izb81EKBMGSjD/NzlXrWGx/Ys7zDOkgYEHQT2g6Q==}
+  eslint-plugin-playwright@2.8.0:
+    resolution: {integrity: sha512-BRCXbnX20l/ZPOOi1jEqNvqU/UjXpkZRJaghQxSM2kjAvsDph8+osn9u1iMmvoa9Cegbp9d0Skh7vro7242t+Q==}
     engines: {node: '>=16.9.0'}
     peerDependencies:
       eslint: '>=8.40.0'
@@ -14699,7 +14700,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-playwright@2.7.1(eslint@9.39.2(jiti@2.6.1)):
+  eslint-plugin-playwright@2.8.0(eslint@9.39.2(jiti@2.6.1)):
     dependencies:
       eslint: 9.39.2(jiti@2.6.1)
       globals: 17.3.0
