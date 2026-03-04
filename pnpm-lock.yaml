@@ -70,8 +70,8 @@ catalogs:
       specifier: 7.16.0
       version: 7.16.0
     groq:
-      specifier: 5.12.0
-      version: 5.12.0
+      specifier: 5.13.0
+      version: 5.13.0
     happy-dom:
       specifier: 20.8.3
       version: 20.8.3
@@ -188,7 +188,7 @@ importers:
         version: 7.16.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       groq:
         specifier: 'catalog:'
-        version: 5.12.0
+        version: 5.13.0
       happy-dom:
         specifier: 'catalog:'
         version: 20.8.3
@@ -5537,8 +5537,8 @@ packages:
   groq-js@0.2.0:
     resolution: {integrity: sha512-qJeuEgziddryH1ClsJvMoZM9aXNQbBViNZZrJwhHKr2wU8HGGM7uNWNVFglWXMX60MMaa2SClX3UohP76Ut68g==}
 
-  groq@5.12.0:
-    resolution: {integrity: sha512-lIng0XwQJuuQRZWSscbZDIDxxlxnnvsHWIGA63IH6DsDwoNv6W/xINfI4RiZX7NsfBKTxsWaJAXia3qQbllU3Q==}
+  groq@5.13.0:
+    resolution: {integrity: sha512-/SVpxcqdtkbobZTzO1klxbpn2KHRAawN8cYx42tXUV9Cle0LVXpiLlrFA2xJBIXSe9IPD+kFzLRPRl8qm+Iuig==}
     engines: {node: '>=20.19 <22 || >=22.12'}
 
   gzip-size@7.0.0:
@@ -15484,7 +15484,7 @@ snapshots:
 
   groq-js@0.2.0: {}
 
-  groq@5.12.0: {}
+  groq@5.13.0: {}
 
   gzip-size@7.0.0:
     dependencies:
