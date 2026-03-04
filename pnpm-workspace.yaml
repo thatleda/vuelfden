@@ -8,7 +8,7 @@ catalog:
   '@nuxt/image': 2.0.0
   '@nuxtjs/color-mode': 4.0.0
   '@playwright/test': 1.58.2
-  '@portabletext/types': 4.0.1
+  '@portabletext/types': 4.0.2
   '@portabletext/vue': 1.0.14
   '@sanity/client': 7.16.0
   '@testing-library/jest-dom': 6.9.1
