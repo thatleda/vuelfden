@@ -19,6 +19,8 @@ interface AuditResult {
   }
 }
 
+const whitespaceRegex = /\s+/g
+
 const baseUrl = process.env.NETLIFY_URL || 'https://leda.fyi'
 
 const urls: AuditTarget[] = [
@@ -83,7 +85,7 @@ async function generateReport(): Promise<void> {
   }
 
   for (const result of results) {
-    const slug = result.name.toLowerCase().replaceAll(/\s+/g, '-')
+    const slug = result.name.toLowerCase().replaceAll(whitespaceRegex, '-')
     await writeFile(`lighthouse-${slug}.html`, result.report.html)
     await writeFile(`lighthouse-${slug}.json`, result.report.json)
   }
@@ -214,7 +216,7 @@ function generateHtmlIndex(results: AuditResult[]): string {
 `
 
   for (const result of results) {
-    const slug = result.name.toLowerCase().replaceAll(/\s+/g, '-')
+    const slug = result.name.toLowerCase().replaceAll(whitespaceRegex, '-')
     html += `
     <div class="page-result">
       <h2>${result.name}</h2>
