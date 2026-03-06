@@ -1,44 +1,7 @@
 import antfu from '@antfu/eslint-config'
 import groq from '@asbjorn/eslint-plugin-groq'
-import emojiRegex from 'emoji-regex'
 import playwright from 'eslint-plugin-playwright'
 import testingLibrary from 'eslint-plugin-testing-library'
-
-const noEmojisRule = {
-  meta: {
-    type: 'problem',
-    docs: {
-      description: 'Emojis aren\'t allowed in this project because I do not need them and they are worth way too many tokens.',
-    },
-    fixable: 'code',
-  },
-  create(context) {
-    const regex = emojiRegex()
-    const sourceCode = context.sourceCode || context.getSourceCode()
-
-    function checkForEmojis(text, node) {
-      if (typeof text !== 'string')
-        return
-      const match = new RegExp(regex).exec(text)
-      if (match) {
-        context.report({
-          message: 'Emojis are not allowed in this project',
-          node,
-          fix(fixer) {
-            const nodeText = sourceCode.getText(node)
-            const cleaned = nodeText.replaceAll(/\s*\p{Emoji}\s*/gu, '')
-            return fixer.replaceText(node, cleaned)
-          },
-        })
-      }
-    }
-
-    return {
-      Literal: node => checkForEmojis(node.value, node),
-      TemplateElement: node => checkForEmojis(node.value.raw, node),
-    }
-  },
-}
 
 const noCommentsRule = {
   meta: {
@@ -55,6 +18,7 @@ const noCommentsRule = {
         return
       const options = context.options[0] || {}
       const allow = (options?.allow) || []
+      // eslint-disable-next-line e18e/prefer-static-regex
       let re = /^\s?(?:global|eslint|@ts-|@typescript-eslint)/
       if (allow.length > 0) {
         re = new RegExp(String.raw`^\s?(${allow.join('|')})`)
@@ -90,7 +54,6 @@ export default antfu({
     matt: {
       rules: {
         'no-comments': noCommentsRule,
-        'no-emojis': noEmojisRule,
       },
     },
   },
@@ -111,4 +74,7 @@ export default antfu({
 }, {
   files: ['e2e/**/*.spec.{js,ts}'],
   ...playwright.configs['flat/recommended'],
+  rules: {
+    'e18e/prefer-static-regex': 'off',
+  },
 })
