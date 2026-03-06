@@ -256,8 +256,10 @@ function generateHtmlIndex(results: AuditResult[]): string {
 
   return html
 }
-
-generateReport().catch((err) => {
+try {
+  await generateReport()
+}
+catch (err) {
   console.error('Error running Lighthouse audit:', err)
   process.exit(1)
-})
+}
