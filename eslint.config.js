@@ -12,7 +12,7 @@ const noCommentsRule = {
     fixable: 'code',
   },
   create(context) {
-    const sourceCode = context.getSourceCode()
+    const sourceCode = context.sourceCode
     function processComment(comment) {
       if (comment.type === 'Shebang')
         return
