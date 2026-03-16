@@ -64,8 +64,8 @@ catalogs:
       specifier: 10.0.3
       version: 10.0.3
     eslint-plugin-playwright:
-      specifier: 2.9.0
-      version: 2.9.0
+      specifier: 2.10.0
+      version: 2.10.0
     eslint-plugin-testing-library:
       specifier: 7.16.0
       version: 7.16.0
@@ -182,7 +182,7 @@ importers:
         version: 10.0.3(jiti@2.6.1)
       eslint-plugin-playwright:
         specifier: 'catalog:'
-        version: 2.9.0(eslint@10.0.3(jiti@2.6.1))
+        version: 2.10.0(eslint@10.0.3(jiti@2.6.1))
       eslint-plugin-testing-library:
         specifier: 'catalog:'
         version: 7.16.0(eslint@10.0.3(jiti@2.6.1))(typescript@5.9.3)
@@ -5277,8 +5277,8 @@ packages:
     peerDependencies:
       eslint: ^8.45.0 || ^9.0.0 || ^10.0.0
 
-  eslint-plugin-playwright@2.9.0:
-    resolution: {integrity: sha512-k3xrG6YzrallWNFMoGUjMNeu3SFFKXN79KJQBD2PkM4PasJegqV2Up+mPY5od2UmPKQGT+MeIhCmWH8r5eYuQQ==}
+  eslint-plugin-playwright@2.10.0:
+    resolution: {integrity: sha512-PByRBp5LhCUd3pd2dxQ7vq6p9iJRPCYgIDakYYkCAPJUPUuKA8/NxyFZVLf0FYYc7s4c+85BqLk+f8LeO0g6aw==}
     engines: {node: '>=16.9.0'}
     peerDependencies:
       eslint: '>=8.40.0'
@@ -15423,7 +15423,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-playwright@2.9.0(eslint@10.0.3(jiti@2.6.1)):
+  eslint-plugin-playwright@2.10.0(eslint@10.0.3(jiti@2.6.1)):
     dependencies:
       eslint: 10.0.3(jiti@2.6.1)
       globals: 17.4.0
