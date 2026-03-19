@@ -70,8 +70,8 @@ catalogs:
       specifier: 7.16.0
       version: 7.16.0
     groq:
-      specifier: 5.16.0
-      version: 5.16.0
+      specifier: 5.17.1
+      version: 5.17.1
     happy-dom:
       specifier: 20.8.4
       version: 20.8.4
@@ -188,7 +188,7 @@ importers:
         version: 7.16.0(eslint@10.0.3(jiti@2.6.1))(typescript@5.9.3)
       groq:
         specifier: 'catalog:'
-        version: 5.16.0
+        version: 5.17.1
       happy-dom:
         specifier: 'catalog:'
         version: 20.8.4
@@ -5668,8 +5668,8 @@ packages:
   groq-js@0.2.0:
     resolution: {integrity: sha512-qJeuEgziddryH1ClsJvMoZM9aXNQbBViNZZrJwhHKr2wU8HGGM7uNWNVFglWXMX60MMaa2SClX3UohP76Ut68g==}
 
-  groq@5.16.0:
-    resolution: {integrity: sha512-Od15+2M3XTi7TuStq6g8rAD3NZhqtvxG5zOuYf3wtsF5xIX9A+8eTbHyvWHvEDamK/ybxUMwzi+qL5GZCTjWhg==}
+  groq@5.17.1:
+    resolution: {integrity: sha512-KxBNTwLtv/lUZHxU2uSfsL6mZJFMS4qllsTcHhBsLPm39fXT0NZWy5qUzOt6ejCwFGUw/F+UdOwAt1BCGCdYuQ==}
     engines: {node: '>=20.19 <22 || >=22.12'}
 
   gzip-size@7.0.0:
@@ -13031,8 +13031,8 @@ snapshots:
 
   '@typescript-eslint/project-service@8.56.1(typescript@5.9.3)':
     dependencies:
-      '@typescript-eslint/tsconfig-utils': 8.56.1(typescript@5.9.3)
-      '@typescript-eslint/types': 8.56.1
+      '@typescript-eslint/tsconfig-utils': 8.57.0(typescript@5.9.3)
+      '@typescript-eslint/types': 8.57.0
       debug: 4.4.3(supports-color@10.2.2)
       typescript: 5.9.3
     transitivePeerDependencies:
@@ -15650,7 +15650,7 @@ snapshots:
 
   groq-js@0.2.0: {}
 
-  groq@5.16.0: {}
+  groq@5.17.1: {}
 
   gzip-size@7.0.0:
     dependencies:
