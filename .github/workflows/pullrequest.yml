@@ -32,12 +32,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version-file: .bun-version
-      - name: Set up Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version-file: .nvmrc
-      - name: Install dependencies
-        run: bun install
+      - run: bun install
       - name: Run linter & tests in parallel
         run: |
           bun run lint:ci &
@@ -60,7 +55,7 @@ jobs:
         run: bun run test:e2e
         continue-on-error: true
       - name: Run Lighthouse audits
-        run: node --experimental-strip-types scripts/lighthouse-audit.ts
+        run: bun run lighthouse
         continue-on-error: true
       - name: Upload Playwright report
         uses: actions/upload-artifact@v7
