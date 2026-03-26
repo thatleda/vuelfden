@@ -14,7 +14,7 @@
     "test": "vitest run",
     "test:e2e": "dotenv -- playwright test",
     "test:e2e:ui": "dotenv -- playwright test --ui",
-    "lighthouse": "node --experimental-strip-types scripts/lighthouse-audit.ts",
+    "lighthouse": "bun run scripts/lighthouse-audit.ts",
     "deploy": "netlify deploy"
   },
   "dependencies": {
