@@ -8,7 +8,7 @@ updates:
     assignees:
       - thatleda
 
-  - package-ecosystem: npm
+  - package-ecosystem: bun
     directory: /
     rebase-strategy: auto
     schedule:
@@ -23,19 +23,22 @@ updates:
     groups:
       node-runtime:
         update-types:
+          - major
           - minor
           - patch
         patterns:
           - node
-      pnpm:
+      bun:
         update-types:
+          - major
           - minor
           - patch
         patterns:
-          - pnpm
+          - bun
       nuxt:
         patterns:
           - nuxt
         update-types:
+          - major
           - minor
           - patch

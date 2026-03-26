@@ -2,7 +2,6 @@
   "name": "vuelfden",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.30.3",
   "engines": {
     "node": "24.13.0"
   },
@@ -53,5 +52,44 @@
     "playwright": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"
+  },
+  "workspaces": {
+    "packages": [
+      "."
+    ],
+    "catalog": {
+      "@antfu/eslint-config": "7.7.3",
+      "@asbjorn/eslint-plugin-groq": "2.0.0",
+      "@nuxt/fonts": "0.14.0",
+      "@nuxt/image": "2.0.0",
+      "@nuxtjs/color-mode": "4.0.0",
+      "@playwright/test": "1.58.2",
+      "@portabletext/types": "4.0.2",
+      "@portabletext/vue": "1.0.14",
+      "@sanity/client": "7.19.0",
+      "@testing-library/jest-dom": "6.9.1",
+      "@testing-library/vue": "8.1.0",
+      "@vitejs/plugin-vue": "6.0.5",
+      "@vue/test-utils": "2.4.6",
+      "@vueuse/core": "14.2.1",
+      "@vueuse/nuxt": "14.2.1",
+      "dayjs": "1.11.20",
+      "dotenv-cli": "11.0.0",
+      "emoji-regex": "10.6.0",
+      "eslint": "10.0.3",
+      "eslint-plugin-playwright": "2.10.1",
+      "eslint-plugin-testing-library": "7.16.2",
+      "groq": "5.18.0",
+      "happy-dom": "20.8.4",
+      "lighthouse": "13.0.3",
+      "netlify-cli": "24.3.0",
+      "nuxt": "4.4.2",
+      "nuxt-graphql-middleware": "5.3.2",
+      "playwright": "1.58.2",
+      "typescript": "5.9.3",
+      "vitest": "4.1.0",
+      "vue": "3.5.31",
+      "vue-router": "5.0.4"
+    }
   }
 }
