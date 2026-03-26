@@ -36,7 +36,7 @@ jobs:
           node-version-file: .nvmrc
           cache: bun
       - name: Install dependencies
-        run: pnpm install
+        run: bun install
       - name: Run linter & tests in parallel
         run: |
           bun run lint:ci &
