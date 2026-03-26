@@ -24,7 +24,7 @@ catalog:
   eslint-plugin-playwright: 2.10.1
   eslint-plugin-testing-library: 7.16.2
   groq: 5.18.0
-  happy-dom: 20.8.4
+  happy-dom: 20.8.8
   lighthouse: 13.0.3
   netlify-cli: 24.6.2
   nuxt: 4.4.2
