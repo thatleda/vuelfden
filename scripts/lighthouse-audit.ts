@@ -1,4 +1,4 @@
-#!/usr/bin/env node --experimental-strip-types
+#!/usr/bin/env bun
 
 import { writeFile } from 'node:fs/promises'
 import lighthouse from 'lighthouse'
