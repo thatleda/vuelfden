@@ -20,18 +20,3 @@ updates:
     versioning-strategy: auto
     pull-request-branch-name:
       separator: /
-    groups:
-      bun:
-        update-types:
-          - major
-          - minor
-          - patch
-        patterns:
-          - bun
-      nuxt:
-        patterns:
-          - nuxt
-        update-types:
-          - major
-          - minor
-          - patch
