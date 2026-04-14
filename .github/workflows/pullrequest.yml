@@ -80,7 +80,7 @@ jobs:
           cp lighthouse-*.html lighthouse-*.json _site/ 2>/dev/null || true
       - name: Upload reports to GitHub Pages
         if: always()
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
       - name: Deploy to GitHub Pages
         if: always()
         uses: actions/deploy-pages@v5
