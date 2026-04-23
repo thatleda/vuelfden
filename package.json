@@ -3,7 +3,7 @@
   "type": "module",
   "private": true,
   "engines": {
-    "node": "24.13.0"
+    "node": ">=22"
   },
   "scripts": {
     "build": "nuxt build",
@@ -14,7 +14,7 @@
     "test": "vitest run",
     "test:e2e": "dotenv -- playwright test",
     "test:e2e:ui": "dotenv -- playwright test --ui",
-    "lighthouse": "bun run scripts/lighthouse-audit.ts",
+    "lighthouse": "node --experimental-strip-types scripts/lighthouse-audit.ts",
     "deploy": "netlify deploy"
   },
   "dependencies": {
@@ -33,7 +33,6 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
-    "@asbjorn/eslint-plugin-groq": "catalog:",
     "@nuxtjs/color-mode": "catalog:",
     "@playwright/test": "catalog:",
     "@portabletext/types": "catalog:",
@@ -46,50 +45,12 @@
     "eslint": "catalog:",
     "eslint-plugin-playwright": "catalog:",
     "eslint-plugin-testing-library": "catalog:",
+    "eslint-plugin-vuejs-accessibility": "catalog:",
     "groq": "catalog:",
     "happy-dom": "catalog:",
     "lighthouse": "catalog:",
     "playwright": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"
-  },
-  "workspaces": {
-    "packages": [
-      "."
-    ],
-    "catalog": {
-      "@antfu/eslint-config": "7.7.3",
-      "@asbjorn/eslint-plugin-groq": "2.0.0",
-      "@nuxt/fonts": "0.14.0",
-      "@nuxt/image": "2.0.0",
-      "@nuxtjs/color-mode": "4.0.0",
-      "@playwright/test": "1.59.1",
-      "@portabletext/types": "4.0.2",
-      "@portabletext/vue": "1.0.14",
-      "@sanity/client": "7.21.0",
-      "@testing-library/jest-dom": "6.9.1",
-      "@testing-library/vue": "8.1.0",
-      "@vitejs/plugin-vue": "6.0.6",
-      "@vue/test-utils": "2.4.6",
-      "@vueuse/core": "14.2.1",
-      "@vueuse/nuxt": "14.2.1",
-      "dayjs": "1.11.20",
-      "dotenv-cli": "11.0.0",
-      "emoji-regex": "10.6.0",
-      "eslint": "10.0.3",
-      "eslint-plugin-playwright": "2.10.2",
-      "eslint-plugin-testing-library": "7.16.2",
-      "groq": "5.22.0",
-      "happy-dom": "20.9.0",
-      "lighthouse": "13.1.0",
-      "netlify-cli": "25.3.0",
-      "nuxt": "4.4.2",
-      "nuxt-graphql-middleware": "5.4.0",
-      "playwright": "1.59.1",
-      "typescript": "6.0.3",
-      "vitest": "4.1.5",
-      "vue": "3.5.33",
-      "vue-router": "5.0.6"
-    }
   }
 }

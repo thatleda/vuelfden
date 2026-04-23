@@ -126,18 +126,17 @@ useHead({
       </LinkButton>
     </nav>
 
-    <output
+    <span
       v-if="isLoading"
       :class="$style.loading"
       aria-live="polite"
     >
       Loading articles...
-    </output>
+    </span>
 
     <main
       ref="mainContent"
       :class="$style.articles"
-      role="main"
       aria-label="Blog articles"
       tabindex="-1"
     >

@@ -28,30 +28,33 @@ jobs:
       NETLIFY_URL: https://ledawolf.info
     steps:
       - uses: actions/checkout@v6
-      - uses: oven-sh/setup-bun@v2
+      - uses: actions/setup-node@v4
         with:
-          bun-version-file: .bun-version
+          node-version: lts/*
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
       - name: Install dependencies
-        run: bun install
+        run: pnpm install
       - name: Run linter & tests in parallel
         run: |
-          bun run lint:ci &
+          pnpm run lint:ci &
           LINT_PID=$!
-          bun run test &
+          pnpm run test &
           TEST_PID=$!
           wait $LINT_PID
           wait $TEST_PID
       - name: Build production bundle
-        run: bun run build
+        run: pnpm run build
       - name: Deploy to production
-        run: bun run deploy --prod --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_TOKEN }} --message "${{ github.event.head_commit.message }}"
+        run: pnpm run deploy --prod --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_TOKEN }} --message "${{ github.event.head_commit.message }}"
       - run: echo "Deployed to production at ${{ env.NETLIFY_URL }}" >> $GITHUB_STEP_SUMMARY
       - name: Install Playwright browsers
-        run: bunx playwright install chromium --with-deps
+        run: pnpm dlx playwright install chromium --with-deps
       - name: Run E2E tests
-        run: bun run test:e2e
+        run: pnpm run test:e2e
       - name: Run Lighthouse audits
-        run: bun run lighthouse
+        run: pnpm run lighthouse
       - name: Prepare reports for GitHub Pages
         if: always()
         run: |

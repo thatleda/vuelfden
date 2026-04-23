@@ -1,5 +1,4 @@
 import antfu from '@antfu/eslint-config'
-import groq from '@asbjorn/eslint-plugin-groq'
 import playwright from 'eslint-plugin-playwright'
 import testingLibrary from 'eslint-plugin-testing-library'
 
@@ -18,7 +17,6 @@ const noCommentsRule = {
         return
       const options = context.options[0] || {}
       const allow = (options?.allow) || []
-      // eslint-disable-next-line e18e/prefer-static-regex
       let re = /^\s?(?:global|eslint|@ts-|@typescript-eslint)/
       if (allow.length > 0) {
         re = new RegExp(String.raw`^\s?(${allow.join('|')})`)
@@ -44,12 +42,14 @@ const noCommentsRule = {
 }
 
 export default antfu({
-  vue: true,
+  vue: {
+    a11y: true,
+  },
   rules: {
     'node/prefer-global/process': 'off',
     'yaml/sort-keys': 'off',
   },
-}, {
+}, { files: ['components/page-header.vue'], rules: { 'vue-a11y/no-aria-hidden-on-focusable': 'off' } }, {
   plugins: {
     matt: {
       rules: {
@@ -59,12 +59,6 @@ export default antfu({
   },
   rules: {
     'matt/no-comments': 'error',
-  },
-}, {
-  plugins: { groq },
-  rules: {
-    'groq/no-syntax-errors': 'error',
-    'groq/no-template-expressions': 'error',
   },
 }, {
   files: [

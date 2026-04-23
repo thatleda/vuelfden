@@ -1,5 +1,4 @@
 version: 2
-enable-beta-ecosystems: true
 updates:
   - package-ecosystem: github-actions
     directory: .github/workflows
@@ -9,7 +8,7 @@ updates:
     assignees:
       - thatleda
 
-  - package-ecosystem: bun
+  - package-ecosystem: npm
     directory: /
     rebase-strategy: auto
     schedule:
