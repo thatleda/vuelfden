@@ -3,8 +3,10 @@ import type { SanityPage, SanityReview } from '~/@types/sanity'
 import groq from 'groq'
 import { useSanityQuery } from '~/composables/useSanity'
 
+const { lang } = useLanguage()
+
 const homePageQuery = groq`{
-  "hero": *[_type == "page" && slug.current == "hero"][0]{
+  "hero": *[_type == "page" && slug.current == "hero" && language == $lang][0]{
     _createdAt,
     _updatedAt,
     _id,
@@ -18,7 +20,7 @@ const homePageQuery = groq`{
       altText
     }
   },
-  "previously": *[_type == "page" && slug.current == "previously"][0]{
+  "previously": *[_type == "page" && slug.current == "previously" && language == $lang][0]{
     _createdAt,
     _updatedAt,
     _id,
@@ -32,7 +34,7 @@ const homePageQuery = groq`{
       altText
     }
   },
-  "about": *[_type == "page" && slug.current == "who"][0]{
+  "about": *[_type == "page" && slug.current == "who" && language == $lang][0]{
     _createdAt,
     _updatedAt,
     _id,
@@ -61,12 +63,14 @@ const homePageQuery = groq`{
   }
 }`
 
+const params = computed(() => ({ lang: lang.value }))
+
 const { data: homeData } = useSanityQuery<{
   hero: SanityPage
   previously: SanityPage
   about: SanityPage
   reviews: SanityReview[]
-}>(homePageQuery)
+}>(homePageQuery, params)
 
 const hero = computed(() => homeData.value?.hero)
 const previouslyPage = computed(() => homeData.value?.previously)

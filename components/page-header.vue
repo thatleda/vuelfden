@@ -10,6 +10,8 @@ const outsideRef = ref(null)
 const darkMode = useDark({ storageKey: 'vuelfden-dark-mode' })
 const toggle = useToggle(darkMode)
 
+const { lang } = useLanguage()
+
 function openMenu() {
   isMenuOpen.value = true
 }
@@ -72,11 +74,27 @@ defineExpose({
         </base-link-button>
         <base-link-button
           variant="primary"
-          to="resume.pdf"
+          to="/resume"
           target="_blank"
         >
           CV
         </base-link-button>
+        <div :class="$style.langSwitch" role="group" :aria-label="'Language'">
+          <button
+            type="button"
+            :class="[$style.langButton, lang === 'en' && $style.langButtonActive]"
+            @click="lang = 'en'"
+          >
+            EN
+          </button>
+          <button
+            type="button"
+            :class="[$style.langButton, lang === 'de' && $style.langButtonActive]"
+            @click="lang = 'de'"
+          >
+            DE
+          </button>
+        </div>
         <button
           type="button"
           aria-label="Toggle dark mode"
@@ -137,7 +155,7 @@ defineExpose({
         </base-link-button>
         <base-link-button
           :class="$style.sideNavigationLink"
-          to="resume.pdf"
+          to="/resume"
           target="_blank"
         >
           CV
@@ -197,6 +215,36 @@ defineExpose({
   justify-content: space-around;
   padding: 0;
   width: 2rem;
+}
+
+.langSwitch {
+  display: flex;
+  border: 1px solid var(--text-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.langButton {
+  background: transparent;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  font-family: var(--base-font);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: background 0.15s;
+}
+
+.langButtonActive {
+  background: var(--text-color);
+  color: var(--background-color);
 }
 
 .darkModeToggle {
