@@ -1,5 +1,3 @@
-#!/usr/bin/env bun
-
 import { writeFile } from 'node:fs/promises'
 import lighthouse from 'lighthouse'
 import { chromium } from 'playwright'
