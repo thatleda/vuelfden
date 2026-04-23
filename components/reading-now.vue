@@ -53,12 +53,13 @@ const latestReview = computed(() => {
       by <em>{{ book.author }}</em>
     </sub>
     <p v-if="challenge" :class="$style.progress">
-      {{ challenge.description }}: {{ challenge.progress }} of {{ challenge.goal }} books completed
-      <progress
-        :class="$style.progressBar"
-        :max="challenge.goal"
-        :value="challenge.progress"
-      />
+      <label for="progress">{{ challenge.description }}: {{ challenge.progress }} of {{ challenge.goal }} books completed
+        <progress
+          id="progress"
+          :class="$style.progressBar"
+          :max="challenge.goal"
+          :value="challenge.progress"
+        /></label>
     </p>
   </div>
 

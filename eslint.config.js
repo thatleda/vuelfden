@@ -42,12 +42,14 @@ const noCommentsRule = {
 }
 
 export default antfu({
-  vue: true,
+  vue: {
+    a11y: true,
+  },
   rules: {
     'node/prefer-global/process': 'off',
     'yaml/sort-keys': 'off',
   },
-}, {
+}, { files: ['components/page-header.vue'], rules: { 'vue-a11y/no-aria-hidden-on-focusable': 'off' } }, {
   plugins: {
     matt: {
       rules: {
