@@ -28,6 +28,9 @@ jobs:
       NETLIFY_URL: https://ledawolf.info
     steps:
       - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version-file: .bun-version
