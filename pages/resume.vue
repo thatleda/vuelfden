@@ -2,6 +2,8 @@
 import type { SanityResume } from '~/@types/sanity'
 import { useDark, useToggle } from '@vueuse/core'
 import groq from 'groq'
+import svgMoon from '~/components/svg/moon.vue'
+import svgSun from '~/components/svg/sun.vue'
 import { sanityClient } from '~/composables/useSanity'
 
 definePageMeta({ layout: false })
@@ -63,7 +65,8 @@ function print() {
           </button>
         </div>
         <button :class="$style.darkModeToggle" type="button" :aria-label="darkMode ? 'Switch to light mode' : 'Switch to dark mode'" @click="toggleDarkMode()">
-          {{ darkMode ? '☀️' : '🌙' }}
+          <svg-sun v-if="darkMode" height="1.5rem" width="1.5rem" />
+          <svg-moon v-else height="1.5rem" width="1.5rem" />
         </button>
         <button :class="$style.printButton" type="button" @click="print">
           Print / Save as PDF
@@ -321,8 +324,9 @@ body.dark-mode .resume-page {
   border-radius: 4px;
   padding: 0.4rem 0.6rem;
   cursor: pointer;
-  font-size: 1rem;
-  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .printButton {
