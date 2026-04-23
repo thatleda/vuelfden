@@ -1,9 +1,11 @@
-trustPolicy: no-downgrade
-
-shellEmulator: true
-
 packages:
   - .
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  netlify-cli: true
+  sharp: true
+  unix-dgram: true
 
 catalog:
   '@antfu/eslint-config': 8.2.0
@@ -38,3 +40,6 @@ catalog:
   vitest: 4.1.5
   vue: 3.5.33
   vue-router: 5.0.6
+
+shellEmulator: true
+trustPolicy: no-downgrade
