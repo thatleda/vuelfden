@@ -82,7 +82,7 @@
       "groq": "5.21.0",
       "happy-dom": "20.9.0",
       "lighthouse": "13.1.0",
-      "netlify-cli": "25.1.1",
+      "netlify-cli": "25.3.0",
       "nuxt": "4.4.2",
       "nuxt-graphql-middleware": "5.4.0",
       "playwright": "1.59.1",
