@@ -79,7 +79,7 @@ defineExpose({
         >
           CV
         </base-link-button>
-        <div :class="$style.langSwitch" role="group" :aria-label="'Language'">
+        <div :class="$style.langSwitch" role="group" aria-label="Language">
           <button
             type="button"
             :class="[$style.langButton, lang === 'en' && $style.langButtonActive]"

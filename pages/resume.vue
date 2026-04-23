@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { SanityResume } from '~/@types/sanity'
-import groq from 'groq'
 import { useDark, useToggle } from '@vueuse/core'
+import groq from 'groq'
 import { sanityClient } from '~/composables/useSanity'
 
 definePageMeta({ layout: false })
@@ -40,7 +40,7 @@ function print() {
 </script>
 
 <template>
-  <div :class="[$style.page, 'resume-page']">
+  <div class="resume-page" :class="[$style.page]">
     <div :class="$style.actions">
       <NuxtLink to="/" :class="$style.backLink">
         ← ledawolf.info
