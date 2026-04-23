@@ -43,7 +43,7 @@ function print() {
   <div class="resume-page" :class="[$style.page]">
     <div :class="$style.actions">
       <NuxtLink to="/" :class="$style.backLink">
-        ← ledawolf.info
+        ← Home
       </NuxtLink>
       <div :class="$style.actionButtons">
         <div :class="$style.langSwitch" role="group" aria-label="Language">

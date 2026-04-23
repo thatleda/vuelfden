@@ -33,16 +33,43 @@ defineExpose({
 <template>
   <nav :class="$style.navigation" role="navigation" aria-label="Main navigation">
     <div :class="$style.links">
-      <base-link-button
-        to="/"
-        title="Home"
-      >
-        <svg-wolf
-          mirror
-          height="5rem"
-          width="5rem"
-        />
-      </base-link-button>
+      <div :class="$style.leftGroup">
+        <base-link-button
+          to="/"
+          title="Home"
+        >
+          <svg-wolf
+            mirror
+            height="5rem"
+            width="5rem"
+          />
+        </base-link-button>
+        <div :class="$style.langSwitch" role="group" aria-label="Language">
+          <button
+            type="button"
+            :class="[$style.langButton, lang === 'en' && $style.langButtonActive]"
+            @click="lang = 'en'"
+          >
+            EN
+          </button>
+          <button
+            type="button"
+            :class="[$style.langButton, lang === 'de' && $style.langButtonActive]"
+            @click="lang = 'de'"
+          >
+            DE
+          </button>
+        </div>
+        <button
+          type="button"
+          aria-label="Toggle dark mode"
+          :class="$style.darkModeToggle"
+          @click="toggleDarkMode"
+        >
+          <svg-sun v-if="darkMode" height="2rem" width="2rem" />
+          <svg-moon v-else height="2rem" width="2rem" />
+        </button>
+      </div>
       <button
         v-if="smallScreen"
         id="openMenu"
@@ -57,22 +84,24 @@ defineExpose({
         />
       </button>
       <template v-else>
-        <base-link-button to="/#who">
-          Who?
-        </base-link-button>
-        <base-link-button to="/#previously">
-          Previously
-        </base-link-button>
-        <base-link-button to="/ramblings">
-          Blog
-        </base-link-button>
-        <base-link-button to="/#reviews">
-          Working with Leda
-        </base-link-button>
-        <base-link-button to="/#contact">
-          Contact
-        </base-link-button>
-        <div :class="$style.controls">
+        <div :class="$style.navLinks">
+          <base-link-button to="/#who">
+            Who?
+          </base-link-button>
+          <base-link-button to="/#previously">
+            Previously
+          </base-link-button>
+          <base-link-button to="/ramblings">
+            Blog
+          </base-link-button>
+          <base-link-button to="/#reviews">
+            Working with Leda
+          </base-link-button>
+          <base-link-button to="/#contact">
+            Contact
+          </base-link-button>
+        </div>
+        <div :class="$style.cvButton">
           <base-link-button
             variant="primary"
             to="/resume"
@@ -80,31 +109,6 @@ defineExpose({
           >
             CV
           </base-link-button>
-          <div :class="$style.langSwitch" role="group" aria-label="Language">
-            <button
-              type="button"
-              :class="[$style.langButton, lang === 'en' && $style.langButtonActive]"
-              @click="lang = 'en'"
-            >
-              EN
-            </button>
-            <button
-              type="button"
-              :class="[$style.langButton, lang === 'de' && $style.langButtonActive]"
-              @click="lang = 'de'"
-            >
-              DE
-            </button>
-          </div>
-          <button
-            type="button"
-            aria-label="Toggle dark mode"
-            :class="$style.darkModeToggle"
-            @click="toggleDarkMode"
-          >
-            <svg-sun v-if="darkMode" height="2rem" width="2rem" />
-            <svg-moon v-else height="2rem" width="2rem" />
-          </button>
         </div>
       </template>
     </div>
@@ -193,6 +197,7 @@ defineExpose({
   display: flex;
   height: 100%;
   justify-content: space-between;
+  gap: 1.5rem;
   margin: 0 auto;
   max-width: var(--page-width);
   padding: var(--page-padding);
@@ -219,10 +224,28 @@ defineExpose({
   width: 2rem;
 }
 
-.controls {
+.leftGroup {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.cvButton {
+  flex-shrink: 0;
+
+  :deep(a), :deep(button) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .langSwitch {
@@ -243,8 +266,6 @@ defineExpose({
   border: none;
   padding: 0.3rem 0.6rem;
   font-family: var(--base-font);
-  font-size: 0.75rem;
-  font-weight: 600;
   cursor: pointer;
   color: var(--text-color);
   transition: background 0.15s;

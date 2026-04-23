@@ -44,7 +44,7 @@ html {
 
 :root {
   --border-radius: 1rem;
-  --page-width: 62rem;
+  --page-width: 70rem;
   --page-padding: 0 1rem;
   --header-height: 6.25rem;
   --footer-height: 7.5rem;
