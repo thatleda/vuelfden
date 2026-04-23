@@ -26,6 +26,14 @@ export default defineNuxtConfig({
     'nuxt-graphql-middleware',
   ],
 
+  fonts: {
+    families: [
+      { name: 'Fira Sans', provider: 'google' },
+      { name: 'Silkscreen', provider: 'google' },
+      { name: 'Satisfy', provider: 'google' },
+    ],
+  },
+
   graphqlMiddleware: {
     downloadSchema: false,
     graphqlEndpoint: 'https://api.hardcover.app/v1/graphql',
