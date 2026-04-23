@@ -58,7 +58,7 @@
       "."
     ],
     "catalog": {
-      "@antfu/eslint-config": "7.7.3",
+      "@antfu/eslint-config": "8.2.0",
       "@asbjorn/eslint-plugin-groq": "2.0.0",
       "@nuxt/fonts": "0.14.0",
       "@nuxt/image": "2.0.0",
@@ -76,7 +76,7 @@
       "dayjs": "1.11.20",
       "dotenv-cli": "11.0.0",
       "emoji-regex": "10.6.0",
-      "eslint": "10.0.3",
+      "eslint": "10.2.1",
       "eslint-plugin-playwright": "2.10.2",
       "eslint-plugin-testing-library": "7.16.2",
       "groq": "5.22.0",
