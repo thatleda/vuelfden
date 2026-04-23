@@ -12,6 +12,7 @@ const { page } = defineProps<HeroProps>()
   <base-page-section :animation-props="{ animationDuration: '0ms' }">
     <div :class="$style.card">
       <NuxtImg
+        v-if="page.banner"
         :src="page.banner._id"
         :alt="page.banner.altText"
         :aria-label="page.banner.altText"

@@ -4,7 +4,7 @@ export interface SanityPage {
   _id: string
   _createdAt: string
   _updatedAt: string
-  banner: SanityLinkedImage
+  banner?: SanityLinkedImage
   content: PortableTextBlock[]
   excerpt: string
   slug: {
