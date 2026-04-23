@@ -2,8 +2,10 @@
 import type { SanityPage, SanityReview } from '~/@types/sanity'
 import groq from 'groq'
 import { useSanityQuery } from '~/composables/useSanity'
+import { useTranslations } from '~/composables/useTranslations'
 
 const { lang } = useLanguage()
+const { t } = useTranslations()
 
 const homePageQuery = groq`{
   "hero": *[_type == "page" && slug.current == "hero" && language == $lang][0]{
@@ -120,7 +122,7 @@ useSeoMeta({
 
 <template>
   <hero-banner v-if="hero" :page="hero" :is-card="true" />
-  <base-page-section anchor="who" heading="Who?" :is-card="true">
+  <base-page-section anchor="who" :heading="t('section.who')" :is-card="true">
     <about-leda v-if="aboutPage" :about-page="aboutPage" :is-card="true" />
   </base-page-section>
   <base-page-section>
@@ -134,10 +136,10 @@ useSeoMeta({
   >
     <base-sanity-block :blocks="previouslyPage.content" />
   </base-page-section>
-  <base-page-section v-if="reviews" anchor="reviews" heading="Reviews" :is-card="true">
+  <base-page-section v-if="reviews" anchor="reviews" :heading="t('section.reviews')" :is-card="true">
     <base-review v-for="review in reviews" :key="review._id" :review="review" />
   </base-page-section>
-  <base-page-section anchor="contact" heading="What is she up to?" :is-card="true">
+  <base-page-section anchor="contact" :heading="t('section.contact')" :is-card="true">
     <reading-now />
   </base-page-section>
   <base-page-section :is-card="true">

@@ -5,11 +5,14 @@ import groq from 'groq'
 import svgMoon from '~/components/svg/moon.vue'
 import svgSun from '~/components/svg/sun.vue'
 import { sanityClient } from '~/composables/useSanity'
+import { useTranslations } from '~/composables/useTranslations'
 
 definePageMeta({ layout: false })
 
 const darkMode = useDark({ storageKey: 'vuelfden-dark-mode', selector: 'body', valueDark: 'dark-mode', valueLight: 'light-mode' })
 const toggleDarkMode = useToggle(darkMode)
+const { lang } = useLanguage()
+const { t } = useTranslations()
 
 useHead({
   title: 'Leda Wolf — Resume',
@@ -27,8 +30,6 @@ const resumeQuery = groq`*[_type == "resume" && language == $lang][0]{
   additionalSkills
 }`
 
-const lang = ref<'en' | 'de'>('en')
-
 const { data: resume, refresh } = await useAsyncData(
   'resume',
   () => sanityClient().fetch<SanityResume>(resumeQuery, { lang: lang.value }),
@@ -45,7 +46,7 @@ function print() {
   <div class="resume-page" :class="[$style.page]">
     <div :class="$style.actions">
       <NuxtLink to="/" :class="$style.backLink">
-        ← Home
+        ← {{ t('resume.back') }}
       </NuxtLink>
       <div :class="$style.actionButtons">
         <div :class="$style.langSwitch" role="group" aria-label="Language">
@@ -69,7 +70,7 @@ function print() {
           <svg-moon v-else height="1.5rem" width="1.5rem" />
         </button>
         <button :class="$style.printButton" type="button" @click="print">
-          Print / Save as PDF
+          {{ t('resume.print') }}
         </button>
       </div>
     </div>
@@ -97,7 +98,7 @@ function print() {
 
       <section v-if="resume?.profile" :class="$style.section">
         <h2 :class="$style.sectionTitle">
-          Profile
+          {{ t('resume.profile') }}
         </h2>
         <p :class="$style.profile">
           {{ resume.profile }}
@@ -106,7 +107,7 @@ function print() {
 
       <section v-if="resume?.skills?.length" :class="$style.section">
         <h2 :class="$style.sectionTitle">
-          Skills
+          {{ t('resume.skills') }}
         </h2>
         <dl :class="$style.skillList">
           <div v-for="group in resume.skills" :key="group._key" :class="$style.skillGroup">
@@ -122,7 +123,7 @@ function print() {
 
       <section v-if="resume?.experience?.length" :class="$style.section">
         <h2 :class="$style.sectionTitle">
-          Experience
+          {{ t('resume.experience') }}
         </h2>
         <div
           v-for="entry in resume.experience"
@@ -152,7 +153,7 @@ function print() {
 
       <section v-if="resume?.education?.length" :class="$style.section">
         <h2 :class="$style.sectionTitle">
-          Education
+          {{ t('resume.education') }}
         </h2>
         <div
           v-for="entry in resume.education"
@@ -174,12 +175,12 @@ function print() {
 
       <section :class="$style.section">
         <h2 :class="$style.sectionTitle">
-          Languages
+          {{ t('resume.languages') }}
         </h2>
         <dl :class="$style.skillList">
           <div :class="$style.skillGroup">
             <dt :class="$style.skillCategory">
-              Fluent
+              {{ t('resume.fluent') }}
             </dt>
             <dd :class="$style.skillItems">
               German, English, Russian
@@ -187,7 +188,7 @@ function print() {
           </div>
           <div :class="$style.skillGroup">
             <dt :class="$style.skillCategory">
-              Conversational
+              {{ t('resume.conversational') }}
             </dt>
             <dd :class="$style.skillItems">
               Spanish, French
@@ -195,7 +196,7 @@ function print() {
           </div>
           <div :class="$style.skillGroup">
             <dt :class="$style.skillCategory">
-              Basic
+              {{ t('resume.basic') }}
             </dt>
             <dd :class="$style.skillItems">
               Ukrainian, Portuguese, Mandarin, Japanese
@@ -206,7 +207,7 @@ function print() {
 
       <section v-if="resume?.additionalSkills?.length" :class="$style.section">
         <h2 :class="$style.sectionTitle">
-          Additional
+          {{ t('resume.additional') }}
         </h2>
         <ul :class="$style.bullets">
           <li v-for="(item, i) in resume.additionalSkills" :key="i">

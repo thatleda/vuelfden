@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { onClickOutside, useDark, useToggle } from '@vueuse/core'
 import { ref } from 'vue'
+import { useTranslations } from '~/composables/useTranslations'
 
 const smallScreen = useMediaQuery('(max-width: 1030px)')
 
@@ -11,6 +12,7 @@ const darkMode = useDark({ storageKey: 'vuelfden-dark-mode' })
 const toggle = useToggle(darkMode)
 
 const { lang } = useLanguage()
+const { t } = useTranslations()
 
 function openMenu() {
   isMenuOpen.value = true
@@ -86,19 +88,19 @@ defineExpose({
       <template v-else>
         <div :class="$style.navLinks">
           <base-link-button to="/#who">
-            Who?
+            {{ t('nav.who') }}
           </base-link-button>
           <base-link-button to="/#previously">
-            Previously
+            {{ t('nav.previously') }}
           </base-link-button>
           <base-link-button to="/ramblings">
-            Blog
+            {{ t('nav.blog') }}
           </base-link-button>
           <base-link-button to="/#reviews">
-            Working with Leda
+            {{ t('nav.working-with') }}
           </base-link-button>
           <base-link-button to="/#contact">
-            Contact
+            {{ t('nav.contact') }}
           </base-link-button>
         </div>
         <div :class="$style.cvButton">

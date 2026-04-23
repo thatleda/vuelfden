@@ -1,11 +1,13 @@
 <script lang="ts" setup>
 import type { SanityPage } from '~/@types/sanity'
+import { useTranslations } from '~/composables/useTranslations'
 
 interface HeroProps {
   page: SanityPage
 }
 
 const { page } = defineProps<HeroProps>()
+const { t } = useTranslations()
 </script>
 
 <template>
@@ -26,11 +28,9 @@ const { page } = defineProps<HeroProps>()
           {{ page.title }}
         </h1>
         <h1 :class="$style.introduction">
-          I'm a software engineer
+          {{ t('hero.tagline') }}
         </h1>
-        <h2 :class="$style.purpose">
-          Let's see if I'm a <u>good fit</u> for your company.
-        </h2>
+        <h2 :class="$style.purpose" v-html="t('hero.pitch')" />
         <base-sanity-block :blocks="page.content" />
         <base-transition-animation
           animation-duration="2s"
