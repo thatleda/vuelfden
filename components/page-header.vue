@@ -72,38 +72,40 @@ defineExpose({
         <base-link-button to="/#contact">
           Contact
         </base-link-button>
-        <base-link-button
-          variant="primary"
-          to="/resume"
-          target="_blank"
-        >
-          CV
-        </base-link-button>
-        <div :class="$style.langSwitch" role="group" aria-label="Language">
+        <div :class="$style.controls">
+          <base-link-button
+            variant="primary"
+            to="/resume"
+            target="_blank"
+          >
+            CV
+          </base-link-button>
+          <div :class="$style.langSwitch" role="group" aria-label="Language">
+            <button
+              type="button"
+              :class="[$style.langButton, lang === 'en' && $style.langButtonActive]"
+              @click="lang = 'en'"
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              :class="[$style.langButton, lang === 'de' && $style.langButtonActive]"
+              @click="lang = 'de'"
+            >
+              DE
+            </button>
+          </div>
           <button
             type="button"
-            :class="[$style.langButton, lang === 'en' && $style.langButtonActive]"
-            @click="lang = 'en'"
+            aria-label="Toggle dark mode"
+            :class="$style.darkModeToggle"
+            @click="toggleDarkMode"
           >
-            EN
-          </button>
-          <button
-            type="button"
-            :class="[$style.langButton, lang === 'de' && $style.langButtonActive]"
-            @click="lang = 'de'"
-          >
-            DE
+            <svg-sun v-if="darkMode" height="2rem" width="2rem" />
+            <svg-moon v-else height="2rem" width="2rem" />
           </button>
         </div>
-        <button
-          type="button"
-          aria-label="Toggle dark mode"
-          :class="$style.darkModeToggle"
-          @click="toggleDarkMode"
-        >
-          <svg-sun v-if="darkMode" height="2rem" width="2rem" />
-          <svg-moon v-else height="2rem" width="2rem" />
-        </button>
       </template>
     </div>
     <div
@@ -215,6 +217,12 @@ defineExpose({
   justify-content: space-around;
   padding: 0;
   width: 2rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .langSwitch {
