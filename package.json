@@ -33,7 +33,6 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
-    "@asbjorn/eslint-plugin-groq": "catalog:",
     "@nuxtjs/color-mode": "catalog:",
     "@playwright/test": "catalog:",
     "@portabletext/types": "catalog:",
