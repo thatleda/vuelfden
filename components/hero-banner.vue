@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import type { SanityPage } from '~/@types/sanity'
-import { useTranslations } from '~/composables/useTranslations'
+import type { SanityPage } from '~/@types/sanity';
+import { useTranslations } from '~/composables/useTranslations';
 
 interface HeroProps {
   page: SanityPage
@@ -59,7 +59,7 @@ const { t } = useTranslations()
             LinkedIn
           </base-link-button>
           <base-link-button
-            to="mailto:leda@hey.com"
+            to="mailto:leda@sent.com"
             variant="secondary"
             aria-label="Mail"
           >

@@ -28,7 +28,7 @@ export default defineNuxtConfig({
 
   fonts: {
     families: [
-      { name: 'Fira Sans', provider: 'google' },
+      { name: 'Fira Sans Condensed', provider: 'google' },
       { name: 'Silkscreen', provider: 'google' },
       { name: 'Satisfy', provider: 'google' },
     ],

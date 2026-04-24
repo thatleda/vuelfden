@@ -267,7 +267,7 @@ defineExpose({
   background: transparent;
   border: none;
   padding: 0.3rem 0.6rem;
-  font-family: var(--base-font);
+  font-family: Fira Sans Condensed, sans-serif;
   cursor: pointer;
   color: var(--text-color);
   transition: background 0.15s;

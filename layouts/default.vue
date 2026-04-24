@@ -48,7 +48,6 @@ html {
   --page-padding: 0 1rem;
   --header-height: 6.25rem;
   --footer-height: 7.5rem;
-  --base-font: Fira Sans, sans-serif;
 }
 
 .dark-mode {
@@ -113,8 +112,7 @@ body {
   overflow-x: hidden;
 
   font-size: 18px;
-  font-weight: 300;
-  font-family: var(--base-font);
+  font-family: Fira Sans Condensed, sans-serif;
   text-rendering: optimizeLegibility;
   color: var(--text-color);
   @media (max-width: 749px) {

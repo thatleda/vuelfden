@@ -88,7 +88,7 @@ function print() {
         <div :class="$style.contact">
           <span>Schwerin, Germany</span>
           <span aria-hidden="true">·</span>
-          <a href="mailto:leda@hey.com">leda@hey.com</a>
+          <a href="mailto:leda@sent.com">leda@sent.com</a>
           <span aria-hidden="true">·</span>
           <a href="tel:+4915773730361">+49 157 73730361</a>
           <span aria-hidden="true">·</span>

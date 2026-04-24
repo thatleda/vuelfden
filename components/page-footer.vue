@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+import { useTranslations } from '~/composables/useTranslations';
+
+const { t } = useTranslations()
+</script>
+
 <template>
   <footer :class="$style.footer">
     <div :class="$style.linkWrapper">
@@ -7,15 +13,15 @@
         target="_blank"
       >
         <span :class="$style.powered">
-          <svg-nuxt-logo fill="var(--text-color)" />-powered vanity
+          <svg-nuxt-logo fill="var(--text-color)" />{{ t('footer.powered') }}
         </span>
       </base-link-button>
       <nav :class="$style.footerNav">
         <base-link-button to="/privacy">
-          Privacy
+          {{ t('footer.privacy') }}
         </base-link-button>
         <base-link-button to="/imprint">
-          Imprint
+          {{ t('footer.imprint') }}
         </base-link-button>
       </nav>
     </div>

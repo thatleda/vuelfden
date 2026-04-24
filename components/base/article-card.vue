@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { SanityPage } from '~/@types/sanity'
+import type { SanityPage } from '~/@types/sanity';
 
-import dayjs from 'dayjs'
-import relativeTime from 'dayjs/plugin/relativeTime'
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 
 const { article } = defineProps<ArticleProps>()
 
@@ -22,6 +22,7 @@ const howLong = dayjs(articleReleaseDate).toNow(true)
   <NuxtLink :to="`/ramblings/${article.slug.current}`">
     <div :class="$style.card" data-testid="article-card">
       <NuxtImg
+        v-if="article.banner"
         :src="article.banner._id"
         :alt="article.banner.altText"
         width="100"

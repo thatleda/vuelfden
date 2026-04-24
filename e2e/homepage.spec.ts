@@ -25,7 +25,7 @@ test('displays social links', async ({ page }) => {
   await expect(page.getByLabel('Discord')).toHaveAttribute('href', 'https://discord.com/users/732667625255075951')
   await expect(page.getByLabel('GitHub')).toHaveAttribute('href', 'https://github.com/thatleda')
   await expect(page.getByLabel('LinkedIn')).toHaveAttribute('href', 'https://www.linkedin.com/in/thatleda/')
-  await expect(page.getByLabel('Mail')).toHaveAttribute('href', 'mailto:leda@hey.com')
+  await expect(page.getByLabel('Mail')).toHaveAttribute('href', 'mailto:leda@sent.com')
   await expect(page.getByLabel('Calendly')).toHaveAttribute('href', 'https://calendly.com/ledawolf/meeting')
 })
 
