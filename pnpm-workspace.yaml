@@ -19,7 +19,7 @@ catalog:
   '@testing-library/jest-dom': 6.9.1
   '@testing-library/vue': 8.1.0
   '@vitejs/plugin-vue': 6.0.6
-  '@vue/test-utils': 2.4.6
+  '@vue/test-utils': 2.4.8
   '@vueuse/core': 14.2.1
   '@vueuse/nuxt': 14.2.1
   dayjs: 1.11.20
