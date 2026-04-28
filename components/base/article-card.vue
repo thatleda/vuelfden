@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import type { SanityPage } from '~/@types/sanity';
+import type { SanityPage } from '~/@types/sanity'
 
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
 
 const { article } = defineProps<ArticleProps>()
 

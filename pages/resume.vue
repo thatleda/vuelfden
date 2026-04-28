@@ -4,6 +4,7 @@ import { useDark, useToggle } from '@vueuse/core'
 import groq from 'groq'
 import svgMoon from '~/components/svg/moon.vue'
 import svgSun from '~/components/svg/sun.vue'
+import { useLanguage } from '~/composables/useLanguage'
 import { sanityClient } from '~/composables/useSanity'
 import { useTranslations } from '~/composables/useTranslations'
 
