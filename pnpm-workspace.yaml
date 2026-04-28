@@ -15,7 +15,7 @@ catalog:
   '@playwright/test': 1.59.1
   '@portabletext/types': 4.0.2
   '@portabletext/vue': 1.0.14
-  '@sanity/client': 7.21.0
+  '@sanity/client': 7.22.0
   '@testing-library/jest-dom': 6.9.1
   '@testing-library/vue': 8.1.0
   '@vitejs/plugin-vue': 6.0.6
@@ -32,7 +32,7 @@ catalog:
   groq: 5.22.0
   happy-dom: 20.9.0
   lighthouse: 13.1.0
-  netlify-cli: 25.3.0
+  netlify-cli: 25.5.0
   nuxt: 4.4.2
   nuxt-graphql-middleware: 5.4.0
   playwright: 1.59.1
@@ -43,3 +43,5 @@ catalog:
 
 shellEmulator: true
 trustPolicy: no-downgrade
+trustPolicyExclude:
+  - semver
