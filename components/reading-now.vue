@@ -4,6 +4,7 @@ import { useTranslations } from '~/composables/useTranslations'
 
 const { data } = await useGraphqlQuery('reading')
 
+const { lang } = useLanguage()
 const { t } = useTranslations()
 
 const challenge = computed(() => data.me[0]?.goals[0])
@@ -81,7 +82,7 @@ const latestReview = computed(() => {
     <sub :class="$style.author">
       {{ t('reading.book.by') }} <em>{{ latestReview.book.author }}</em>
     </sub>
-    <p>Rating: {{ latestReview.rating }} / 5</p>
+    <p>Rating: {{ Intl.NumberFormat(lang).format(latestReview.rating) }} / 5</p>
 
     <BaseSlateBlock
       v-if="latestReview.slateContent"

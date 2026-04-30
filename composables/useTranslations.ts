@@ -33,6 +33,7 @@ const translations = {
     'footer.imprint': 'Imprint',
     'ramblings.title': 'Unhinged ramblings',
     'ramblings.description': 'You have reached the coveted index of Leda Wolf\'s select wisdom nuggets. Good for you!',
+    'article.published': 'published',
   },
   de: {
     'hero.tagline': 'Ich bin eine Softwareentwicklerin',
@@ -68,6 +69,7 @@ const translations = {
     'footer.imprint': 'Impressum',
     'ramblings.title': 'Gedankenwirrwar auf Englisch',
     'ramblings.description': 'Du hast den versteckten Index von Leda Wolfs ausgewählten Weisheitsnuggets erreicht. Gut für dich!',
+    'article.published': 'veröffentlicht',
   },
 } as const
 
