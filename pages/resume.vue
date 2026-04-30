@@ -10,7 +10,7 @@ import { useTranslations } from '~/composables/useTranslations'
 
 definePageMeta({ layout: false })
 
-const darkMode = useDark({ storageKey: 'vuelfden-dark-mode', selector: 'body', valueDark: 'dark-mode', valueLight: 'light-mode' })
+const darkMode = useDark({ storageKey: 'vuelfden-color-mode', selector: 'body', valueDark: 'dark-mode', valueLight: 'light-mode' })
 const toggleDarkMode = useToggle(darkMode)
 const { lang } = useLanguage()
 const { t } = useTranslations()

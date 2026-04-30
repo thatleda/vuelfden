@@ -19,7 +19,7 @@ const translations = {
     'resume.fluent': 'Fluent',
     'resume.conversational': 'Conversational',
     'resume.basic': 'Basic',
-    'resume.back': '← Back',
+    'resume.back': 'Back',
     'resume.print': 'Print / Save as PDF',
     'reading.title': 'Currently reading',
     'reading.finished': 'Just finished reading',

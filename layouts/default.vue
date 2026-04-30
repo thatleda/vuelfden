@@ -6,7 +6,7 @@ const header = ref<{ isMenuOpen: boolean }>({ isMenuOpen: false })
 
 const prefersReducedMotion = usePreferredReducedMotion()
 useDark({
-  storageKey: 'vuelfden-dark-mode',
+  storageKey: 'vuelfden-color-mode',
   selector: 'body',
   valueDark: 'dark-mode',
   valueLight: 'light-mode',
