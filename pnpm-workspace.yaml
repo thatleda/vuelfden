@@ -19,7 +19,7 @@ catalog:
   '@testing-library/jest-dom': 6.9.1
   '@testing-library/vue': 8.1.0
   '@vitejs/plugin-vue': 6.0.6
-  '@vue/test-utils': 2.4.6
+  '@vue/test-utils': 2.4.9
   '@vueuse/core': 14.2.1
   '@vueuse/nuxt': 14.2.1
   dayjs: 1.11.20
@@ -29,7 +29,7 @@ catalog:
   eslint-plugin-playwright: 2.10.2
   eslint-plugin-testing-library: 7.16.2
   eslint-plugin-vuejs-accessibility: 2.5.0
-  groq: 5.22.0
+  groq: 5.23.0
   happy-dom: 20.9.0
   lighthouse: 13.1.0
   netlify-cli: 26.0.0
