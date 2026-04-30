@@ -63,7 +63,7 @@ const translations = {
     'reading.challenge': 'Lese-Challenge',
     'reading.challenge.of': 'von',
     'reading.challenge.completed': 'Büchern abgeschlossen',
-    'contact.leda': 'Wenn du das starke Bedürfnis verspürst, mit mir zu kommunizieren oder zusammenzuarbeiten, zögere bitte nicht und schreibe an:',
+    'contact.leda': 'Wenn du das starke Bedürfnis verspürst, mit mir zu kommunizieren oder gar zusammenzuarbeiten, zögere bitte nicht und schreibe an:',
     'footer.powered': '-basierter Blödsinn',
     'footer.privacy': 'Datenschutz',
     'footer.imprint': 'Impressum',
