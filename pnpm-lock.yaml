@@ -79,8 +79,8 @@ catalogs:
       specifier: 13.1.0
       version: 13.1.0
     netlify-cli:
-      specifier: 25.6.2
-      version: 25.6.2
+      specifier: 26.0.0
+      version: 26.0.0
     nuxt:
       specifier: 4.4.2
       version: 4.4.2
@@ -130,7 +130,7 @@ importers:
         version: 1.11.20
       netlify-cli:
         specifier: 'catalog:'
-        version: 25.6.2(@types/node@25.6.0)(db0@0.3.4(@electric-sql/pglite@0.3.16))(ioredis@5.10.1)(picomatch@4.0.4)(rollup@4.60.2)(srvx@0.11.15)
+        version: 26.0.0(@types/node@25.6.0)(db0@0.3.4(@electric-sql/pglite@0.3.16))(ioredis@5.10.1)(picomatch@4.0.4)(rollup@4.60.2)(srvx@0.11.15)
       nuxt:
         specifier: 'catalog:'
         version: 4.4.2(@babel/core@7.29.0)(@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.0))(@electric-sql/pglite@0.3.16)(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@netlify/blobs@10.7.4)(@parcel/watcher@2.5.6)(@types/node@25.6.0)(@vue/compiler-sfc@3.5.33)(cac@6.7.14)(db0@0.3.4(@electric-sql/pglite@0.3.16))(eslint@10.2.1(jiti@2.6.1))(ioredis@5.10.1)(lightningcss@1.32.0)(magicast@0.5.2)(optionator@0.9.4)(rollup-plugin-visualizer@7.0.1(rollup@4.60.2))(rollup@4.60.2)(srvx@0.11.15)(terser@5.46.1)(typescript@6.0.3)(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.1)(yaml@2.8.3))(yaml@2.8.3)
@@ -1589,8 +1589,8 @@ packages:
     engines: {node: '>=18.14.0'}
     hasBin: true
 
-  '@netlify/database-dev@0.10.0':
-    resolution: {integrity: sha512-kdootHVxNsIZK8B6p2pAeIXs1VsVOCGsApzyi7JhA60Sdqemk9DT2Pf4FeIcGJb205o9VX1AXEbErOmDzjnnnA==}
+  '@netlify/database-dev@0.10.1':
+    resolution: {integrity: sha512-kHLdS6r45TsDiS5aBrHUmzqPvoaWQEUZnaZeMwnIrLMwX8f2bIa6YAMOJJYJhyKm2drVo3C/T92/lJ5iGV/VBQ==}
     engines: {node: '>=20.6.1'}
 
   '@netlify/dev-utils@4.3.3':
@@ -1601,8 +1601,8 @@ packages:
     resolution: {integrity: sha512-VkMD8YACshR6pHgoub6nikkI+SQVdhjVvLsOK2ZSpN2wMlDHdsD8uRjESfzv/yYfq5jlsGskfx1cf1FUurWt9A==}
     engines: {node: ^18.14.0 || >=20}
 
-  '@netlify/dev@4.17.3':
-    resolution: {integrity: sha512-EU8EqY2E3BdNCzimZS5PMat8ETAsUFJMBKcOaAMhw0dJFckUj+oZ5OijxfBHJe0sfvDj8eq3E/nQtBlnaoKpHw==}
+  '@netlify/dev@4.18.0':
+    resolution: {integrity: sha512-8wzQT8IdCDOnhaMe65u+R8slRVgUe6Q/EODPVIhgIqGgNd9rVCgLjNcZjJho6gdLRYRIRYtoiZoVUDw20/Ptag==}
     engines: {node: '>=20.6.1'}
 
   '@netlify/edge-bundler@14.10.1':
@@ -6602,8 +6602,8 @@ packages:
     resolution: {integrity: sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg==}
     engines: {node: '>= 0.6'}
 
-  netlify-cli@25.6.2:
-    resolution: {integrity: sha512-cjiDH1gpwN0dC8sAoUvXIiICix8pvYORB9SSjc+/L0VMuDbLeMyAcuP4xyCJBbCUfDZF0r6eoR3LJ8y5fSX+Eg==}
+  netlify-cli@26.0.0:
+    resolution: {integrity: sha512-5ieUMW+5h+evJDlcnSzbO2clFaaqDTGG+XIdqRHlkqGXyRM3mpbAfKDGTZkdvIxMp/vxggZW/0PzTlTQM94sVQ==}
     engines: {node: '>=20.12.2'}
     hasBin: true
 
@@ -10542,7 +10542,7 @@ snapshots:
       yargs: 17.7.2
       zod: 4.3.6
 
-  '@netlify/database-dev@0.10.0':
+  '@netlify/database-dev@0.10.1':
     dependencies:
       '@electric-sql/pglite': 0.3.16
       pg-gateway: 0.3.0-beta.4
@@ -10583,12 +10583,12 @@ snapshots:
       uuid: 13.0.0
       write-file-atomic: 5.0.1
 
-  '@netlify/dev@4.17.3(db0@0.3.4(@electric-sql/pglite@0.3.16))(ioredis@5.10.1)(rollup@4.60.2)(srvx@0.11.15)':
+  '@netlify/dev@4.18.0(db0@0.3.4(@electric-sql/pglite@0.3.16))(ioredis@5.10.1)(rollup@4.60.2)(srvx@0.11.15)':
     dependencies:
       '@netlify/ai': 0.4.1
       '@netlify/blobs': 10.7.4(supports-color@10.2.2)
       '@netlify/config': 24.5.0
-      '@netlify/database-dev': 0.10.0
+      '@netlify/database-dev': 0.10.1
       '@netlify/dev-utils': 4.4.3
       '@netlify/edge-functions-dev': 1.0.16
       '@netlify/functions-dev': 1.2.6(rollup@4.60.2)
@@ -16569,7 +16569,7 @@ snapshots:
 
   negotiator@1.0.0: {}
 
-  netlify-cli@25.6.2(@types/node@25.6.0)(db0@0.3.4(@electric-sql/pglite@0.3.16))(ioredis@5.10.1)(picomatch@4.0.4)(rollup@4.60.2)(srvx@0.11.15):
+  netlify-cli@26.0.0(@types/node@25.6.0)(db0@0.3.4(@electric-sql/pglite@0.3.16))(ioredis@5.10.1)(picomatch@4.0.4)(rollup@4.60.2)(srvx@0.11.15):
     dependencies:
       '@fastify/static': 9.0.0
       '@netlify/ai': 0.4.1
@@ -16578,7 +16578,7 @@ snapshots:
       '@netlify/build': 35.13.4(@opentelemetry/api@1.8.0)(@types/node@25.6.0)(picomatch@4.0.4)(rollup@4.60.2)
       '@netlify/build-info': 10.5.1
       '@netlify/config': 24.5.0
-      '@netlify/dev': 4.17.3(db0@0.3.4(@electric-sql/pglite@0.3.16))(ioredis@5.10.1)(rollup@4.60.2)(srvx@0.11.15)
+      '@netlify/dev': 4.18.0(db0@0.3.4(@electric-sql/pglite@0.3.16))(ioredis@5.10.1)(rollup@4.60.2)(srvx@0.11.15)
       '@netlify/dev-utils': 4.4.3
       '@netlify/edge-bundler': 14.10.1
       '@netlify/edge-functions': 3.0.6
