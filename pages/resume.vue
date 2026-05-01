@@ -2,9 +2,7 @@
 import type { SanityResume } from '~/@types/sanity'
 import groq from 'groq'
 import linkButton from '~/components/base/link-button.vue'
-import { useLanguage } from '~/composables/useLanguage'
 import { sanityClient } from '~/composables/useSanity'
-import { useTranslations } from '~/composables/useTranslations'
 
 const { lang } = useLanguage()
 const { t } = useTranslations()
