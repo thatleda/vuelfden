@@ -1,4 +1,6 @@
-const translations = {
+import { useLanguage } from '~/composables/useLanguage'
+
+export const translations = {
   en: {
     'hero.tagline': 'I\'m a software engineer',
     'hero.pitch': 'Let\'s see if I\'m a <u>good fit</u> for your company.',

@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import type { SanityPage } from '~/@types/sanity'
-import { useTranslations } from '~/composables/useTranslations'
+import type { SanityPage } from '~/@types/sanity';
 
 interface HeroProps {
   page: SanityPage

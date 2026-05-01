@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { useTranslations } from '~/composables/useTranslations'
-
 const { t } = useTranslations()
 </script>
 
