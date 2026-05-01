@@ -1,8 +1,11 @@
+<script lang="ts" setup>
+const { t } = useTranslations()
+</script>
+
 <template>
   <div :class="$style.card">
     <p>
-      If you have developed a strong desire to communicate or collaborate,
-      please don't hesitate and write to:
+      {{ t('contact.leda') }}
     </p>
     <div :class="$style.profile">
       <svg-mail height="5rem" width="5rem" />
@@ -10,8 +13,8 @@
         <div :class="$style.name">
           <u>Leda Wolf</u>
         </div>
-        <NuxtLink to="mailto:leda@hey.com">
-          leda@hey.com
+        <NuxtLink to="mailto:leda@sent.com">
+          leda@sent.com
         </NuxtLink>
       </div>
     </div>

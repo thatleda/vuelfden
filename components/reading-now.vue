@@ -1,11 +1,15 @@
 <script lang="ts" setup>
 import BaseSlateBlock from '~/components/base/slate-block.vue'
+import { useTranslations } from '~/composables/useTranslations'
 
-const { data } = await useGraphqlQuery('reading')
+const { data, pending } = await useAsyncGraphqlQuery('reading', {}, { server: false })
 
-const challenge = computed(() => data.me[0]?.goals[0])
+const { lang } = useLanguage()
+const { t } = useTranslations()
 
-const user = computed(() => data.me[0]?.goals[0]?.user)
+const challenge = computed(() => data.value?.data?.me[0]?.goals[0])
+
+const user = computed(() => data.value?.data?.me[0]?.goals[0]?.user)
 
 const book = computed(() => {
   const userBook = user.value?.user_books[0]
@@ -41,19 +45,21 @@ const latestReview = computed(() => {
 </script>
 
 <template>
-  <div :class="$style.card">
+  <div v-if="pending" :class="$style.loading" aria-busy="true" />
+
+  <div v-else :class="$style.card">
     <NuxtImg
       :alt="`The book cover of ${book.title} by ${book.author}`"
       :srcset="book.cover || '/images/book-cover-placeholder.png'"
       :class="[$style.bookCover, $style.image]"
     />
-    Probably reading
+    {{ t('reading.title') }}
     <h3>{{ book.title }} ({{ book.release }})</h3>
     <sub :class="$style.author">
-      by <em>{{ book.author }}</em>
+      {{ t('reading.book.by') }} <em>{{ book.author }}</em>
     </sub>
     <p v-if="challenge" :class="$style.progress">
-      <label for="progress">{{ challenge.description }}: {{ challenge.progress }} of {{ challenge.goal }} books completed
+      <label for="progress">{{ t('reading.challenge') }} {{ challenge.description }} : {{ challenge.progress }} {{ t('reading.challenge.of') }} {{ challenge.goal }} {{ t('reading.challenge.completed') }}
         <progress
           id="progress"
           :class="$style.progressBar"
@@ -64,7 +70,7 @@ const latestReview = computed(() => {
   </div>
 
   <div
-    v-if="latestReview"
+    v-if="!pending && latestReview"
     :class="$style.card"
   >
     <NuxtImg
@@ -73,12 +79,12 @@ const latestReview = computed(() => {
       loading="lazy"
       :class="[$style.image, $style.reviewCover]"
     />
-    Just finished reading
+    {{ t('reading.finished') }}
     <h3>{{ latestReview.book.title }} ({{ latestReview.book.release }})</h3>
     <sub :class="$style.author">
-      by <em>{{ latestReview.book.author }}</em>
+      {{ t('reading.book.by') }} <em>{{ latestReview.book.author }}</em>
     </sub>
-    <p>Rating: {{ latestReview.rating }} / 5</p>
+    <p>{{ t('reading.book.rating') }}: {{ Intl.NumberFormat(lang).format(latestReview.rating) }} / 5 {{ t('reading.book.stars') }}</p>
 
     <BaseSlateBlock
       v-if="latestReview.slateContent"
@@ -88,6 +94,14 @@ const latestReview = computed(() => {
 </template>
 
 <style module>
+.loading {
+  height: 12rem;
+  opacity: 0.4;
+  border-radius: var(--border-radius);
+  background: var(--subtext);
+  animation: aurora 1.5s ease-in-out infinite;
+}
+
 .card {
   @media (max-width: 700px) {
     display: flex;

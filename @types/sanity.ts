@@ -4,7 +4,7 @@ export interface SanityPage {
   _id: string
   _createdAt: string
   _updatedAt: string
-  banner: SanityLinkedImage
+  banner?: SanityLinkedImage
   content: PortableTextBlock[]
   excerpt: string
   slug: {
@@ -34,4 +34,38 @@ export interface SanityReview {
   comment: string
   picture: SanityLinkedImage
   reviewer: string
+}
+
+export interface SanitySkillGroup {
+  _key: string
+  category: string
+  items: string[]
+}
+
+export interface SanityExperienceEntry {
+  _key: string
+  company: string
+  title?: string
+  startDate?: string
+  endDate?: string
+  location?: string
+  note?: string
+  bullets?: string[]
+}
+
+export interface SanityEducationEntry {
+  _key: string
+  degree?: string
+  institution?: string
+  year?: string
+  note?: string
+}
+
+export interface SanityResume {
+  _id: string
+  profile: string
+  skills: SanitySkillGroup[]
+  experience: SanityExperienceEntry[]
+  education: SanityEducationEntry[]
+  additionalSkills: string[]
 }

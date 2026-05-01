@@ -1,4 +1,7 @@
 import { config } from '@vue/test-utils'
+import { vi } from 'vitest'
+import { ref } from 'vue'
+import { translations } from '~/composables/useTranslations'
 import '@testing-library/jest-dom/vitest'
 
 config.global.mocks = config.global.mocks || {}
@@ -65,3 +68,22 @@ config.global.stubs = {
     template: '<div><slot /></div>',
   },
 }
+
+function useTranslations() {
+  const locale = ref('en')
+
+  return {
+    t: (key: string) => {
+      const currentLocale = locale.value as 'de' | 'en'
+      const exists = (translations[currentLocale] as Record<string, unknown>)[key] !== undefined
+      if (!exists) {
+        console.warn(`Missing i18n key: ${key}`)
+        return key
+      }
+      return (translations[currentLocale] as Record<string, unknown>)[key]
+    },
+  }
+}
+
+vi.stubGlobal('useTranslations', useTranslations)
+vi.stubGlobal('useLanguage', () => ({ lang: ref('en') }))

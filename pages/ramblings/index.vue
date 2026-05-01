@@ -3,6 +3,9 @@ import type { SanityPage } from '~/@types/sanity'
 import groq from 'groq'
 import LinkButton from '~/components/base/link-button.vue'
 import TransitionAnimation from '~/components/base/transition-animation.vue'
+import { useTranslations } from '~/composables/useTranslations'
+
+const { t } = useTranslations()
 
 const currentPage = 1
 const pageSize = 10
@@ -50,12 +53,12 @@ function calculateTotalPages() {
 
 useSeoMeta({
   description:
-    'You have reached the coveted index of Leda Wolf\'s select wisdom nuggets. Good for you!',
+    t('ramblings.description'),
   ogImage: '/images/wolf.jpeg',
-  ogTitle: 'Ramblings',
+  ogTitle: t('ramblings.title'),
   robots:
     'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
-  title: 'Ramblings',
+  title: t('ramblings.title'),
 })
 
 useHead({
@@ -74,7 +77,7 @@ useHead({
 </script>
 
 <template>
-  <base-page-section heading="Unhinged ramblings">
+  <base-page-section :heading="t('ramblings.title')" :is-card="true">
     <nav
       v-if="articles?.length || hasPreviousPage"
       :class="$style.pagination"
@@ -95,7 +98,7 @@ useHead({
         aria-live="polite"
         aria-current="page"
       >
-        Page {{ currentPage }} of {{ totalPages }}
+        {{ t('ramblings.page') }} {{ currentPage }} {{ t('ramblings.of') }} {{ totalPages }}
       </span>
 
       <LinkButton
@@ -104,7 +107,7 @@ useHead({
         variant="secondary"
         :aria-label="`Go to next page, page ${currentPage + 1}`"
       >
-        Next →
+        {{ t('ramblings.next') }} →
       </LinkButton>
     </nav>
 

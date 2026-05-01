@@ -6,12 +6,14 @@ interface HeroProps {
 }
 
 const { page } = defineProps<HeroProps>()
+const { t } = useTranslations()
 </script>
 
 <template>
   <base-page-section :animation-props="{ animationDuration: '0ms' }">
     <div :class="$style.card">
       <NuxtImg
+        v-if="page.banner"
         :src="page.banner._id"
         :alt="page.banner.altText"
         :aria-label="page.banner.altText"
@@ -25,11 +27,9 @@ const { page } = defineProps<HeroProps>()
           {{ page.title }}
         </h1>
         <h1 :class="$style.introduction">
-          I'm a software engineer
+          {{ t('hero.tagline') }}
         </h1>
-        <h2 :class="$style.purpose">
-          Let's see if I'm a <u>good fit</u> for your company.
-        </h2>
+        <h2 :class="$style.purpose" v-html="t('hero.pitch')" />
         <base-sanity-block :blocks="page.content" />
         <base-transition-animation
           animation-duration="2s"
@@ -58,7 +58,7 @@ const { page } = defineProps<HeroProps>()
             LinkedIn
           </base-link-button>
           <base-link-button
-            to="mailto:leda@hey.com"
+            to="mailto:leda@sent.com"
             variant="secondary"
             aria-label="Mail"
           >
@@ -126,6 +126,7 @@ const { page } = defineProps<HeroProps>()
   line-height: 3rem;
   margin-bottom: 0;
   line-break: unset;
+  word-wrap: break-word;
   text-shadow: var(--secondary-color) 1px 0 10px;
 }
 

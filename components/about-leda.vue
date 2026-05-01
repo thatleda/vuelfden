@@ -9,7 +9,7 @@ const { aboutPage } = defineProps<AboutLedaProps>()
 
 <template>
   <div :class="$style.card">
-    <div :class="$style.frame">
+    <div v-if="aboutPage.banner" :class="$style.frame">
       <NuxtImg
         :src="aboutPage.banner._id"
         :alt="aboutPage.banner.altText"

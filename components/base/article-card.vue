@@ -5,6 +5,7 @@ import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 
 const { article } = defineProps<ArticleProps>()
+const { t } = useTranslations()
 
 dayjs.extend(relativeTime)
 
@@ -15,13 +16,14 @@ interface ArticleProps {
 const articleReleaseDate
   = article._createdAt === null ? new Date() : new Date(article._createdAt)
 
-const howLong = dayjs(articleReleaseDate).toNow(true)
+const howLong = dayjs(articleReleaseDate).from(Date.now())
 </script>
 
 <template>
   <NuxtLink :to="`/ramblings/${article.slug.current}`">
     <div :class="$style.card" data-testid="article-card">
       <NuxtImg
+        v-if="article.banner"
         :src="article.banner._id"
         :alt="article.banner.altText"
         width="100"
@@ -32,7 +34,7 @@ const howLong = dayjs(articleReleaseDate).toNow(true)
           {{ article.title }}
         </h3>
         <p>{{ article.excerpt }}</p>
-        <sub :class="$style.published">published {{ howLong }} ago</sub>
+        <sub :class="$style.published">{{ t('article.published') }} {{ howLong }}</sub>
       </div>
     </div>
   </NuxtLink>

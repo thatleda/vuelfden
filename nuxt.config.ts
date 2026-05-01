@@ -26,6 +26,14 @@ export default defineNuxtConfig({
     'nuxt-graphql-middleware',
   ],
 
+  fonts: {
+    families: [
+      { name: 'Fira Sans Condensed', provider: 'google' },
+      { name: 'Silkscreen', provider: 'google' },
+      { name: 'Satisfy', provider: 'google' },
+    ],
+  },
+
   graphqlMiddleware: {
     downloadSchema: false,
     graphqlEndpoint: 'https://api.hardcover.app/v1/graphql',
@@ -55,11 +63,13 @@ export default defineNuxtConfig({
     preset: 'netlify',
     prerender: {
       crawlLinks: true,
+      ignore: ['/resume/_payload.json', '/ramblings/_payload.json'],
     },
   },
 
   routeRules: {
     '/': { prerender: true },
+    '/resume': { isr: 2 * 60 * 60 },
     '/imprint': { prerender: true },
     '/privacy': { prerender: true },
     '/ramblings': { isr: 2 * 60 * 60 },

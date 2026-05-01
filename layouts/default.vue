@@ -1,12 +1,18 @@
 <script lang="ts" setup>
 import { useDark, usePreferredReducedMotion } from '@vueuse/core'
+import dayjs from 'dayjs'
 import PageHeader from '~/components/page-header.vue'
+import { useLanguage } from '~/composables/useLanguage'
+import 'dayjs/locale/de'
 
 const header = ref<{ isMenuOpen: boolean }>({ isMenuOpen: false })
+const { lang } = useLanguage()
+
+dayjs.locale(lang.value)
 
 const prefersReducedMotion = usePreferredReducedMotion()
 useDark({
-  storageKey: 'vuelfden-dark-mode',
+  storageKey: 'vuelfden-color-mode',
   selector: 'body',
   valueDark: 'dark-mode',
   valueLight: 'light-mode',
@@ -22,7 +28,7 @@ useHead({
     }),
   },
   htmlAttrs: {
-    lang: 'en',
+    lang: lang.value,
   },
 })
 </script>
@@ -44,11 +50,10 @@ html {
 
 :root {
   --border-radius: 1rem;
-  --page-width: 62rem;
+  --page-width: 70rem;
   --page-padding: 0 1rem;
   --header-height: 6.25rem;
   --footer-height: 7.5rem;
-  --base-font: Fira Sans, sans-serif;
 }
 
 .dark-mode {
@@ -113,8 +118,7 @@ body {
   overflow-x: hidden;
 
   font-size: 18px;
-  font-weight: 300;
-  font-family: var(--base-font);
+  font-family: Fira Sans Condensed, sans-serif;
   text-rendering: optimizeLegibility;
   color: var(--text-color);
   @media (max-width: 749px) {

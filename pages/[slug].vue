@@ -4,22 +4,24 @@ import groq from 'groq'
 
 const route = useRoute()
 const { slug } = route.params
+const { lang } = useLanguage()
 
-const query = groq`*[slug.current == $slug][0]{
-  _createdAt, 
-  _updatedAt, 
-  _id, 
-  content, 
-  excerpt, 
-  slug, 
-  title, 
+const query = groq`*[_type == "page" && slug.current == $slug && language == $lang][0]{
+  _createdAt,
+  _updatedAt,
+  _id,
+  content,
+  excerpt,
+  slug,
+  title,
   "banner": banner.asset->{
-    _id, 
-    _type, 
+    _id,
+    _type,
     altText
   }
 }`
-const { data: page } = useSanityQuery<SanityPage>(query, { slug })
+const params = computed(() => ({ slug, lang: lang.value }))
+const { data: page } = useSanityQuery<SanityPage>(query, params)
 useSeoMeta({
   description:
     page.value?.excerpt

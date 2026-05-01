@@ -1,14 +1,18 @@
 <script lang="ts" setup>
 import { onClickOutside, useDark, useToggle } from '@vueuse/core'
 import { ref } from 'vue'
+import { useTranslations } from '~/composables/useTranslations'
 
 const smallScreen = useMediaQuery('(max-width: 1030px)')
 
 const isMenuOpen = ref(false)
 const outsideRef = ref(null)
 
-const darkMode = useDark({ storageKey: 'vuelfden-dark-mode' })
+const darkMode = useDark({ storageKey: 'vuelfden-color-mode' })
 const toggle = useToggle(darkMode)
+
+const { lang } = useLanguage()
+const { t } = useTranslations()
 
 function openMenu() {
   isMenuOpen.value = true
@@ -29,23 +33,52 @@ defineExpose({
 </script>
 
 <template>
-  <nav :class="$style.navigation" role="navigation" aria-label="Main navigation">
+  <nav :class="$style.navigation" role="navigation" :aria-label="t('nav.menu')">
     <div :class="$style.links">
-      <base-link-button
-        to="/"
-        title="Home"
-      >
-        <svg-wolf
-          mirror
-          height="5rem"
-          width="5rem"
-        />
-      </base-link-button>
+      <div :class="$style.leftGroup">
+        <base-link-button
+          to="/"
+          title="Home"
+        >
+          <svg-wolf
+            mirror
+            height="5rem"
+            width="5rem"
+          />
+        </base-link-button>
+        <div :class="$style.langSwitch" role="group" :aria-label="t('nav.language')">
+          <button
+            type="button"
+            :aria-label="`${t('nav.language')} ${t('nav.language.english')}`"
+            :class="[$style.langButton, lang === 'en' && $style.langButtonActive]"
+            @click="lang = 'en'"
+          >
+            EN
+          </button>
+          <button
+            type="button"
+            :aria-label="`${t('nav.language')} ${t('nav.language.german')}`"
+            :class="[$style.langButton, lang === 'de' && $style.langButtonActive]"
+            @click="lang = 'de'"
+          >
+            DE
+          </button>
+        </div>
+        <button
+          type="button"
+          :aria-label="t('nav.toggle.color-mode')"
+          :class="$style.darkModeToggle"
+          @click="toggleDarkMode"
+        >
+          <svg-sun v-if="darkMode" height="2rem" width="2rem" />
+          <svg-moon v-else height="2rem" width="2rem" />
+        </button>
+      </div>
       <button
         v-if="smallScreen"
         id="openMenu"
         type="button"
-        aria-label="Open menu"
+        :aria-label="t('nav.menu.open')"
         :class="isMenuOpen ? $style.noDisplay : $style.burgerMenu"
         @click="openMenu"
       >
@@ -55,37 +88,31 @@ defineExpose({
         />
       </button>
       <template v-else>
-        <base-link-button to="/#who">
-          Who?
-        </base-link-button>
-        <base-link-button to="/#previously">
-          Previously
-        </base-link-button>
-        <base-link-button to="/ramblings">
-          Blog
-        </base-link-button>
-        <base-link-button to="/#reviews">
-          Working with Leda
-        </base-link-button>
-        <base-link-button to="/#contact">
-          Contact
-        </base-link-button>
-        <base-link-button
-          variant="primary"
-          to="resume.pdf"
-          target="_blank"
-        >
-          CV
-        </base-link-button>
-        <button
-          type="button"
-          aria-label="Toggle dark mode"
-          :class="$style.darkModeToggle"
-          @click="toggleDarkMode"
-        >
-          <svg-sun v-if="darkMode" height="2rem" width="2rem" />
-          <svg-moon v-else height="2rem" width="2rem" />
-        </button>
+        <div :class="$style.navLinks">
+          <base-link-button to="/#who">
+            {{ t('nav.who') }}
+          </base-link-button>
+          <base-link-button to="/#previously">
+            {{ t('nav.previously') }}
+          </base-link-button>
+          <base-link-button to="/ramblings">
+            {{ t('nav.blog') }}
+          </base-link-button>
+          <base-link-button to="/#reviews">
+            {{ t('nav.working-with') }}
+          </base-link-button>
+          <base-link-button to="/#contact">
+            {{ t('nav.contact') }}
+          </base-link-button>
+        </div>
+        <div :class="$style.cvButton">
+          <base-link-button
+            variant="primary"
+            to="/resume"
+          >
+            {{ t('nav.resume') }}
+          </base-link-button>
+        </div>
       </template>
     </div>
     <div
@@ -97,50 +124,50 @@ defineExpose({
       <nav
         ref="outsideRef"
         :class="$style.sideNavigation"
-        aria-label="Mobile navigation"
+        :aria-label="t('nav.menu.mobile')"
       >
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/#who"
           @click="closeMenu"
         >
-          Who?
+          {{ t('nav.who') }}
         </base-link-button>
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/#previously"
-          :onclick="closeMenu"
+          @click="closeMenu"
         >
-          Previously
+          {{ t('nav.previously') }}
         </base-link-button>
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/ramblings"
-          :onclick="closeMenu"
+          @click="closeMenu"
         >
-          Blog
+          {{ t('nav.blog') }}
         </base-link-button>
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/#reviews"
-          :onclick="closeMenu"
+          @click="closeMenu"
         >
-          Working with Leda
+          {{ t('nav.working-with') }}
         </base-link-button>
 
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/#contact"
-          :onclick="closeMenu"
+          @click="closeMenu"
         >
-          Contact
+          {{ t('nav.contact') }}
         </base-link-button>
         <base-link-button
           :class="$style.sideNavigationLink"
-          to="resume.pdf"
+          to="/resume"
           target="_blank"
         >
-          CV
+          {{ t('nav.resume') }}
         </base-link-button>
       </nav>
       <div :class="[$style.backdrop, isMenuOpen && $style.backdropBlock]" />
@@ -173,6 +200,7 @@ defineExpose({
   display: flex;
   height: 100%;
   justify-content: space-between;
+  gap: 1.5rem;
   margin: 0 auto;
   max-width: var(--page-width);
   padding: var(--page-padding);
@@ -197,6 +225,58 @@ defineExpose({
   justify-content: space-around;
   padding: 0;
   width: 2rem;
+}
+
+.leftGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.cvButton {
+  flex-shrink: 0;
+
+  :deep(a), :deep(button) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.langSwitch {
+  display: flex;
+  border: 1px solid var(--text-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.langButton {
+  background: transparent;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  font-family: Fira Sans Condensed, sans-serif;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: background 0.15s;
+}
+
+.langButtonActive {
+  background: var(--text-color);
+  color: var(--background-color);
 }
 
 .darkModeToggle {

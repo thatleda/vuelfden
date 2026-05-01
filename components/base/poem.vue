@@ -4,7 +4,7 @@
 
 <style module>
 .centered {
-  font-family: var(--base-font);
+  font-family: Fira Sans Condensed, sans-serif;
   font-style: italic;
   text-align: center;
   color: var(--primary-color);
