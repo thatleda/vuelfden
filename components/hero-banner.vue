@@ -126,6 +126,7 @@ const { t } = useTranslations()
   line-height: 3rem;
   margin-bottom: 0;
   line-break: unset;
+  word-wrap: break-word;
   text-shadow: var(--secondary-color) 1px 0 10px;
 }
 

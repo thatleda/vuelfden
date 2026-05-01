@@ -60,7 +60,7 @@ export const translations = {
     'article.published': 'published',
   },
   de: {
-    'hero.tagline': 'Ich bin eine Softwareentwicklerin',
+    'hero.tagline': 'Ich bin eine Software-Entwicklerin',
     'hero.pitch': 'Finden wir heraus, ob ich <u>gut zu Euch passe</u>.',
     'nav.menu': 'Hauptmenü',
     'nav.language': 'Sprache',
