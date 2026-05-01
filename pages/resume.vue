@@ -222,7 +222,6 @@ function print() {
   font-family: 'Silkscreen', sans-serif;
   font-size: 2.5rem;
   line-height: 3rem;
-  color: var(--accent);
   margin: 0 0 0.2rem;
   letter-spacing: 0.02em;
 }
@@ -315,12 +314,11 @@ function print() {
 }
 
 .company {
-  color: var(--text);
-  font-weight: 700;
+  font-family: 'Silkscreen', sans-serif;
 }
 
 .role {
-  color: var(--subtext);
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
 }
 
@@ -385,6 +383,10 @@ function print() {
   .resume {
     color: black;
     background: none !important;
+  }
+
+  .company {
+    color: black;
   }
 }
 </style>
