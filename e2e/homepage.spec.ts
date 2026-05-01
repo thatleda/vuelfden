@@ -39,7 +39,7 @@ test('displays who section', async ({ page }) => {
 test('displays reviews section', async ({ page }) => {
   await page.goto('/')
 
-  await expect(page.getByRole('heading', { name: 'Reviews' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Working with Leda' })).toBeVisible()
   await expect(page.getByLabel('Karan Hudia\'s portrait')).toBeVisible()
   await expect(page.getByLabel('Aira Wolf z Tuřanského dvora\'s portrait')).toBeVisible()
   await expect(page.getByLabel('Marta Gilabert Guzman\'s portrait')).toBeVisible()
@@ -49,7 +49,7 @@ test('displays reading section', async ({ page }) => {
   await page.goto('/')
 
   await expect(page.getByRole('heading', { name: /What is she up to?/i })).toBeVisible()
-  await expect(page.getByText(/probably reading/i)).toBeVisible()
+  await expect(page.getByText(/currently reading/i)).toBeVisible()
   await expect(page.getByText(/of 100 books completed/i)).toBeVisible()
   await expect(page.getByText(/just finished reading/i)).toBeVisible()
 })
