@@ -21,5 +21,5 @@ test('displays navigation with home link', async ({ page }) => {
   await expect(page.getByLabel('Main navigation').getByRole('link', { name: 'Blog' })).toBeVisible()
   await expect(page.getByLabel('Main navigation').getByRole('link', { name: 'Working with Leda' })).toBeVisible()
   await expect(page.getByLabel('Main navigation').getByRole('link', { name: 'Contact' })).toBeVisible()
-  await expect(page.getByLabel('Main navigation').getByRole('link', { name: 'CV' })).toBeVisible()
+  await expect(page.getByLabel('Main navigation').getByRole('link', { name: 'Resume' })).toBeVisible()
 })
