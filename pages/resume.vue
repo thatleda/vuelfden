@@ -1,24 +1,18 @@
 <script lang="ts" setup>
 import type { SanityResume } from '~/@types/sanity'
-import { useDark, useToggle } from '@vueuse/core'
 import groq from 'groq'
-import svgMoon from '~/components/svg/moon.vue'
-import svgSun from '~/components/svg/sun.vue'
+import linkButton from '~/components/base/link-button.vue'
 import { useLanguage } from '~/composables/useLanguage'
 import { sanityClient } from '~/composables/useSanity'
 import { useTranslations } from '~/composables/useTranslations'
 
-definePageMeta({ layout: false })
-
-const darkMode = useDark({ storageKey: 'vuelfden-color-mode', selector: 'body', valueDark: 'dark-mode', valueLight: 'light-mode' })
-const toggleDarkMode = useToggle(darkMode)
 const { lang } = useLanguage()
 const { t } = useTranslations()
 
 useHead({
-  title: 'Leda Wolf — Resume',
+  title: t('resume.title'),
   meta: [
-    { name: 'description', content: 'Resume of Leda Wolf, Senior Fullstack Software Engineer' },
+    { name: 'description', content: t('resume.description') },
   ],
 })
 
@@ -44,36 +38,11 @@ function print() {
 </script>
 
 <template>
-  <div class="resume-page" :class="[$style.page]">
+  <div :class="$style.page">
     <div :class="$style.actions">
-      <NuxtLink to="/" :class="$style.backLink">
-        ← {{ t('resume.back') }}
-      </NuxtLink>
-      <div :class="$style.actionButtons">
-        <div :class="$style.langSwitch" role="group" aria-label="Language">
-          <button
-            :class="[$style.langButton, lang === 'en' && $style.langButtonActive]"
-            type="button"
-            @click="lang = 'en'"
-          >
-            EN
-          </button>
-          <button
-            :class="[$style.langButton, lang === 'de' && $style.langButtonActive]"
-            type="button"
-            @click="lang = 'de'"
-          >
-            DE
-          </button>
-        </div>
-        <button :class="$style.darkModeToggle" type="button" :aria-label="darkMode ? 'Switch to light mode' : 'Switch to dark mode'" @click="toggleDarkMode()">
-          <svg-sun v-if="darkMode" height="1.5rem" width="1.5rem" />
-          <svg-moon v-else height="1.5rem" width="1.5rem" />
-        </button>
-        <button :class="$style.printButton" type="button" @click="print">
-          {{ t('resume.print') }}
-        </button>
-      </div>
+      <link-button variant="primary" @click="print">
+        {{ t('resume.print') }}
+      </link-button>
     </div>
 
     <article :class="$style.resume">
@@ -82,8 +51,8 @@ function print() {
           <h1 :class="$style.name">
             Leda Wolf
           </h1>
-          <p :class="$style.jobTitle">
-            Senior Fullstack Software Engineer
+          <p :class="$style.career">
+            {{ t('resume.career') }}
           </p>
         </div>
         <div :class="$style.contact">
@@ -122,7 +91,7 @@ function print() {
         </dl>
       </section>
 
-      <section v-if="resume?.experience?.length" :class="$style.section">
+      <section v-if="resume?.experience?.length" :class="[$style.section, $style.pageBreak]">
         <h2 :class="$style.sectionTitle">
           {{ t('resume.experience') }}
         </h2>
@@ -152,7 +121,7 @@ function print() {
         </div>
       </section>
 
-      <section v-if="resume?.education?.length" :class="$style.section">
+      <section v-if="resume?.education?.length" :class="[$style.section, $style.pageBreak]">
         <h2 :class="$style.sectionTitle">
           {{ t('resume.education') }}
         </h2>
@@ -220,140 +189,27 @@ function print() {
   </div>
 </template>
 
-<style>
-.resume-page {
-  --accent: #1a4d2e;
-  --accent-border: #94e4af;
-  --page-bg: #e8e8e8;
-  --paper-bg: #ffffff;
-  --text: #111111;
-  --subtext: #444444;
-  --muted: #666666;
-  --shadow: rgba(0, 0, 0, 0.15);
-}
-
-body.dark-mode .resume-page {
-  --accent: #94e4af;
-  --accent-border: #527766;
-  --page-bg: #1a1a1a;
-  --paper-bg: #2a2a2a;
-  --text: #e6e6e6;
-  --subtext: #b1b1b1;
-  --muted: #888888;
-  --shadow: rgba(0, 0, 0, 0.5);
-}
-
-@media print {
-  .resume-page {
-    --page-bg: #fff;
-    --paper-bg: #fff;
-    --text: #111;
-    --subtext: #444;
-    --muted: #666;
-    --accent: #1a4d2e;
-    --accent-border: #94e4af;
-  }
-}
-</style>
-
 <style module>
-.page {
-  background: var(--page-bg);
-  min-height: 100vh;
-  padding: 2rem 1rem;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 14px;
-  color: var(--text);
-  transition: background 0.2s, color 0.2s;
-}
-
 .actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 210mm;
-  margin: 0 auto 1.5rem;
+  max-width: 20rem;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-.actionButtons {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.backLink {
-  color: var(--accent);
-  text-decoration: none;
-  font-size: 0.9rem;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-.langSwitch {
-  display: flex;
-  border: 1px solid var(--accent-border);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.langButton {
-  background: transparent;
-  border: none;
-  padding: 0.4rem 0.65rem;
+.page {
+  min-height: 100vh;
+  padding: 1rem;
   font-family: 'Fira Sans', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  cursor: pointer;
-  color: var(--subtext);
-  transition: background 0.15s, color 0.15s;
-
-  &:hover {
-    background: var(--accent-border);
-    color: var(--text);
-  }
-}
-
-.langButtonActive {
-  background: var(--accent);
-  color: #fff;
-}
-
-.darkModeToggle {
-  background: transparent;
-  border: 1px solid var(--accent-border);
-  border-radius: 4px;
-  padding: 0.4rem 0.6rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.printButton {
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1.25rem;
-  border-radius: 4px;
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: opacity 0.2s;
-
-  &:hover {
-    opacity: 0.85;
-  }
+  color: var(--text-color);
 }
 
 .resume {
-  background: var(--paper-bg);
+  background: var(--background-color);
+  border-radius: var(--border-radius);
   max-width: 210mm;
   margin: 0 auto;
-  padding: 20mm 18mm;
+  padding: 2rem;
   box-shadow: 0 4px 24px var(--shadow);
-  transition: background 0.2s, box-shadow 0.2s;
 }
 
 .header {
@@ -363,16 +219,15 @@ body.dark-mode .resume-page {
 }
 
 .name {
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
+  font-family: 'Silkscreen', sans-serif;
+  font-size: 2.5rem;
+  line-height: 3rem;
   color: var(--accent);
   margin: 0 0 0.2rem;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
 }
 
-.jobTitle {
+.career {
   font-size: 1rem;
   font-weight: 400;
   color: var(--subtext);
@@ -403,13 +258,8 @@ body.dark-mode .resume-page {
 }
 
 .sectionTitle {
-  font-family: 'Fira Sans', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-  border-bottom: 1px solid var(--accent-border);
+  font-family: 'Satisfy', cursive;
+  font-size: 1.5rem;
   padding-bottom: 0.3rem;
   margin: 0 0 0.75rem;
 }
@@ -436,7 +286,7 @@ body.dark-mode .resume-page {
 .skillCategory {
   font-weight: 600;
   color: var(--text);
-  min-width: 7rem;
+  min-width: 14rem;
   flex-shrink: 0;
 
   &::after {
@@ -460,7 +310,7 @@ body.dark-mode .resume-page {
 }
 
 .entryTitle {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   line-height: 1.4;
 }
 
@@ -497,18 +347,44 @@ body.dark-mode .resume-page {
 }
 
 @media print {
+  @page {
+    size: A4 portrait;
+    margin: 50px;
+    background: none;
+  }
+
+  body {
+    background: none !important;
+  }
+
+  .pageBreak {
+    break-before: page;
+  }
+
+  h1, h2, h3, h4, h5 {
+    color: black !important;
+    break-after: avoid;
+  }
+
+  footer {
+    display: none !important;
+  }
+
+  nav {
+    display: none !important;
+  }
+
   .actions {
-    display: none;
+    display: none !important;
   }
 
   .page {
-    padding: 0;
+    background: none !important;
   }
 
   .resume {
-    box-shadow: none;
-    max-width: 100%;
-    padding: 15mm 15mm;
+    color: black;
+    background: none !important;
   }
 }
 </style>

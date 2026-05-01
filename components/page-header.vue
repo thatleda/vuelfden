@@ -107,7 +107,6 @@ defineExpose({
           <base-link-button
             variant="primary"
             to="/resume"
-            target="_blank"
           >
             CV
           </base-link-button>
