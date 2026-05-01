@@ -63,6 +63,7 @@ export default defineNuxtConfig({
     preset: 'netlify',
     prerender: {
       crawlLinks: true,
+      ignore: ['/resume/_payload.json', '/ramblings/_payload.json'],
     },
   },
 
