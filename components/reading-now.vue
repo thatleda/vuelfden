@@ -57,7 +57,7 @@ const latestReview = computed(() => {
       {{ t('reading.book.by') }} <em>{{ book.author }}</em>
     </sub>
     <p v-if="challenge" :class="$style.progress">
-      <label for="progress">{{ challenge.description }} {{ t('reading.challenge') }}: {{ challenge.progress }} {{ t('reading.challenge.of') }} {{ challenge.goal }} {{ t('reading.challenge.completed') }}
+      <label for="progress">{{ t('reading.challenge') }} {{ challenge.description }} : {{ challenge.progress }} {{ t('reading.challenge.of') }} {{ challenge.goal }} {{ t('reading.challenge.completed') }}
         <progress
           id="progress"
           :class="$style.progressBar"
@@ -82,7 +82,7 @@ const latestReview = computed(() => {
     <sub :class="$style.author">
       {{ t('reading.book.by') }} <em>{{ latestReview.book.author }}</em>
     </sub>
-    <p>Rating: {{ Intl.NumberFormat(lang).format(latestReview.rating) }} / 5</p>
+    <p>{{ t('reading.book.rating') }}: {{ Intl.NumberFormat(lang).format(latestReview.rating) }} / 5 {{ t('reading.book.stars') }}</p>
 
     <BaseSlateBlock
       v-if="latestReview.slateContent"
