@@ -2,7 +2,9 @@
 import BaseSlateBlock from '~/components/base/slate-block.vue'
 import { useTranslations } from '~/composables/useTranslations'
 
-const { data } = await useGraphqlQuery('reading')
+const { data, refresh } = await useGraphqlQuery('reading')
+
+onMounted(() => refresh())
 
 const { lang } = useLanguage()
 const { t } = useTranslations()
