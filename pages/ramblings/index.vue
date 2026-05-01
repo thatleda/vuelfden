@@ -98,7 +98,7 @@ useHead({
         aria-live="polite"
         aria-current="page"
       >
-        Page {{ currentPage }} of {{ totalPages }}
+        {{ t('ramblings.page') }} {{ currentPage }} {{ t('ramblings.of') }} {{ totalPages }}
       </span>
 
       <LinkButton
@@ -107,7 +107,7 @@ useHead({
         variant="secondary"
         :aria-label="`Go to next page, page ${currentPage + 1}`"
       >
-        Next →
+        {{ t('ramblings.next') }} →
       </LinkButton>
     </nav>
 

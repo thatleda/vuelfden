@@ -8,6 +8,8 @@ const route = useRoute()
 const pageSize = 10
 const mainContent = ref<HTMLElement>()
 
+const { t } = useTranslations()
+
 const currentPage = computed(() => {
   const pageNumber = Number.parseInt(route.params.number as string, 10)
   return Number.isNaN(pageNumber) || pageNumber < 1 ? 1 : pageNumber
@@ -92,7 +94,7 @@ useHead({
 </script>
 
 <template>
-  <base-page-section heading="Unhinged ramblings">
+  <base-page-section :heading="t('ramblings.title')" :is-card="true">
     <nav
       v-if="articles?.length || hasPreviousPage"
       :class="$style.pagination"
@@ -105,7 +107,7 @@ useHead({
         variant="secondary"
         :aria-label="`Go to previous page, page ${currentPage - 1}`"
       >
-        ← Previous
+        ← {{ t('ramblings.previous') }}
       </LinkButton>
 
       <span
@@ -113,7 +115,7 @@ useHead({
         aria-live="polite"
         aria-current="page"
       >
-        Page {{ currentPage }} of {{ totalPages }}
+        {{ t('ramblings.page') }} {{ currentPage }} {{ t('ramblings.of') }} {{ totalPages }}
       </span>
 
       <LinkButton
@@ -122,7 +124,7 @@ useHead({
         variant="secondary"
         :aria-label="`Go to next page, page ${currentPage + 1}`"
       >
-        Next →
+        {{ t('ramblings.next') }} →
       </LinkButton>
     </nav>
 

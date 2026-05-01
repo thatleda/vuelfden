@@ -153,7 +153,7 @@ function print() {
               {{ t('resume.fluent') }}
             </dt>
             <dd :class="$style.skillItems">
-              German, English, Russian
+              {{ t('resume.languages.fluent') }}
             </dd>
           </div>
           <div :class="$style.skillGroup">
@@ -161,7 +161,7 @@ function print() {
               {{ t('resume.conversational') }}
             </dt>
             <dd :class="$style.skillItems">
-              Spanish, French
+              {{ t('resume.languages.conversational') }}
             </dd>
           </div>
           <div :class="$style.skillGroup">
@@ -169,7 +169,7 @@ function print() {
               {{ t('resume.basic') }}
             </dt>
             <dd :class="$style.skillItems">
-              Ukrainian, Portuguese, Mandarin, Japanese
+              {{ t('resume.languages.basic') }}
             </dd>
           </div>
         </dl>

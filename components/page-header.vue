@@ -33,7 +33,7 @@ defineExpose({
 </script>
 
 <template>
-  <nav :class="$style.navigation" role="navigation" aria-label="Main navigation">
+  <nav :class="$style.navigation" role="navigation" :aria-label="t('nav.menu')">
     <div :class="$style.links">
       <div :class="$style.leftGroup">
         <base-link-button
@@ -46,9 +46,10 @@ defineExpose({
             width="5rem"
           />
         </base-link-button>
-        <div :class="$style.langSwitch" role="group" aria-label="Language">
+        <div :class="$style.langSwitch" role="group" :aria-label="t('nav.language')">
           <button
             type="button"
+            :aria-label="`${t('nav.language')} ${t('nav.language.english')}`"
             :class="[$style.langButton, lang === 'en' && $style.langButtonActive]"
             @click="lang = 'en'"
           >
@@ -56,6 +57,7 @@ defineExpose({
           </button>
           <button
             type="button"
+            :aria-label="`${t('nav.language')} ${t('nav.language.german')}`"
             :class="[$style.langButton, lang === 'de' && $style.langButtonActive]"
             @click="lang = 'de'"
           >
@@ -64,7 +66,7 @@ defineExpose({
         </div>
         <button
           type="button"
-          aria-label="Toggle dark mode"
+          :aria-label="t('nav.toggle.color-mode')"
           :class="$style.darkModeToggle"
           @click="toggleDarkMode"
         >
@@ -76,7 +78,7 @@ defineExpose({
         v-if="smallScreen"
         id="openMenu"
         type="button"
-        aria-label="Open menu"
+        :aria-label="t('nav.menu.open')"
         :class="isMenuOpen ? $style.noDisplay : $style.burgerMenu"
         @click="openMenu"
       >
@@ -108,7 +110,7 @@ defineExpose({
             variant="primary"
             to="/resume"
           >
-            CV
+            {{ t('nav.resume') }}
           </base-link-button>
         </div>
       </template>
@@ -122,50 +124,50 @@ defineExpose({
       <nav
         ref="outsideRef"
         :class="$style.sideNavigation"
-        aria-label="Mobile navigation"
+        :aria-label="t('nav.menu.mobile')"
       >
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/#who"
           @click="closeMenu"
         >
-          Who?
+          {{ t('nav.who') }}
         </base-link-button>
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/#previously"
-          :onclick="closeMenu"
+          @click="closeMenu"
         >
-          Previously
+          {{ t('nav.previously') }}
         </base-link-button>
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/ramblings"
-          :onclick="closeMenu"
+          @click="closeMenu"
         >
-          Blog
+          {{ t('nav.blog') }}
         </base-link-button>
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/#reviews"
-          :onclick="closeMenu"
+          @click="closeMenu"
         >
-          Working with Leda
+          {{ t('nav.working-with') }}
         </base-link-button>
 
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/#contact"
-          :onclick="closeMenu"
+          @click="closeMenu"
         >
-          Contact
+          {{ t('nav.contact') }}
         </base-link-button>
         <base-link-button
           :class="$style.sideNavigationLink"
           to="/resume"
           target="_blank"
         >
-          CV
+          {{ t('nav.resume') }}
         </base-link-button>
       </nav>
       <div :class="[$style.backdrop, isMenuOpen && $style.backdropBlock]" />
