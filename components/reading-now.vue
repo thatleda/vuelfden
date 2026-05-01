@@ -2,16 +2,14 @@
 import BaseSlateBlock from '~/components/base/slate-block.vue'
 import { useTranslations } from '~/composables/useTranslations'
 
-const { data, refresh } = await useGraphqlQuery('reading')
-
-onMounted(() => refresh())
+const { data, pending } = await useAsyncGraphqlQuery('reading', {}, { server: false })
 
 const { lang } = useLanguage()
 const { t } = useTranslations()
 
-const challenge = computed(() => data.me[0]?.goals[0])
+const challenge = computed(() => data.value?.data?.me[0]?.goals[0])
 
-const user = computed(() => data.me[0]?.goals[0]?.user)
+const user = computed(() => data.value?.data?.me[0]?.goals[0]?.user)
 
 const book = computed(() => {
   const userBook = user.value?.user_books[0]
@@ -47,7 +45,9 @@ const latestReview = computed(() => {
 </script>
 
 <template>
-  <div :class="$style.card">
+  <div v-if="pending" :class="$style.loading" aria-busy="true" />
+
+  <div v-else :class="$style.card">
     <NuxtImg
       :alt="`The book cover of ${book.title} by ${book.author}`"
       :srcset="book.cover || '/images/book-cover-placeholder.png'"
@@ -70,7 +70,7 @@ const latestReview = computed(() => {
   </div>
 
   <div
-    v-if="latestReview"
+    v-if="!pending && latestReview"
     :class="$style.card"
   >
     <NuxtImg
@@ -94,6 +94,14 @@ const latestReview = computed(() => {
 </template>
 
 <style module>
+.loading {
+  height: 12rem;
+  opacity: 0.4;
+  border-radius: var(--border-radius);
+  background: var(--subtext);
+  animation: aurora 1.5s ease-in-out infinite;
+}
+
 .card {
   @media (max-width: 700px) {
     display: flex;
