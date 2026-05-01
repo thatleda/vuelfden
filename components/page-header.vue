@@ -8,7 +8,7 @@ const smallScreen = useMediaQuery('(max-width: 1030px)')
 const isMenuOpen = ref(false)
 const outsideRef = ref(null)
 
-const darkMode = useDark({ storageKey: 'vuelfden-dark-mode' })
+const darkMode = useDark({ storageKey: 'vuelfden-color-mode' })
 const toggle = useToggle(darkMode)
 
 const { lang } = useLanguage()
