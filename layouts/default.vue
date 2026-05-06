@@ -36,7 +36,7 @@ useHead({
 <template>
   <ClientOnly><PageHeader ref="header" /></ClientOnly>
   <main><NuxtPage /></main>
-  <page-footer />
+  <ClientOnly><page-footer /></ClientOnly>
 </template>
 
 <style>

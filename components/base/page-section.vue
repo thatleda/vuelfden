@@ -25,7 +25,7 @@ const padding = computed(() => (props.isCard ? 'var(--page-padding)' : '0'))
     <section :id="props.anchor" :class="$style.section">
       <div :class="$style.wrapper">
         <h2 v-if="props.heading" :class="$style.heading">
-          {{ props.heading }}
+          <ClientOnly>{{ props.heading }}</ClientOnly>
         </h2>
         <div v-if="props.isCard" :class="$style.cards">
           <slot />

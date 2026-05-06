@@ -81,7 +81,7 @@ const reviews = computed(() => homeData.value?.reviews)
 
 useHead({
   htmlAttrs: {
-    lang: 'en',
+    lang: lang.value,
   },
   link: [
     {
@@ -114,6 +114,7 @@ useSeoMeta({
     'Leda is a passionate software engineer, whose empathetic and playful approach to problems is sure to find a solution for you.',
   ogImage: '/images/wolf.jpeg',
   ogTitle: 'Vuelfden - the Nuxt Edition of Leda Wolf\'s website',
+  ogLocale: lang.value,
   robots:
     'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   title: 'Vuelfden',

@@ -5,6 +5,7 @@ import LinkButton from '~/components/base/link-button.vue'
 import TransitionAnimation from '~/components/base/transition-animation.vue'
 import { useTranslations } from '~/composables/useTranslations'
 
+const { lang } = useLanguage()
 const { t } = useTranslations()
 
 const currentPage = 1
@@ -56,6 +57,7 @@ useSeoMeta({
     t('ramblings.description'),
   ogImage: '/images/wolf.jpeg',
   ogTitle: t('ramblings.title'),
+  ogLocale: lang.value,
   robots:
     'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   title: t('ramblings.title'),
@@ -71,7 +73,7 @@ useHead({
       : null,
   ].filter(Boolean),
   htmlAttrs: {
-    lang: 'en',
+    lang: lang.value,
   },
 })
 </script>
