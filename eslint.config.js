@@ -4,30 +4,28 @@ import testingLibrary from 'eslint-plugin-testing-library'
 
 const noCommentsRule = {
   meta: {
-    type: 'problem',
+    type: "problem",
     docs: {
-      description: 'Comments are not allowed in this project as they can cause unnecessary noise or leak into production code. Check configuration to see the exceptions from this rule.',
+      description: "Comments are not allowed in this project as they can cause unnecessary noise or leak into production code. Check configuration to see the exceptions from this rule.",
     },
-    fixable: 'code',
+    fixable: "code",
   },
   create(context) {
-    const sourceCode = context.sourceCode
+    const { sourceCode } = context
     function processComment(comment) {
-      if (comment.type === 'Shebang')
+      if (comment.type === "Shebang")
         return
       const options = context.options[0] || {}
-      const allow = (options?.allow) || []
-      let re = /^\s?(?:global|eslint|@ts-|@typescript-eslint)/
-      if (allow.length > 0) {
-        re = new RegExp(String.raw`^\s?(${allow.join('|')})`)
-      }
+      const allow = (options && options.allow) || []
+      const defaults = ["global", "eslint", "@ts-", "@typescript-eslint", "\\/"]
+      const re = new RegExp(String.raw`^\s?(${[...defaults, ...allow].join("|")})`)
       if (comment && !re.test(comment.value)) {
         context.report({
           fix(fixer) {
             return fixer.remove(comment)
           },
           loc: comment.loc,
-          message: 'Comments are forbidden',
+          message: "Comments are forbidden",
           node: null,
         })
       }
