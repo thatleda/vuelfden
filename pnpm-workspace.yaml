@@ -29,7 +29,7 @@ catalog:
   eslint-plugin-playwright: 2.10.2
   eslint-plugin-testing-library: 7.16.2
   eslint-plugin-vuejs-accessibility: 2.5.0
-  groq: 5.24.0
+  groq: 5.25.0
   happy-dom: 20.9.0
   lighthouse: 13.3.0
   netlify-cli: 26.0.1
