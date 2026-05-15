@@ -50,7 +50,7 @@ jobs:
         run: pnpm run deploy --prod --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_TOKEN }} --message "${{ github.event.head_commit.message }}"
       - run: echo "Deployed to production at ${{ env.NETLIFY_URL }}" >> $GITHUB_STEP_SUMMARY
       - name: Install Playwright browsers
-        run: pnpm dlx playwright install chromium --with-deps
+        run: pnpm exec playwright install chromium --with-deps
       - name: Run E2E tests
         run: pnpm run test:e2e
       - name: Run Lighthouse audits

@@ -50,7 +50,7 @@ jobs:
           pnpm run deploy --alias "${ALIAS}" --site ${{ secrets.NETLIFY_SITE_ID }} --auth ${{ secrets.NETLIFY_TOKEN }} --message "Deploying PR #${{ github.event.pull_request.number }}"
       - run: echo "Published preview at ${{ env.NETLIFY_URL }}" >> $GITHUB_STEP_SUMMARY
       - name: Install Playwright browsers
-        run: pnpm dlx playwright install chromium --with-deps
+        run: pnpm exec playwright install chromium --with-deps
       - name: Run E2E tests
         run: pnpm run test:e2e
         continue-on-error: true
