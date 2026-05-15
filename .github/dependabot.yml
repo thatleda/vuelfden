@@ -25,3 +25,14 @@ updates:
         patterns:
           - '@playwright*'
           - playwright
+      lint:
+        patterns:
+          - '@antfu/eslint-config'
+          - eslint*
+          - emoji-regex
+      testing:
+        patterns:
+          - '@testing-library*'
+          - happy-dom
+          - vitest
+          - '@vue/test-utils'
