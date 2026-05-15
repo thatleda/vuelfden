@@ -20,3 +20,8 @@ updates:
     versioning-strategy: auto
     pull-request-branch-name:
       separator: /
+    groups:
+      playwright:
+        patterns:
+          - '@playwright*'
+          - playwright
