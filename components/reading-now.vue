@@ -13,6 +13,9 @@ const user = computed(() => data.value?.data?.me[0]?.goals[0]?.user)
 
 const book = computed(() => {
   const userBook = user.value?.user_books[0]
+  if (!userBook) {
+    return null
+  }
   return {
     title: userBook?.book?.title ?? 'title unknown',
     author: userBook?.book?.contributions?.[0]?.author?.name ?? 'author unknown',
@@ -46,7 +49,9 @@ const latestReview = computed(() => {
 
 <template>
   <div v-if="pending" :class="$style.loading" aria-busy="true" />
-
+  <div v-else-if="!book" :class="$style.card">
+    {{ t('not.reading.title') }}  
+  </div>
   <div v-else :class="$style.card">
     <NuxtImg
       :alt="`The book cover of ${book.title} by ${book.author}`"
