@@ -50,7 +50,7 @@ const latestReview = computed(() => {
 <template>
   <div v-if="pending" :class="$style.loading" aria-busy="true" />
   <div v-else-if="!book" :class="$style.card">
-    {{ t('not.reading.title') }}  
+    {{ t('not.reading.title') }}
   </div>
   <div v-else :class="$style.card">
     <NuxtImg

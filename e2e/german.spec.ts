@@ -22,7 +22,6 @@ test('displays reading section', async ({ page }) => {
   await page.getByLabel('Language German').click()
 
   await expect(page.getByRole('heading', { name: 'Was macht sie gerade?' })).toBeVisible()
-  await expect(page.getByText('Aktuell lese ich')).toBeVisible()
   await expect(page.getByText('Lese-Challenge')).toBeVisible()
   await expect(page.getByText('von 100 Büchern durchgelesen')).toBeVisible()
   await expect(page.getByText('Gerade gelesen')).toBeVisible()

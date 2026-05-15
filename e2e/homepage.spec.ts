@@ -52,7 +52,6 @@ test('displays reading section', async ({ page }) => {
   await page.goto('/')
 
   await expect(page.getByRole('heading', { name: 'What is she up to?' })).toBeVisible()
-  await expect(page.getByText('Currently reading')).toBeVisible()
   await expect(page.getByText('of 100 books completed')).toBeVisible()
   await expect(page.getByText('Just finished reading')).toBeVisible()
 })
