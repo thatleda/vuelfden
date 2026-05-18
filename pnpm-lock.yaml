@@ -70,8 +70,8 @@ catalogs:
       specifier: 2.5.0
       version: 2.5.0
     groq:
-      specifier: 5.24.0
-      version: 5.24.0
+      specifier: 5.25.1
+      version: 5.25.1
     happy-dom:
       specifier: 20.9.0
       version: 20.9.0
@@ -191,7 +191,7 @@ importers:
         version: 2.5.0(eslint@10.3.0(jiti@2.6.1))(globals@17.5.0)
       groq:
         specifier: 'catalog:'
-        version: 5.24.0
+        version: 5.25.1
       happy-dom:
         specifier: 'catalog:'
         version: 20.9.0
@@ -5535,8 +5535,8 @@ packages:
     resolution: {integrity: sha512-5bJ+nf/UCpAjHM8i06fl7eLyVC9iuNAjm9qzkiu2ZGhM0VscSvS6WDPfAwkdkBuoXGM9FJSbKl6wylMwP9Ktig==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
 
-  groq@5.24.0:
-    resolution: {integrity: sha512-YMumFhEJjROiE4czCBMbno/xbQSz/phlosTJhGM/gJg7ZiR/dqAhx5nfUUt0p7ytiRokyEFc/sHT4xKIPo6HJA==}
+  groq@5.25.1:
+    resolution: {integrity: sha512-EzSkxI0r6Wf9BkdDpSpcCmuTe32PcMAZPuWyOixVnOLX4ZrapEqW/UW84SrERGDyiUbm4tmZx3s5HS3IyqAalg==}
     engines: {node: '>=20.19 <22 || >=22.12'}
 
   gzip-size@7.0.0:
@@ -15476,7 +15476,7 @@ snapshots:
 
   graphql@16.13.2: {}
 
-  groq@5.24.0: {}
+  groq@5.25.1: {}
 
   gzip-size@7.0.0:
     dependencies:
