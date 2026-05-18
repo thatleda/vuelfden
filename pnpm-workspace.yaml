@@ -18,7 +18,7 @@ catalog:
   '@sanity/client': 7.22.0
   '@testing-library/jest-dom': 6.9.1
   '@testing-library/vue': 8.1.0
-  '@vitejs/plugin-vue': 6.0.6
+  '@vitejs/plugin-vue': 6.0.7
   '@vue/test-utils': 2.4.10
   '@vueuse/core': 14.3.0
   '@vueuse/nuxt': 14.3.0
@@ -47,3 +47,5 @@ shellEmulator: true
 trustPolicy: no-downgrade
 trustPolicyExclude:
   - semver
+  - chokidar
+  - '@netlify/*'
