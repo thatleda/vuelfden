@@ -32,7 +32,7 @@ catalog:
   groq: 5.25.1
   happy-dom: 20.9.0
   lighthouse: 13.3.0
-  netlify-cli: 26.0.1
+  netlify-cli: 26.0.2
   nuxt: 4.4.5
   nuxt-graphql-middleware: 5.4.0
   playwright: 1.60.0
