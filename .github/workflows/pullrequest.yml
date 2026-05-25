@@ -26,12 +26,12 @@ jobs:
       NETLIFY_URL: https://pr-${{ github.event.pull_request.number }}--vuelfden.netlify.app
     steps:
       - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v6
         with:
           node-version: lts/*
           cache: pnpm
           cache-dependency-path: pnpm-lock.yaml
-      - uses: pnpm/action-setup@v6
       - run: pnpm install
       - name: Run linter & tests in parallel
         run: |
