@@ -30,8 +30,6 @@ jobs:
         with:
           node-version: lts/*
       - uses: pnpm/action-setup@v6
-        with:
-          version: latest
       - run: pnpm install
       - name: Run linter & tests in parallel
         run: |
