@@ -3,8 +3,8 @@ name: Pull Request CI
 on: pull_request
 
 concurrency:
-  group: development
-  cancel-in-progress: false
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
