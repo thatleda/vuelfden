@@ -29,6 +29,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v6
+        with:
+          cache: true
+          cache_dependency_path: pnpm-lock.yaml
       - uses: actions/setup-node@v6
         with:
           node-version: lts/*
