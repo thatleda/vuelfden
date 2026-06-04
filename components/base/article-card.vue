@@ -1,11 +1,13 @@
 <script lang="ts" setup>
 import type { SanityPage } from '~/@types/sanity'
 
+import { computed } from 'vue'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 
 const { article } = defineProps<ArticleProps>()
 const { t } = useTranslations()
+const { lang } = useLanguage()
 
 dayjs.extend(relativeTime)
 
@@ -16,7 +18,7 @@ interface ArticleProps {
 const articleReleaseDate
   = article._createdAt === null ? new Date() : new Date(article._createdAt)
 
-const howLong = dayjs(articleReleaseDate).from(Date.now())
+const howLong = computed(() => dayjs(articleReleaseDate).locale(lang.value).from(Date.now()))
 </script>
 
 <template>

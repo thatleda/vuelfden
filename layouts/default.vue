@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { useDark, usePreferredReducedMotion } from '@vueuse/core'
-import dayjs from 'dayjs'
 import PageHeader from '~/components/page-header.vue'
 import { useLanguage } from '~/composables/useLanguage'
 import 'dayjs/locale/de'
@@ -8,7 +7,6 @@ import 'dayjs/locale/de'
 const header = ref<{ isMenuOpen: boolean }>({ isMenuOpen: false })
 const { lang } = useLanguage()
 
-dayjs.locale(lang.value)
 
 const prefersReducedMotion = usePreferredReducedMotion()
 useDark({
