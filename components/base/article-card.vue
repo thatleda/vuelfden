@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import type { SanityPage } from '~/@types/sanity'
 
-import { computed } from 'vue'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
+import { computed } from 'vue'
 
 const { article } = defineProps<ArticleProps>()
 const { t } = useTranslations()

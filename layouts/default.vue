@@ -7,7 +7,6 @@ import 'dayjs/locale/de'
 const header = ref<{ isMenuOpen: boolean }>({ isMenuOpen: false })
 const { lang } = useLanguage()
 
-
 const prefersReducedMotion = usePreferredReducedMotion()
 useDark({
   storageKey: 'vuelfden-color-mode',
