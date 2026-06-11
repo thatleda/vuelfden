@@ -48,6 +48,7 @@ overrides:
   uuid: '>=13.0.1'
   multiparty: '>=4.3.0'
   tmp: '>=0.2.6'
+  shell-quote: '>=1.8.4'
 
 shellEmulator: true
 trustPolicy: no-downgrade
