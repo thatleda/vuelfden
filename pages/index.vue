@@ -126,9 +126,6 @@ useSeoMeta({
   <base-page-section anchor="who" :heading="t('section.who')" :is-card="true">
     <about-leda v-if="aboutPage" :about-page="aboutPage" :is-card="true" />
   </base-page-section>
-  <base-page-section>
-    <lazy-work-playlist />
-  </base-page-section>
   <base-page-section
     v-if="previouslyPage"
     :heading="previouslyPage.title"
