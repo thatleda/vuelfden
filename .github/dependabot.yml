@@ -13,6 +13,8 @@ updates:
     rebase-strategy: auto
     schedule:
       interval: daily
+    cooldown:
+      default-days: 7
     assignees:
       - thatleda
     allow:
