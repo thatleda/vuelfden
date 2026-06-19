@@ -27,7 +27,7 @@ jobs:
       NUXT_HARDCOVER_API_KEY: ${{ secrets.NUXT_HARDCOVER_API_KEY }}
       NETLIFY_URL: https://ledawolf.info
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
         with:
           cache: true
