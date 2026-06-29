@@ -12,7 +12,7 @@ catalog:
   '@nuxt/fonts': 0.14.0
   '@nuxt/image': 2.0.0
   '@nuxtjs/color-mode': 4.0.1
-  '@playwright/test': 1.60.0
+  '@playwright/test': 1.61.0
   '@portabletext/types': 4.0.2
   '@portabletext/vue': 1.0.14
   '@sanity/client': 7.23.0
@@ -35,7 +35,7 @@ catalog:
   netlify-cli: 26.1.0
   nuxt: 4.4.8
   nuxt-graphql-middleware: 5.4.0
-  playwright: 1.60.0
+  playwright: 1.61.0
   typescript: 6.0.3
   vitest: 4.1.8
   vue: 3.5.38
