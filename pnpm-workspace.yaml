@@ -57,6 +57,7 @@ overrides:
   js-yaml: '>=4.2.0'
   '@babel/core': '>=7.29.6'
   launch-editor: '>=2.14.1'
+  http-proxy-middleware: '>=3.0.7'
 
 shellEmulator: true
 trustPolicy: no-downgrade
