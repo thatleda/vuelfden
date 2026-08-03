@@ -26,7 +26,7 @@ jobs:
       NETLIFY_URL: https://pr-${{ github.event.pull_request.number }}--vuelfden.netlify.app
     steps:
       - uses: actions/checkout@v7
-      - uses: pnpm/action-setup@v6
+      - uses: pnpm/action-setup@v6.0.9
         with:
           cache: true
           cache_dependency_path: pnpm-lock.yaml
