@@ -28,8 +28,8 @@ catalogs:
       specifier: 1.0.14
       version: 1.0.14
     '@sanity/client':
-      specifier: 7.23.0
-      version: 7.23.0
+      specifier: 7.26.0
+      version: 7.26.0
     '@testing-library/jest-dom':
       specifier: 6.9.1
       version: 6.9.1
@@ -142,7 +142,7 @@ importers:
         version: 1.0.14(vue@3.5.39(typescript@6.0.3))
       '@sanity/client':
         specifier: 'catalog:'
-        version: 7.23.0
+        version: 7.26.0
       '@vueuse/core':
         specifier: 'catalog:'
         version: 14.3.0(vue@3.5.39(typescript@6.0.3))
@@ -2951,12 +2951,12 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@sanity/client@7.23.0':
-    resolution: {integrity: sha512-4VFcLeP/lD0lhe5TD102tSnoW72ERT6xD/ZLb9pdLNMbZgbOciAy3m0hAYvs1vjA6663ZjNM6SLwl1Utq97DHA==}
+  '@sanity/client@7.26.0':
+    resolution: {integrity: sha512-7GEzTFRY6kWRjHbJYUDEGKPXHVl/XItGpV5LYCLcWMvBlgfujXuAjdp4hJVZqX8F8OtBzIFqdhiSn5Kh5u/V5Q==}
     engines: {node: '>=20'}
 
-  '@sanity/eventsource@5.0.2':
-    resolution: {integrity: sha512-/B9PMkUvAlUrpRq0y+NzXgRv5lYCLxZNsBJD2WXVnqZYOfByL9oQBV7KiTaARuObp5hcQYuPfOAVjgXe3hrixA==}
+  '@sanity/eventsource@5.0.4':
+    resolution: {integrity: sha512-NT6XrTJePJd7q1ZdTqB3NsTyNNOe9R2zMkg4Hlkqwb0LL6UmekVamAD46yjSJ+HbRyXAKLl1Rb65xZBdzC1f8Q==}
 
   '@sec-ant/readable-stream@0.4.1':
     resolution: {integrity: sha512-831qok9r2t8AlxLko40y2ebgSDhenenCatLVeW/uBtnHPyhHOvG0C7TvfgecV+wHzIm5KUICgzmVpWS+IMEAeg==}
@@ -6634,11 +6634,6 @@ packages:
 
   nan@2.27.0:
     resolution: {integrity: sha512-hC+0LidcL3XE4rp1C4H54KujgXKzbfyTngZTwBByQxsOxCEKZT0MPQ4hOKUH2jU1OYstqdDH4onyHPDzcV0XdQ==}
-
-  nanoid@3.3.12:
-    resolution: {integrity: sha512-ZB9RH/39qpq5Vu6Y+NmUaFhQR6pp+M2Xt76XBnEwDaGcVAqhlvxrl3B2bKS5D3NH3QR76v3aSrKaF/Kiy7lEtQ==}
-    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
 
   nanoid@3.3.16:
     resolution: {integrity: sha512-bzlKTyNJ7+LdGIIwy8ijFpIqEQIvafahV7eYykJ8Cvh42EdJeODoJ6gUJXpQJvej1BddH8OqTXZNE/KfbWAu8Q==}
@@ -12108,14 +12103,14 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.60.4':
     optional: true
 
-  '@sanity/client@7.23.0':
+  '@sanity/client@7.26.0':
     dependencies:
-      '@sanity/eventsource': 5.0.2
+      '@sanity/eventsource': 5.0.4
       get-it: 8.8.0
-      nanoid: 3.3.12
+      nanoid: 3.3.16
       rxjs: 7.8.2
 
-  '@sanity/eventsource@5.0.2':
+  '@sanity/eventsource@5.0.4':
     dependencies:
       '@types/event-source-polyfill': 1.0.5
       '@types/eventsource': 1.1.15
@@ -16438,8 +16433,6 @@ snapshots:
 
   nan@2.27.0:
     optional: true
-
-  nanoid@3.3.12: {}
 
   nanoid@3.3.16: {}
 
