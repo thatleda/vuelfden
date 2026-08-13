@@ -33,7 +33,7 @@ catalog:
   happy-dom: 20.10.6
   lighthouse: 13.4.0
   netlify-cli: 27.0.3
-  nuxt: 4.4.8
+  nuxt: 4.5.2
   nuxt-graphql-middleware: 5.4.0
   playwright: 1.61.1
   typescript: 6.0.3
