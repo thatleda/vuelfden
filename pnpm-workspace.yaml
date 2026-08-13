@@ -15,7 +15,7 @@ catalog:
   '@playwright/test': 1.62.1
   '@portabletext/types': 4.0.2
   '@portabletext/vue': 1.0.14
-  '@sanity/client': 7.26.0
+  '@sanity/client': 7.26.2
   '@testing-library/jest-dom': 7.0.0
   '@testing-library/vue': 8.1.0
   '@vitejs/plugin-vue': 6.0.7
@@ -32,7 +32,7 @@ catalog:
   groq: 6.9.0
   happy-dom: 20.11.1
   lighthouse: 13.4.0
-  netlify-cli: 27.0.3
+  netlify-cli: 27.1.1
   nuxt: 4.5.2
   nuxt-graphql-middleware: 5.4.0
   playwright: 1.62.1
@@ -67,6 +67,7 @@ overrides:
   immutable: '>=5.1.8'
   svgo: '>=4.0.2'
   body-parser: '>=2.3.0'
+  nanoid: '>=3.3.18'
 
 shellEmulator: true
 trustPolicy: no-downgrade
