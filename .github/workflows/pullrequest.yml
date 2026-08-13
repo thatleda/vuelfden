@@ -39,13 +39,13 @@ jobs:
           cache-dependency-path: pnpm-lock.yaml
       - name: Install dependencies
         run: |
-          if [ "${{ github.actor }}" = "dependabot[bot]" ]; then
+          if [ "${{ github.actor }}" = "dependabot[bot]" ] || [ "${{ github.actor }}" = "thatleda" ]; then
             pnpm install --no-frozen-lockfile
           else
             pnpm install --frozen-lockfile
           fi
       - name: Commit lockfile fix (Dependabot only)
-        if: github.actor == 'dependabot[bot]'
+        if: github.actor == 'dependabot[bot]' || github.actor == 'thatleda'
         run: |
           if ! git diff --quiet -- pnpm-lock.yaml; then
             git config user.name "github-actions[bot]"
