@@ -18,7 +18,7 @@ catalog:
   '@sanity/client': 7.26.2
   '@testing-library/jest-dom': 7.0.0
   '@testing-library/vue': 8.1.0
-  '@vitejs/plugin-vue': 6.0.7
+  '@vitejs/plugin-vue': 6.0.8
   '@vue/test-utils': 2.4.11
   '@vueuse/core': 14.3.0
   '@vueuse/nuxt': 14.3.0
