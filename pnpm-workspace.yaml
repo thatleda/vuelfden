@@ -38,7 +38,7 @@ catalog:
   playwright: 1.62.1
   typescript: 6.0.3
   vitest: 4.1.10
-  vue: 3.5.39
+  vue: 3.5.41
   vue-router: 5.2.0
 
 minimumReleaseAgeExclude:
