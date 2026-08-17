@@ -72,6 +72,9 @@ catalogs:
     groq:
       specifier: 6.9.1
       version: 6.9.1
+    happy-dom:
+      specifier: 20.11.2
+      version: 20.11.2
     lighthouse:
       specifier: 13.4.0
       version: 13.4.0
@@ -212,7 +215,7 @@ importers:
         specifier: 'catalog:'
         version: 6.9.1
       happy-dom:
-        specifier: 20.11.2
+        specifier: 'catalog:'
         version: 20.11.2
       lighthouse:
         specifier: 'catalog:'
