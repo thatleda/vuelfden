@@ -10,7 +10,7 @@ allowBuilds:
 catalog:
   '@antfu/eslint-config': 9.3.0
   '@nuxt/fonts': 0.14.0
-  '@nuxt/image': 2.0.0
+  '@nuxt/image': 2.1.0
   '@nuxtjs/color-mode': 4.0.1
   '@playwright/test': 1.62.1
   '@portabletext/types': 4.0.2
