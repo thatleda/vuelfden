@@ -25,10 +25,10 @@ catalog:
   dayjs: 1.11.21
   dotenv-cli: 11.0.0
   emoji-regex: 10.6.0
-  eslint: 10.8.0
+  eslint: 10.8.1
   eslint-plugin-playwright: 2.11.0
   eslint-plugin-testing-library: 7.16.2
-  eslint-plugin-vuejs-accessibility: 2.5.0
+  eslint-plugin-vuejs-accessibility: 2.6.0
   groq: 6.9.1
   happy-dom: 20.11.1
   lighthouse: 13.4.0
