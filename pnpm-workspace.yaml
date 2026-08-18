@@ -31,7 +31,7 @@ catalog:
   eslint-plugin-vuejs-accessibility: 2.5.0
   groq: 6.9.1
   happy-dom: 20.11.1
-  lighthouse: 13.4.0
+  lighthouse: 13.4.1
   netlify-cli: 27.1.1
   nuxt: 4.5.2
   nuxt-graphql-middleware: 5.4.0
