@@ -3,6 +3,7 @@ packages:
 allowBuilds:
   '@parcel/watcher': true
   esbuild: true
+  msw: true
   netlify-cli: true
   sharp: true
   unix-dgram: true
@@ -17,6 +18,7 @@ catalog:
   '@portabletext/vue': 2.0.0
   '@sanity/client': 8.0.0
   '@testing-library/jest-dom': 7.0.0
+  '@testing-library/user-event': 14.6.6
   '@testing-library/vue': 8.1.0
   '@vitejs/plugin-vue': 6.0.8
   '@vue/test-utils': 2.4.11
@@ -32,8 +34,10 @@ catalog:
   groq: 6.9.2
   happy-dom: 20.11.1
   lighthouse: 13.4.1
+  msw: 2.15.0
   netlify-cli: 27.1.1
   nuxt: 4.5.2
+  ofetch: 1.5.1
   nuxt-graphql-middleware: 5.4.0
   playwright: 1.62.1
   typescript: 6.0.3
@@ -43,6 +47,7 @@ catalog:
 
 minimumReleaseAgeExclude:
   - eslint-plugin-playwright@2.10.4
+  - '@testing-library/user-event@14.6.6'
 
 overrides:
   uuid: '>=13.0.1'

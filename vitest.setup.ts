@@ -1,6 +1,8 @@
 import { config } from '@vue/test-utils'
+import { ofetch } from 'ofetch'
 import { vi } from 'vitest'
 import { ref } from 'vue'
+import BaseLinkButton from '~/components/base/link-button.vue'
 import { translations } from '~/composables/useTranslations'
 import '@testing-library/jest-dom/vitest'
 
@@ -69,6 +71,9 @@ config.global.stubs = {
   },
 }
 
+config.global.components = config.global.components || {}
+config.global.components['base-link-button'] = BaseLinkButton
+
 function useTranslations() {
   const locale = ref('en')
 
@@ -85,5 +90,42 @@ function useTranslations() {
   }
 }
 
+function createMemoryStorage(): Storage {
+  const store = new Map<string, string>()
+
+  return {
+    getItem: key => store.get(key) ?? null,
+    setItem: (key, value) => { store.set(key, value) },
+    removeItem: (key) => { store.delete(key) },
+    clear: () => store.clear(),
+    key: index => Array.from(store.keys())[index] ?? null,
+    get length() { return store.size },
+  }
+}
+
+vi.stubGlobal('localStorage', createMemoryStorage())
+
 vi.stubGlobal('useTranslations', useTranslations)
 vi.stubGlobal('useLanguage', () => ({ lang: ref('en') }))
+vi.stubGlobal('useMediaQuery', () => ref(true))
+
+vi.stubGlobal('$fetch', ofetch)
+
+vi.stubGlobal('useAsyncData', (_key: string, handler: () => Promise<unknown>) => {
+  const data = ref<unknown>(null)
+  const pending = ref(true)
+  const error = ref<unknown>(null)
+
+  handler()
+    .then((result) => {
+      data.value = result
+    })
+    .catch((caught) => {
+      error.value = caught
+    })
+    .finally(() => {
+      pending.value = false
+    })
+
+  return { data, pending, error }
+})

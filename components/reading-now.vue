@@ -1,8 +1,13 @@
 <script lang="ts" setup>
+import { computed } from 'vue'
 import BaseSlateBlock from '~/components/base/slate-block.vue'
 import { useTranslations } from '~/composables/useTranslations'
 
-const { data, pending } = await useAsyncGraphqlQuery('reading', {}, { server: false })
+const { data, pending } = await useAsyncData(
+  'reading',
+  () => $fetch('/api/graphql_middleware/query/reading'),
+  { server: false },
+)
 
 const { lang } = useLanguage()
 const { t } = useTranslations()

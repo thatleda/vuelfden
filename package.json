@@ -35,6 +35,7 @@
     "@playwright/test": "catalog:",
     "@portabletext/types": "catalog:",
     "@testing-library/jest-dom": "catalog:",
+    "@testing-library/user-event": "catalog:",
     "@testing-library/vue": "catalog:",
     "@vitejs/plugin-vue": "catalog:",
     "@vue/test-utils": "catalog:",
@@ -47,6 +48,8 @@
     "groq": "catalog:",
     "happy-dom": "catalog:",
     "lighthouse": "catalog:",
+    "msw": "catalog:",
+    "ofetch": "catalog:",
     "playwright": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"
