@@ -52,8 +52,8 @@ catalogs:
       specifier: 14.4.0
       version: 14.4.0
     dayjs:
-      specifier: 1.11.21
-      version: 1.11.21
+      specifier: 1.11.23
+      version: 1.11.23
     dotenv-cli:
       specifier: 11.0.0
       version: 11.0.0
@@ -161,7 +161,7 @@ importers:
         version: 14.4.0(fb4e7249725d6b11bc5b501645d25fe9)
       dayjs:
         specifier: 'catalog:'
-        version: 1.11.21
+        version: 1.11.23
       netlify-cli:
         specifier: 'catalog:'
         version: 27.1.1(@types/node@26.2.0)(db0@0.3.4(@electric-sql/pglite@0.3.16))(ioredis@5.10.1(supports-color@10.2.2))(picomatch@4.0.5)(rollup@4.60.4)(srvx@0.11.22)(supports-color@10.2.2)
@@ -3982,8 +3982,8 @@ packages:
   dataloader@2.2.3:
     resolution: {integrity: sha512-y2krtASINtPFS1rSDjacrFgn1dcUuoREVabwlOGOe4SdxenREqwjwjElAdwvbGM7kgZz9a3KVicWR7vcz8rnzA==}
 
-  dayjs@1.11.21:
-    resolution: {integrity: sha512-98IT+HOahAisibz/yjKbzuOBwYcjJ7BCLPzARyHiyEBmRz4fatF+KPJszEHXsGYjUG234aH/cOjW1wwTbKUZlA==}
+  dayjs@1.11.23:
+    resolution: {integrity: sha512-QDTCU0M0MxR3hQfnlDJfwekQiaanm1ubOD231u73WBckQ/fsamwRLiE2GBz6D3a/xF1NgfiDLJjXBa1hYOYTtQ==}
 
   db0@0.3.4:
     resolution: {integrity: sha512-RiXXi4WaNzPTHEOu8UPQKMooIbqOEyqA1t7Z6MsdxSCeb8iUC9ko3LcmsLmeUt2SM5bctfArZKkRQggKZz7JNw==}
@@ -13456,7 +13456,7 @@ snapshots:
 
   dataloader@2.2.3: {}
 
-  dayjs@1.11.21: {}
+  dayjs@1.11.23: {}
 
   db0@0.3.4(@electric-sql/pglite@0.3.16):
     optionalDependencies:
