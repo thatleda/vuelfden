@@ -28,8 +28,8 @@ catalogs:
       specifier: 2.0.0
       version: 2.0.0
     '@sanity/client':
-      specifier: 8.0.0
-      version: 8.0.0
+      specifier: 8.1.0
+      version: 8.1.0
     '@testing-library/jest-dom':
       specifier: 7.0.0
       version: 7.0.0
@@ -152,7 +152,7 @@ importers:
         version: 2.0.0(vue@3.5.41(typescript@6.0.3))
       '@sanity/client':
         specifier: 'catalog:'
-        version: 8.0.0(vitest@4.1.10(@opentelemetry/api@1.9.1)(@types/node@26.2.0)(happy-dom@20.11.1)(msw@2.15.0(@types/node@26.2.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.2.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))
+        version: 8.1.0(vitest@4.1.10(@opentelemetry/api@1.9.1)(@types/node@26.2.0)(happy-dom@20.11.1)(msw@2.15.0(@types/node@26.2.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.2.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))
       '@vueuse/core':
         specifier: 'catalog:'
         version: 14.4.0(vue@3.5.41(typescript@6.0.3))
@@ -2595,8 +2595,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@sanity/client@8.0.0':
-    resolution: {integrity: sha512-PL2zaAkTz8fL93cEFNsmLFmaFl0/xyslnA3pdYXegdP9v1A+GRwXV3delEPaNmRn520CCDAnCrB7Bz3D//uyQQ==}
+  '@sanity/client@8.1.0':
+    resolution: {integrity: sha512-GS9q17kSIpF+NSOMJejAmTw0sKJA5oSTxtipkItnuWFvO4njVQnUQ+1OvRYZyg/AK9dwymlM35ROKuA5XuWyFQ==}
     engines: {node: '>=22.12.0'}
 
   '@sec-ant/readable-stream@0.4.1':
@@ -11845,7 +11845,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.60.4':
     optional: true
 
-  '@sanity/client@8.0.0(vitest@4.1.10(@opentelemetry/api@1.9.1)(@types/node@26.2.0)(happy-dom@20.11.1)(msw@2.15.0(@types/node@26.2.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.2.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))':
+  '@sanity/client@8.1.0(vitest@4.1.10(@opentelemetry/api@1.9.1)(@types/node@26.2.0)(happy-dom@20.11.1)(msw@2.15.0(@types/node@26.2.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.2.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))':
     dependencies:
       eventsource: 5.1.1
       get-it: 9.5.1(vitest@4.1.10(@opentelemetry/api@1.9.1)(@types/node@26.2.0)(happy-dom@20.11.1)(msw@2.15.0(@types/node@26.2.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.2.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))
