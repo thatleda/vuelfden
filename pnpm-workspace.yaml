@@ -35,7 +35,7 @@ catalog:
   happy-dom: 20.11.6
   lighthouse: 13.4.1
   msw: 2.15.0
-  netlify-cli: 27.3.0
+  netlify-cli: 27.3.1
   nuxt: 4.5.2
   ofetch: 1.5.1
   nuxt-graphql-middleware: 5.4.0
