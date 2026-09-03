@@ -75,9 +75,6 @@ catalogs:
     groq:
       specifier: 6.11.0
       version: 6.11.0
-    happy-dom:
-      specifier: 20.11.6
-      version: 20.11.6
     lighthouse:
       specifier: 13.4.1
       version: 13.4.1
@@ -152,7 +149,7 @@ importers:
         version: 2.0.0(vue@3.5.41(typescript@6.0.3))
       '@sanity/client':
         specifier: 'catalog:'
-        version: 8.3.0(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.6)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))
+        version: 8.3.0(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.9)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))
       '@vueuse/core':
         specifier: 'catalog:'
         version: 14.4.0(vue@3.5.41(typescript@6.0.3))
@@ -180,7 +177,7 @@ importers:
     devDependencies:
       '@antfu/eslint-config':
         specifier: 'catalog:'
-        version: 9.3.0(@typescript-eslint/typescript-estree@8.67.0(supports-color@10.2.2)(typescript@6.0.3))(@typescript-eslint/utils@8.67.0(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(@vue/compiler-sfc@3.5.41)(eslint-plugin-vuejs-accessibility@2.5.0(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(globals@17.11.0)(supports-color@10.2.2))(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.6)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))
+        version: 9.3.0(@typescript-eslint/typescript-estree@8.67.0(supports-color@10.2.2)(typescript@6.0.3))(@typescript-eslint/utils@8.67.0(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(@vue/compiler-sfc@3.5.41)(eslint-plugin-vuejs-accessibility@2.5.0(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(globals@17.11.0)(supports-color@10.2.2))(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.9)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))
       '@nuxtjs/color-mode':
         specifier: 'catalog:'
         version: 4.0.1(magic-string@1.1.1)(magicast@0.5.4)(rolldown@1.2.4)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.4)(rollup@4.60.4)(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))
@@ -192,7 +189,7 @@ importers:
         version: 4.0.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
-        version: 7.0.1(@testing-library/dom@10.4.1)(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.6)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))
+        version: 7.0.1(@testing-library/dom@10.4.1)(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.9)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))
       '@testing-library/user-event':
         specifier: 'catalog:'
         version: 14.6.6(@testing-library/dom@10.4.1)
@@ -227,8 +224,8 @@ importers:
         specifier: 'catalog:'
         version: 6.11.0
       happy-dom:
-        specifier: 'catalog:'
-        version: 20.11.6
+        specifier: 20.11.9
+        version: 20.11.9
       lighthouse:
         specifier: 'catalog:'
         version: 13.4.1(@opentelemetry/core@2.8.0(@opentelemetry/api@1.9.1))(supports-color@10.2.2)(yauzl@2.10.0)
@@ -246,7 +243,7 @@ importers:
         version: 6.0.3
       vitest:
         specifier: 'catalog:'
-        version: 4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.6)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))
+        version: 4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.9)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))
 
 packages:
 
@@ -5075,8 +5072,8 @@ packages:
   h3@1.15.11:
     resolution: {integrity: sha512-L3THSe2MPeBwgIZVSH5zLdBBU90TOxarvhK9d04IDY2AmVS8j2Jz2LIWtwsGOU3lu2I5jCN7FNvVfY2+XyF+mg==}
 
-  happy-dom@20.11.6:
-    resolution: {integrity: sha512-Hldbg8AdAa5a5oDcZpjqnGitp7JB0hqWmfv/8qr+kft4vzSD8BHsbdRfzYvL/0QcbKcURC/yyoygbeDQarPvYg==}
+  happy-dom@20.11.9:
+    resolution: {integrity: sha512-azw0zvQtg+Gr6yzg9FQdKFbOE6CHbLFnJ0Z/miZWOomaar5GYwp/KX3hCmzuuDodcFr2IS9aV/s1uisQlKxpqQ==}
     engines: {node: '>=20.0.0'}
 
   has-bigints@1.1.0:
@@ -8788,7 +8785,7 @@ snapshots:
 
   '@adobe/css-tools@4.5.0': {}
 
-  '@antfu/eslint-config@9.3.0(@typescript-eslint/typescript-estree@8.67.0(supports-color@10.2.2)(typescript@6.0.3))(@typescript-eslint/utils@8.67.0(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(@vue/compiler-sfc@3.5.41)(eslint-plugin-vuejs-accessibility@2.5.0(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(globals@17.11.0)(supports-color@10.2.2))(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.6)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))':
+  '@antfu/eslint-config@9.3.0(@typescript-eslint/typescript-estree@8.67.0(supports-color@10.2.2)(typescript@6.0.3))(@typescript-eslint/utils@8.67.0(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(@vue/compiler-sfc@3.5.41)(eslint-plugin-vuejs-accessibility@2.5.0(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(globals@17.11.0)(supports-color@10.2.2))(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.9)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))':
     dependencies:
       '@antfu/install-pkg': 2.0.1
       '@clack/prompts': 1.7.0
@@ -8798,7 +8795,7 @@ snapshots:
       '@stylistic/eslint-plugin': 5.10.0(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))
       '@typescript-eslint/eslint-plugin': 8.67.0(@typescript-eslint/parser@8.67.0(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
       '@typescript-eslint/parser': 8.67.0(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
-      '@vitest/eslint-plugin': 1.6.27(@typescript-eslint/eslint-plugin@8.67.0(@typescript-eslint/parser@8.67.0(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.6)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))
+      '@vitest/eslint-plugin': 1.6.27(@typescript-eslint/eslint-plugin@8.67.0(@typescript-eslint/parser@8.67.0(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.9)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))
       ansis: 4.3.1
       cac: 7.0.0
       eslint: 10.8.0(jiti@2.7.0)(supports-color@10.2.2)
@@ -11658,10 +11655,10 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.60.4':
     optional: true
 
-  '@sanity/client@8.3.0(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.6)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))':
+  '@sanity/client@8.3.0(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.9)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))':
     dependencies:
       eventsource: 5.1.1
-      get-it: 9.5.1(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.6)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))
+      get-it: 9.5.1(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.9)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))
       obug: 2.1.4
       rxjs: 7.8.2
     transitivePeerDependencies:
@@ -11787,7 +11784,7 @@ snapshots:
       lz-string: 1.5.0
       pretty-format: 27.5.1
 
-  '@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.1)(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.6)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))':
+  '@testing-library/jest-dom@7.0.1(@testing-library/dom@10.4.1)(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.9)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))':
     dependencies:
       '@adobe/css-tools': 4.5.0
       '@testing-library/dom': 10.4.1
@@ -11797,7 +11794,7 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
     optionalDependencies:
-      vitest: 4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.6)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))
+      vitest: 4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.9)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))
 
   '@testing-library/user-event@14.6.6(@testing-library/dom@10.4.1)':
     dependencies:
@@ -12094,7 +12091,7 @@ snapshots:
       vite: 8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)
       vue: 3.5.41(typescript@6.0.3)
 
-  '@vitest/eslint-plugin@1.6.27(@typescript-eslint/eslint-plugin@8.67.0(@typescript-eslint/parser@8.67.0(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.6)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))':
+  '@vitest/eslint-plugin@1.6.27(@typescript-eslint/eslint-plugin@8.67.0(@typescript-eslint/parser@8.67.0(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.9)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))':
     dependencies:
       '@typescript-eslint/scope-manager': 8.67.0
       '@typescript-eslint/utils': 8.67.0(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
@@ -12102,7 +12099,7 @@ snapshots:
     optionalDependencies:
       '@typescript-eslint/eslint-plugin': 8.67.0(@typescript-eslint/parser@8.67.0(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3)
       typescript: 6.0.3
-      vitest: 4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.6)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))
+      vitest: 4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.9)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))
     transitivePeerDependencies:
       - supports-color
 
@@ -14337,11 +14334,11 @@ snapshots:
       hasown: 2.0.3
       math-intrinsics: 1.1.0
 
-  get-it@9.5.1(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.6)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))):
+  get-it@9.5.1(vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.9)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))):
     dependencies:
       undici: 7.29.0
     optionalDependencies:
-      vitest: 4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.6)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))
+      vitest: 4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.9)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))
 
   get-port-please@3.2.0: {}
 
@@ -14512,7 +14509,7 @@ snapshots:
       ufo: 1.6.4
       uncrypto: 0.1.3
 
-  happy-dom@20.11.6:
+  happy-dom@20.11.9:
     dependencies:
       '@types/node': 26.4.0
       '@types/whatwg-mimetype': 3.0.2
@@ -18591,7 +18588,7 @@ snapshots:
       terser: 5.47.1
       yaml: 2.9.0
 
-  vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.6)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)):
+  vitest@4.1.11(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.11.9)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)):
     dependencies:
       '@vitest/expect': 4.1.11
       '@vitest/mocker': 4.1.11(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))
@@ -18616,7 +18613,7 @@ snapshots:
     optionalDependencies:
       '@opentelemetry/api': 1.9.1
       '@types/node': 26.4.0
-      happy-dom: 20.11.6
+      happy-dom: 20.11.9
     transitivePeerDependencies:
       - msw
 
