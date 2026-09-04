@@ -85,8 +85,8 @@ catalogs:
       specifier: 2.15.0
       version: 2.15.0
     netlify-cli:
-      specifier: 27.3.1
-      version: 27.3.1
+      specifier: 27.4.0
+      version: 27.4.0
     nuxt:
       specifier: 4.5.2
       version: 4.5.2
@@ -164,7 +164,7 @@ importers:
         version: 1.11.23
       netlify-cli:
         specifier: 'catalog:'
-        version: 27.3.1(@types/node@26.4.0)(db0@0.3.4(@electric-sql/pglite@0.3.16))(ioredis@5.10.1(supports-color@10.2.2))(picomatch@4.0.7)(rollup@4.60.4)(srvx@0.11.22)(supports-color@10.2.2)
+        version: 27.4.0(@types/node@26.4.0)(db0@0.3.4(@electric-sql/pglite@0.3.16))(ioredis@5.10.1(supports-color@10.2.2))(picomatch@4.0.7)(rollup@4.60.4)(srvx@0.11.22)(supports-color@10.2.2)
       nuxt:
         specifier: 'catalog:'
         version: 4.5.2(@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.7(supports-color@10.2.2)))(@babel/plugin-syntax-typescript@7.29.7(@babel/core@7.29.7(supports-color@10.2.2)))(@electric-sql/pglite@0.3.16)(@netlify/blobs@11.0.1(supports-color@10.2.2))(@oxc-project/types@0.144.0)(@parcel/watcher@2.5.6)(@types/node@26.4.0)(@vue/compiler-sfc@3.5.42)(cac@6.7.14)(db0@0.3.4(@electric-sql/pglite@0.3.16))(esbuild@0.28.1)(eslint@10.8.0(jiti@2.7.0)(supports-color@10.2.2))(ioredis@5.10.1(supports-color@10.2.2))(lightningcss@1.32.0)(magicast@0.5.4)(optionator@0.9.4)(rolldown@1.2.4)(rollup-plugin-visualizer@7.0.1(rolldown@1.2.4)(rollup@4.60.4))(rollup@4.60.4)(srvx@0.11.22)(supports-color@10.2.2)(terser@5.47.1)(typescript@6.0.3)(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))(yaml@2.9.0)
@@ -6352,8 +6352,8 @@ packages:
     resolution: {integrity: sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg==}
     engines: {node: '>= 0.6'}
 
-  netlify-cli@27.3.1:
-    resolution: {integrity: sha512-qvIb7trvjWOPE3Sf4otZyUm3si4mxmMsMGiR+x0rnTFeYxWmFricLE4VzWgzOx46NP4Qr0wo4gAhRE4o+GwQqA==}
+  netlify-cli@27.4.0:
+    resolution: {integrity: sha512-36DUMJJv8mGDwO/bNAC1kYCaIbNRRE7awpxBfdW/3d6w7dPaOVAqLUuCoraPQeubOhfXsO6+KNu2UG6wWSz9BQ==}
     engines: {node: '>=22.13.0'}
     hasBin: true
 
@@ -16053,7 +16053,7 @@ snapshots:
 
   negotiator@1.0.0: {}
 
-  netlify-cli@27.3.1(@types/node@26.4.0)(db0@0.3.4(@electric-sql/pglite@0.3.16))(ioredis@5.10.1(supports-color@10.2.2))(picomatch@4.0.7)(rollup@4.60.4)(srvx@0.11.22)(supports-color@10.2.2):
+  netlify-cli@27.4.0(@types/node@26.4.0)(db0@0.3.4(@electric-sql/pglite@0.3.16))(ioredis@5.10.1(supports-color@10.2.2))(picomatch@4.0.7)(rollup@4.60.4)(srvx@0.11.22)(supports-color@10.2.2):
     dependencies:
       '@fastify/static': 10.1.2
       '@netlify/ai': 1.0.0
