@@ -21,7 +21,7 @@ catalog:
   '@testing-library/user-event': 14.6.6
   '@testing-library/vue': 8.1.0
   '@vitejs/plugin-vue': 6.0.8
-  '@vue/test-utils': 2.4.11
+  '@vue/test-utils': 2.5.0
   '@vueuse/core': 14.4.0
   '@vueuse/nuxt': 14.4.0
   dayjs: 1.11.23
@@ -32,7 +32,7 @@ catalog:
   eslint-plugin-testing-library: 7.16.2
   eslint-plugin-vuejs-accessibility: 2.5.0
   groq: 6.11.0
-  happy-dom: 20.11.6
+  happy-dom: 20.11.12
   lighthouse: 13.4.1
   msw: 2.15.0
   netlify-cli: 27.4.0
