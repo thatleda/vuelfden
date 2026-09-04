@@ -43,7 +43,7 @@ catalog:
   typescript: 6.0.3
   vitest: 4.1.11
   vue: 3.5.42
-  vue-router: 5.2.0
+  vue-router: 5.3.0
 
 minimumReleaseAgeExclude:
   - eslint-plugin-playwright@2.10.4
