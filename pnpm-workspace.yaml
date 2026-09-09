@@ -9,7 +9,7 @@ allowBuilds:
   unix-dgram: true
 
 catalog:
-  '@antfu/eslint-config': 9.3.0
+  '@antfu/eslint-config': 9.5.1
   '@nuxt/fonts': 0.14.0
   '@nuxt/image': 2.1.0
   '@nuxtjs/color-mode': 4.0.1
@@ -27,10 +27,10 @@ catalog:
   dayjs: 1.11.23
   dotenv-cli: 11.0.0
   emoji-regex: 10.6.0
-  eslint: 10.8.0
+  eslint: 10.9.1
   eslint-plugin-playwright: 2.11.0
   eslint-plugin-testing-library: 7.16.2
-  eslint-plugin-vuejs-accessibility: 2.5.0
+  eslint-plugin-vuejs-accessibility: 2.6.0
   groq: 6.11.0
   happy-dom: 20.12.0
   lighthouse: 13.4.1
