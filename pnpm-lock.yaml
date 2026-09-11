@@ -28,8 +28,8 @@ catalogs:
       specifier: 2.0.0
       version: 2.0.0
     '@sanity/client':
-      specifier: 8.4.0
-      version: 8.4.0
+      specifier: 8.5.0
+      version: 8.5.0
     '@testing-library/jest-dom':
       specifier: 7.0.1
       version: 7.0.1
@@ -152,7 +152,7 @@ importers:
         version: 2.0.0(vue@3.5.42(typescript@6.0.3))
       '@sanity/client':
         specifier: 'catalog:'
-        version: 8.4.0(vitest@5.0.0(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.13.2)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))
+        version: 8.5.0(vitest@5.0.0(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.13.2)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))
       '@vueuse/core':
         specifier: 'catalog:'
         version: 14.4.0(vue@3.5.42(typescript@6.0.3))
@@ -2613,8 +2613,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@sanity/client@8.4.0':
-    resolution: {integrity: sha512-rwMtDxH3x9dc8ZiCMRDLStZoCr6MSPrH2LH4NIxWTCZ9Vz5OSgg0RolZy+ccM8p4yzK5lgC9XMF8tF6zsje0gQ==}
+  '@sanity/client@8.5.0':
+    resolution: {integrity: sha512-GpTdkeyMOqsuXCB74iCiGqOs7lHBELD7pgWCm+hJ0FrqXL+CIgR6ZvehPSn+O9/8964X9Nb7iFtjZpOYOydtMA==}
     engines: {node: '>=22.12.0'}
 
   '@sec-ant/readable-stream@0.4.1':
@@ -4902,8 +4902,8 @@ packages:
     resolution: {integrity: sha512-9fSjSaos/fRIVIp+xSJlE6lfwhES7LNtKaCBIamHsjr2na1BiABJPo0mOjjz8GJDURarmCPGqaiVg5mfjb98CQ==}
     engines: {node: '>= 0.4'}
 
-  get-it@9.5.1:
-    resolution: {integrity: sha512-XCVgepH7ROA/VEW4iaorxII3ZqQt7bqNhRNdeOklqwWsl7iGuJCGL7jxkUzcWVpK5zsYr0WaMqeXrIfeL02Uig==}
+  get-it@9.5.2:
+    resolution: {integrity: sha512-n4iCIF3/STaCsEIgestecjGJ3Oa+GEIwMT91HU+5TBHQ8DIpBCS1/BXjaxS5HuYHtVMRVTFDRX2bf3+gP/MOPg==}
     engines: {node: '>=22.12.0'}
     peerDependencies:
       vitest: '>=2.0.0'
@@ -11702,10 +11702,10 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.60.4':
     optional: true
 
-  '@sanity/client@8.4.0(vitest@5.0.0(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.13.2)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))':
+  '@sanity/client@8.5.0(vitest@5.0.0(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.13.2)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))':
     dependencies:
       eventsource: 5.1.1
-      get-it: 9.5.1(vitest@5.0.0(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.13.2)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))
+      get-it: 9.5.2(vitest@5.0.0(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.13.2)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)))
       obug: 2.1.4
       rxjs: 7.8.2
     transitivePeerDependencies:
@@ -14343,7 +14343,7 @@ snapshots:
       hasown: 2.0.3
       math-intrinsics: 1.1.0
 
-  get-it@9.5.1(vitest@5.0.0(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.13.2)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))):
+  get-it@9.5.2(vitest@5.0.0(@opentelemetry/api@1.9.1)(@types/node@26.4.0)(happy-dom@20.13.2)(msw@2.15.0(@types/node@26.4.0)(typescript@6.0.3))(vite@8.0.16(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))):
     dependencies:
       undici: 7.29.0
     optionalDependencies:
