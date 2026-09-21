@@ -1,5 +1,8 @@
+minimumReleaseAgeExcludePrune: true
+
 packages:
   - .
+
 allowBuilds:
   '@parcel/watcher': true
   esbuild: true
@@ -9,7 +12,7 @@ allowBuilds:
   unix-dgram: true
 
 catalog:
-  '@antfu/eslint-config': 9.3.0
+  '@antfu/eslint-config': 9.5.1
   '@nuxt/fonts': 0.14.0
   '@nuxt/image': 2.1.0
   '@nuxtjs/color-mode': 4.0.1
@@ -20,20 +23,20 @@ catalog:
   '@testing-library/jest-dom': 7.0.1
   '@testing-library/user-event': 14.6.7
   '@testing-library/vue': 8.1.0
-  '@vitejs/plugin-vue': 6.0.8
-  '@vue/test-utils': 2.5.0
+  '@vitejs/plugin-vue': 6.0.9
+  '@vue/test-utils': 2.5.1
   '@vueuse/core': 14.4.0
   '@vueuse/nuxt': 14.4.0
   dayjs: 1.11.23
   dotenv-cli: 11.0.0
-  emoji-regex: 10.6.0
-  eslint: 10.8.0
-  eslint-plugin-playwright: 2.11.0
+  emoji-regex: 11.0.0
+  eslint: 10.11.0
+  eslint-plugin-playwright: 2.12.0
   eslint-plugin-testing-library: 7.16.2
-  eslint-plugin-vuejs-accessibility: 2.5.0
-  groq: 6.13.1
-  happy-dom: 20.14.3
-  lighthouse: 13.4.1
+  eslint-plugin-vuejs-accessibility: 2.6.0
+  groq: 6.15.0
+  happy-dom: 20.14.5
+  lighthouse: 13.5.0
   msw: 2.15.0
   netlify-cli: 27.5.2
   nuxt: 4.5.2
@@ -41,7 +44,7 @@ catalog:
   nuxt-graphql-middleware: 5.4.0
   playwright: 1.63.0
   typescript: 6.0.3
-  vitest: 5.0.0
+  vitest: 5.0.1
   vue: 3.5.42
   vue-router: 5.3.1
 
@@ -75,6 +78,7 @@ overrides:
   nanoid: '>=3.3.18'
 
 shellEmulator: true
+
 trustPolicy: no-downgrade
 trustPolicyExclude:
   - semver
