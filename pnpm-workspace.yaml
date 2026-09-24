@@ -25,7 +25,7 @@ catalog:
   '@testing-library/vue': 8.1.0
   '@vitejs/plugin-vue': 6.0.9
   '@vue/test-utils': 2.5.1
-  '@vueuse/core': 14.4.0
+  '@vueuse/core': 15.0.0
   '@vueuse/nuxt': 14.4.0
   dayjs: 1.11.23
   dotenv-cli: 11.0.0
