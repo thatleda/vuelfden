@@ -6,7 +6,7 @@ export default defineGraphqlServerOptions({
     return {
       headers: {
         'content-type': 'application/json',
-        'Authorization': config.hardcoverApiKey,
+        'Authorization': `Bearer ${config.hardcoverApiKey}`,
       },
     }
   },
