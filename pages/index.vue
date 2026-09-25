@@ -138,7 +138,7 @@ useSeoMeta({
     <base-review v-for="review in reviews" :key="review._id" :review="review" />
   </base-page-section>
   <base-page-section anchor="contact" :heading="t('section.contact')" :is-card="true">
-    <reading-now />
+    <client-only><reading-now /></client-only>
   </base-page-section>
   <base-page-section :is-card="true">
     <contact-leda />
