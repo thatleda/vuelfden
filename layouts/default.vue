@@ -118,6 +118,8 @@ html {
   z-index: -3;
   pointer-events: none;
   background: var(--background-gradient);
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 @supports (height: 100svh) {
