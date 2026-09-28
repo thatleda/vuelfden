@@ -122,9 +122,9 @@ html {
   will-change: transform;
 }
 
-@supports (height: 100svh) {
+@supports (height: 100lvh) {
   .page-background {
-    height: 100svh;
+    height: 100lvh;
   }
 }
 
