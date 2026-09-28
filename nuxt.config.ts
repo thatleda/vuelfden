@@ -20,7 +20,6 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/fonts',
-    '@nuxtjs/color-mode',
     '@nuxt/image',
     '@vueuse/nuxt',
     'nuxt-graphql-middleware',
