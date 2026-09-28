@@ -111,6 +111,7 @@ html {
 body {
   min-height: 100%;
   background: var(--background-gradient);
+  background-attachment: fixed;
   position: relative;
   overflow-x: hidden;
 
@@ -181,6 +182,7 @@ body.dark-mode::after {
 
 body.dark-mode {
   background: var(--background-gradient);
+  background-attachment: fixed;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
