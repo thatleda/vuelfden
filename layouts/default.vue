@@ -31,6 +31,7 @@ useHead({
 </script>
 
 <template>
+  <div class="page-background" aria-hidden="true" />
   <ClientOnly><PageHeader ref="header" /></ClientOnly>
   <main><NuxtPage /></main>
   <ClientOnly><page-footer /></ClientOnly>
@@ -108,10 +109,16 @@ html {
   }
 }
 
+.page-background {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background: var(--background-gradient);
+}
+
 body {
   min-height: 100%;
-  background: var(--background-gradient);
-  background-attachment: fixed;
   position: relative;
   overflow-x: hidden;
 
@@ -178,11 +185,6 @@ body.dark-mode::after {
   animation: twinkle-slow 6s ease-in-out infinite;
   pointer-events: none;
   z-index: -1;
-}
-
-body.dark-mode {
-  background: var(--background-gradient);
-  background-attachment: fixed;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
