@@ -111,21 +111,12 @@ html {
 
 .page-background {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
+  inset: 0;
   z-index: -3;
   pointer-events: none;
   background: var(--background-gradient);
   transform: translateZ(0);
   will-change: transform;
-}
-
-@supports (height: 100lvh) {
-  .page-background {
-    height: 100lvh;
-  }
 }
 
 body {
