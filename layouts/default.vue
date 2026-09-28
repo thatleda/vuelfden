@@ -109,7 +109,7 @@ html {
 }
 
 body {
-  height: 100%;
+  min-height: 100%;
   background: var(--background-gradient);
   position: relative;
   overflow-x: hidden;
