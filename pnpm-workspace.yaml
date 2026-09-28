@@ -15,7 +15,6 @@ catalog:
   '@antfu/eslint-config': 9.5.1
   '@nuxt/fonts': 0.14.0
   '@nuxt/image': 2.1.0
-  '@nuxtjs/color-mode': 4.0.1
   '@playwright/test': 1.63.0
   '@portabletext/types': 4.0.2
   '@portabletext/vue': 2.0.0

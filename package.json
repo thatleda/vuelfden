@@ -31,7 +31,6 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
-    "@nuxtjs/color-mode": "catalog:",
     "@playwright/test": "catalog:",
     "@portabletext/types": "catalog:",
     "@testing-library/jest-dom": "catalog:",
